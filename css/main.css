@@ -216,11 +216,11 @@ h4 {
 
 
 p {
-   padding: var(--space-3) 0px;
+   /* padding: var(--space-3) 0px; */
    font-size: var(--font-size-3);
    line-height: 1.8;
    margin: var(--space-4) 0;
-   border-bottom: 1px solid rgba(52, 152, 219, 0.2);
+   /* border-bottom: 1px solid rgba(52, 152, 219, 0.2); */
 }
 
 li {
@@ -409,3 +409,36 @@ footer #date {
 #home p.intro {
    margin-top: 0px;
 }
+
+/* 기본 한 문단 공백 */
+.spacer {
+   height: 1em;
+   width: 100%;
+ }
+ 
+ /* 다양한 크기의 공백 옵션들 */
+ .spacer-small {
+   height: 0.5em;
+   width: 100%;
+ }
+ 
+ .spacer-medium {
+   height: 1em;
+   width: 100%;
+ }
+ 
+ .spacer-large {
+   height: 1.5em;
+   width: 100%;
+ }
+ 
+ .spacer-xl {
+   height: 2em;
+   width: 100%;
+ }
+ 
+ /* 반응형을 고려한 공백 */
+ .spacer-responsive {
+   height: clamp(0.5em, 2vw, 1.5em);
+   width: 100%;
+ }
