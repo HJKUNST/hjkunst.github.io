@@ -315,7 +315,7 @@ code {
    padding: var(--space-1) var(--space-2);
    font-size: var(--font-size-2);
    color: #007ED2;
-   background-color: rgba(218, 240, 255, 0.1);
+   background-color: rgba(218, 240, 255, 0.8);
    border-radius: 3px;
 }
 
