@@ -75,7 +75,7 @@ html {
 
 body {
    height: auto;
-   background-color: #eaf3f5;
+   background-color: rgb(241, 249, 251);
    font-family: "Satoshi-Variable", "Open Sans", sans-serif;
    font-weight: 300;
    font-size: var(--font-size-5);
@@ -315,14 +315,14 @@ code {
    padding: var(--space-1) var(--space-2);
    font-size: var(--font-size-2);
    color: #007ED2;
-   background-color: rgba(52, 152, 219, 0.1);
+   background-color: rgba(218, 240, 255, 0.1);
    border-radius: 3px;
 }
 
 pre {
    font-family: "IBM Plex Mono", monospace;
    display: block;
-   margin: var(--space-4) 0 var(--space-5);
+   margin: var(--space-4) var(--space-5);
    padding: var(--space-6) var(--space-7);
    font-size: var(--font-size-3);
    line-height: 1.8;
@@ -330,7 +330,7 @@ pre {
    white-space: pre-wrap;
    word-break: break-all;
    word-wrap: break-word;
-   background-color: #f6f7f9;
+   background-color: rgb(248, 252, 255);
    box-shadow: 0px 0px 8px #D8E5EE;
    border-radius: 12px;
 }
