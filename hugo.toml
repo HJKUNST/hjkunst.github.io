@@ -1,0 +1,13 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Strawberry Fields'
+
+theme = 'archie'
+
+summaryLength = 24
+
+[params]
+  mode = 'auto'          # light/dark based on system
+  subtitle = 'Personal dev blog documenting Achievements, Archiving and Attempts'
+  useCDN = false
+  customCSS = ['css/syntax.css', 'css/custom.css']

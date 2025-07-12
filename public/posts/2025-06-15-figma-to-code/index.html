@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>디자인에서 구현까지: Figma와 Cursor MCP를 연결해봤다 (기본편) - Strawberry Fields</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="
+목적
+Cursor AI와 Figma 파일을 연동시켜서, 디자인 리소스를 바로 코드로 전환해보고자 했다. 다른 대부분의 디자인과 예술은 프로덕트 완성까지를 &lsquo;완성&rsquo;으로 보는데, 왜 UX, UI 디자인만 구현은 개발자의 몫이어야 할까? 그 질문에 대한 도전이었다. 결론적으로 작가 의식에 기반한 웹사이트 제작을 해보고 싶었던 것 같다.
+
+
+
+가능성에 대한 의문들
+
+
+외형은 구현할 수 있더라도, flex, grid layout, margin/padding, 질감 표현까지 내가 만든 대로 옮겨질 수 있을까?" />
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content="http://localhost:1313/posts/2025-06-15-figma-to-code/">
+  <meta property="og:site_name" content="Strawberry Fields">
+  <meta property="og:title" content="디자인에서 구현까지: Figma와 Cursor MCP를 연결해봤다 (기본편)">
+  <meta property="og:description" content="목적 Cursor AI와 Figma 파일을 연동시켜서, 디자인 리소스를 바로 코드로 전환해보고자 했다. 다른 대부분의 디자인과 예술은 프로덕트 완성까지를 ‘완성’으로 보는데, 왜 UX, UI 디자인만 구현은 개발자의 몫이어야 할까? 그 질문에 대한 도전이었다. 결론적으로 작가 의식에 기반한 웹사이트 제작을 해보고 싶었던 것 같다.
+가능성에 대한 의문들 외형은 구현할 수 있더라도, flex, grid layout, margin/padding, 질감 표현까지 내가 만든 대로 옮겨질 수 있을까?">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-15T02:04:00+09:00">
+    <meta property="article:modified_time" content="2025-06-15T02:04:00+09:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="디자인에서 구현까지: Figma와 Cursor MCP를 연결해봤다 (기본편)">
+  <meta name="twitter:description" content="목적 Cursor AI와 Figma 파일을 연동시켜서, 디자인 리소스를 바로 코드로 전환해보고자 했다. 다른 대부분의 디자인과 예술은 프로덕트 완성까지를 ‘완성’으로 보는데, 왜 UX, UI 디자인만 구현은 개발자의 몫이어야 할까? 그 질문에 대한 도전이었다. 결론적으로 작가 의식에 기반한 웹사이트 제작을 해보고 싶었던 것 같다.
+가능성에 대한 의문들 외형은 구현할 수 있더라도, flex, grid layout, margin/padding, 질감 표현까지 내가 만든 대로 옮겨질 수 있을까?">
+
+        <link href="http://localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.6a0f23ea50fd34b46fee262a5a68e17d458c51a2bc99ba1ba018065de6b180c3.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.50b57e12d401420df23965fed157368aba37b76df0ecefd0b1ecd4da664f01a0.css" media="(prefers-color-scheme: dark)"  />
+		
+		
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/syntax.4493023feaa35b09c7b856b102e60821243b21e1de1e21b3d5b25171e54cad99.css">
+		
+		
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/custom.d81e84271bd58b59de59cce46b0cb79069804f60fe6a16b37bf8f73461cdf05c.css">
+		
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">Strawberry Fields</a>
+	</div>
+	<nav>
+		
+		
+	</nav>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">디자인에서 구현까지: Figma와 Cursor MCP를 연결해봤다 (기본편)</h1>
+          <div class="meta">Posted on Jun 15, 2025</div>
+        </div>
+        
+        <section class="body">
+          <!-- raw HTML omitted -->
+<h3 id="목적">목적</h3>
+<p>Cursor AI와 Figma 파일을 연동시켜서, 디자인 리소스를 바로 코드로 전환해보고자 했다. 다른 대부분의 디자인과 예술은 프로덕트 완성까지를 &lsquo;완성&rsquo;으로 보는데, 왜 UX, UI 디자인만 구현은 개발자의 몫이어야 할까? 그 질문에 대한 도전이었다. 결론적으로 작가 의식에 기반한 웹사이트 제작을 해보고 싶었던 것 같다.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="가능성에-대한-의문들">가능성에 대한 의문들</h3>
+<ul>
+<li>
+<p>외형은 구현할 수 있더라도, flex, grid layout, margin/padding, 질감 표현까지 내가 만든 대로 옮겨질 수 있을까?</p>
+</li>
+<li>
+<p>개발 공수가 두 배가 되지는 않을까? lovable과 v0에서는 코드만 던져주는 느낌이라 실제 프로덕션에 적용하고 싶지 않았다. 디자인이란 결국 프로덕트에서 감성적인 보완점을 주는 역할을 빼놓을 수 없는데, 트렌드와 간결함에만 충실하고 친화적이지 않았다.</p>
+</li>
+<li>
+<p>Animation이 들어간 prototype도 구현 가능할까?</p>
+<ul>
+<li>Figma에서는 프레임 간 연결로 prototype과 animation을 구현하지만, 단일 프레임 기반으로 MCP를 연결하면 어렵지 않을까?</li>
+<li>애니메이션이 가능하다면, 어떤 library이 효과적일까?</li>
+</ul>
+</li>
+<li>
+<p>hover 같은 상태(state)는 어떻게 구현되는가?</p>
+</li>
+<li>
+<p>JavaScript로 구현이 필요한 component들은 어떻게 처리할 수 있을까? 단순히 화면만 구성되고 기능은 무시되는 게 아닌가?</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="이-블로그를-남기는-이유">이 블로그를 남기는 이유</h3>
+<p>다른 사람들은 Cursor 연동만 완료한 뒤, 결과물만 보여준다. 개발 배경 지식이 없는 사람이 보더라도 Figma + Cursor MCP를 사용할 수 있도록 만들고 싶었다. 물론 의미있는 삽질이었지만, 다른 사람들은 나와 같은 시행착오를 겪지 않고 빠르게 개발을 하길 바란다. 디자이너와 개발자 간 소통 공수를 줄여, 더 빠르고 만족스러운 제품을 함께 만들어가기 위해 필요한 기술인 만큼 많이들 봐주었으면 좋겠다.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="그래서-결과는">그래서 결과는?</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="순서">순서</h3>
+<!-- raw HTML omitted -->
+<h4 id="1-figma-파일에서-연결할-frame을-열어두기">1. Figma 파일에서 연결할 Frame을 열어두기</h4>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="2-cursor-로그인">2. Cursor 로그인</h4>
+<ul>
+<li>계정당 2주 무료</li>
+<li>미국 학생은 Pro 요금제 무료 사용 가능</li>
+<li>필자는 계정 3개를 넘기면서 IP 밴을 당해 결국 1년 Pro 결제함
+<!-- raw HTML omitted --></li>
+</ul>
+<!-- raw HTML omitted -->
+<h4 id="3-cursor-settings--mcp-tools--new-mcp-server-클릭">3. Cursor Settings &gt; MCP Tools &gt; New MCP Server 클릭</h4>
+<p>생성된 <code>mcp.json</code> 파일에 다음 내용 복붙해 입력:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;mcpServers&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Framelink Figma MCP&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;npx&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;args&#34;</span>: [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;-y&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;figma-developer-mcp&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;--figma-api-key=YOUR-KEY&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;--stdio&#34;</span>
+</span></span><span style="display:flex;"><span>      ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<h4 id="4-여기서---figma-api-keyyour-key-부분을-채워야-하는데">4. 여기서 <code>--figma-api-key=YOUR-KEY</code> 부분을 채워야 하는데</h4>
+<ul>
+<li>
+<p>Figma &gt; Settings &gt; Security에 들어가서 ‘Generate new token’ 을 누른다</p>
+</li>
+<li>
+<p>자기가 구분할 수 있는 이름 넣고 만들면 되고, Scopes를 선택해서 생성해준다
+<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>Copy this token하고 <code>YOUR-KEY</code> 에 넣어준다</p>
+</li>
+<li>
+<p>gpt같은 ai chatbot에 질문할 때 들어가지 않도록 조심하기
+<!-- raw HTML omitted --></p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h4 id="5-설정을-마쳤다면-다음과-같은-화면이-보일-것이다">5. 설정을 마쳤다면 다음과 같은 화면이 보일 것이다</h4>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="4-지금까지-mcpjson에-복붙했을텐데-이걸-닫고-다시-cursor-setting으로-돌아가자-방금-만든-json이-적용되어-이렇게-뜰-것이다">4. 지금까지 mcp.json에 복붙했을텐데, 이걸 닫고 다시 cursor setting으로 돌아가자. 방금 만든 json이 적용되어 이렇게 뜰 것이다.</h4>
+<p>MCP 서버 토글이 꺼져 있다면 켜기
+<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<h3 id="cursor-chat으로-구현-요청하기">Cursor Chat으로 구현 요청하기</h3>
+<p>기본편에서는 심화적인 프롬프팅과 설정보다는 일단 만드는 것만을 소개한다
+Cursor Chat을 열고 다음과 같이 입력:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>implement this figma file and generate a new react project by (html/css/javascript or react or next app) on desktop @(링크)
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<p><strong>추가 프롬프트:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>I need new project and want you to adapt get_figma_data
+</span></span><span style="display:flex;"><span>Always choose the best consideration for this project
+</span></span></code></pre></div><ul>
+<li>
+<p>연결이 성공하면 다음과 같은 화면이 보인다:<br>
+<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>생성된 코드를 확인 후, 우측 하단 <strong>Accept 버튼 클릭</strong><br>
+<!-- raw HTML omitted --></p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="로컬에서-실행하기">로컬에서 실행하기</h3>
+<p>나는 <code>next app</code>으로 생성한 뒤, 로컬 서버를 실행했다:
+간단한 컴포넌트 페이지지만, Figma의 auto-layout 설정이 div 구조로 잘 반영되어 있었다.
+<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="참고할만한-자료들">참고할만한 자료들</h3>
+<ul>
+<li><a href="https://github.com/GLips/Figma-Context-MCP">Figma Context MCP GitHub</a></li>
+<li><a href="https://www.framelink.ai/docs/quickstart">Framelink Quickstart Docs</a></li>
+<li><a href="https://www.reese-log.com/cursor-figma-model-context-protocol">Cursor 실험기 - reese-log</a></li>
+</ul>
+
+        </section>
+        <div class="back-link"><a href="javascript:history.back()">← Go back</a></div>
+        <div class="post-tags">
+          
+          
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </article>
+</main>
+<footer>
+  <div style="display:flex"></div>
+  <div class="footer-info">
+    2025  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>
