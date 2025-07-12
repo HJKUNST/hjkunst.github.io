@@ -1,0 +1,49 @@
+<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Strawberry Fields | Home</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta property="og:image" content><link rel=alternate type=application/rss+xml href=https://hjkunst.github.io/index.xml title="Strawberry Fields"><meta property="og:url" content="https://hjkunst.github.io/"><meta property="og:site_name" content="Strawberry Fields"><meta property="og:title" content="Strawberry Fields"><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="Strawberry Fields"><link href=https://hjkunst.github.io/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://hjkunst.github.io/css/main.6a0f23ea50fd34b46fee262a5a68e17d458c51a2bc99ba1ba018065de6b180c3.css><link id=darkModeStyle rel=stylesheet type=text/css href=https://hjkunst.github.io/css/dark.50b57e12d401420df23965fed157368aba37b76df0ecefd0b1ecd4da664f01a0.css media="(prefers-color-scheme: dark)"><link rel=stylesheet type=text/css href=https://hjkunst.github.io/css/syntax.4493023feaa35b09c7b856b102e60821243b21e1de1e21b3d5b25171e54cad99.css><link rel=stylesheet type=text/css href=https://hjkunst.github.io/css/custom.d81e84271bd58b59de59cce46b0cb79069804f60fe6a16b37bf8f73461cdf05c.css></head><body><div class=content><header><div class=main><a href=https://hjkunst.github.io/>Strawberry Fields</a></div><nav></nav></header><main class=list><div class=site-description><p>Personal dev blog documenting Achievements, Archiving and Attempts</p></div><section class=list-item><h1 class=title><a href=/posts/2025-06-27-file-path/>파일 절대경로, 상대경로 표기법</a></h1><time>Jun 27, 2025</time><br><div class=description><h3 id=적는-이유>적는 이유</h3><p>계속 찾아보기 시간 아까워서 이참에 외우자 하는 마음에 적어본다</p><h3 id=상대-경로>상대 경로</h3><pre tabindex=0><code>/ : 최상위 디렉토리
+./ : 현재 디렉토리
+../ : 현재 디렉토리의 상위 디렉토리
+</code></pre><h3 id=예시->예시 :</h3><pre tabindex=0><code>.
+├── 404.html
+├── Gemfile
+├── Gemfile.lock
+├── LICENSE
+├── README.md
+├── _config.yml
+├── _layouts
+│   ├── default.html
+│   ├── page.html
+│   └── post.html
+├── _posts
+│   ├── 2025-06-01-welcome-to-jekyll.markdown
+│   ├── 2025-06-15-figma-to-code.md
+│   ├── 2025-06-26-file-path.md
+│   ├── 2025-06-26-sum.md
+│   └── template.md
+...
+</code></pre><h4 id=현재-파일이-2025-06-26-file-pathmd-일-때>현재 파일이 <code>2025-06-26-file-path.md</code> 일 때</h4><ol><li><code>2025-06-15-figma-to-code.md</code> 의</li></ol><ul><li>상대경로 : <code>./2025-06-15-figma-to-code.md</code></li><li>절대경로 : <code>strawberry-field/_posts/2025-06-15-figma-to-code.md</code></li></ul><ol start=2><li><code>404.html</code> 의</li></ol><ul><li>상대경로 : <code>../404.html</code></li><li>절대경로 : <code>strawberry-field/404.html</code></li></ul><p>절대경로에서 폴더 : <code>_post</code> 로 쓰기.</p>&mldr;</div><a class=readmore href=/posts/2025-06-27-file-path/>Read more ⟶</a></section><section class=list-item><h1 class=title><a href=/posts/2025-06-26-sum/>Javascript로 1부터 10까지 더하기</a></h1><time>Jun 26, 2025</time><br><div class=description><h3 id=적는-이유>적는 이유</h3><p>저번 학기 시험 공부를 안 했다고는 했지만, 웹프로그래밍 기말고사에서 자바스크립트로 1부터 20까지 더하는 문제를 틀려버린 것은 아쉬웠다.
+이번 기회에 for문에 대한 공부를 확실히 해두고자 이 포스트를 적는다.</p><h3 id=문제>문제</h3><p><code>Javascript로 1부터 10까지 더해서 console에 출력하기</code></p><h3 id=정답>정답</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span>    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>sum</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>20</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>sum</span> <span style=color:#f92672>+=</span> <span style=color:#a6e22e>i</span>; <span style=color:#75715e>// 이 블록의 코드가 반복실행
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    }
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;1부터 20까지의 합은:&#34;</span>, <span style=color:#a6e22e>sum</span>);
+</span></span></code></pre></div><h3 id=해설>해설</h3><h4 id=1-for-문-구조>1. <code>for</code> 문 구조</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>for</span> (<span style=color:#a6e22e>초기값</span>; <span style=color:#a6e22e>조건식</span>; <span style=color:#a6e22e>증가식</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 반복할 코드
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span></code></pre></div><p>여기 <code>for (let i = 1; i &lt;= 20; i++)</code> 에서는</p>&mldr;</div><a class=readmore href=/posts/2025-06-26-sum/>Read more ⟶</a></section><section class=list-item><h1 class=title><a href=/posts/2025-06-15-figma-to-code/>디자인에서 구현까지: Figma와 Cursor MCP를 연결해봤다 (기본편)</a></h1><time>Jun 15, 2025</time><br><div class=description><h3 id=목적>목적</h3><p>Cursor AI와 Figma 파일을 연동시켜서, 디자인 리소스를 바로 코드로 전환해보고자 했다. 다른 대부분의 디자인과 예술은 프로덕트 완성까지를 &lsquo;완성&rsquo;으로 보는데, 왜 UX, UI 디자인만 구현은 개발자의 몫이어야 할까? 그 질문에 대한 도전이었다. 결론적으로 작가 의식에 기반한 웹사이트 제작을 해보고 싶었던 것 같다.</p><h3 id=가능성에-대한-의문들>가능성에 대한 의문들</h3><ul><li><p>외형은 구현할 수 있더라도, flex, grid layout, margin/padding, 질감 표현까지 내가 만든 대로 옮겨질 수 있을까?</p>&mldr;</div><a class=readmore href=/posts/2025-06-15-figma-to-code/>Read more ⟶</a></section><section class=list-item><h1 class=title><a href=/posts/template/>Hello, World!</a></h1><time>Jun 2, 2025</time><br><div class=description><p>Hi there!<br>This is my very first post on my Jekyll-powered blog.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ruby data-lang=ruby><span style=display:flex><span>puts <span style=color:#e6db74>&#34;Hello, World!&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ---</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ### 🔧 Front matter breakdown</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># | Field         | Description |</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># |---------------|-------------|</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># | `layout`      | Use `post` layout (depends on your theme) |</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># | `title`       | The title of the post |</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># | `date`        | Post timestamp (`+0900` is Korea Standard Time) |</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># | `categories`  | Categories for organizing posts |</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># | `tags`        | Tags for filtering or search |</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ---</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Let me know if you&#39;d like a template for a portfolio post, tech blog, TIL, or something else!</span>
+</span></span></code></pre></div>&mldr;</div><a class=readmore href=/posts/template/>Read more ⟶</a></section></main><footer><div style=display:flex></div><div class=footer-info>2025 <a href=https://github.com/athul/archie>Archie Theme</a> | Built with <a href=https://gohugo.io>Hugo</a></div></footer></div></body></html>

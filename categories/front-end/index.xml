@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Front-End on Strawberry Fields</title><link>https://hjkunst.github.io/categories/front-end/</link><description>Recent content in Front-End on Strawberry Fields</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0900</lastBuildDate><atom:link href="https://hjkunst.github.io/categories/front-end/index.xml" rel="self" type="application/rss+xml"/><item><title>파일 절대경로, 상대경로 표기법</title><link>https://hjkunst.github.io/posts/2025-06-27-file-path/</link><pubDate>Fri, 27 Jun 2025 00:00:00 +0900</pubDate><guid>https://hjkunst.github.io/posts/2025-06-27-file-path/</guid><description>&lt;h3 id="적는-이유">적는 이유&lt;/h3>
+&lt;p>계속 찾아보기 시간 아까워서 이참에 외우자 하는 마음에 적어본다&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;h3 id="상대-경로">상대 경로&lt;/h3>
+&lt;pre tabindex="0">&lt;code>/ : 최상위 디렉토리
+./ : 현재 디렉토리
+../ : 현재 디렉토리의 상위 디렉토리
+&lt;/code>&lt;/pre>&lt;h3 id="예시-">예시 :&lt;/h3>
+&lt;pre tabindex="0">&lt;code>.
+├── 404.html
+├── Gemfile
+├── Gemfile.lock
+├── LICENSE
+├── README.md
+├── _config.yml
+├── _layouts
+│ ├── default.html
+│ ├── page.html
+│ └── post.html
+├── _posts
+│ ├── 2025-06-01-welcome-to-jekyll.markdown
+│ ├── 2025-06-15-figma-to-code.md
+│ ├── 2025-06-26-file-path.md
+│ ├── 2025-06-26-sum.md
+│ └── template.md
+...
+&lt;/code>&lt;/pre>&lt;!-- raw HTML omitted -->
+&lt;h4 id="현재-파일이-2025-06-26-file-pathmd-일-때">현재 파일이 &lt;code>2025-06-26-file-path.md&lt;/code> 일 때&lt;/h4>
+&lt;!-- raw HTML omitted -->
+&lt;ol>
+&lt;li>&lt;code>2025-06-15-figma-to-code.md&lt;/code> 의&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>상대경로 : &lt;code>./2025-06-15-figma-to-code.md&lt;/code>&lt;/li>
+&lt;li>절대경로 : &lt;code>strawberry-field/_posts/2025-06-15-figma-to-code.md&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;ol start="2">
+&lt;li>&lt;code>404.html&lt;/code> 의&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>상대경로 : &lt;code>../404.html&lt;/code>&lt;/li>
+&lt;li>절대경로 : &lt;code>strawberry-field/404.html&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>절대경로에서 폴더 : &lt;code>_post&lt;/code> 로 쓰기.&lt;/p></description></item><item><title>Javascript로 1부터 10까지 더하기</title><link>https://hjkunst.github.io/posts/2025-06-26-sum/</link><pubDate>Thu, 26 Jun 2025 00:00:00 +0900</pubDate><guid>https://hjkunst.github.io/posts/2025-06-26-sum/</guid><description>&lt;h3 id="적는-이유">적는 이유&lt;/h3>
+&lt;p>저번 학기 시험 공부를 안 했다고는 했지만, 웹프로그래밍 기말고사에서 자바스크립트로 1부터 20까지 더하는 문제를 틀려버린 것은 아쉬웠다.
+이번 기회에 for문에 대한 공부를 확실히 해두고자 이 포스트를 적는다.&lt;/p>
+&lt;h3 id="문제">문제&lt;/h3>
+&lt;p>&lt;code>Javascript로 1부터 10까지 더해서 console에 출력하기&lt;/code>&lt;/p>
+&lt;h3 id="정답">정답&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">sum&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">&amp;lt;=&lt;/span> &lt;span style="color:#ae81ff">20&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span>&lt;span style="color:#f92672">++&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">sum&lt;/span> &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#a6e22e">i&lt;/span>; &lt;span style="color:#75715e">// 이 블록의 코드가 반복실행
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;1부터 20까지의 합은:&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">sum&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- raw HTML omitted -->
+&lt;h3 id="해설">해설&lt;/h3>
+&lt;h4 id="1-for-문-구조">1. &lt;code>for&lt;/code> 문 구조&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#a6e22e">초기값&lt;/span>; &lt;span style="color:#a6e22e">조건식&lt;/span>; &lt;span style="color:#a6e22e">증가식&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 반복할 코드
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>여기 &lt;code>for (let i = 1; i &amp;lt;= 20; i++)&lt;/code> 에서는&lt;/p></description></item><item><title>디자인에서 구현까지: Figma와 Cursor MCP를 연결해봤다 (기본편)</title><link>https://hjkunst.github.io/posts/2025-06-15-figma-to-code/</link><pubDate>Sun, 15 Jun 2025 02:04:00 +0900</pubDate><guid>https://hjkunst.github.io/posts/2025-06-15-figma-to-code/</guid><description>&lt;!-- raw HTML omitted -->
+&lt;h3 id="목적">목적&lt;/h3>
+&lt;p>Cursor AI와 Figma 파일을 연동시켜서, 디자인 리소스를 바로 코드로 전환해보고자 했다. 다른 대부분의 디자인과 예술은 프로덕트 완성까지를 &amp;lsquo;완성&amp;rsquo;으로 보는데, 왜 UX, UI 디자인만 구현은 개발자의 몫이어야 할까? 그 질문에 대한 도전이었다. 결론적으로 작가 의식에 기반한 웹사이트 제작을 해보고 싶었던 것 같다.&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;h3 id="가능성에-대한-의문들">가능성에 대한 의문들&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>외형은 구현할 수 있더라도, flex, grid layout, margin/padding, 질감 표현까지 내가 만든 대로 옮겨질 수 있을까?&lt;/p></description></item></channel></rss>
