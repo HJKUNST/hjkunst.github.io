@@ -3,6 +3,15 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches: [main]
+    paths:
+      - 'content/**'
+      - 'assets/**'
+      - 'static/**'
+      - 'layouts/**'
+      - 'config.*'
+      - 'hugo.*'
+      - '.github/workflows/gh-pages.yml'
+      - 'archetypes/**'
 
 permissions:
   contents: write        # allow pushing commit/branch
