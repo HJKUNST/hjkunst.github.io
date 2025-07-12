@@ -4,8 +4,6 @@ title = 'Strawberry Fields'
 
 theme = 'archie'
 
-summaryLength = 24
-
 [params]
   mode = 'auto'          # light/dark based on system
   subtitle = 'Personal dev blog documenting Achievements, Archiving and Attempts'
