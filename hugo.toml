@@ -9,3 +9,8 @@ theme = 'archie'
   subtitle = 'Personal dev blog documenting Achievements, Archiving and Attempts'
   useCDN = false
   customCSS = ['css/syntax.css', 'css/custom.css']
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
