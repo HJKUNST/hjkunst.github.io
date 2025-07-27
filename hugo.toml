@@ -15,6 +15,15 @@ theme = 'archie'
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 6
+
+# GitHub Pages 배포를 위한 설정
+[deployment]
+  [[deployment.targets]]
+    name = "github"
+    URL = "github://hjkunst/hjkunst.github.io"
 
 # 빌드 최적화
 [build]
