@@ -5,13 +5,22 @@ title = 'Strawberry Fields'
 theme = 'archie'
 
 [params]
-  mode = 'auto'          # light/dark based on system
+  mode = 'auto'
   subtitle = 'Personal dev blog documenting Achievements, Archiving and Attempts'
   useCDN = false
-  customCSS = ['css/syntax.css', 'css/custom.css']
+  customCSS = ['css/custom.css']
   mainSections = ['posts']
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+# 빌드 최적화
+[build]
+  writeStats = false
+  
+[minify]
+  disableCSS = false
+  disableHTML = false
+  disableJS = false

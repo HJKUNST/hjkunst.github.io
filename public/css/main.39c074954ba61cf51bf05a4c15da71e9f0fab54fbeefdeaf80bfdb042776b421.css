@@ -1,7 +1,7 @@
 /* Markdown */
 :root{
 --maincolor: red;
-/* --bordercl:rebeccapurple; */
+--bordercl:rebeccapurple;
 --callouctcolor:dodgerblue;
 --hovercolor:navy;
 --darkMaincolor: #50fa7b;
@@ -149,7 +149,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 2em;
 }
 
-h1::before { color: var(--maincolor) }
+h1::before { color: var(--maincolor); content: '# '; }
 h2::before { color: var(--maincolor); content: '## '; }
 h3::before { color: var(--maincolor); content: '### '; }
 h4::before { color: var(--maincolor); content: '#### '; }
@@ -190,7 +190,7 @@ h6::before { color: var(--maincolor); content: '###### '; }
 footer {
   display: flex;
   align-items: center;
-  border-top: 0.4rem dotted var(--bordercl);
+  /* border-top: 0.4rem dotted var(--bordercl); */
   padding: 2rem 0rem;
   margin-top: 2rem;
 }
