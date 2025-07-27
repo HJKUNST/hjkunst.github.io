@@ -6,7 +6,6 @@ theme = 'archie'
 
 [params]
   mode = 'auto'
-  subtitle = 'Personal dev blog documenting Achievements, Archiving and Attempts'
   useCDN = false
   customCSS = ['css/custom.css']
   mainSections = ['posts']
