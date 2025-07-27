@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Design on Strawberry Fields</title>
+    <link>https://hjkunst.github.io/tags/design/</link>
+    <description>Recent content in Design on Strawberry Fields</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Jul 2025 12:00:00 +0900</lastBuildDate>
+    <atom:link href="https://hjkunst.github.io/tags/design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Toss Makers Conference : Design Day 리뷰</title>
+      <link>https://hjkunst.github.io/posts/2025-07-27-tmc/</link>
+      <pubDate>Sun, 27 Jul 2025 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/posts/2025-07-27-tmc/</guid>
+      <description>&lt;h2 id=&#34;토스에서-가장-안-좋은-경험-만들기&#34;&gt;토스에서 가장 안 좋은 경험 만들기&lt;/h2&gt;&#xA;&lt;p&gt;토스 광고 UX 개선 사례를 공유한 이번 세션은 ‘피할 수 없는 기능’을 어떻게 더 나은 경험으로 바꿔나갈 수 있는지를 중심으로 진행됐다. &lt;/br&gt;&#xA;광고는 대부분의 유저에게 불쾌한 요소지만, 서비스 입장에서는 쉽게 제거할 수 없다. &lt;/br&gt;&#xA;이 발표자는 그 안에서 ‘불편하지 않은 경험’은 물론, 나아가 &lt;strong&gt;유저가 수용하거나 긍정적으로 느낄 수 있는 광고 UX&lt;/strong&gt;를 만들기 위해 어떤 접근을 했는지 공유했다.&lt;/p&gt;&#xA;&lt;p&gt;유저가 가장 싫어한 건 두 가지였다.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;1. 갑작스럽게 뜨는 광고&#xA;2. 중요한 정보 사이에 끼어드는 광고&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;예고 없이 튀어나오거나 동선을 막는 구조는 유저가 앱을 꺼버릴 정도로 반감을 일으켰고, 실제로 고객센터에 관련 문의가 들어오는 사례도 있었다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -18,14 +18,14 @@
 	
 
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://hjkunst.github.io/css/main.6a0f23ea50fd34b46fee262a5a68e17d458c51a2bc99ba1ba018065de6b180c3.css" />
-		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://hjkunst.github.io/css/dark.50b57e12d401420df23965fed157368aba37b76df0ecefd0b1ecd4da664f01a0.css" media="(prefers-color-scheme: dark)"  />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://hjkunst.github.io/css/main.9d1c5605a424f8e5ba216cafdcdc560e8b231808c45aee05ed76f56f66e3eaec.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://hjkunst.github.io/css/dark.97e7b2da51b34cb08d70cc8953fb2ccc61657a50bf36c169a0f392267ae4095a.css" media="(prefers-color-scheme: dark)"  />
 		
 		
 		<link rel="stylesheet" type="text/css" href="https://hjkunst.github.io/css/syntax.4493023feaa35b09c7b856b102e60821243b21e1de1e21b3d5b25171e54cad99.css">
 		
 		
-		<link rel="stylesheet" type="text/css" href="https://hjkunst.github.io/css/custom.d81e84271bd58b59de59cce46b0cb79069804f60fe6a16b37bf8f73461cdf05c.css">
+		<link rel="stylesheet" type="text/css" href="https://hjkunst.github.io/css/custom.61c3d3f02e1c30c680d3fff7cadbfb8c52778f46672943b3f6be3e04bb82ef3d.css">
 		
 </head>
 <body>
@@ -43,41 +43,28 @@
 <ul class="posts">
   
   <li class="post">
+    <h2><a href="/posts/2025-07-27-tmc/">Toss Makers Conference : Design Day 리뷰</a></h2>
+    <p class="meta">Jul 27, 2025</p>
+  </li>
+  
+  <li class="post">
     <h2><a href="/posts/2025-06-27-file-path/">파일 절대경로, 상대경로 표기법</a></h2>
     <p class="meta">Jun 27, 2025</p>
-    <p class="post-summary">적는 이유 계속 찾아보기 시간 아까워서 이참에 외우자 하는 마음에 적어본다
-상대 경로 / : 최상위 디렉토리 ./ : 현재 디렉토리 ../ : 현재 디렉토리의 상위 디렉토리 예시 : . ├── 404.html ├── Gemfile ├── Gemfile.lock ├── LICENSE ├── README.md ├── _config.yml ├── _layouts │ ├── default.html │ ├── page.html │ └── post.html ├── _posts │ ├── 2025-06-01-welcome-to-jekyll.markdown │ ├── 2025-06-15-figma-to-code.md │ ├── 2025-06-26-file-path.md │ ├── 2025-06-26-sum.md │ └── template.md ... 현재 파일이 2025-06-26-file-path.md 일 때 2025-06-15-figma-to-code.md 의 상대경로 : ./2025-06-15-figma-to-code.md 절대경로 : strawberry-field/_posts/2025-06-15-figma-to-code.md 404.html 의 상대경로 : ../404.html 절대경로 : strawberry-field/404.html 절대경로에서 폴더 : _post 로 쓰기.
-</p>
-    <a class="read-more" href="/posts/2025-06-27-file-path/">Read&nbsp;More&nbsp;→</a>
   </li>
   
   <li class="post">
     <h2><a href="/posts/2025-06-26-sum/">Javascript로 1부터 10까지 더하기</a></h2>
     <p class="meta">Jun 26, 2025</p>
-    <p class="post-summary">적는 이유 저번 학기 시험 공부를 안 했다고는 했지만, 웹프로그래밍 기말고사에서 자바스크립트로 1부터 20까지 더하는 문제를 틀려버린 것은 아쉬웠다. 이번 기회에 for문에 대한 공부를 확실히 해두고자 이 포스트를 적는다.
-문제 Javascript로 1부터 10까지 더해서 console에 출력하기
-정답 let sum = 0; for (let i = 1; i &lt;= 20; i++) { sum += i; // 이 블록의 코드가 반복실행 } console.log(&#34;1부터 20까지의 합은:&#34;, sum); 해설 1. for 문 구조 for (초기값; 조건식; 증가식) { // 반복할 코드 } 여기 for (let i = 1; i &lt;= 20; i++) 에서는
-</p>
-    <a class="read-more" href="/posts/2025-06-26-sum/">Read&nbsp;More&nbsp;→</a>
   </li>
   
   <li class="post">
     <h2><a href="/posts/2025-06-15-figma-to-code/">디자인에서 구현까지: Figma와 Cursor MCP를 연결해봤다 (기본편)</a></h2>
     <p class="meta">Jun 15, 2025</p>
-    <p class="post-summary"> 목적 Cursor AI와 Figma 파일을 연동시켜서, 디자인 리소스를 바로 코드로 전환해보고자 했다. 다른 대부분의 디자인과 예술은 프로덕트 완성까지를 &lsquo;완성&rsquo;으로 보는데, 왜 UX, UI 디자인만 구현은 개발자의 몫이어야 할까? 그 질문에 대한 도전이었다. 결론적으로 작가 의식에 기반한 웹사이트 제작을 해보고 싶었던 것 같다.
-가능성에 대한 의문들 외형은 구현할 수 있더라도, flex, grid layout, margin/padding, 질감 표현까지 내가 만든 대로 옮겨질 수 있을까?
-개발 공수가 두 배가 되지는 않을까? lovable과 v0에서는 코드만 던져주는 느낌이라 실제 프로덕션에 적용하고 싶지 않았다. 디자인이란 결국 프로덕트에서 감성적인 보완점을 주는 역할을 빼놓을 수 없는데, 트렌드와 간결함에만 충실하고 친화적이지 않았다.
-</p>
-    <a class="read-more" href="/posts/2025-06-15-figma-to-code/">Read&nbsp;More&nbsp;→</a>
   </li>
   
   <li class="post">
     <h2><a href="/posts/template/">Hello, World!</a></h2>
     <p class="meta">Jun 2, 2025</p>
-    <p class="post-summary">Hi there!
-This is my very first post on my Jekyll-powered blog.
-puts &#34;Hello, World!&#34; # --- # ### 🔧 Front matter breakdown # | Field | Description | # |---------------|-------------| # | `layout` | Use `post` layout (depends on your theme) | # | `title` | The title of the post | # | `date` | Post timestamp (`+0900` is Korea Standard Time) | # | `categories` | Categories for organizing posts | # | `tags` | Tags for filtering or search | # --- # Let me know if you&#39;d like a template for a portfolio post, tech blog, TIL, or something else! </p>
-    <a class="read-more" href="/posts/template/">Read&nbsp;More&nbsp;→</a>
   </li>
   
 </ul>
