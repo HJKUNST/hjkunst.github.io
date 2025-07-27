@@ -2,8 +2,8 @@
 .post-summary {
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  line-clamp: 3;
   -webkit-box-orient: vertical;
+  line-clamp: 3;
   overflow: hidden;
   margin-top: 0.5rem;
   color: var(--text-color, inherit);
