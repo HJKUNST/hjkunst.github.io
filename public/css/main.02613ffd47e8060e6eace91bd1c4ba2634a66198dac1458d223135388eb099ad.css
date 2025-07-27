@@ -1,7 +1,7 @@
 /* Markdown */
 :root{
 --maincolor: red;
-/* --bordercl:rebeccapurple; */
+--bordercl:rebeccapurple;
 --callouctcolor:dodgerblue;
 --hovercolor:navy;
 --darkMaincolor: #50fa7b;
@@ -30,11 +30,11 @@ p {
   line-height: 1.5;
 }
 
-hr {
+/* hr {
   border: 0;
-  /* border-top: 3px dotted var(--bordercl); */
+  border-top: 3px dotted var(--bordercl);
   margin: 1em 0;
-}
+} */
 
 blockquote {
   border-left: 3px solid var(--bordercl);

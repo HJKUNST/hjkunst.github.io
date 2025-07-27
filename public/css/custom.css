@@ -28,6 +28,29 @@
   text-decoration: underline;
 }
 
+/* Tags styling */
+.tags {
+  margin-top: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  background-color: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  padding: 2px 8px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+.tag:hover {
+  background-color: rgba(231, 76, 60, 0.2);
+  opacity: 1;
+}
+
 /* Code styling (from old theme) */
 code {
   font-family: "IBM Plex Mono", monospace !important;

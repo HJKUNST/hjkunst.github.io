@@ -19,6 +19,7 @@ Javascript로 1부터 10까지 더해서 console에 출력하기
 for (초기값; 조건식; 증가식) {
   // 반복할 코드
 }
+
 여기 for (let i = 1; i &lt;= 20; i&#43;&#43;) 에서는" />
 	<meta property="og:image" content=""/>
 	<meta property="og:url" content="http://localhost:1313/posts/2025-06-26-sum/">
@@ -43,14 +44,14 @@ for (초기값; 조건식; 증가식) {
 	
 
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.6a0f23ea50fd34b46fee262a5a68e17d458c51a2bc99ba1ba018065de6b180c3.css" />
-		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.50b57e12d401420df23965fed157368aba37b76df0ecefd0b1ecd4da664f01a0.css" media="(prefers-color-scheme: dark)"  />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.9d1c5605a424f8e5ba216cafdcdc560e8b231808c45aee05ed76f56f66e3eaec.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.97e7b2da51b34cb08d70cc8953fb2ccc61657a50bf36c169a0f392267ae4095a.css" media="(prefers-color-scheme: dark)"  />
 		
 		
 		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/syntax.4493023feaa35b09c7b856b102e60821243b21e1de1e21b3d5b25171e54cad99.css">
 		
 		
-		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/custom.d81e84271bd58b59de59cce46b0cb79069804f60fe6a16b37bf8f73461cdf05c.css">
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/custom.f77b3b1b2e2978c9a68e4e18c804c62c60af1ece4f4d9c30d9d1026b7c17214e.css">
 		
 </head>
 <body>
@@ -86,33 +87,38 @@ for (초기값; 조건식; 증가식) {
 </span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">i</span>; <span style="color:#75715e">// 이 블록의 코드가 반복실행
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;1부터 20까지의 합은:&#34;</span>, <span style="color:#a6e22e">sum</span>);
-</span></span></code></pre></div><!-- raw HTML omitted -->
+</span></span></code></pre></div><div class="spacer"></div>
 <h3 id="해설">해설</h3>
 <h4 id="1-for-문-구조">1. <code>for</code> 문 구조</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">초기값</span>; <span style="color:#a6e22e">조건식</span>; <span style="color:#a6e22e">증가식</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 반복할 코드
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></div><p>여기 <code>for (let i = 1; i &lt;= 20; i++)</code> 에서는</p>
+</span></span></code></pre></div><!-- <div class="spacer"></div> -->
+<p>여기 <code>for (let i = 1; i &lt;= 20; i++)</code> 에서는</p>
 <ul>
 <li><code>let i = 1;</code> : 초기값</li>
 <li><code>i &lt;= 20;</code> : 조건식</li>
 <li><code>i++</code> : 증가식</li>
 </ul>
-<!-- raw HTML omitted -->
+<div class="spacer"></div>
+---
+<div class="spacer"></div>
 <h4 id="2-코드-블럭--sum--1-">2. 코드 블럭 <code>{ sum += 1; }</code></h4>
 <p>의미 : <code> sum = sum + i;</code> 의 축약</p>
 <ul>
 <li><code>{}</code> 안의 코드는 반복 실행됨</li>
 <li>여기서는 : i가 1부터 20까지 변화할 때마다 실행할 작업 담음.</li>
 </ul>
-<!-- raw HTML omitted -->
+<div class="spacer"></div>
+---
+<div class="spacer"></div>
 <h3 id="다른-예시">다른 예시</h3>
 <h4 id="배열-전체-출력할-때">배열 전체 출력할 때</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fruits</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;apple&#34;</span>, <span style="color:#e6db74">&#34;banana&#34;</span>, <span style="color:#e6db74">&#34;cherry&#34;</span>]
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) { <span style="color:#75715e">// i가 처음에는 0인데 fruits 배열 길이보다 작을 때까지 1씩 증가시키기
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">fruits</span>[<span style="color:#a6e22e">i</span>]); <span style="color:#75715e">//현재 i번째 과일(fruits[i])을 콘솔에 출력하기
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></div><!-- raw HTML omitted -->
+</span></span></code></pre></div><div class="spacer"></div>
 <h4 id="중첩-for문">중첩 for문</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">matrix</span> <span style="color:#f92672">=</span> [
 </span></span><span style="display:flex;"><span>  [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>], <span style="color:#75715e">// 0번째 행

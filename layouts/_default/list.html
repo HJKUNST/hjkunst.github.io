@@ -5,8 +5,6 @@
   <li class="post">
     <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
     <p class="meta">{{ dateFormat ":date_medium" .Date }}</p>
-    <p class="post-summary">{{ .Summary | plainify }}</p>
-    <a class="read-more" href="{{ .RelPermalink }}">Read&nbsp;More&nbsp;→</a>
   </li>
   {{ end }}
 </ul>
