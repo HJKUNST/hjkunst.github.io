@@ -10,6 +10,7 @@ theme = 'archie'
   useCDN = false
   customCSS = ['css/custom.css']
   mainSections = ['posts']
+  favicon = '/favicon.svg'  # SVG favicon으로 변경
 
 [markup]
   [markup.goldmark]

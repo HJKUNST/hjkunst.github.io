@@ -2,51 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/design/</loc>
+    <loc>https://hjkunst.github.io/tags/design/</loc>
     <lastmod>2025-07-27T12:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://hjkunst.github.io/posts/</loc>
     <lastmod>2025-07-27T12:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://hjkunst.github.io/</loc>
     <lastmod>2025-07-27T12:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://hjkunst.github.io/tags/</loc>
     <lastmod>2025-07-27T12:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2025-07-27-tmc/</loc>
+    <loc>https://hjkunst.github.io/posts/2025-07-27-tmc/</loc>
     <lastmod>2025-07-27T12:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://hjkunst.github.io/categories/</loc>
     <lastmod>2025-06-27T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/front-end/</loc>
+    <loc>https://hjkunst.github.io/categories/front-end/</loc>
     <lastmod>2025-06-27T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2025-06-27-file-path/</loc>
+    <loc>https://hjkunst.github.io/posts/2025-06-27-file-path/</loc>
     <lastmod>2025-06-27T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2025-06-26-sum/</loc>
+    <loc>https://hjkunst.github.io/posts/2025-06-26-sum/</loc>
     <lastmod>2025-06-26T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2025-06-15-figma-to-code/</loc>
+    <loc>https://hjkunst.github.io/posts/2025-06-15-figma-to-code/</loc>
     <lastmod>2025-06-15T02:04:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/first-post/</loc>
+    <loc>https://hjkunst.github.io/tags/first-post/</loc>
     <lastmod>2025-06-02T12:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/template/</loc>
+    <loc>https://hjkunst.github.io/posts/template/</loc>
     <lastmod>2025-06-02T12:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/jekyll/</loc>
+    <loc>https://hjkunst.github.io/tags/jekyll/</loc>
     <lastmod>2025-06-02T12:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/log/</loc>
+    <loc>https://hjkunst.github.io/categories/log/</loc>
     <lastmod>2025-06-02T12:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/personal/</loc>
+    <loc>https://hjkunst.github.io/categories/personal/</loc>
     <lastmod>2025-06-02T12:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://hjkunst.github.io/about/</loc>
   </url>
 </urlset>
