@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Crypto Article Week 1 | Coinbase Design System 요약하기"
-date: 2025-07-27 12:00:00 +0900
+date: 2025-12-31 12:00:00 +0900
 tags: [Design System, UX, Crypto]
 ---
 
