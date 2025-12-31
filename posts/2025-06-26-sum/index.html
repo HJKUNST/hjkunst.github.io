@@ -61,10 +61,11 @@ for (초기값; 조건식; 증가식) {
 
   
   <link rel="stylesheet" type="text/css" media="screen" href="https://hjkunst.github.io/css/main.39c074954ba61cf51bf05a4c15da71e9f0fab54fbeefdeaf80bfdb042776b421.css" />
-  <link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://hjkunst.github.io/css/dark.97e7b2da51b34cb08d70cc8953fb2ccc61657a50bf36c169a0f392267ae4095a.css" media="(prefers-color-scheme: dark)"   />
+
   
   
-  <link rel="stylesheet" type="text/css" href="https://hjkunst.github.io/css/custom.f0b98e588a934aa158f57110e3db8298bba9d0d17219a28eab2c47ae760ef1c3.css">
+  
+  <link rel="stylesheet" type="text/css" href="https://hjkunst.github.io/css/custom.f69b48f1ad1849e0686210557c4dfb67b645d888b93819ca1a319d0c3378d782.css">
   
 </head><body>
         <div class="content"><header>
@@ -73,9 +74,9 @@ for (초기값; 조건식; 증가식) {
 	</div>
 	<nav>
 		
-		
 	</nav>
 </header>
+
 
 <main>
   <article>
@@ -97,14 +98,14 @@ for (초기값; 조건식; 증가식) {
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">20</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">i</span>; <span style="color:#75715e">// 이 블록의 코드가 반복실행
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;1부터 20까지의 합은:&#34;</span>, <span style="color:#a6e22e">sum</span>);
 </span></span></code></pre></div><div class="spacer"></div>
 <h3 id="해설">해설</h3>
 <h4 id="1-for-문-구조">1. <code>for</code> 문 구조</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">초기값</span>; <span style="color:#a6e22e">조건식</span>; <span style="color:#a6e22e">증가식</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 반복할 코드
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><!-- <div class="spacer"></div> -->
 <p>여기 <code>for (let i = 1; i &lt;= 20; i++)</code> 에서는</p>
 <ul>
@@ -128,20 +129,20 @@ for (초기값; 조건식; 증가식) {
 <h4 id="배열-전체-출력할-때">배열 전체 출력할 때</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fruits</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;apple&#34;</span>, <span style="color:#e6db74">&#34;banana&#34;</span>, <span style="color:#e6db74">&#34;cherry&#34;</span>]
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) { <span style="color:#75715e">// i가 처음에는 0인데 fruits 배열 길이보다 작을 때까지 1씩 증가시키기
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">fruits</span>[<span style="color:#a6e22e">i</span>]); <span style="color:#75715e">//현재 i번째 과일(fruits[i])을 콘솔에 출력하기
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">fruits</span>[<span style="color:#a6e22e">i</span>]); <span style="color:#75715e">//현재 i번째 과일(fruits[i])을 콘솔에 출력하기
+</span></span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><div class="spacer"></div>
 <h4 id="중첩-for문">중첩 for문</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">matrix</span> <span style="color:#f92672">=</span> [
 </span></span><span style="display:flex;"><span>  [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>], <span style="color:#75715e">// 0번째 행
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]
+</span></span></span><span style="display:flex;"><span>  [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]
 </span></span><span style="display:flex;"><span>];
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// 바깥 for문: 줄(행)을 하나씩 보기
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">matrix</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++&gt;</span>) { <span style="color:#75715e">// i는 줄 번호 (0, 1)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">matrix</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++&gt;</span>) { <span style="color:#75715e">// j는 칸 번호 (0, 1)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">matrix</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>]); <span style="color:#75715e">// 현재 줄 i, 칸 j에 있는 숫자를 출력
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">matrix</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++&gt;</span>) { <span style="color:#75715e">// i는 줄 번호 (0, 1)
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">matrix</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++&gt;</span>) { <span style="color:#75715e">// j는 칸 번호 (0, 1)
+</span></span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">matrix</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>]); <span style="color:#75715e">// 현재 줄 i, 칸 j에 있는 숫자를 출력
+</span></span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>출력</p>
 <pre tabindex="0"><code>1 (첫 줄 첫 숫자)

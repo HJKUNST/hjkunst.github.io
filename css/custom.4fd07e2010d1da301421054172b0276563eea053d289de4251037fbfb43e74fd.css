@@ -1,0 +1,417 @@
+/* ==========================================================================
+   FONTS
+   ========================================================================== */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@1,2,3,4,5,6,7,8,9&display=swap');
+
+/* ==========================================================================
+   BASE TYPOGRAPHY
+   ========================================================================== */
+html,
+body,
+p,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Manrope', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+}
+
+p,
+div {
+  line-height: 1.8em !important;
+}
+
+:lang(ko) {
+  font-family: 'wanted', 'Manrope', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+}
+
+/* 텍스트 관련 요소들도 line-height 적용 */
+article,
+section,
+main,
+.content,
+li,
+blockquote {
+  line-height: 1.8em;
+}
+
+/* ==========================================================================
+   CODE & SYNTAX HIGHLIGHTING
+   ========================================================================== */
+code,
+pre,
+.highlight {
+  font-family: 'SF Mono', Monaco, 'Inconsolata', 'Roboto Mono', 'Source Code Pro', monospace !important;
+}
+
+code {
+  font-weight: 500;
+  padding: 4px 8px;
+  font-size: 0.875rem;
+  color: #007ED2;
+  background-color: rgba(218, 240, 255, 0.8);
+  border-radius: 3px;
+}
+
+pre {
+  display: block;
+  margin: 24px 32px;
+  padding: 32px 40px;
+  font-size: 1rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  word-break: break-all;
+  background-color: rgb(248, 252, 255);
+  box-shadow: 0px 0px 8px #D8E5EE;
+  border-radius: 12px;
+}
+
+pre code {
+  padding: 0;
+  font-size: 0.875rem;
+  color: inherit;
+  background-color: transparent;
+}
+
+/* Syntax highlighting - Catppuccin Latte theme */
+code .hll {
+  background-color: #EFF1F5
+}
+
+code .c {
+  color: #ACB0BE;
+  font-style: italic
+}
+
+code .err {
+  color: #D20F39;
+  background-color: #F2CDCD
+}
+
+code .k {
+  color: #DC8A78
+}
+
+code .o {
+  color: #FE640B
+}
+
+code .cm {
+  color: #ACB0BE;
+  font-style: italic
+}
+
+code .cp {
+  color: #DC8A78
+}
+
+code .c1 {
+  color: #ACB0BE;
+  font-style: italic
+}
+
+code .cs {
+  color: #ACB0BE;
+  font-style: italic
+}
+
+code .gd {
+  background-color: #F2CDCD;
+  border: 1px solid #D20F39
+}
+
+code .ge {
+  font-style: italic
+}
+
+code .gr {
+  color: #D20F39
+}
+
+code .gh {
+  color: #7287FD;
+  font-weight: bold
+}
+
+code .gi {
+  background-color: #C9F0C9;
+  border: 1px solid #40A02B
+}
+
+code .go {
+  color: #9CA0B0
+}
+
+code .gp {
+  color: #4C4F69
+}
+
+code .gs {
+  font-weight: bold
+}
+
+code .gu {
+  color: #7287FD;
+  font-weight: bold
+}
+
+code .gt {
+  color: #D20F39
+}
+
+code .kc {
+  color: #DD7878
+}
+
+code .kd {
+  color: #DC8A78
+}
+
+code .kn {
+  color: #DC8A78
+}
+
+code .kp {
+  color: #DC8A78
+}
+
+code .kr {
+  color: #DC8A78
+}
+
+code .kt {
+  color: #DD7878
+}
+
+code .m {
+  color: #7287FD
+}
+
+code .s {
+  color: #40A02B
+}
+
+code .na {
+  color: #8839EF
+}
+
+code .nb {
+  color: #7287FD
+}
+
+code .nc {
+  color: #8839EF
+}
+
+code .no {
+  color: #DD7878
+}
+
+code .nd {
+  color: #8839EF
+}
+
+code .ni {
+  color: #4C4F69
+}
+
+code .ne {
+  color: #D20F39
+}
+
+code .nf {
+  color: #8839EF
+}
+
+code .nl {
+  color: #7287FD
+}
+
+code .nn {
+  color: #8839EF
+}
+
+code .nt {
+  color: #D20F39
+}
+
+code .nv {
+  color: #4C4F69
+}
+
+code .ow {
+  color: #FE640B
+}
+
+code .w {
+  color: #BCC0CC
+}
+
+code .mf {
+  color: #7287FD
+}
+
+code .mh {
+  color: #7287FD
+}
+
+code .mi {
+  color: #7287FD
+}
+
+code .mo {
+  color: #7287FD
+}
+
+code .sb {
+  color: #40A02B
+}
+
+code .sc {
+  color: #40A02B
+}
+
+code .sd {
+  color: #ACB0BE;
+  font-style: italic
+}
+
+code .s2 {
+  color: #40A02B
+}
+
+code .se {
+  color: #40A02B
+}
+
+code .sh {
+  color: #40A02B
+}
+
+code .si {
+  color: #40A02B
+}
+
+code .sx {
+  color: #40A02B
+}
+
+code .sr {
+  color: #40A02B
+}
+
+code .s1 {
+  color: #40A02B
+}
+
+code .ss {
+  color: #DC8A78
+}
+
+code .bp {
+  color: #7287FD
+}
+
+code .vc {
+  color: #4C4F69
+}
+
+code .vg {
+  color: #4C4F69
+}
+
+code .vi {
+  color: #4C4F69
+}
+
+code .il {
+  color: #7287FD
+}
+
+.css .o,
+.css .o+.nt,
+.css .nt+.nt {
+  color: #DC8A78
+}
+
+/* ==========================================================================
+   CUSTOM COMPONENTS
+   ========================================================================== */
+
+/* Post Summary */
+.post-summary {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  color: var(--text-color, inherit);
+  line-height: 1.8em;
+}
+
+/* Links */
+.read-more {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #e74c3c;
+  text-decoration: underline;
+}
+
+.back-link {
+  margin-top: 2rem;
+}
+
+.back-link a {
+  color: #e74c3c;
+  text-decoration: none;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+/* Tags */
+.tags {
+  margin-top: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  background-color: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  padding: 2px 8px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+.tag:hover {
+  background-color: rgba(231, 76, 60, 0.2);
+  opacity: 1;
+}
+
+/* Layout Components */
+.spacer {
+  height: 20px;
+  margin: 10px 0;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--maincolor);
+  margin: 20px 0;
+  opacity: 0.3;
+}
+
+/* Headings */
+h2 {
+  color: var(--maincolor) !important;
+}
