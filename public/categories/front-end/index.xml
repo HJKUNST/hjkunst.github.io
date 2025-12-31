@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/categories/front-end/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>파일 절대경로, 상대경로 표기법</title>
-      <link>http://localhost:1313/posts/2025-06-27-file-path/</link>
+      <link>http://localhost:1313/posts/discarded-file-path/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0900</pubDate>
-      <guid>http://localhost:1313/posts/2025-06-27-file-path/</guid>
+      <guid>http://localhost:1313/posts/discarded-file-path/</guid>
       <description>&lt;h3 id=&#34;적는-이유&#34;&gt;적는 이유&lt;/h3&gt;&#xA;&lt;p&gt;계속 찾아보기 시간 아까워서 이참에 외우자 하는 마음에 적어본다&lt;/p&gt;&#xA;&lt;div class=&#34;spacer&#34;&gt;&lt;/div&gt;&#xA;&lt;h3 id=&#34;상대-경로&#34;&gt;상대 경로&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/ : 최상위 디렉토리&#xA;./ : 현재 디렉토리&#xA;../ : 현재 디렉토리의 상위 디렉토리&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;예시-&#34;&gt;예시 :&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.&#xA;├── 404.html&#xA;├── Gemfile&#xA;├── Gemfile.lock&#xA;├── LICENSE&#xA;├── README.md&#xA;├── _config.yml&#xA;├── _layouts&#xA;│   ├── default.html&#xA;│   ├── page.html&#xA;│   └── post.html&#xA;├── _posts&#xA;│   ├── 2025-06-01-welcome-to-jekyll.markdown&#xA;│   ├── 2025-06-15-figma-to-code.md&#xA;│   ├── 2025-06-26-file-path.md&#xA;│   ├── 2025-06-26-sum.md&#xA;│   └── template.md&#xA;...&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;spacer&#34;&gt;&lt;/div&gt;&#xA;&lt;h4 id=&#34;현재-파일이-2025-06-26-file-pathmd-일-때&#34;&gt;현재 파일이 &lt;code&gt;2025-06-26-file-path.md&lt;/code&gt; 일 때&lt;/h4&gt;&#xA;&lt;div class=&#34;spacer&#34;&gt;&lt;/div&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;code&gt;2025-06-15-figma-to-code.md&lt;/code&gt; 의&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;상대경로 : &lt;code&gt;./2025-06-15-figma-to-code.md&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;절대경로 : &lt;code&gt;strawberry-field/_posts/2025-06-15-figma-to-code.md&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;&lt;code&gt;404.html&lt;/code&gt; 의&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;상대경로 : &lt;code&gt;../404.html&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;절대경로 : &lt;code&gt;strawberry-field/404.html&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;절대경로에서 폴더 : &lt;code&gt;_post&lt;/code&gt; 로 쓰기.&lt;/p&gt;</description>
     </item>
     <item>

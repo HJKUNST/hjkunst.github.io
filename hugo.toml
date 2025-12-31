@@ -5,7 +5,6 @@ title = 'Strawberry Fields'
 theme = 'archie'
 
 [params]
-  mode = 'auto'
   useCDN = false
   customCSS = ['css/custom.css']
   mainSections = ['posts']
@@ -28,6 +27,7 @@ theme = 'archie'
 # 빌드 최적화
 [build]
   writeStats = false
+  buildFuture = true
   
 [minify]
   disableCSS = false

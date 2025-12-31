@@ -26,7 +26,7 @@ div {
 }
 
 :lang(ko) {
-  font-family: 'wanted-sans', 'Manrope', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+  font-family: 'Noto', 'Manrope', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
 }
 
 /* 텍스트 관련 요소들도 line-height 적용 */

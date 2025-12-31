@@ -9,6 +9,13 @@
     <lastBuildDate>Sun, 27 Jul 2025 12:00:00 +0900</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Crypto Article Week 1 | Coinbase Design System 요약하기</title>
+      <link>http://localhost:1313/posts/2025-07-27-crypto-article-1/</link>
+      <pubDate>Sun, 27 Jul 2025 12:00:00 +0900</pubDate>
+      <guid>http://localhost:1313/posts/2025-07-27-crypto-article-1/</guid>
+      <description>&lt;h2 id=&#34;서론-왜-디자인-시스템-먼저-분석하는가-왜-coinbase-design-system을-먼저-선택했는가&#34;&gt;서론: 왜 디자인 시스템 먼저 분석하는가? 왜 Coinbase Design System을 먼저 선택했는가?&lt;/h2&gt;&#xA;&lt;p&gt;크립토 생태계에서 개발자가 아닌 디자이너로서 어떤 방식으로 기여할 수 있을지에 대해 오랫동안 고민해 왔다. 화면을 설계하는 역할에 머무르기보다는, 제품이 만들어지고 확장되는 과정 전반에서 어떤 지점에 개입할 수 있는지가 더 중요한 질문이 되었다. 그 과정에서 토큰 단위부터 컴포넌트까지 이어지는 디자인 시스템 구축 방식에 자연스럽게 관심이 옮겨갔다.&lt;/p&gt;&#xA;&lt;p&gt;디자인을 기반으로 최근에는 웹사이트를 직접 만들며 개발 영역까지 함께 배우고 있다. 이 과정에서 디자이너와 프론트엔드 개발자가 어떤 방식으로 소통해야 협업 리소스를 최소화할 수 있는지에 대한 고민이 구체화되었다. 특히 AI 시대에 들어서며 Cursor, Antigravity, CLI와 같은 도구들이 디자이너와 프론트엔드 개발자의 역할을 대체할 수 있을 것이라는 이야기가 자주 언급되고 있다는 점도 이러한 고민을 가속시켰다. 나 역시 AI 대중화 이전과 이후를 비교했을 때, 맡게 되는 업무의 성격이 분명히 달라졌다고 느꼈다. 과거에는 ‘예쁘게 만드는’ 디자인 업무를 본업이나 외주 작업으로 주로 수행했다면, 최근에는 AI와 템플릿이 거의 모든 분야에 보편화되면서 그 역할만으로는 충분하지 않다고 느끼게 되었다. 대신 실물 작업을 기반으로 한 감각과 실전 경험을 바탕으로, 실제 상황에서 미감과 판단의 근거를 설명하고 선보일 수 있는 디자이너가 요구되고 있다는 인상을 받았다. 실무에서 중요하게 작동하는 것은 결과물보다도 사람들 사이에서 일이 흘러가는 방식에 대한 이해였다. 효율화된 프로세스를 알고 있고, 협업 과정에서 무엇이 병목이 되는지를 체감적으로 이해하고 있는 디자이너가 필요하다고 느꼈다. 디자이너의 언어로 비유하자면, 학부 시절 인쇄소에서 반복되는 수정과 꾸중을 거의 거치지 않고 작업을 마무리하는 것 처럼 해야지만 실무에서 필요로 하는 사람이 되어, 살아남을 수 있었다.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Toss Makers Conference : Design Day 리뷰</title>
       <link>http://localhost:1313/posts/2025-07-27-tmc/</link>
       <pubDate>Sun, 27 Jul 2025 12:00:00 +0900</pubDate>
@@ -17,9 +24,9 @@
     </item>
     <item>
       <title>파일 절대경로, 상대경로 표기법</title>
-      <link>http://localhost:1313/posts/2025-06-27-file-path/</link>
+      <link>http://localhost:1313/posts/discarded-file-path/</link>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0900</pubDate>
-      <guid>http://localhost:1313/posts/2025-06-27-file-path/</guid>
+      <guid>http://localhost:1313/posts/discarded-file-path/</guid>
       <description>&lt;h3 id=&#34;적는-이유&#34;&gt;적는 이유&lt;/h3&gt;&#xA;&lt;p&gt;계속 찾아보기 시간 아까워서 이참에 외우자 하는 마음에 적어본다&lt;/p&gt;&#xA;&lt;div class=&#34;spacer&#34;&gt;&lt;/div&gt;&#xA;&lt;h3 id=&#34;상대-경로&#34;&gt;상대 경로&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/ : 최상위 디렉토리&#xA;./ : 현재 디렉토리&#xA;../ : 현재 디렉토리의 상위 디렉토리&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;예시-&#34;&gt;예시 :&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.&#xA;├── 404.html&#xA;├── Gemfile&#xA;├── Gemfile.lock&#xA;├── LICENSE&#xA;├── README.md&#xA;├── _config.yml&#xA;├── _layouts&#xA;│   ├── default.html&#xA;│   ├── page.html&#xA;│   └── post.html&#xA;├── _posts&#xA;│   ├── 2025-06-01-welcome-to-jekyll.markdown&#xA;│   ├── 2025-06-15-figma-to-code.md&#xA;│   ├── 2025-06-26-file-path.md&#xA;│   ├── 2025-06-26-sum.md&#xA;│   └── template.md&#xA;...&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;spacer&#34;&gt;&lt;/div&gt;&#xA;&lt;h4 id=&#34;현재-파일이-2025-06-26-file-pathmd-일-때&#34;&gt;현재 파일이 &lt;code&gt;2025-06-26-file-path.md&lt;/code&gt; 일 때&lt;/h4&gt;&#xA;&lt;div class=&#34;spacer&#34;&gt;&lt;/div&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;code&gt;2025-06-15-figma-to-code.md&lt;/code&gt; 의&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;상대경로 : &lt;code&gt;./2025-06-15-figma-to-code.md&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;절대경로 : &lt;code&gt;strawberry-field/_posts/2025-06-15-figma-to-code.md&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;&lt;code&gt;404.html&lt;/code&gt; 의&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;상대경로 : &lt;code&gt;../404.html&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;절대경로 : &lt;code&gt;strawberry-field/404.html&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;절대경로에서 폴더 : &lt;code&gt;_post&lt;/code&gt; 로 쓰기.&lt;/p&gt;</description>
     </item>
     <item>

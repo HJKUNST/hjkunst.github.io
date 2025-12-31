@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/crypto/</loc>
+    <lastmod>2025-07-27T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2025-07-27-crypto-article-1/</loc>
+    <lastmod>2025-07-27T12:00:00+09:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/design/</loc>
+    <lastmod>2025-07-27T12:00:00+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/design-system/</loc>
     <lastmod>2025-07-27T12:00:00+09:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
@@ -17,13 +26,16 @@
     <loc>http://localhost:1313/posts/2025-07-27-tmc/</loc>
     <lastmod>2025-07-27T12:00:00+09:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/ux/</loc>
+    <lastmod>2025-07-27T12:00:00+09:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/categories/</loc>
     <lastmod>2025-06-27T00:00:00+09:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/front-end/</loc>
     <lastmod>2025-06-27T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2025-06-27-file-path/</loc>
+    <loc>http://localhost:1313/posts/discarded-file-path/</loc>
     <lastmod>2025-06-27T00:00:00+09:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/2025-06-26-sum/</loc>
