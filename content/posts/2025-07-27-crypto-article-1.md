@@ -145,15 +145,15 @@ Theming에 정의된 `defaultTheme`를 기준으로 디자인 토큰의 구조�
 
 Primitive token은 물리적 규칙에 따라 분류된 값의 집합이다. 예를 들어 색상 토큰은 `--light-blue0`부터 `--light-blue100`, `--dark-gray0`부터 `--dark-gray100`까지 스펙트럼 단위로 촘촘히 나뉘어 있다. 이 단계의 토큰에는 사용 맥락이나 의미가 부여되지 않으며, 버튼이나 배경과 같은 역할 정보도 포함되지 않는다. 이 구조는 팔레트 수정이나 테마 전환 시, 시스템 전반에 영향을 주지 않고 기반 색상 체계만 교체할 수 있게 한다.
 
-![Primitive token 색상 팔레트: Blue, Green, Orange 각각 11단계 색상 스펙트럼](/posts/2025-07-27-crypto-article-1/crypto-article-1-img1.png)
+<img src="/crypto-article-1-img1.png" alt="Primitive token 색상 팔레트: Blue, Green, Orange 각각 11단계 색상 스펙트럼" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
 
 반면 Semantic token은 사용 규칙과 의미를 정의한다. `fgPrimary`와 같은 토큰은 브랜드나 주요 액션을 나타내는 텍스트 색이라는 역할을 가지며, 실제 값이 어떤 색인지는 중요하지 않다. 이로 인해 컴포넌트 레벨에서는 특정 색상 값을 직접 참조하지 않고, 의미 기반 토큰만을 사용하게 된다.
 
-![Semantic token 색상: FG, FGMUTED, FGINVERSE, FGPRIMARY, FGWARNING, FGPOSITIVE, FGNEGATIVE, BG, BGALTERNATE](/posts/2025-07-27-crypto-article-1/crypto-article-1-img2.png)
+<img src="/crypto-article-1-img2.png" alt="Semantic token 색상: FG, FGMUTED, FGINVERSE, FGPRIMARY, FGWARNING, FGPOSITIVE, FGNEGATIVE, BG, BGALTERNATE" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
 
 간단한 스크립트를 통해 토큰 구조를 확인한 결과, Light와 Dark를 통틀어 총 110개의 semantic token이 primitive token을 기반으로 구성되어 있었다. 예를 들어 `--lightColor-bg`와 `--darkColor-bg`는 모두 기본 배경이라는 동일한 의미를 가지지만, 각각 다른 primitive 값과 연결된다. 이 구조는 새로운 모드 추가나 테마 확장 시 컴포넌트 수정 없이 토큰 레벨에서 대응할 수 있게 만든다. 테마 확장은 UI 수정 작업이 아니라 데이터 교체 작업이 된다.
 
-![Dark mode semantic token 매핑 테이블: --darkColor-fgMuted, --darkColor-fgPrimary, --darkColor-fgPositive, --darkColor-fgNegative, --darkColor-fgWarning, --darkColor-bg](/posts/2025-07-27-crypto-article-1/crypto-article-1-img3.png)
+<img src="/crypto-article-1-img3.png" alt="Dark mode semantic token 매핑 테이블: --darkColor-fgMuted, --darkColor-fgPrimary, --darkColor-fgPositive, --darkColor-fgNegative, --darkColor-fgWarning, --darkColor-bg" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
 
 ### 컬러 외 영역에서의 토큰 적용
 
