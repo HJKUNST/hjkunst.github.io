@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html><head lang="en">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Crypto Article Week 2 | CDS Components - Strawberry Fields</title>
+  
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<meta name="theme-color" content="#FF6254">
+<meta name="msapplication-TileColor" content="#FF6254">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="과정
+이 글에서는 디자인 시스템의 구성 요소를 실제로 분석하면서 의사 결정 과정에 중점을 둔다. 포트폴리오에 포함할 코드 스니펫 역시 구현 결과물보다는 “왜 이렇게 구현했는가” 하는 결정 이유를 드러내는 범위로 제한하였다. 예를 들어, 특정 스타일 차이를 별도 컴포넌트가 아니라 prop으로 분리한 이유, 여러 스타일 변형을 variant로 설계한 이유, 혹은 디자인 토큰을 직접 참조하지 않고 간접적으로 사용하도록 한 배경 등을 중점적으로 해설한다. 이를 위해 Apple Human Interface Guidelines(HIG), Material-UI(MUI), Coinbase Design System(CDS) 세 가지 디자인 시스템을 Button, Text Input, Modal의 공통 컴포넌트와 CDS에만 있는 AreaChart 컴포넌트를 중심으로 비교하였다. 각 컴포넌트를 디자인 관점과 코드 구현 관점에서 분석하면서, 디자인 토큰 활용, variant 구조, 상태(State) 구성, 접근성 처리 방식 등의 구체 요소를 상세히 정리한다. 분석 방식은 논문 &ldquo;모바일 운영체제별 GUI 컴포넌트의 사용성 비교 분석을 위한 프레임워크&quot;에서 제안된 분류처럼, 공통 구조, 명칭상의 차이, 기능상의 차이 관점으로 내용을 분류하여 서술한다. 마지막으로 이러한 비교 분석 과정을 통해 얻은 교훈과 학습 효과를 정리하고, 디자인-개발 협업에 주는 시사점을 실용적인 결론으로 제시한다." />
+  <meta property="og:image" content="" />
+  <meta property="og:url" content="https://hjkunst.github.io/posts/2026-01-05-crypto-article-2/">
+  <meta property="og:site_name" content="Strawberry Fields">
+  <meta property="og:title" content="Crypto Article Week 2 | CDS Components">
+  <meta property="og:description" content="과정 이 글에서는 디자인 시스템의 구성 요소를 실제로 분석하면서 의사 결정 과정에 중점을 둔다. 포트폴리오에 포함할 코드 스니펫 역시 구현 결과물보다는 “왜 이렇게 구현했는가” 하는 결정 이유를 드러내는 범위로 제한하였다. 예를 들어, 특정 스타일 차이를 별도 컴포넌트가 아니라 prop으로 분리한 이유, 여러 스타일 변형을 variant로 설계한 이유, 혹은 디자인 토큰을 직접 참조하지 않고 간접적으로 사용하도록 한 배경 등을 중점적으로 해설한다. 이를 위해 Apple Human Interface Guidelines(HIG), Material-UI(MUI), Coinbase Design System(CDS) 세 가지 디자인 시스템을 Button, Text Input, Modal의 공통 컴포넌트와 CDS에만 있는 AreaChart 컴포넌트를 중심으로 비교하였다. 각 컴포넌트를 디자인 관점과 코드 구현 관점에서 분석하면서, 디자인 토큰 활용, variant 구조, 상태(State) 구성, 접근성 처리 방식 등의 구체 요소를 상세히 정리한다. 분석 방식은 논문 “모바일 운영체제별 GUI 컴포넌트의 사용성 비교 분석을 위한 프레임워크&#34;에서 제안된 분류처럼, 공통 구조, 명칭상의 차이, 기능상의 차이 관점으로 내용을 분류하여 서술한다. 마지막으로 이러한 비교 분석 과정을 통해 얻은 교훈과 학습 효과를 정리하고, 디자인-개발 협업에 주는 시사점을 실용적인 결론으로 제시한다.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-01-05T12:00:00+09:00">
+    <meta property="article:modified_time" content="2026-01-05T12:00:00+09:00">
+    <meta property="article:tag" content="Design System">
+    <meta property="article:tag" content="UX">
+    <meta property="article:tag" content="Crypto">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Crypto Article Week 2 | CDS Components">
+  <meta name="twitter:description" content="과정 이 글에서는 디자인 시스템의 구성 요소를 실제로 분석하면서 의사 결정 과정에 중점을 둔다. 포트폴리오에 포함할 코드 스니펫 역시 구현 결과물보다는 “왜 이렇게 구현했는가” 하는 결정 이유를 드러내는 범위로 제한하였다. 예를 들어, 특정 스타일 차이를 별도 컴포넌트가 아니라 prop으로 분리한 이유, 여러 스타일 변형을 variant로 설계한 이유, 혹은 디자인 토큰을 직접 참조하지 않고 간접적으로 사용하도록 한 배경 등을 중점적으로 해설한다. 이를 위해 Apple Human Interface Guidelines(HIG), Material-UI(MUI), Coinbase Design System(CDS) 세 가지 디자인 시스템을 Button, Text Input, Modal의 공통 컴포넌트와 CDS에만 있는 AreaChart 컴포넌트를 중심으로 비교하였다. 각 컴포넌트를 디자인 관점과 코드 구현 관점에서 분석하면서, 디자인 토큰 활용, variant 구조, 상태(State) 구성, 접근성 처리 방식 등의 구체 요소를 상세히 정리한다. 분석 방식은 논문 “모바일 운영체제별 GUI 컴포넌트의 사용성 비교 분석을 위한 프레임워크&#34;에서 제안된 분류처럼, 공통 구조, 명칭상의 차이, 기능상의 차이 관점으로 내용을 분류하여 서술한다. 마지막으로 이러한 비교 분석 과정을 통해 얻은 교훈과 학습 효과를 정리하고, 디자인-개발 협업에 주는 시사점을 실용적인 결론으로 제시한다.">
+
+  <link href="https://hjkunst.github.io/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+  
+
+  
+  <link rel="stylesheet" type="text/css" media="screen" href="https://hjkunst.github.io/css/main.39c074954ba61cf51bf05a4c15da71e9f0fab54fbeefdeaf80bfdb042776b421.css" />
+
+  
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://hjkunst.github.io/css/custom.f69b48f1ad1849e0686210557c4dfb67b645d888b93819ca1a319d0c3378d782.css">
+  
+</head><body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://hjkunst.github.io/">Strawberry Fields</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">Crypto Article Week 2 | CDS Components</h1>
+          <div class="meta">Posted on Jan 5, 2026</div>
+        </div>
+        
+        <section class="body">
+          <h2 id="과정">과정</h2>
+<p>이 글에서는 디자인 시스템의 구성 요소를 실제로 분석하면서 의사 결정 과정에 중점을 둔다. 포트폴리오에 포함할 코드 스니펫 역시 구현 결과물보다는 “왜 이렇게 구현했는가” 하는 결정 이유를 드러내는 범위로 제한하였다. 예를 들어, 특정 스타일 차이를 별도 컴포넌트가 아니라 prop으로 분리한 이유, 여러 스타일 변형을 variant로 설계한 이유, 혹은 디자인 토큰을 직접 참조하지 않고 간접적으로 사용하도록 한 배경 등을 중점적으로 해설한다. 이를 위해 Apple Human Interface Guidelines(HIG), Material-UI(MUI), Coinbase Design System(CDS) 세 가지 디자인 시스템을 Button, Text Input, Modal의 공통 컴포넌트와 CDS에만 있는 AreaChart 컴포넌트를 중심으로 비교하였다. 각 컴포넌트를 디자인 관점과 코드 구현 관점에서 분석하면서, 디자인 토큰 활용, variant 구조, 상태(State) 구성, 접근성 처리 방식 등의 구체 요소를 상세히 정리한다. 분석 방식은 논문 &ldquo;모바일 운영체제별 GUI 컴포넌트의 사용성 비교 분석을 위한 프레임워크&quot;에서 제안된 분류처럼, 공통 구조, 명칭상의 차이, 기능상의 차이 관점으로 내용을 분류하여 서술한다. 마지막으로 이러한 비교 분석 과정을 통해 얻은 교훈과 학습 효과를 정리하고, 디자인-개발 협업에 주는 시사점을 실용적인 결론으로 제시한다.</p>
+<h3 id="3-분석-접근-방식-approach">3. 분석 접근 방식 (Approach)</h3>
+<p>컴포넌트 기능의 명칭 일치 여부, 기능 유사성, 구조적 차별성을 중심으로 유형화한다. 우선 컴포넌트를 세 가지 유형으로 분류하였다. Primitive에는 기본적인 인터랙션 요소인 Button과 Text Input을, Overlay에는 화면 위에 겹쳐지는 Modal을, Crypto-specific에는 크립토 분야에서 특히 자주 사용되는 Area Chart를 포함한다. 각 컴포넌트에 대해 다음 항목을 비교한다:</p>
+<ul>
+<li>디자인 명세: 공식 가이드라인에서 해당 컴포넌트의 사용 지침과 시각적 권장 사항.</li>
+<li>구조 및 Props: 코드 레벨에서 컴포넌트의 속성(props) 구성과 하위 구조. 예를 들어 Variants(변형) 제공 방식, State 관리(props로 loading 지원 등)와 Design Token 활용 여부를 검토한다.</li>
+<li>명칭 및 기능 비교: 세 시스템에서 컴포넌트 이름이나 개념이 일치하는지(예: “Button”으로 동일한지), 제공하는 기능이 유사한지(예: 비활성화, 로딩 상태 지원 등), 구조나 사용성에서 차이가 있는지 (예: 서브컴포넌트 구성, Label 처리 방식 등) 비교한다.</li>
+<li>커스터마이징 포인트: 테마 적용이나 스타일 확장 등 각 시스템에서 허용하는 커스터마이징 범위와 방법을 살펴본다.</li>
+</ul>
+<p>비교 과정에서는 논문의 방법론에 따라, 기능 명칭의 일치 여부, 기능상의 유사성 정도, 구조/사용 패턴의 차별성을 표로 정리하여 유형화한다. 또한 코드 스니펫을 통해 각 디자인 시스템의 설계 의도와 구현상의 선택을 보여준다. 예를 들어 variant 개념을 도입한 이유나 spacing 처리에 design token을 어떻게 활용하는지 등 의사결정을 드러내는 부분을 발췌하여 분석에 인용한다.</p>
+<h2 id="components">Components</h2>
+<h3 id="primary-button">Primary Button</h3>
+<p><strong>디자인 가이드 비교</strong></p>
+<p>세 시스템 모두 “Button” 컴포넌트를 기본 요소로 제공하지만, 디자인 철학에 따라 세부 지침에 차이가 있다.</p>
+<img src="/crypto-article-2-design-system-venn.png" alt="Design System 구성 요소 벤 다이어그램" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<p>Apple HIG에서는 직관적인 터치 영역과 플랫폼 일관성을 강조한다. 예를 들어 “버튼은 최소 44×44 pt(visionOS의 경우 60×60 pt)의 터치 영역을 가져야 한다”고 권고하여 사용자가 쉽게 누를 수 있도록 한다.</p>
+<p>또한 iOS에서는 Primary 액션 버튼을 눈에 띄게(기본 파랑 등 액센트 컬러 사용) 하고, Destructive 액션은 빨간색 텍스트로 표시해 주의를 주도록 안내한다. Apple은 버튼 스타일을 크게 커스터마이즈하기보다는 OS가 제공하는 기본 스타일을 따를 것을 권장하며, 모달 대화상자의 경우 확인(OK) 버튼을 볼드체로 강조하는 등 컨텍스트에 따른 표준 스타일이 있다.</p>
+<img src="/crypto-article-2-apple-hig-alert.png" alt="Apple HIG Alert/Action Sheet 예시: A Short Title Is Best" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<p>반면 Material-UI(MUI)는 Material Design 원칙에 따라 Contained / Outlined / Text 세 가지 버튼 variant를 제공하여 문맥에 맞는 시각적 강조 수준을 조절한다. 기본 “Contained(채움)” 버튼은 배경색이 채워져 가장 높은 강조를 가지며, “Outlined”는 외곽선만 있어 중간 정도, “Text” 버튼은 배경 없이 글자만 있어 가장 낮은 강조를 나타낸다. 또한 MUI 버튼은 <code>color</code> prop으로 기본/보조 색상이나 에러 색상 등을 지정할 수 있어, Primary와 Secondary 역할 구분이나 Destructive(error color) 스타일도 쉽게 구현된다.</p>
+<img src="/crypto-article-2-mui-button-variants.png" alt="MUI Button Variants: TEXT, CONTAINED, OUTLINED" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<img src="/crypto-article-2-mui-button-colors.png" alt="MUI Button Colors: Primary, Secondary, Tertiary, Negative" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<p>Coinbase CDS의 버튼은 MUI와 유사하게 variant prop을 사용하지만 그 값으로 primary, secondary, tertiary, negative 네 가지를 명시적으로 제공한다. Primary는 화면 내 주된 액션에 (한 화면에 하나만 권장), Secondary는 동등한 복수 액션에, Tertiary는 어두운 배경에서의 반전(high-contrast) 용도로, Negative는 실행 취소 불가능한 파괴적 행동에 사용하도록 가이드한다. 또한 CDS는 <code>transparent</code> prop을 별도로 두어 어떤 variant에도 “배경 투명” 스타일을 적용할 수 있게 했다. 이를 통해 버튼의 강조도를 한 단계 낮추는 Ghost 버튼 스타일을 구현하며(컨테이너는 호버 등 상호작용 시에만 표시), MUI의 Text 버튼과 유사한 역할을 한다.</p>
+<p>Apple HIG에는 투명 배경 버튼에 대한 직접 언급은 없으나, iOS에서는 Navigation Bar 등에 텍스트 형태 버튼(링크 스타일)으로 구현하는 패턴이 존재한다.</p>
+<p><strong>구조 및 상태 구현</strong></p>
+<p>Apple의 UIKit/SwiftUI 버튼은 비교적 단순한 인터페이스(<code>UIButton</code> 혹은 SwiftUI <code>Button</code> 뷰)로, loading 상태나 아이콘 배치 등의 기능은 기본 제공하지 않는다. 필요하면 개발자가 버튼 위에 Activity Indicator(스피너)를 올리거나 별도 구현을 해야 한다.</p>
+<p>반면 MUI는 확장된 버튼 컴포넌트를 통해 <code>startIcon</code> 및 <code>endIcon</code> prop으로 아이콘을 버튼 내부 양옆에 쉽게 넣을 수 있게 했고, <code>disabled</code> prop 및 <code>onClick</code> 이벤트 핸들러 등 기본 기능을 모두 갖춘다.</p>
+<p>MUI 자체로 로딩 상태 prop을 기본 제공하지는 않지만(별도의 <code>&lt;LoadingButton&gt;</code> 컴포넌트가 Lab에 존재), CDS에서는 아예 <code>loading</code>이라는 boolean prop을 지원하여 로딩 시 버튼을 비활성화하고 스피너를 보여주는 패턴을 표준화했다. 예를 들어 <code>&lt;Button loading={isLoading}&gt;</code>으로 설정하면 버튼 내용 대신 내부에 로딩 스피너가 나타나고, 버튼 폭은 그대로 유지되어 레이아웃 변동을 막는다. 이는 Coinbase의 실무 경험(트랜잭션 처리 등 대기 상황이 많은 크립토 UX)을 반영한 것으로 보인다. 또한 <code>disabled</code> prop도 세 시스템 모두 제공(Apple은 SwiftUI에서 <code>.disabled(true)</code> modifier 형태)하지만, Coinbase CDS는 여기서 나아가 <code>compact</code> prop(작은 사이즈 버튼), <code>block</code> prop(부모 컨테이너 너비 100% 확장) 등을 지원하여 다양한 레이아웃 상황에 대응한다.</p>
+<p>MUI도 <code>size=&quot;small|medium|large&quot;</code> 등의 prop과 <code>fullWidth</code> prop을 제공하여 유사한 기능을 한다. 한편 Apple의 버튼은 사이즈를 일일이 지정하거나 시스템 기본을 따르며, iOS HIG에서는 버튼 간 충분한 간격과 터치 영역을 확보하는 레이아웃을 권장할 뿐 세밀한 size variant 개념은 없다.</p>
+<p><strong>명칭 및 스타일 일치/차이</strong></p>
+<p>명칭에서는 세 시스템 모두 Button으로 통일되어 있다. 기능적으로도 클릭/탭 동작, 비활성화 등 기본은 공통이다. 그러나 스타일 variant 명칭과 개념에는 차이가 있다. Apple은 공식 문서에서 Primary action이나 Destructive action처럼 역할로 설명하고, SwiftUI 구현에서는 <code>Button(role: .destructive)</code>와 같이 role로 지정하면 자동으로 빨간색 텍스트 스타일이 적용된다.</p>
+<p>MUI는 variant=&ldquo;contained/outlined/text” 처럼 표현 방식에 따른 분류를 하고, 추가로 <code>color=&quot;primary|secondary|error|...</code>로 의미를 전달한다.</p>
+<p>Coinbase CDS의 경우 Material 디자인을 참고하면서도 Primary/Secondary/Tertiary/Negative를 variant로 바로 노출함으로써, 의미와 스타일을 통합한 설계를 채택했다. 예를 들어 CDS에서 <code>variant=&quot;negative&quot;</code>로 주면 버튼 색상이 빨간색으로 설정되는데, CDS는 이를 ARIA 속성에도 반영하여 접근성 측면에서 에러 역할을 암시적으로 전달한다.</p>
+<p>또한 Apple과 달리 MUI와 CDS는 아이콘 전용 버튼도 별도로 제공한다(MUI <code>&lt;IconButton&gt;</code>, CDS <code>&lt;IconButton&gt;</code> 컴포넌트)하여, 만약 버튼 내용이 아이콘뿐이면 명시적으로 그 컴포넌트를 쓰도록 권장한다. 접근성 측면에서는 Apple은 버튼 텍스트를 음성 읽기 등의 레이블로 삼으며, CDS도 <code>accessibilityLabel</code>을 prop으로 받아 아이콘-only 버튼에 대체 라벨을 지정하게 한다. MUI는 <code>aria-label</code>속성을 직접 부여하거나 <code>&lt;IconButton aria-label=&quot;...&quot;&gt;</code>로 처리하게 하는 등 개발자에게 맡긴다.</p>
+<p><strong>디자인 토큰 활용 및 커스터마이징</strong></p>
+<p>Apple HIG은 개발자에게 노출되는 “디자인 토큰” 개념은 없지만, 시스템 컬러와 폰트 자체가 일종의 토큰으로 간주될 수 있다 (예: iOS에서 Light/Dark 모드에 대응하는 시스템 색상 사용 등).</p>
+<p>MUI는 테마 시스템을 통해 팔레트 색상, 간격 단위 등을 토큰처럼 다루며, <code>sx</code> prop이나 <code>styled</code> API로 컴포넌트 스타일을 오버라이드할 수 있다..</p>
+<p>CDS는 디자인 토큰 철학을 전면에 내세운 시스템으로, 모든 시각적 속성(색상, 타이포그래피, spacing, radii 등)을 토큰으로 정의하고 이를 컴포넌트에 적용했다. 예컨대 CDS 버튼의 CSS를 보면 <code>var(--color-bg)</code>나 <code>var(--spacing-2)</code> 같은 사용자 테마값이 쓰이며, Coinbase는 이를 Theming 기능으로 개방해 누구나 자사 브랜드 색상 등으로 커스터마이징 가능하도록 했다<a href="https://www.coinbase.com/blog/Coinbase-has-open-sourced-its-design-system#:~:text=While%20CDS%20is%20the%20engine,brand%E2%80%99s%20identity%20and%20user%20needs">.</a> 이는 MUI의 테마 커스터마이즈와 개념상 비슷하나, Coinbase는 디자인 시스템을 오픈소스화하며 다양한 crypto 프로젝트들이 토큰만 교체하여 Coinbase 수준의 UI 구성 요소를 활용하도록 독려하고 있다.</p>
+<p>Button 컴포넌트만 보더라도, MUI는 Material Design 기본 색상 체계를 따라 <code>primary(main #1976d2)</code>, <code>secondary(main #9c27b0)</code> 등의 팔레트를 제공하고, CDS는 Coinbase 고유 브랜딩 컬러를 기본값으로 두지만 토큰 교체로 다른 브랜드 색으로 일괄 변경할 수 있다. 이러한 구조적 설계 덕분에 디자인 수정 범위 예측이 용이해진다. 예를 들어 Coinbase CDS에서 Primary 버튼 색상을 바꾸는 것은 단순히 토큰 값을 바꾸는 일이므로, 전체 제품에 걸쳐 Primary 버튼이 바뀔 영향을 쉽게 예측하고 관리할 수 있다.</p>
+<h3 id="overlay-component--modal-dialog-popover">Overlay Component : Modal (Dialog, Popover)</h3>
+<p><strong>디자인 가이드 비교</strong></p>
+<img src="/crypto-article-2-apple-hig-action-sheet.png" alt="Apple HIG Action Sheet 예시" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<p>Modal은 현재 화면 위에 겹쳐 나타나 사용자의 주의를 집중시키는 UI 패턴이다. Apple HIG에서는 “Modal” 용어를 직접 쓰기보다는 “모달 뷰” 또는 “시트(sheet)”, “경고(alert)” 등 상황별 용어로 가이드한다. 핵심 원칙은 사용자에게 자완결적인(self-contained) 작업을 수행하도록 할 때 Modal을 사용하라는 것이다. 예를 들어 “중요한 부가 작업이나 다단계 하위 작업이 필요할 때 현재 흐름에서 벗어나 모달로 제공하고, 완료하면 원래 화면으로 복귀”하는 것이 바람직하다.</p>
+<p>Apple은 로그인 화면이나 새 항목 추가 화면 등을 이러한 모달 사례로 들며, 항상 취소 또는 완료 버튼을 배치해 사용자가 명시적으로 닫게 한다고 강조한다. 그리고 iPhone에서는 모달이 화면 전체를 덮으므로 상단에 내비게이션 바를 포함해 “취소”/“완료”를 배치하고, iPad에서는 폼시트 형태로 가운데 뜨는 등 플랫폼별 모달 형태도 HIG에 규정되어 있다.</p>
+<img src="/crypto-article-2-google-location-modal.png" alt="Google 위치 서비스 모달 다이얼로그" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<p>Material Design에서도 Modal 개념은 Dialog로 구체화되어 있다. Material 가이드에 따르면 “Dialog는 앱 콘텐츠 위에 나타나 중요 정보를 표시하거나 결정을 요구하며, 나타나는 동안 다른 기능을 모두 막는다”. 또한 “방해적이므로 필요한 경우에만 사용”하라고 명시한다<a href="https://mui.com/material-ui/react-dialog/#:~:text=or%20a%20required%20action%20has,been%20taken">.</a> MUI에서는 <code>&lt;Dialog&gt;</code> 컴포넌트로 구현되어 있고, 이는 내부적으로 <code>&lt;Modal&gt;</code> 컴포넌트를 활용한다. MUI 가이드에는 “모달 다이얼로그를 만들려면 <code>Modal</code>을 직접 쓰기보다 <code>Dialog</code>를 사용하는 것이 좋다”라고 안내되어 있다. Dialog에는 제목(<code>&lt;DialogTitle&gt;</code>), 본문(<code>&lt;DialogContent&gt;</code>), 액션 버튼 영역(<code>&lt;DialogActions&gt;</code>)의 서브컴포넌트를 제공하여, 일관된 구조를 잡도록 했다<a href="https://mui.com/material-ui/react-dialog/#:~:text=Dialogs%20are%20implemented%20using%20a,collection%20of%20related%20components">mui.com</a>.</p>
+<img src="/crypto-article-2-cds-modal-basic.png" alt="Coinbase CDS Basic Modal 예시" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<p>Coinbase CDS에서도 Modal 컴포넌트를 구조적으로 나누었는데, <code>&lt;ModalHeader&gt;</code>, <code>&lt;ModalBody&gt;</code>, <code>&lt;ModalFooter&gt;</code> 세 부분으로 구성하여 사용하도록 되어 있다. 또한 CDS는 FullscreenModal과 Alert, Tray 등 몇 가지 변형을 제공한다. FullscreenModal은 모바일에서 전체 화면을 덮는 모달(아마 Apple의 기본 모달과 유사)이고, Alert는 경고용 간이 모달, Tray는 화면 하단에서 올라오는 일종의 바텀시트로 보인다. 이러한 분류는 Coinbase 디자인팀이 Web, Mobile을 아우르며 Modal 패턴을 세분화한 것이다. Apple도 UIAlertController에서 <code>.alert</code>(중앙 팝업)과 <code>.actionSheet</code>(하단 슬라이드) 두 스타일을 구분하며, CDS의 Alert와 Tray는 이와 일맥상통한다.</p>
+<p><strong>구조 및 기능</strong></p>
+<p>Apple iOS에서는 모달을 호출할 때 새로운 UIViewController를 <code>.present(...)</code> 하여 modalPresentationStyle에 따라 화면 전환한다. 별도의 Modal 컴포넌트 객체가 있는 것은 아니지만, UIKit이 모달 특성을 부여한다 (예: 이전 화면은 비활성 처리, 새 VC가 떠오름). 개발자는 단지 VC 전환 방식만 지정하면 되고 iOS 시스템이 뒤 dimming 처리나 화면전환 애니메이션(기본적으로 밑에서 슬라이드 업)을 제공한다.</p>
+<p>MUI의 <code>&lt;Modal&gt;</code> 컴포넌트는 매우 저수준으로, 포털(React Portal) 기반으로 children을 body에 렌더링하고, 백드롭 클릭이나 ESC 키 처리, focus 트랩 같은 A11y 기능을 담당한다. <code>&lt;Dialog&gt;</code>는 이 Modal 위에 여러 편의 기능 (제목, 내용 스크롤 등)을 추가한 고수준 구현이다. 예컨대 MUI Dialog는 기본적으로 role=&ldquo;dialog&quot;와 aria-labelledby 등을 세팅하고, tabIndex 관리도 자동화한다.</p>
+<p>CDS Modal 역시 React Portal로 구현되고, <code>isOpen</code> prop 등을 통해 열고 닫는다. CDS는 <code>&lt;Modal&gt;</code>을 그냥 쓰기보다 <code>&lt;ModalHeader&gt;</code>에 제목과 닫기(X)버튼, <code>&lt;ModalBody&gt;</code>에 내용을 넣고, <code>&lt;ModalFooter&gt;</code>에 <code>&lt;Button&gt;</code>들을 넣는 패턴을 권장한다. 이러한 구조 강제는 개발자 실수를 줄이고 디자인 일관성을 높인다. 한편 CDS는 모달 내부에서 페이지 단위 내비게이션도 가능하게 설계했다. 예를 들어 FullscreenModalLayout은 내부에 네비게이션 바 컴포넌트를 포함할 수 있어, 모달 안에서 여러 step을 가질 수 있다. Apple도 HIG에서 “모달 안에 내비게이션 계층을 가질 수 있다”고 언급하여, 모달 내에서 push/pop이 가능함을 인정한다. 다만 복잡도가 높아지므로 가급적 짧은 플로우에 한정하라고 조언한다. Coinbase CDS의 PortalProvider나 OverlayContext 훅도 있어, 여러 겹 모달이 떴을 때 context를 처리해주는 등 고급 기능이 포함된 것으로 보인다.</p>
+<p><strong>명칭 및 사용성 비교</strong></p>
+<p>명칭에서는 Apple은 “Modal”이라는 용어보다 “Alert”, “Action Sheet” 등을 상황별로 부르고, Material/MUI는 “Dialog”, Coinbase는 “Modal”로 통칭한다. 사용성 측면에서 공통으로 강조되는 것은 반드시 사용자가 조치를 취해 닫게 만들 것이다.</p>
+<p>Apple은 모달에는 취소/확인 버튼이 필수라 하고, MUI도 Dialog 액션으로 반드시 닫기 관련 버튼을 넣도록 예시를 든다. 백드롭 클릭 시 닫힘도 차이 있는데, Apple의 모달(alert)은 백드롭 터치로는 닫히지 않고 명시적 액션이 필요하다.</p>
+<p>웹/MUI Dialog는 기본 설정으로 백드롭 클릭 시 닫히지 않도록 되어 있으며(필요 시 <code>onClose</code>에 처리), Coinbase CDS도 Modal은 기본적으로 사용자 명시적 닫기를 원칙으로 한다. 다만 CDS <code>&lt;Tray&gt;</code>(액션시트)는 아마도 백드롭 터치로 닫히게 할 수 있을 것이다. 여러 모달 동시 표출은 세 시스템 모두 지양하지만, 필요시 가능하긴 하다 (예: Apple Contacts 앱처럼 모달 위에 또 액션시트 등).</p>
+<p>MUI Modal은 중첩을 허용하나 2개 이상 겹치는 것은 권장하지 않고, CDS도 FullscreenModal 위에 Alert를 띄우는 식으로는 사용할 수 있을 것이다. 애니메이션은 Apple은 기본 제공(슬라이드 등), MUI는 Transition 컴포넌트를 통해 Slide, Fade 등을 선택 적용, CDS도 기본 Fade/Slide 효과와 함께 필요하면 <code>Transition</code> prop으로 커스텀 spring 애니메이션을 주입할 수 있게 했다.</p>
+<p><strong>디자인 토큰 및 커스터마이징</strong></p>
+<p>Coinbase CDS의 모달은 토큰으로 백드롭 색상 투명도, 모달 배경/모서리 등을 제어할 수 있어 다크모드나 테마에 쉽게 대응한다.</p>
+<p>MUI도 theme의 <code>palette.background.paper</code>가 모달 배경에 쓰이고, radius 등도 theme override 가능하다.</p>
+<p>Apple은 시스템이 정한 모달 모양(특히 alert 스타일은 둥근 모서리 사각형)에 따르게 되며 변경 여지는 거의 없다. 다만 iOS13 이후 모달 표시 스타일에 <code>.automatic/ pageSheet/ formSheet/ fullScreen</code> 등을 선택할 수 있어 디바이스별 기본 형태를 활용하거나 강제 지정 가능하다.</p>
+<p>전반적으로 Overlay/Modal 컴포넌트 비교에서 얻은 통찰은, 웹 디자인 시스템은 Modal의 구조와 활용을 세심히 정의하여 개발 편의와 일관성을 높이는 반면, 플랫폼 가이드(HIG)는 Modal의 사용 시나리오와 UX 원칙에 집중한다는 점이다. 두 접근 모두 사용자 경험을 해치지 않도록 모달을 남발하지 않고 맥락에 맞게 쓰는 것을 최우선으로 한다는 공통점을 가진다.</p>
+<h3 id="crypto-specific-컴포넌트-area-chart">Crypto-specific 컴포넌트: Area Chart</h3>
+<p><strong>도입 배경</strong></p>
+<p>Area Chart는 일반적인 UI 라이브러리에는 없지만 크립토 서비스에서는 가격 추이 시각화 등으로 핵심 사용된다. 이번 비교 대상 중 Coinbase CDS만이 AreaChart 컴포넌트를 디자인 시스템 레벨에서 제공하고 있어, 도메인 특화 컴포넌트의 설계 사례를 보여준다<a href="https://www.coinbase.com/blog/Coinbase-has-open-sourced-its-design-system#:~:text=CDS%20offers%20a%20rich%20collection,intuitive%20and%20engaging%20user%20experiences">coinbase.com</a>. Apple HIG나 Material Design에도 “차트”에 대한 일반 지침은 있지만, 구체적인 구현 컴포넌트는 제공하지 않는다. Apple은 iOS 16부터 SwiftUI Charts 프레임워크로 다양한 차트를 그릴 수 있는 API(BarMark, LineMark, AreaMark 등)를 도입했으나, 이는 어디까지나 개발 프레임워크이며 HIG 차원의 “디자인 시스템 컴포넌트”로 간주되진 않는다. Material-UI도 기본 구성에는 차트가 없고, MUI X라는 별도 패키지로 Charts 라이브러리를 제공하고 있다<a href="https://mui.com/x/react-charts/#:~:text=">mui.com</a><a href="https://mui.com/x/react-charts/#:~:text=,data%20type">mui.com</a>. MUI X Charts는 D3 기반으로 Bar, Line, Pie 등을 React 컴포넌트화한 것으로, Area Chart는 LineChart 컴포넌트에 속성으로 fill 영역을 주어 구현하는 방식이다. Coinbase CDS는 내부적으로 리차트(Recharts) 등을 활용해 AreaChart를 래핑했을 가능성이 있으나, 디자인 시스템 관점의 문서화와 props API를 정의한 점이 중요하다.</p>
+<p><strong>디자인 가이드 비교</strong></p>
+<img src="/crypto-article-2-area-chart-1.png" alt="Area Chart 예시 1" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<p>Apple HIG의 “Charting Data” 섹션에서는 차트를 사용할 때 데이터의 핵심을 명확히 전달하고 너무 많은 정보로 혼란 주지 말 것 등을 조언한다. 예컨대 “차트는 시각적으로 두드러지므로 사용자가 관심을 가질 중요한 정보에 집중해야 한다”, “가능한 한 차트를 단순하게 유지하고 추가 세부사항은 사용자가 원할 때 드릴다운하게 하라” 등의 모범 사례를 든다.</p>
+<img src="/crypto-article-2-area-chart-2.png" alt="Area Chart 예시 2" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<p>Material Design도 데이터 시각화에서 색상, 레이블 가독성, 상호작용 시 접근성(예: ARIA 설명)을 고려하도록 별도 가이드가 존재한다. 그러나 이들은 디자인 원칙 수준이며, “Area Chart는 이렇게 그려야 한다” 같은 구체적인 컴포넌트 스펙은 없다.</p>
+<img src="/crypto-article-2-area-chart-3.png" alt="Area Chart: Negative Values and Area Styles" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<p>Coinbase CDS는 자사 서비스 전반에서 일관된 차트 스타일을 유지하기 위해 AreaChart 컴포넌트를 만들었다. 디자인적으로 Coinbase의 차트는 일반적으로 파란색/녹색 계열로 상승을 표시하고, 하락/음수는 붉은색으로 표시하는 규칙이 있다. CDS AreaChart는 기본적으로 이 규칙을 따르며, 음수 데이터가 포함될 경우 기준선(baseline)을 0으로 자동 조정하여 음영을 분리 표시한다. 또한 차트 내 여러 계열(series)을 겹칠 경우 투명도나 그래디언트를 사용해 가독성을 높인다. Coinbase 디자인팀은 차트의 애니메이션 효과와 상호작용(Marker, Scrubber)까지 디자인 시스템에 포함시켰는데, 예를 들어 차트 로드 시 선들이 서서히 그려지거나 값 변동에 따라 실시간 애니메이션되는 부분도 설정 가능하다. 이는 일반적인 UI 가이드에서 다루지 않는 상세로, Coinbase가 얼마나 크립토 UX에 최적화된 설계를 고민했는지 보여준다.</p>
+<p><strong>구조 및 Props</strong></p>
+<p>Coinbase CDS AreaChart의 props를 살펴보면, 데이터 series 배열과 각 series의 속성(id, data 배열, color 등), <code>height</code>와 <code>inset</code>(차트 내부 여백), <code>showLines</code>(선 윤곽 표시 여부), <code>showYAxis</code>/<code>XAxis</code> 등 축 표시, <code>stacked</code> 여부와 <code>stackId</code>(스택 그룹 구분) 등 여러 시리즈를 한꺼번에 표현하는 옵션들이 있다. 특히 <code>type</code> prop으로 <code>'gradient'</code>, <code>'dotted'</code> 등을 지정해 영역 채우기 스타일이나 선 모양을 바꿀 수 있고, <code>AreaComponent</code>나 <code>LineComponent</code>를 커스터마이징 prop으로 주입할 수 있어 굉장히 유연하다. 예를 들어 dotted line 차트를 그리고 싶다면 <code>LineComponent: DottedLine</code> 같은 커스텀 컴포넌트를 넘겨 선을 대체할 수 있다. 애니메이션 관련으로 <code>transition</code> prop에 <code>{ type: 'spring', stiffness: 700, damping: 20 }</code> 같은 값을 넘겨주면 차트 등장/갱신 애니메이션을 조정할 수 있다. 또한 <code>animate={false}</code>로 애니메이션 끌 수도 있다.</p>
+<p>전반적으로 CDS의 차트 컴포넌트는 중급 개발자나 데이터 시각화 담당자가 바로 활용할 수 있을 정도로 완결된 API를 제공한다. MUI X Charts의 대응 항목인 LineChart+Area 필드의 경우, <code>&lt;LineChart series={[{data: [...] }]} xAxis={[...]} /&gt;</code> 식으로 사용하며 MUI X도 composition 방식(ChartContainer, ChartAxis 등)을 취하고 있다. 그러나 MUI X Charts는 아직 커뮤니티 버전/프로 버전으로 나뉘어 있어 모든 기능이 무료는 아니다. Apple의 SwiftUI Charts <code>AreaMark</code>를 쓰는 경우, <code>Chart(data) { AreaMark(x: .value(...), y: .value(...)) }</code> 식으로 선언적 구문이지만, 세밀한 모양 제어는 modifier로 처리해야 하고 낮은 수준의 커스터마이즈는 어렵다.</p>
+<p><strong>명칭 및 기능 비교</strong></p>
+<img src="/crypto-article-2-stocks-activity-apps.png" alt="Stocks 앱과 Activity 앱 스크린샷 비교" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<p>명칭은 Coinbase가 <code>AreaChart</code>로 명확히 컴포넌트화한 반면 다른 시스템에는 특별한 이름이 없다. Material 가이드에서는 area 차트를 별도로 분류하지 않고 line chart의 한 형태로 본다. Apple도 영역형 차트/선형 차트를 구분하기보다 데이터 종류나 사용자 목적에 따른 차트 선택을 권장할 뿐이다. 기능에서는 CDS AreaChart가 도메인 특화 답게 범례(legend)나 툴팁은 없지만, 기간 선택기(PeriodSelector) 컴포넌트나 스크러버(Scrubber), 축(XAxis, YAxis) 컴포넌트를 별도로 제공한다. 예를 들어 Coinbase 앱의 가격 차트 밑에 1D/1W/1M/1Y 같은 기간 토글을 PeriodSelector로 구현하고, 그래프 위 손가락으로 슬라이드하면 해당 시점 값을 보여주는 것이 Scrubber이다. 이러한 구성 요소를 디자인 시스템에 포함한 것은, 일관된 상호작용 경험을 보장하려는 것이다. MUI X에도 Tooltip, Legend 모듈이 있어 차트에 적용 가능하나, Period selector나 scrubber는 범용 UI가 아니라서 제공되지 않는다. Apple은 차트 상호작용에 대해 “사용자가 탐색하도록 유도하라” 정도의 철학만 제시하고 구현은 앱별로 하도록 두고 있다.</p>
+<img src="/crypto-article-2-area-chart-4.png" alt="Area Chart Scrubber Basics" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<img src="/crypto-article-2-area-chart-5.png" alt="Area Chart Scrubber Pulsing" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<img src="/crypto-article-2-area-chart-6.png" alt="Area Chart Labels with BeaconLabelComponent" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<p><strong>디자인 토큰 및 커스터마이징</strong></p>
+<p>CDS 차트는 디자인 토큰으로 색상을 관리하므로, 테마를 바꾸면 차트 색상 팔레트도 자동으로 연동된다. 위 예시에서 <code>color: 'var(--color-fgPositive)'</code> 등 토큰을 사용해 상승분은 테마의 positive 색을 쓰도록 했다. MUI X는 MUI 테마 색을 그대로 사용하거나 직접 색상 지정한다.</p>
+<p>Apple은 차트 색상을 자동 생성해주지 않으므로 개발자가 Color set을 정해야 하지만, Apple 차트 기본 색상 팔레트(iOS 차트 프레임워크 기본 제공 색들)가 있어 권장 사항을 암묵적으로 따르고 있다. 커스터마이징 측면에서는, CDS AreaChart는 <code>AreaComponent</code> prop으로 임의의 React 컴포넌트를 주입해 렌더링을 대체할 정도로 개방적이다. 이는 특정 구간만 독특한 그래픽으로 표시하거나, 영역 색에 패턴을 깔거나 등 다양한 요구에 대응한다. 반면 MUI X나 Apple Charts는 그러한 수준의 확장성을 문서화하진 않았다 (물론 소스 수정이나 SwiftUI View composition으로 가능은 할지라도 지원 범위 밖이다.</p>
+
+        </section>
+        <div class="back-link"><a href="javascript:history.back()">← Go back</a></div>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/%20/tags/design-system">Design System</a></li>
+              
+              <li><a href="/%20/tags/ux">UX</a></li>
+              
+              <li><a href="/%20/tags/crypto">Crypto</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </article>
+</main>
+<footer>
+  <div style="display:flex"></div>
+  <div class="footer-info">
+    2026  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+
+
+</div>
+    </body>
+</html>
