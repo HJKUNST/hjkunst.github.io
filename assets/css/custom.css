@@ -342,6 +342,11 @@ code .il {
    CUSTOM COMPONENTS
    ========================================================================== */
 
+/* Images - Add 8px margin bottom */
+img {
+  margin-bottom: 40px;
+}
+
 /* Post Summary */
 .post-summary {
   display: -webkit-box;
