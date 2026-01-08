@@ -6,13 +6,34 @@
     <description>Recent content in Tags on Strawberry Fields</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jan 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 07 Jan 2026 12:00:00 +0900</lastBuildDate>
     <atom:link href="https://hjkunst.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>App</title>
+      <link>https://hjkunst.github.io/tags/app/</link>
+      <pubDate>Wed, 07 Jan 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/tags/app/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Crypto</title>
       <link>https://hjkunst.github.io/tags/crypto/</link>
-      <pubDate>Mon, 05 Jan 2026 12:00:00 +0900</pubDate>
+      <pubDate>Wed, 07 Jan 2026 12:00:00 +0900</pubDate>
       <guid>https://hjkunst.github.io/tags/crypto/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MacOS</title>
+      <link>https://hjkunst.github.io/tags/macos/</link>
+      <pubDate>Wed, 07 Jan 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/tags/macos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SwiftUI</title>
+      <link>https://hjkunst.github.io/tags/swiftui/</link>
+      <pubDate>Wed, 07 Jan 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/tags/swiftui/</guid>
       <description></description>
     </item>
     <item>
