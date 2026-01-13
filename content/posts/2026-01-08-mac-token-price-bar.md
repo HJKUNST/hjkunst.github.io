@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Crypto Article Week 2.5 | 이 프로젝트는 돈을 벌어주지 않는다"
+title: "Crypto Article Week 3 | 만들기 : Mac OS 사용자를 위한 실시간 토큰 가격 바"
 date: 2026-01-07 12:00:00 +0900
 tags: [Crypto, SwiftUI, macOS, App]
 ---
