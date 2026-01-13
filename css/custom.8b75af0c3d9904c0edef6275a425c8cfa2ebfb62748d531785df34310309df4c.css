@@ -347,6 +347,15 @@ img {
   margin-bottom: 40px;
 }
 
+/* ==========================================================================
+   LIGHT MODE BACKGROUND
+   ========================================================================== */
+
+/* Light mode background color - applies when dark mode CSS is disabled */
+body {
+  background-color: #f4f4f4 !important;
+}
+
 /* Post Summary */
 .post-summary {
   display: -webkit-box;
@@ -363,7 +372,7 @@ img {
 .read-more {
   display: inline-block;
   margin-top: 0.5rem;
-  color: #e74c3c;
+  color: #FD9A6D;
   text-decoration: underline;
 }
 
@@ -372,7 +381,7 @@ img {
 }
 
 .back-link a {
-  color: #e74c3c;
+  color: #FD9A6D;
   text-decoration: none;
 }
 
@@ -387,8 +396,8 @@ img {
 
 .tag {
   display: inline-block;
-  background-color: rgba(231, 76, 60, 0.1);
-  color: #e74c3c;
+  background-color: rgba(253, 154, 109, 0.1);
+  color: #FD9A6D;
   padding: 2px 8px;
   margin-right: 6px;
   margin-bottom: 4px;
@@ -401,6 +410,33 @@ img {
 .tag:hover {
   background-color: rgba(231, 76, 60, 0.2);
   opacity: 1;
+}
+
+/* Content area tags - match home page tag style */
+.post-tags .tags a {
+  display: inline-block;
+  background-color: rgba(253, 154, 109, 0.1);
+  color: #FD9A6D;
+  padding: 2px 8px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.5;
+  border-bottom: none !important;
+  text-decoration: none;
+}
+
+.post-tags .tags a:hover {
+  background-color: rgba(231, 76, 60, 0.2);
+  opacity: 1;
+  color: #FD9A6D;
+}
+
+/* Remove emoji from content tags */
+.post-tags .tags li::before {
+  content: "" !important;
 }
 
 /* Layout Components */
