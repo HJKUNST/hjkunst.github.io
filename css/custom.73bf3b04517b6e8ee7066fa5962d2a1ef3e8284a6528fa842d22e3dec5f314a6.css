@@ -4,6 +4,15 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@1,2,3,4,5,6,7,8,9&display=swap');
 
+/* Cygnito Mono Font - for site title only */
+@font-face {
+  font-family: 'Cygnito Mono';
+  src: url('/fonts/cygnito-mono-regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ==========================================================================
    BASE TYPOGRAPHY
    ========================================================================== */
@@ -455,4 +464,12 @@ body {
 /* Headings */
 h2 {
   color: var(--maincolor) !important;
+}
+
+/* Site Title - Cygnito Mono Font */
+header .main a {
+  font-family: 'Cygnito Mono', monospace !important;
+  letter-spacing: -0.03em;
+  border-bottom: none;
+  color: var(--maincolor);
 }
