@@ -6,13 +6,20 @@
     <description>Recent content in Posts on Strawberry Fields</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Jan 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 22 Jan 2026 12:00:00 +0900</lastBuildDate>
     <atom:link href="https://hjkunst.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Colorimetry 1 | 색 공간과 색상 시스템 이해를 위한 용어 정리 및 시각화</title>
+      <link>https://hjkunst.github.io/posts/2026-01-22-colorimetry-1/</link>
+      <pubDate>Thu, 22 Jan 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/posts/2026-01-22-colorimetry-1/</guid>
+      <description>&lt;h1 id=&#34;색-공간과-색상-시스템-이해를-위한-용어-정리-및-시각화&#34;&gt;색 공간과 색상 시스템 이해를 위한 용어 정리 및 시각화&lt;/h1&gt;&#xA;&lt;h2 id=&#34;문제-제기&#34;&gt;문제 제기&lt;/h2&gt;&#xA;&lt;p&gt;최근 아이폰의 컬러 선택 모드에는 기존의 RGB 외에도 &amp;ldquo;HDR Boost&amp;quot;라는 항목이 추가되었다. &lt;/br&gt; 이 외에도 &lt;strong&gt;sRGB, Display P3, DCI-P3 같은 색역(color gamut)&lt;/strong&gt; 등의 개념이 자주 등장하지만, 개념적 차이를 명확히 이해하지 못한 채 사용하는 경우가 많다. 구체적으로 내가 디자인을 하면서 궁금했던 것들은 다음과 같다.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;최근 아이폰 컬러 선택 모드에 rgb 말고도 HDR Boost 라는게 생겼는데 무엇인지.&lt;/li&gt;&#xA;&lt;li&gt;이 외에도 color space - sRGB, Display P3, DCI-p3, 넓은 색 영역, 색 재현 규격 그래프 등이 많은데 알고 쓰는게 좋을 것 같다.&lt;/li&gt;&#xA;&lt;li&gt;Css 에서도 컬러 모드가 rgba, hex 외에도 hsl, oklch 등 표기법이 많은데 용도의 차이를 알고싶었다.&lt;/li&gt;&#xA;&lt;li&gt;adobe illustrator 에서도 hsb, 그리고 ‘웹 적합 색상만’ 선택시 아래 사진처럼 색 영역이 단순화 되는데 왜 그런건지 궁금하다.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;항상 색을 공부할 떄면 색채심리학에 치중된 자료들을 접했었는데, 이번에는 질문에 답을 줄 수 있는 과학적인 접근 방식들을 이용해보려 한다. 결과적으로 이러한 배경을 바탕으로 색 관련 용어와 기술 개념을 정리하고자 한다.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Crypto Article Week 3 | 만들기 : Mac OS 사용자를 위한 실시간 토큰 가격 바</title>
-      <link>https://hjkunst.github.io/posts/2026-01-08-mac-token-price-bar/</link>
+      <link>https://hjkunst.github.io/posts/2026-01-08-mac-token-price-bar-copy/</link>
       <pubDate>Wed, 07 Jan 2026 12:00:00 +0900</pubDate>
-      <guid>https://hjkunst.github.io/posts/2026-01-08-mac-token-price-bar/</guid>
+      <guid>https://hjkunst.github.io/posts/2026-01-08-mac-token-price-bar-copy/</guid>
       <description>&lt;h2 id=&#34;mac-os-사용자를-위한-실시간-토큰-가격-바&#34;&gt;&lt;strong&gt;Mac OS 사용자를 위한 실시간 토큰 가격 바&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;크립토는 구조적으로 지속적인 자본 유입이 있어야만 유지된다. 그래서 유저 유입이 중요해지고, 종종 팀의 펀더멘털보다 얼마나 많이 노출되었는지가 더 큰 영향을 미친다. 트레이딩 사용자들은 에어드랍으로 온체인에 들어온 뒤 선물 DEX, 예측시장 등으로 영역을 넓혀가며 더 많은 자극을 찾는다. 도파민을 줄 수 있는 장치에 대한 수요가 늘어나고, 이에 따라 이를 제공하는 서비스들도 계속해서 등장한다.&lt;/p&gt;&#xA;&lt;p&gt;그러다 시장이 꺾인다. 비트를 시작으로 대부분의 토큰이 하락하고, 온체인이든 CEX든 코인이 더 이상 재미있지 않다. 베어장에서는 무엇을 해도 수익이 나지 않는다. 사용자는 떠나고, 남는 건 조용한 차트뿐이다.&lt;/p&gt;</description>
     </item>
     <item>
