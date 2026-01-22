@@ -68,7 +68,7 @@ code {
 
 pre {
   display: block;
-  margin: 24px 32px;
+  margin: 24px 0;
   padding: 32px 40px;
   font-size: 1rem;
   line-height: 1.8;
@@ -77,6 +77,8 @@ pre {
   background-color: rgb(248, 252, 255);
   box-shadow: 0px 0px 8px #D8E5EE;
   border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 pre code {
@@ -472,4 +474,45 @@ header .main a {
   letter-spacing: -0.03em;
   border-bottom: none;
   color: var(--maincolor);
+}
+
+/* Table styles */
+table {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+table th {
+  font-size: 0.875em !important;
+}
+
+table td {
+  font-size: 0.875em !important;
+}
+
+/* Two-column layout for images and text */
+.content div[style*="grid-template-columns"],
+.content div[style*="display: grid"] {
+  display: grid !important;
+  grid-template-columns: 1.5fr 1fr !important;
+  gap: 1.5rem !important;
+  margin: 1.5rem 0 !important;
+  align-items: start !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.content div[style*="grid-template-columns"] > div,
+.content div[style*="display: grid"] > div {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.content div[style*="grid-template-columns"] img,
+.content div[style*="display: grid"] img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
 }
