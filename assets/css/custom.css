@@ -474,6 +474,13 @@ header .main a {
   letter-spacing: -0.03em;
   border-bottom: none;
   color: var(--maincolor);
+  transition: color 0.2s ease;
+}
+
+header .main a:hover {
+  color: #E74C3C !important;
+  /* 또는 원하는 색상으로 변경 가능 */
+  background-color: transparent !important;
 }
 
 /* Table styles */
@@ -502,8 +509,8 @@ table td {
   box-sizing: border-box !important;
 }
 
-.content div[style*="grid-template-columns"] > div,
-.content div[style*="display: grid"] > div {
+.content div[style*="grid-template-columns"]>div,
+.content div[style*="display: grid"]>div {
   min-width: 0;
   box-sizing: border-box;
 }
