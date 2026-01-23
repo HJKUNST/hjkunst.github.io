@@ -523,3 +523,13 @@ table td {
   margin: 0 !important;
   margin-bottom: 0 !important;
 }
+
+/* Mobile: Stack columns vertically */
+@media screen and (max-width: 768px) {
+
+  .content div[style*="grid-template-columns"],
+  .content div[style*="display: grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+}
