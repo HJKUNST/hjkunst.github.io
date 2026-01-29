@@ -46,17 +46,31 @@ adobe illustrator 에서도 hsb, 그리고 ‘웹 적합 색상만’ 선택시 
   <meta name="twitter:title" content="Colorimetry 1 | 색 공간과 색상 시스템 이해를 위한 용어 정리 및 시각화">
   <meta name="twitter:description" content="색 공간과 색상 시스템 이해를 위한 용어 정리 및 시각화 문제 제기 최근 아이폰의 컬러 선택 모드에는 기존의 RGB 외에도 “HDR Boost&#34;라는 항목이 추가되었다. 이 외에도 sRGB, Display P3, DCI-P3 같은 색역(color gamut) 등의 개념이 자주 등장하지만, 개념적 차이를 명확히 이해하지 못한 채 사용하는 경우가 많다. 구체적으로 내가 디자인을 하면서 궁금했던 것들은 다음과 같다.
 최근 아이폰 컬러 선택 모드에 rgb 말고도 HDR Boost 라는게 생겼는데 무엇인지. 이 외에도 color space - sRGB, Display P3, DCI-p3, 넓은 색 영역, 색 재현 규격 그래프 등이 많은데 알고 쓰는게 좋을 것 같다. Css 에서도 컬러 모드가 rgba, hex 외에도 hsl, oklch 등 표기법이 많은데 용도의 차이를 알고싶었다. adobe illustrator 에서도 hsb, 그리고 ‘웹 적합 색상만’ 선택시 아래 사진처럼 색 영역이 단순화 되는데 왜 그런건지 궁금하다. 항상 색을 공부할 떄면 색채심리학에 치중된 자료들을 접했었는데, 이번에는 질문에 답을 줄 수 있는 과학적인 접근 방식들을 이용해보려 한다. 결과적으로 이러한 배경을 바탕으로 색 관련 용어와 기술 개념을 정리하고자 한다.">
-
-  <link href="https://hjkunst.github.io/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
-  
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 
   
   <link rel="stylesheet" type="text/css" media="screen" href="https://hjkunst.github.io/css/main.55c11e59ca1902b2677f99ce52bb36b6d41cb72df1ab4c1dd37cb0117c63fc8e.css" />
 
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   
   
-  
-  <link rel="stylesheet" type="text/css" href="https://hjkunst.github.io/css/custom.31c7a0beb547e04b555eb06c23913021a1c238477057b575fbe797c28e3b8f3f.css">
+  <link rel="stylesheet" type="text/css" href="https://hjkunst.github.io/css/custom.0a0710c7b496595bd252cefa06a81789328fb5bbbdebd5f80eddb4580cbb4964.css">
   
 </head><body>
         <div class="content"><header>

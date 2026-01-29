@@ -49,17 +49,31 @@ Cursor AI와 Figma 파일을 연동시켜서, 디자인 리소스를 바로 코�
   <meta name="twitter:description" content="목적 Cursor AI와 Figma 파일을 연동시켜서, 디자인 리소스를 바로 코드로 전환해보고자 했다. 다른 대부분의 디자인과 예술은 프로덕트 완성까지를 ‘완성’으로 보는데, 왜 UX, UI 디자인만 구현은 개발자의 몫이어야 할까? 그 질문에 대한 도전이었다. 결론적으로 작가 의식에 기반한 웹사이트 제작을 해보고 싶었던 것 같다.
 가능성에 대한 의문들 외형은 구현할 수 있더라도, flex, grid layout, margin/padding, 질감 표현까지 내가 만든 대로 옮겨질 수 있을까?
 개발 공수가 두 배가 되지는 않을까? lovable과 v0에서는 코드만 던져주는 느낌이라 실제 프로덕션에 적용하고 싶지 않았다. 디자인이란 결국 프로덕트에서 감성적인 보완점을 주는 역할을 빼놓을 수 없는데, 트렌드와 간결함에만 충실하고 친화적이지 않았다.">
-
-  <link href="https://hjkunst.github.io/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
-  
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 
   
   <link rel="stylesheet" type="text/css" media="screen" href="https://hjkunst.github.io/css/main.55c11e59ca1902b2677f99ce52bb36b6d41cb72df1ab4c1dd37cb0117c63fc8e.css" />
 
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   
   
-  
-  <link rel="stylesheet" type="text/css" href="https://hjkunst.github.io/css/custom.31c7a0beb547e04b555eb06c23913021a1c238477057b575fbe797c28e3b8f3f.css">
+  <link rel="stylesheet" type="text/css" href="https://hjkunst.github.io/css/custom.0a0710c7b496595bd252cefa06a81789328fb5bbbdebd5f80eddb4580cbb4964.css">
   
 </head><body>
         <div class="content"><header>
@@ -161,7 +175,7 @@ Cursor AI와 Figma 파일을 연동시켜서, 디자인 리소스를 바로 코�
 <div class="spacer"></div>
 <h4 id="3-cursor-settings--mcp-tools--new-mcp-server-클릭">3. Cursor Settings &gt; MCP Tools &gt; New MCP Server 클릭</h4>
 <p>생성된 <code>mcp.json</code> 파일에 다음 내용 복붙해 입력:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;mcpServers&#34;</span>: {
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Framelink Figma MCP&#34;</span>: {
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;npx&#34;</span>,
@@ -203,10 +217,10 @@ Cursor AI와 Figma 파일을 연동시켜서, 디자인 리소스를 바로 코�
 <h3 id="cursor-chat으로-구현-요청하기">Cursor Chat으로 구현 요청하기</h3>
 <p>기본편에서는 심화적인 프롬프팅과 설정보다는 일단 만드는 것만을 소개한다
 Cursor Chat을 열고 다음과 같이 입력:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>implement this figma file and generate a new react project by (html/css/javascript or react or next app) on desktop @(링크)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>implement this figma file and generate a new react project by (html/css/javascript or react or next app) on desktop @(링크)
 </span></span></code></pre></div><div class="spacer"></div>
 <p><strong>추가 프롬프트:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>I need new project and want you to adapt get_figma_data
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>I need new project and want you to adapt get_figma_data
 </span></span><span style="display:flex;"><span>Always choose the best consideration for this project
 </span></span></code></pre></div><ul>
 <li>

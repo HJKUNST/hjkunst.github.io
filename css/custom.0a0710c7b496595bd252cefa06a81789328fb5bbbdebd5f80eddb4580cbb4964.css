@@ -4,6 +4,15 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@1,2,3,4,5,6,7,8,9&display=swap');
 
+/* Cygnito Mono Font - for site title only */
+@font-face {
+  font-family: 'Cygnito Mono';
+  src: url('/fonts/cygnito-mono-regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ==========================================================================
    BASE TYPOGRAPHY
    ========================================================================== */
@@ -59,7 +68,7 @@ code {
 
 pre {
   display: block;
-  margin: 24px 32px;
+  margin: 24px 0;
   padding: 32px 40px;
   font-size: 1rem;
   line-height: 1.8;
@@ -68,6 +77,8 @@ pre {
   background-color: rgb(248, 252, 255);
   box-shadow: 0px 0px 8px #D8E5EE;
   border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 pre code {
@@ -342,6 +353,20 @@ code .il {
    CUSTOM COMPONENTS
    ========================================================================== */
 
+/* Images - Add 8px margin bottom */
+img {
+  margin-bottom: 40px;
+}
+
+/* ==========================================================================
+   LIGHT MODE BACKGROUND
+   ========================================================================== */
+
+/* Light mode background color - applies when dark mode CSS is disabled */
+body {
+  background-color: #f4f4f4 !important;
+}
+
 /* Post Summary */
 .post-summary {
   display: -webkit-box;
@@ -358,7 +383,7 @@ code .il {
 .read-more {
   display: inline-block;
   margin-top: 0.5rem;
-  color: #e74c3c;
+  color: #FD9A6D;
   text-decoration: underline;
 }
 
@@ -367,7 +392,7 @@ code .il {
 }
 
 .back-link a {
-  color: #e74c3c;
+  color: #FD9A6D;
   text-decoration: none;
 }
 
@@ -382,8 +407,8 @@ code .il {
 
 .tag {
   display: inline-block;
-  background-color: rgba(231, 76, 60, 0.1);
-  color: #e74c3c;
+  background-color: rgba(253, 154, 109, 0.1);
+  color: #FD9A6D;
   padding: 2px 8px;
   margin-right: 6px;
   margin-bottom: 4px;
@@ -396,6 +421,33 @@ code .il {
 .tag:hover {
   background-color: rgba(231, 76, 60, 0.2);
   opacity: 1;
+}
+
+/* Content area tags - match home page tag style */
+.post-tags .tags a {
+  display: inline-block;
+  background-color: rgba(253, 154, 109, 0.1);
+  color: #FD9A6D;
+  padding: 2px 8px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.5;
+  border-bottom: none !important;
+  text-decoration: none;
+}
+
+.post-tags .tags a:hover {
+  background-color: rgba(231, 76, 60, 0.2);
+  opacity: 1;
+  color: #FD9A6D;
+}
+
+/* Remove emoji from content tags */
+.post-tags .tags li::before {
+  content: "" !important;
 }
 
 /* Layout Components */
@@ -414,4 +466,97 @@ code .il {
 /* Headings */
 h2 {
   color: var(--maincolor) !important;
+}
+
+/* Site Title - Cygnito Mono Font */
+header .main a {
+  font-family: 'Cygnito Mono', monospace !important;
+  letter-spacing: -0.03em;
+  border-bottom: none;
+  color: var(--maincolor);
+  transition: color 0.2s ease;
+}
+
+header .main a:hover {
+  color: #E74C3C !important;
+  /* 또는 원하는 색상으로 변경 가능 */
+  background-color: transparent !important;
+}
+
+/* Table styles */
+table {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+table th {
+  font-size: 0.875em !important;
+}
+
+table td {
+  font-size: 0.875em !important;
+}
+
+/* Two-column layout for images and text */
+.content div[style*="grid-template-columns: 1.5fr 1fr"],
+.content div[style*="grid-template-columns:1.5fr 1fr"] {
+  display: grid !important;
+  grid-template-columns: 1.5fr 1fr !important;
+  gap: 1.5rem !important;
+  margin: 1.5rem 0 !important;
+  align-items: start !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.content div[style*="grid-template-columns: 1.5fr 1fr"]>div,
+.content div[style*="grid-template-columns:1.5fr 1fr"]>div {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.content div[style*="grid-template-columns: 1.5fr 1fr"] img,
+.content div[style*="grid-template-columns:1.5fr 1fr"] img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Mobile: Stack columns vertically */
+@media screen and (max-width: 768px) {
+  /* 2-column layouts (text + image) */
+  .content div[style*="grid-template-columns: 1.5fr 1fr"],
+  .content div[style*="grid-template-columns:1.5fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  /* 2x2 grid layouts (images) */
+  .content div[style*="grid-template-columns: 1fr 1fr"],
+  .content div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+}
+
+/* MathJax block equations - style like code blocks */
+mjx-container[display="true"],
+.MathJax-display {
+  display: block !important;
+  margin: 24px 0 !important;
+  padding: 32px 40px !important;
+  background-color: rgb(248, 252, 255) !important;
+  box-shadow: 0px 0px 8px #D8E5EE !important;
+  border-radius: 12px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  overflow-x: auto !important;
+}
+
+/* MathJax inline equations - no special styling */
+mjx-container[display="false"],
+.MathJax {
+  display: inline !important;
 }

@@ -63,17 +63,31 @@ Shadow 구조
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Crypto Article Week 1 | Coinbase Design System 요약하기">
   <meta name="twitter:description" content="목차 서론: 왜 디자인 시스템 먼저 분석하는가? 왜 Coinbase Design System을 먼저 선택했는가? 본문: 정체성과 대상 사용자 시스템의 공식 미션 / 슬로건 CDS, MUI, HIG 비교 분석 시스템 아키텍처 Get Started에서 주목할 부분: Theming Components Hooks 디자인 토큰 구조 Primitive token과 Semantic token의 결합 컬러 외 영역에서의 토큰 적용 Shadow 구조 결론 서론: 왜 디자인 시스템 먼저 분석하는가? 왜 Coinbase Design System을 먼저 선택했는가? 크립토 생태계에서 개발자가 아닌 디자이너로서 어떤 방식으로 기여할 수 있을지에 대해 오랫동안 고민해 왔다. 화면을 설계하는 역할에 머무르기보다는, 제품이 만들어지고 확장되는 과정 전반에서 어떤 지점에 개입할 수 있는지가 더 중요한 질문이 되었다. 그 과정에서 토큰 단위부터 컴포넌트까지 이어지는 디자인 시스템 구축 방식에 자연스럽게 관심이 옮겨갔다.">
-
-  <link href="https://hjkunst.github.io/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
-  
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 
   
   <link rel="stylesheet" type="text/css" media="screen" href="https://hjkunst.github.io/css/main.55c11e59ca1902b2677f99ce52bb36b6d41cb72df1ab4c1dd37cb0117c63fc8e.css" />
 
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   
   
-  
-  <link rel="stylesheet" type="text/css" href="https://hjkunst.github.io/css/custom.31c7a0beb547e04b555eb06c23913021a1c238477057b575fbe797c28e3b8f3f.css">
+  <link rel="stylesheet" type="text/css" href="https://hjkunst.github.io/css/custom.0a0710c7b496595bd252cefa06a81789328fb5bbbdebd5f80eddb4580cbb4964.css">
   
 </head><body>
         <div class="content"><header>
@@ -175,7 +189,7 @@ Shadow 구조
 <hr>
 <h2 id="3-시스템-아키텍처">3. 시스템 아키텍처</h2>
 <p>서론이 길었다. 이제부터는 Coinbase Design System을 중심으로 본격적인 구조 분석에 들어간다. Coinbase Design System의 전체 구조는 크게 세 영역으로 나뉜다. Get Started, Components, Hooks로 구성되며, Components 내부에는 더 세분화된 분류가 존재하지만 지면 관계상 최상위 구조만 정리한다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>design-system/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>design-system/
 </span></span><span style="display:flex;"><span>├── get-started/
 </span></span><span style="display:flex;"><span>│ ├── introduction/
 </span></span><span style="display:flex;"><span>│ ├── installation/
