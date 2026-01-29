@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Colorimetry 2 | CIE 1931: 색을 수치로 표현하는 과정"
+title: "Colorimetry 2 | CIE 1931: 색공간"
 date: 2026-01-29 12:00:00 +0900
 tags: [Colorimetry, Science]
 ---
