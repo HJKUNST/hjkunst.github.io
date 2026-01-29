@@ -2,7 +2,7 @@ baseURL = 'https://hjkunst.github.io/'
 languageCode = 'en-us'
 title = 'Strawberry Fields'
 
-theme = 'archie'
+theme = 'hugo-discaptive'
 
 [params]
   useCDN = true  # MathJax CDN 사용을 위해 true로 변경
@@ -10,6 +10,8 @@ theme = 'archie'
   mainSections = ['posts']
   favicon = '/favicon.svg'  # SVG favicon으로 변경
   mathjax = true  # LaTeX 수식 렌더링 활성화
+  github = 'https://github.com/hjkunst'
+  username = 'hjkunst'
 
 [markup]
   [markup.goldmark]
@@ -34,3 +36,16 @@ theme = 'archie'
   disableCSS = false
   disableHTML = false
   disableJS = false
+
+# Menu items displayed in the header.
+[[menus.main]]
+  name = 'About'
+  url = '/about'
+  weight = 1
+[[menus.main]]
+  name = 'Tags'
+  url = '/tags'
+  weight = 2
+
+[pagination]
+  pagerSize = 5  # Specify the max number of rows to be returned in list
