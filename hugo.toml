@@ -5,11 +5,11 @@ title = 'Strawberry Fields'
 theme = 'hugo-discaptive'
 
 [params]
-  useCDN = true  # MathJax CDN 사용을 위해 true로 변경
+  useCDN = true
   customCSS = ['css/custom.css']
   mainSections = ['posts']
-  favicon = '/favicon.svg'  # SVG favicon으로 변경
-  mathjax = true  # LaTeX 수식 렌더링 활성화
+  favicon = '/favicon.svg'
+  mathjax = true
   github = 'https://github.com/hjkunst'
   username = 'hjkunst'
 
@@ -21,23 +21,21 @@ theme = 'hugo-discaptive'
     startLevel = 2
     endLevel = 6
 
-# GitHub Pages 배포를 위한 설정
 [deployment]
   [[deployment.targets]]
     name = "github"
     URL = "github://hjkunst/hjkunst.github.io"
 
-# 빌드 최적화
 [build]
   writeStats = false
   buildFuture = true
-  
+
 [minify]
   disableCSS = false
   disableHTML = false
   disableJS = false
 
-# Menu items displayed in the header.
+[menus]
 [[menus.main]]
   name = 'About'
   url = '/about'
