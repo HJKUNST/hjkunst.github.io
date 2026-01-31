@@ -140,7 +140,7 @@ CIE 1931 색도학(Colorimetry)은 인간의 시각 체계가 다양한 스펙�
 
         </header>
         <main class="mb-auto">
-  <script type="application/ld+json">
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -153,89 +153,71 @@ CIE 1931 색도학(Colorimetry)은 인간의 시각 체계가 다양한 스펙�
       "author": [{ "@type": "Person", "name": "hjkunst" }]
     }
   </script>
-  <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-    <article>
-      <div class="xl:divide-y xl:divide-gray-200">
-        <header class="pt-6 xl:pb-6">
-          <div class="space-y-1 text-center">
-            <dl class="space-y-10">
-              <div>
-                <dt class="sr-only">Published on</dt>
-                <dd class="text-base font-medium leading-6 text-gray-500">
-                  
-                  
-                  <time datetime="2026-01-29T12:00:00&#43;09:00">Thursday, January 29, 2026</time>
-                </dd>
-              </div>
-            </dl>
+<section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+  <article>
+    <div class="xl:divide-y xl:divide-gray-200">
+      <header class="pt-6 xl:pb-6">
+        <div class="space-y-1 text-center">
+          <dl class="space-y-10">
             <div>
-              <h1
-                class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14"
-              >
-                <div>Colorimetry 2 | CIE 1931: 색공간</div>
-              </h1>
+              <dt class="sr-only">Published on</dt>
+              <dd class="text-base font-medium leading-6 text-gray-500">
+                
+                
+                <time datetime="2026-01-29T12:00:00&#43;09:00">Thursday, January 29, 2026</time>
+              </dd>
+            </div>
+          </dl>
+          <div>
+            <h1
+              class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+              <div>Colorimetry 2 | CIE 1931: 색공간</div>
+            </h1>
+          </div>
+        </div>
+      </header>
+
+      <div class="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0">
+        <aside class="hidden xl:block xl:col-start-1 xl:row-start-1">
+          <div class="sticky top-24 space-y-8">
+            <div class="py-4">
+              <h2 class="text-xs uppercase tracking-wide text-gray-500">
+                Table of Contents
+              </h2>
+              <nav class="mt-2">
+                <ul class="space-y-1">
+                  <li class="text-sm">
+                    <a href="#1-%ec%83%89%ec%9d%84-%ec%88%98%ec%b9%98%eb%a1%9c-%ed%91%9c%ed%98%84%ed%95%9c%eb%8b%a4%eb%8a%94-%ea%b2%83%ec%9d%80-%ec%8b%a4%ec%a0%9c%eb%a1%9c-%ec%96%b4%eb%96%a4-%ea%b3%bc%ec%a0%95%ec%9d%84-%ea%b1%b0%ec%b9%98%eb%8a%94%ea%b0%80" class="text-indigo-500 hover:text-indigo-600">1) 색을 수치로 표현한다는 것은 실제로 어떤 과정을 거치는가?</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#2-1924-%ea%b4%91%ed%9a%a8%ec%9c%a8-%ed%95%a8%ec%88%98-v%ce%bb" class="text-indigo-500 hover:text-indigo-600">2) 1924 광효율 함수, V(λ)</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#3-%ec%83%89-%ec%98%81%ec%97%ad-%ea%b7%b8%eb%9e%98%ed%94%84-%ec%a0%9c%eb%8c%80%eb%a1%9c-%ec%9d%bd%ea%b8%b0-cie-1931-xy" class="text-indigo-500 hover:text-indigo-600">3) “색 영역 그래프” 제대로 읽기: CIE 1931 xy</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#4-%ec%83%89%eb%8f%84%eb%8f%84cie-1931-chromaticity-diagram%ea%b0%80-%ec%a0%95%ec%9d%98%eb%90%98%eb%8a%94-%ec%88%98%ed%95%99%ec%a0%81%ec%8b%9c%ea%b0%81%ec%a0%81-%ea%b3%bc%ec%a0%95" class="text-indigo-500 hover:text-indigo-600">4) 색도도(CIE 1931 Chromaticity Diagram)가 정의되는 수학적·시각적 과정</a>
+                    <ul class="ml-4 mt-1 space-y-1">
+                      <li class="text-sm">
+                        <a href="#%ec%83%89%eb%8f%84%eb%8f%84chromaticity-diagram%ec%99%80-%ea%b0%80%ec%8b%9c-%ec%83%89-%ec%98%81%ec%97%ad%ec%9d%98-%ec%8b%9c%ea%b0%81%ed%99%94" class="text-indigo-500 hover:text-indigo-600">색도도(Chromaticity Diagram)와 가시 색 영역의 시각화</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#cie-1976-u-v-%ea%b7%a0%eb%93%b1-%ec%83%89%eb%8f%84%eb%8f%84%ec%99%80-%ec%83%89-%ec%a7%80%ea%b0%81%ec%9d%98-%ea%b0%9c%ec%84%a0" class="text-indigo-500 hover:text-indigo-600">CIE 1976 (u′, v′) 균등 색도도와 색 지각의 개선</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#%ec%8b%a4%ec%a0%9c-%ec%84%b8%ea%b3%84%ec%97%90%ec%84%9c%ec%9d%98-%ec%83%89-%ec%98%81%ec%97%ad%ea%b3%bc-%ec%9e%ac%ed%98%84%ec%9d%98-%ed%95%9c%ea%b3%84" class="text-indigo-500 hover:text-indigo-600">실제 세계에서의 색 영역과 재현의 한계</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
-        </header>
+        </aside>
 
-        <div
-          class="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0"
-        >
-          <dl class="pb-10 pt-6 xl:border-b xl:border-gray-200 xl:pt-11">
-            <dt class="sr-only">Authors</dt>
-            <dd>
-              <ul
-                class="flex flex-wrap justify-center gap-4 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8"
-              >
-                <li class="flex items-center space-x-2">
-                  <img
-                    src="https://github.com/hjkunst.png"
-                    class="rounded-full"
-                    width="38"
-                    height="38"
-                    alt="Profile Image"
-                    loading="lazy"
-                  />
-                  <dl class="whitespace-nowrap text-sm font-medium leading-5">
-                    <dt class="sr-only">Name</dt>
-                    <dd class="text-gray-900">hjkunst</dd>
-                  </dl>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <div
-            class="divide-y divide-gray-200 xl:col-span-3 xl:row-span-2 xl:pb-0"
-          >
-            <div class="prose max-w-none pb-8 pt-10">
-              <details open>
-                <summary class="ml-6 pb-2 pt-2 text-xl font-bold">
-                  <span>Table of Contents</span>
-                </summary>
-
-                <nav class="ml-6">
-                    <ul>
-                        <li><a href="#1-%ec%83%89%ec%9d%84-%ec%88%98%ec%b9%98%eb%a1%9c-%ed%91%9c%ed%98%84%ed%95%9c%eb%8b%a4%eb%8a%94-%ea%b2%83%ec%9d%80-%ec%8b%a4%ec%a0%9c%eb%a1%9c-%ec%96%b4%eb%96%a4-%ea%b3%bc%ec%a0%95%ec%9d%84-%ea%b1%b0%ec%b9%98%eb%8a%94%ea%b0%80">1) 색을 수치로 표현한다는 것은 실제로 어떤 과정을 거치는가?</a></li>
-                        <li><a href="#2-1924-%ea%b4%91%ed%9a%a8%ec%9c%a8-%ed%95%a8%ec%88%98-v%ce%bb">2) 1924 광효율 함수, V(λ)</a></li>
-                        <li><a href="#3-%ec%83%89-%ec%98%81%ec%97%ad-%ea%b7%b8%eb%9e%98%ed%94%84-%ec%a0%9c%eb%8c%80%eb%a1%9c-%ec%9d%bd%ea%b8%b0-cie-1931-xy">3) “색 영역 그래프” 제대로 읽기: CIE 1931 xy</a></li>
-                        <li><a href="#4-%ec%83%89%eb%8f%84%eb%8f%84cie-1931-chromaticity-diagram%ea%b0%80-%ec%a0%95%ec%9d%98%eb%90%98%eb%8a%94-%ec%88%98%ed%95%99%ec%a0%81%ec%8b%9c%ea%b0%81%ec%a0%81-%ea%b3%bc%ec%a0%95">4) 색도도(CIE 1931 Chromaticity Diagram)가 정의되는 수학적·시각적 과정</a></li>
-                          <ul>
-                              <li>
-                                <a href="#%ec%83%89%eb%8f%84%eb%8f%84chromaticity-diagram%ec%99%80-%ea%b0%80%ec%8b%9c-%ec%83%89-%ec%98%81%ec%97%ad%ec%9d%98-%ec%8b%9c%ea%b0%81%ed%99%94">색도도(Chromaticity Diagram)와 가시 색 영역의 시각화</a>
-                              </li>
-                              <li>
-                                <a href="#cie-1976-u-v-%ea%b7%a0%eb%93%b1-%ec%83%89%eb%8f%84%eb%8f%84%ec%99%80-%ec%83%89-%ec%a7%80%ea%b0%81%ec%9d%98-%ea%b0%9c%ec%84%a0">CIE 1976 (u′, v′) 균등 색도도와 색 지각의 개선</a>
-                              </li>
-                              <li>
-                                <a href="#%ec%8b%a4%ec%a0%9c-%ec%84%b8%ea%b3%84%ec%97%90%ec%84%9c%ec%9d%98-%ec%83%89-%ec%98%81%ec%97%ad%ea%b3%bc-%ec%9e%ac%ed%98%84%ec%9d%98-%ed%95%9c%ea%b3%84">실제 세계에서의 색 영역과 재현의 한계</a>
-                              </li>
-                          </ul>
-                    </ul>
-                </nav>
-              </details>
-
-              <h2 id="1-색을-수치로-표현한다는-것은-실제로-어떤-과정을-거치는가">1) 색을 수치로 표현한다는 것은 실제로 어떤 과정을 거치는가?</h2>
+        <div class="divide-y divide-gray-200 xl:col-span-3 xl:row-span-2 xl:pb-0">
+          <div class="prose max-w-none pb-8 pt-10">
+            <h2 id="1-색을-수치로-표현한다는-것은-실제로-어떤-과정을-거치는가">1) 색을 수치로 표현한다는 것은 실제로 어떤 과정을 거치는가?</h2>
 <p>CIE 1931 색도학(Colorimetry)은 인간의 시각 체계가 다양한 스펙트럼 분포를 어떻게 색으로 인식하는지를 설명하기 위한 이론적·실험적 기반을 제공한다. 나뭇잎과 초록색 자동차처럼 겉보기에는 같은 색으로 보이지만 실제 반사 스펙트럼은 전혀 다른 경우를 상상해 보면, 같은 색 지각이 서로 다른 물리적 조건에서 발생할 수 있음을 알 수 있다. 이와 같이 서로 다른 스펙트럼 분포가 동일한 색 자극을 유발하는 현상을 메타메리즘(metamerism)이라고 하며, 색 재현의 핵심적인 개념이다.</p>
 <div style="text-align: center; margin: 1rem 0;">
   <img src="/colorimetry2-1.webp" alt="Cone cell color response function" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
@@ -411,48 +393,36 @@ $$
 <li><a href="https://jlongster.com/why-chromaticity-shape">jlongster — why chromaticity shape</a></li>
 </ul>
 
+          </div>
+        </div>
+
+        <footer class="xl:col-start-1 xl:col-span-4">
+          <div class="divide-gray-200 text-sm font-medium leading-5 xl:divide-y">
+            <div class="py-4 xl:py-8">
+              <h2 class="text-xs uppercase tracking-wide text-gray-500">
+                Tags
+              </h2>
+              <div class="flex flex-wrap mt-2">
+                
+                <a href="/tags/colorimetry"
+                  class="mr-3 text-sm font-medium uppercase text-indigo-500 hover:text-indigo-600">Colorimetry</a>
+                
+                <a href="/tags/science"
+                  class="mr-3 text-sm font-medium uppercase text-indigo-500 hover:text-indigo-600">Science</a>
+                
+              </div>
             </div>
           </div>
 
-          <footer>
-            <div
-              class="divide-gray-200 text-sm font-medium leading-5 xl:col-start-1 xl:row-start-2 xl:divide-y"
-            >
-              <div class="py-4 xl:py-8">
-                <h2 class="text-xs uppercase tracking-wide text-gray-500">
-                  Tags
-                </h2>
-                <div class="flex flex-wrap">
-                  
-                    <a
-                      href="/tags/colorimetry"
-                      class="mr-3 text-sm font-medium uppercase text-indigo-500 hover:text-indigo-600"
-                      >Colorimetry</a
-                    >
-                  
-                    <a
-                      href="/tags/science"
-                      class="mr-3 text-sm font-medium uppercase text-indigo-500 hover:text-indigo-600"
-                      >Science</a
-                    >
-                  
-                </div>
-              </div>
-            </div>
-
-            <div class="pt-4 xl:pt-8">
-              <a
-                class="text-indigo-500 hover:text-indigo-600"
-                aria-label="Back to the list"
-                href="/"
-                >← Back to the list</a
-              >
-            </div>
-          </footer>
-        </div>
+          <div class="pt-4 xl:pt-8">
+            <a class="text-indigo-500 hover:text-indigo-600" aria-label="Back to the list" href="/">← Back to the
+              list</a>
+          </div>
+        </footer>
       </div>
-    </article>
-  </section>
+    </div>
+  </article>
+</section>
 </main>
         <footer><div class="mt-16 flex flex-col items-center">
   <div class="mb-2 text-sm text-gray-500">

@@ -173,7 +173,7 @@ Cursor AI와 Figma 파일을 연동시켜서, 디자인 리소스를 바로 코�
 
         </header>
         <main class="mb-auto">
-  <script type="application/ld+json">
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -186,101 +186,77 @@ Cursor AI와 Figma 파일을 연동시켜서, 디자인 리소스를 바로 코�
       "author": [{ "@type": "Person", "name": "hjkunst" }]
     }
   </script>
-  <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-    <article>
-      <div class="xl:divide-y xl:divide-gray-200">
-        <header class="pt-6 xl:pb-6">
-          <div class="space-y-1 text-center">
-            <dl class="space-y-10">
-              <div>
-                <dt class="sr-only">Published on</dt>
-                <dd class="text-base font-medium leading-6 text-gray-500">
-                  
-                  
-                  <time datetime="2025-06-15T02:04:00&#43;09:00">Sunday, June 15, 2025</time>
-                </dd>
-              </div>
-            </dl>
+<section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+  <article>
+    <div class="xl:divide-y xl:divide-gray-200">
+      <header class="pt-6 xl:pb-6">
+        <div class="space-y-1 text-center">
+          <dl class="space-y-10">
             <div>
-              <h1
-                class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14"
-              >
-                <div>디자인에서 구현까지: Figma와 Cursor MCP를 연결해봤다 (기본편)</div>
-              </h1>
+              <dt class="sr-only">Published on</dt>
+              <dd class="text-base font-medium leading-6 text-gray-500">
+                
+                
+                <time datetime="2025-06-15T02:04:00&#43;09:00">Sunday, June 15, 2025</time>
+              </dd>
+            </div>
+          </dl>
+          <div>
+            <h1
+              class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+              <div>디자인에서 구현까지: Figma와 Cursor MCP를 연결해봤다 (기본편)</div>
+            </h1>
+          </div>
+        </div>
+      </header>
+
+      <div class="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0">
+        <aside class="hidden xl:block xl:col-start-1 xl:row-start-1">
+          <div class="sticky top-24 space-y-8">
+            <div class="py-4">
+              <h2 class="text-xs uppercase tracking-wide text-gray-500">
+                Table of Contents
+              </h2>
+              <nav class="mt-2">
+                <ul class="space-y-1">
+                  <li class="text-sm">
+                    <a href="#" class="text-indigo-500 hover:text-indigo-600"></a>
+                    <ul class="ml-4 mt-1 space-y-1">
+                      <li class="text-sm">
+                        <a href="#%eb%aa%a9%ec%a0%81" class="text-indigo-500 hover:text-indigo-600">목적</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#%ea%b0%80%eb%8a%a5%ec%84%b1%ec%97%90-%eb%8c%80%ed%95%9c-%ec%9d%98%eb%ac%b8%eb%93%a4" class="text-indigo-500 hover:text-indigo-600">가능성에 대한 의문들</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#%ec%9d%b4-%eb%b8%94%eb%a1%9c%ea%b7%b8%eb%a5%bc-%eb%82%a8%ea%b8%b0%eb%8a%94-%ec%9d%b4%ec%9c%a0" class="text-indigo-500 hover:text-indigo-600">이 블로그를 남기는 이유</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#%ea%b7%b8%eb%9e%98%ec%84%9c-%ea%b2%b0%ea%b3%bc%eb%8a%94" class="text-indigo-500 hover:text-indigo-600">그래서 결과는?</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#%ec%88%9c%ec%84%9c" class="text-indigo-500 hover:text-indigo-600">순서</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#cursor-chat%ec%9c%bc%eb%a1%9c-%ea%b5%ac%ed%98%84-%ec%9a%94%ec%b2%ad%ed%95%98%ea%b8%b0" class="text-indigo-500 hover:text-indigo-600">Cursor Chat으로 구현 요청하기</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#%eb%a1%9c%ec%bb%ac%ec%97%90%ec%84%9c-%ec%8b%a4%ed%96%89%ed%95%98%ea%b8%b0" class="text-indigo-500 hover:text-indigo-600">로컬에서 실행하기</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#%ec%b0%b8%ea%b3%a0%ed%95%a0%eb%a7%8c%ed%95%9c-%ec%9e%90%eb%a3%8c%eb%93%a4" class="text-indigo-500 hover:text-indigo-600">참고할만한 자료들</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
-        </header>
+        </aside>
 
-        <div
-          class="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0"
-        >
-          <dl class="pb-10 pt-6 xl:border-b xl:border-gray-200 xl:pt-11">
-            <dt class="sr-only">Authors</dt>
-            <dd>
-              <ul
-                class="flex flex-wrap justify-center gap-4 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8"
-              >
-                <li class="flex items-center space-x-2">
-                  <img
-                    src="https://github.com/hjkunst.png"
-                    class="rounded-full"
-                    width="38"
-                    height="38"
-                    alt="Profile Image"
-                    loading="lazy"
-                  />
-                  <dl class="whitespace-nowrap text-sm font-medium leading-5">
-                    <dt class="sr-only">Name</dt>
-                    <dd class="text-gray-900">hjkunst</dd>
-                  </dl>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <div
-            class="divide-y divide-gray-200 xl:col-span-3 xl:row-span-2 xl:pb-0"
-          >
-            <div class="prose max-w-none pb-8 pt-10">
-              <details open>
-                <summary class="ml-6 pb-2 pt-2 text-xl font-bold">
-                  <span>Table of Contents</span>
-                </summary>
-
-                <nav class="ml-6">
-                    <ul>
-                        <li><a href="#"></a></li>
-                          <ul>
-                              <li>
-                                <a href="#%eb%aa%a9%ec%a0%81">목적</a>
-                              </li>
-                              <li>
-                                <a href="#%ea%b0%80%eb%8a%a5%ec%84%b1%ec%97%90-%eb%8c%80%ed%95%9c-%ec%9d%98%eb%ac%b8%eb%93%a4">가능성에 대한 의문들</a>
-                              </li>
-                              <li>
-                                <a href="#%ec%9d%b4-%eb%b8%94%eb%a1%9c%ea%b7%b8%eb%a5%bc-%eb%82%a8%ea%b8%b0%eb%8a%94-%ec%9d%b4%ec%9c%a0">이 블로그를 남기는 이유</a>
-                              </li>
-                              <li>
-                                <a href="#%ea%b7%b8%eb%9e%98%ec%84%9c-%ea%b2%b0%ea%b3%bc%eb%8a%94">그래서 결과는?</a>
-                              </li>
-                              <li>
-                                <a href="#%ec%88%9c%ec%84%9c">순서</a>
-                              </li>
-                              <li>
-                                <a href="#cursor-chat%ec%9c%bc%eb%a1%9c-%ea%b5%ac%ed%98%84-%ec%9a%94%ec%b2%ad%ed%95%98%ea%b8%b0">Cursor Chat으로 구현 요청하기</a>
-                              </li>
-                              <li>
-                                <a href="#%eb%a1%9c%ec%bb%ac%ec%97%90%ec%84%9c-%ec%8b%a4%ed%96%89%ed%95%98%ea%b8%b0">로컬에서 실행하기</a>
-                              </li>
-                              <li>
-                                <a href="#%ec%b0%b8%ea%b3%a0%ed%95%a0%eb%a7%8c%ed%95%9c-%ec%9e%90%eb%a3%8c%eb%93%a4">참고할만한 자료들</a>
-                              </li>
-                          </ul>
-                    </ul>
-                </nav>
-              </details>
-
-              <div markdown="1">
+        <div class="divide-y divide-gray-200 xl:col-span-3 xl:row-span-2 xl:pb-0">
+          <div class="prose max-w-none pb-8 pt-10">
+            <div markdown="1">
 <h3 id="목적">목적</h3>
 <p>Cursor AI와 Figma 파일을 연동시켜서, 디자인 리소스를 바로 코드로 전환해보고자 했다. 다른 대부분의 디자인과 예술은 프로덕트 완성까지를 &lsquo;완성&rsquo;으로 보는데, 왜 UX, UI 디자인만 구현은 개발자의 몫이어야 할까? 그 질문에 대한 도전이었다. 결론적으로 작가 의식에 기반한 웹사이트 제작을 해보고 싶었던 것 같다.</p>
 </div>
@@ -429,36 +405,30 @@ Cursor Chat을 열고 다음과 같이 입력:</p>
 <li><a href="https://www.reese-log.com/cursor-figma-model-context-protocol">Cursor 실험기 - reese-log</a></li>
 </ul>
 
+          </div>
+        </div>
+
+        <footer class="xl:col-start-1 xl:col-span-4">
+          <div class="divide-gray-200 text-sm font-medium leading-5 xl:divide-y">
+            <div class="py-4 xl:py-8">
+              <h2 class="text-xs uppercase tracking-wide text-gray-500">
+                Tags
+              </h2>
+              <div class="flex flex-wrap mt-2">
+                
+              </div>
             </div>
           </div>
 
-          <footer>
-            <div
-              class="divide-gray-200 text-sm font-medium leading-5 xl:col-start-1 xl:row-start-2 xl:divide-y"
-            >
-              <div class="py-4 xl:py-8">
-                <h2 class="text-xs uppercase tracking-wide text-gray-500">
-                  Tags
-                </h2>
-                <div class="flex flex-wrap">
-                  
-                </div>
-              </div>
-            </div>
-
-            <div class="pt-4 xl:pt-8">
-              <a
-                class="text-indigo-500 hover:text-indigo-600"
-                aria-label="Back to the list"
-                href="/"
-                >← Back to the list</a
-              >
-            </div>
-          </footer>
-        </div>
+          <div class="pt-4 xl:pt-8">
+            <a class="text-indigo-500 hover:text-indigo-600" aria-label="Back to the list" href="/">← Back to the
+              list</a>
+          </div>
+        </footer>
       </div>
-    </article>
-  </section>
+    </div>
+  </article>
+</section>
 </main>
         <footer><div class="mt-16 flex flex-col items-center">
   <div class="mb-2 text-sm text-gray-500">
