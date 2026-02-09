@@ -28,7 +28,7 @@ tags: [Colorimetry, Science]
     결과적으로 이 3차원 색 영역은 원뿔 또는 반구 형태의 벡터 공간으로 나타나며, 이는 디스플레이 장치가 표현할 수 있는 실제 색의 '부피'를 뜻한다. 3D Color Volume의 좌표 체계는 보통 u′v′+Y 형태를 사용하며, 이때 u′v′는 기존 xy좌표계에서 면적 왜곡 문제를 보완하기 위해 CIE 1976에서 제안된 새로운 색도 좌표이다. 이 좌표계를 통해 보다 지각에 일치하는 색 표현이 가능하다.
   </div>
   <div>
-    <img src="/colorimetry-1.webp" alt="3D Color Volume 시각화" style="width: 100%; height: auto; display: block;" />
+    <img src="/colorimetry-1/colorimetry-1.webp" alt="3D Color Volume 시각화" style="width: 100%; height: auto; display: block;" />
   </div>
 </div>
 
@@ -63,7 +63,7 @@ HSL(Hue, Saturation, Lightness) 및 HSV(Hue, Saturation, Value) 색 공간은 RG
 이 모델의 핵심은 ‘휘도(밝기)’ 정보를 색상/채도와 분리하여 다룰 수 있다는 점이다. 이를 통해 다양한 색조 조절과 톤 보정이 용이해진다.
 
 <div style="text-align: center; margin: 1rem 0;">
-  <img src="/colorimetry-2.webp" alt="HSL/HSV 색 공간 시각화" style="width: 100%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+  <img src="/colorimetry-1/colorimetry-2.webp" alt="HSL/HSV 색 공간 시각화" style="width: 100%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
 </div>
 
 <div class="spacer"></div>
@@ -76,7 +76,7 @@ HSL(Hue, Saturation, Lightness) 및 HSV(Hue, Saturation, Value) 색 공간은 RG
     핵심 아이디어는 전체 색상 정보를 세 개의 성분으로 나누되, 밝기 성분(Y)은 고해상도·고정밀로 보존하고, 색차 성분(Cb, Cr 혹은 U, V)은 상대적으로 낮은 정밀도로 저장하는 것이다. 이는 대부분의 사람 눈이 밝기 변화에는 민감하지만, 색의 세부 차이에 둔감하기 때문이다.
   </div>
   <div>
-    <img src="/colorimetry-7.png" alt="YUV 색 공간 시각화" style="width: 100%; height: auto; display: block;" />
+    <img src="/colorimetry-1/colorimetry-7.png" alt="YUV 색 공간 시각화" style="width: 100%; height: auto; display: block;" />
   </div>
 </div>
 
@@ -123,7 +123,7 @@ R = 1 – C, G = 1 – M, B = 1 – Y
     ICC 프로파일은 특정 기기나 파일의 RGB 값이 어떤 실제 색을 나타내는지를 정의한 메타데이터이다. 예를 들어, "이 이미지의 RGB는 sRGB 기준이다", "이 디스플레이는 이런 특성으로 색을 낸다", "프린터는 이 잉크/종이 조합에서 이런 색 변환이 필요하다"와 같은 식으로 색 공간을 명시한다. 이를 통해 장치 간 색상 일관성을 유지할 수 있다.
   </div>
   <div>
-    <img src="/colorimetry-3.webp" alt="ICC Profile 설명" style="width: 100%; height: auto; display: block;" />
+    <img src="/colorimetry-1/colorimetry-3.webp" alt="ICC Profile 설명" style="width: 100%; height: auto; display: block;" />
   </div>
 </div>
 
@@ -146,7 +146,7 @@ R = 1 – C, G = 1 – M, B = 1 – Y
 | Rec.2020 | 가장 넓음 | HDR/UHD 표준 | 미래 호환성 우수 | 대부분 디스플레이에서 미지원 |
 
 <div style="text-align: center; margin: 1.5rem 0;">
-  <img src="/colorimetry-4.webp" alt="Gamut Comparison 시각화" style="width: 80%; min-width: 200px; height: auto; display: block; margin: 0 auto;" />
+  <img src="/colorimetry-1/colorimetry-4.webp" alt="Gamut Comparison 시각화" style="width: 80%; min-width: 200px; height: auto; display: block; margin: 0 auto;" />
 </div>
 
 
@@ -159,7 +159,7 @@ R = 1 – C, G = 1 – M, B = 1 – Y
     예를 들어, 웹에서 이미지나 UI 요소의 배경이 #FFFFFF일 경우, 일반적인 SDR 환경에서는 종이 같은 중립적인 흰색으로 보인다. 하지만 HDR Boost가 적용되면, 같은 색 코드라도 그것은 화면 상에서 하이라이트 효과가 있는 빛나는 흰색처럼 보일 수 있다. 즉, 색상값 자체는 변하지 않지만 시스템은 해당 색상의 휘도를 강조함으로써 더 강한 시각적 인상을 전달한다.
   </div>
   <div>
-    <img src="/colorimetry-5.webp" alt="HDR Boost 기능 시각화" style="width: 100%; height: auto; display: block;" />
+    <img src="/colorimetry-1/colorimetry-5.webp" alt="HDR Boost 기능 시각화" style="width: 100%; height: auto; display: block;" />
   </div>
 </div>
 
@@ -176,7 +176,7 @@ R = 1 – C, G = 1 – M, B = 1 – Y
 이처럼 표현 가능한 색의 수가 제한된 환경에서는, 디자이너가 특정 RGB 색상을 선택했을 때 디스플레이 장치가 그 색을 정확히 표시하지 못하고, 가장 유사한 인접 색상으로 강제 변환(dithering)하는 현상이 흔하게 발생하였다. 이로 인해 이미지의 색이 뭉개지거나, 패턴이나 배경 그라데이션이 의도와 다르게 표시되는 문제가 지속적으로 발생하였다.
   </div>
   <div>
-    <img src="/colorimetry-6.webp" alt="Illustrator HSB 색상 선택기" style="width: 100%; height: auto; display: block;" />
+    <img src="/colorimetry-1/colorimetry-6.webp" alt="Illustrator HSB 색상 선택기" style="width: 100%; height: auto; display: block;" />
   </div>
 </div>
 

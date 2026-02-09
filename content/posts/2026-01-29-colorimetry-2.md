@@ -10,7 +10,7 @@ tags: [Colorimetry, Science]
 CIE 1931 색도학(Colorimetry)은 인간의 시각 체계가 다양한 스펙트럼 분포를 어떻게 색으로 인식하는지를 설명하기 위한 이론적·실험적 기반을 제공한다. 나뭇잎과 초록색 자동차처럼 겉보기에는 같은 색으로 보이지만 실제 반사 스펙트럼은 전혀 다른 경우를 상상해 보면, 같은 색 지각이 서로 다른 물리적 조건에서 발생할 수 있음을 알 수 있다. 이와 같이 서로 다른 스펙트럼 분포가 동일한 색 자극을 유발하는 현상을 메타메리즘(metamerism)이라고 하며, 색 재현의 핵심적인 개념이다.
 
 <div style="text-align: center; margin: 1rem 0;">
-  <img src="/colorimetry2-1.webp" alt="Cone cell color response function" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+  <img src="/colorimetry-2/colorimetry2-1.webp" alt="Cone cell color response function" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
   <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">
     Fig 1. 인간 원추세포(S/M/L)의 파장별 상대 감응도 분포.
   </p>
@@ -29,7 +29,7 @@ CIE 1931 색도학(Colorimetry)은 인간의 시각 체계가 다양한 스펙�
 다만, 1924년 버전의 V(λ)는 스펙트럼의 청색 영역에서 인간의 감도 반응을 과소평가한 것으로 이후 연구에서 밝혀졌다. 이는 후속 모델링과 보정을 통해 개선되어 왔으며, CIE 1931 색도학 모델은 이러한 광도 반응을 포함해 색지각 전반을 정량화한 최초의 종합적 체계로 자리잡았다.
 
 <div style="text-align: center; margin: 1rem 0;">
-  <img src="/colorimetry2-2.webp" alt="CIE 1924 luminous efficiency function V(lambda)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+  <img src="/colorimetry-2/colorimetry2-2.webp" alt="CIE 1924 luminous efficiency function V(lambda)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
   <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 2. CIE 1924 광도 효율 함수 V(λ)와 파장에 따른 밝기 지각 특성.</p>
 </div>
 
@@ -48,19 +48,19 @@ CIE 1931 색도학(Colorimetry)은 인간의 시각 체계가 다양한 스펙�
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
   <div style="text-align: center;">
-    <img src="/colorimetry2-3.webp" alt="CIE 1931 Color Matching Functions (CMFs)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-3.webp" alt="CIE 1931 Color Matching Functions (CMFs)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 3. Wright–Guild 색 일치 실험의 개념적 구조.</p>
   </div>
   <div style="text-align: center;">
-    <img src="/colorimetry2-4.webp" alt="Wright–Guild color matching experiment" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-4.webp" alt="Wright–Guild color matching experiment" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 4. RGB 색 일치 함수에서 나타나는 음의 자극치 현상.</p>
   </div>
   <div style="text-align: center;">
-    <img src="/colorimetry2-5.webp" alt="Additional reference figure for CMF / chromaticity discussion" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-5.webp" alt="Additional reference figure for CMF / chromaticity discussion" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 6. CIE 1931 색 일치 함수의 실험적 도출 과정과 표준 관측자 모델.</p>
   </div>
   <div style="text-align: center;">
-    <img src="/colorimetry2-6.webp" alt="Additional reference figure for CMF / chromaticity discussion" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-6.webp" alt="Additional reference figure for CMF / chromaticity discussion" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 5. CIE 1931 색 일치 함수 x̄(λ), ȳ(λ), z̄(λ).</p>
   </div>
 </div>
@@ -110,7 +110,7 @@ $$
 [예시 이미지 (spectral locus)](https://miro.medium.com/v2/resize:fit:1400/format:webp/0*cX02ZDqUrsdDGMUP./)
 
 <div style="text-align: center; margin: 1rem 0;">
-  <img src="/colorimetry2-7.webp" alt="CIE 1931 chromaticity diagram spectral locus" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+  <img src="/colorimetry-2/colorimetry2-7.webp" alt="CIE 1931 chromaticity diagram spectral locus" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 8. XYZ 공간에서 단색광 스펙트럼이 형성하는 궤적.</p>
 </div>
 
@@ -122,11 +122,11 @@ RGB 공간에서도 동일한 원리가 적용된다. 강도(밝기) 정보를 �
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
   <div style="text-align: center;">
-    <img src="/colorimetry2-8.webp" alt="RGB rg-plane projection example" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-8.webp" alt="RGB rg-plane projection example" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 7. 3D → 2D 투영(rg plane projection) 예시</p>
   </div>
   <div style="text-align: center;">
-    <img src="/colorimetry2-9.webp" alt="Additional chromaticity / gamut reference figure" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-9.webp" alt="Additional chromaticity / gamut reference figure" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 9. rg 색도 평면과 RGB 색역(gamut) 표현.</p>
   </div>
 </div>
@@ -143,19 +143,19 @@ RGB 공간에서도 동일한 원리가 적용된다. 강도(밝기) 정보를 �
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
   <div style="text-align: center;">
-    <img src="/colorimetry2-10.webp" alt="Chromaticity / gamut reference figure" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-10.webp" alt="Chromaticity / gamut reference figure" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 10. CIE 1931 색도도 상의 색역(gamut) 비교: sRGB, Adobe RGB, DCI-P3.</p>
   </div>
   <div style="text-align: center;">
-    <img src="/colorimetry2-11.webp" alt="Chromaticity / gamut reference figure" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-11.webp" alt="Chromaticity / gamut reference figure" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 11. 디스플레이 장치의 RGB 기본색 좌표와 색역 삼각형 표현.</p>
   </div>
   <div style="text-align: center;">
-    <img src="/colorimetry2-12.webp" alt="Convert RGB chromaticity coordinates (r,g) to XYZ chromaticity coordinates (x,y)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-12.webp" alt="Convert RGB chromaticity coordinates (r,g) to XYZ chromaticity coordinates (x,y)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 12. RGB 색도 좌표(r, g)를 XYZ 색도 좌표(x, y)로 변환하는 색공간 재정의 과정.</p>
   </div>
   <div style="text-align: center;">
-    <img src="/colorimetry2-13.webp" alt="Additional reference figure for XYZ / chromaticity discussion" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-13.webp" alt="Additional reference figure for XYZ / chromaticity discussion" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 13. 가상의 기본색(Imaginary Primaries)을 사용한 XYZ 색 공간의 구성 원리.</p>
   </div>
 </div>
@@ -199,7 +199,7 @@ $$
 ### 색도도(Chromaticity Diagram)와 가시 색 영역의 시각화
 
 <div style="text-align: center; margin: 1rem 0;">
-  <img src="/colorimetry2-14.webp" alt="CIE 1931 Chromaticity Diagram (xy)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+  <img src="/colorimetry-2/colorimetry2-14.webp" alt="CIE 1931 Chromaticity Diagram (xy)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
   <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 14. CIE 1931 색도도(xy)와 가시 색 영역의 시각화.</p>
 </div>
 
@@ -212,7 +212,7 @@ CIE 1931 색도도(xy)는 인간 시각계의 평균적 반응을 모델링한 �
 ### CIE 1976 (u′, v′) 균등 색도도와 색 지각의 개선
 
 <div style="text-align: center; margin: 1rem 0;">
-  <img src="/colorimetry2-15.webp" alt="CIE 1976 (u′, v′) Uniform Chromaticity Scale Diagram" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+  <img src="/colorimetry-2/colorimetry2-15.webp" alt="CIE 1976 (u′, v′) Uniform Chromaticity Scale Diagram" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
   <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 15. CIE 1976 (u′, v′) 균등 색도도와 지각 균등성 개선 효과.</p>
 </div>
 

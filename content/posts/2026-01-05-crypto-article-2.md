@@ -30,22 +30,22 @@ tags: [Design System, UX, Crypto]
 
 세 시스템 모두 “Button” 컴포넌트를 기본 요소로 제공하지만, 디자인 철학에 따라 세부 지침에 차이가 있다.
 
-<img src="/crypto-article-2-design-system-venn.png" alt="Design System 구성 요소 벤 다이어그램" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+<img src="/crypto-article-2/crypto-article-2-design-system-venn.png" alt="Design System 구성 요소 벤 다이어그램" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
 
 Apple HIG에서는 직관적인 터치 영역과 플랫폼 일관성을 강조한다. 예를 들어 “버튼은 최소 44×44 pt(visionOS의 경우 60×60 pt)의 터치 영역을 가져야 한다”고 권고하여 사용자가 쉽게 누를 수 있도록 한다.
 또한 iOS에서는 Primary 액션 버튼을 눈에 띄게(기본 파랑 등 액센트 컬러 사용) 하고, Destructive 액션은 빨간색 텍스트로 표시해 주의를 주도록 안내한다. Apple은 버튼 스타일을 크게 커스터마이즈하기보다는 OS가 제공하는 기본 스타일을 따를 것을 권장하며, 모달 대화상자의 경우 확인(OK) 버튼을 볼드체로 강조하는 등 컨텍스트에 따른 표준 스타일이 있다. Apple HIG에는 투명 배경 버튼에 대한 직접 언급은 없으나, iOS에서는 Navigation Bar 등에 텍스트 형태 버튼(링크 스타일)으로 구현하는 패턴이 존재한다.
 
-<img src="/crypto-article-2-apple-hig-alert.png" alt="Apple HIG Alert/Action Sheet 예시: A Short Title Is Best" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+<img src="/crypto-article-2/crypto-article-2-apple-hig-alert.png" alt="Apple HIG Alert/Action Sheet 예시: A Short Title Is Best" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
 
 반면 Material-UI(MUI)는 Material Design 원칙에 따라 Contained / Outlined / Text 세 가지 버튼 variant를 제공하여 문맥에 맞는 시각적 강조 수준을 조절한다. 기본 “Contained(채움)” 버튼은 배경색이 채워져 가장 높은 강조를 가지며, “Outlined”는 외곽선만 있어 중간 정도, “Text” 버튼은 배경 없이 글자만 있어 가장 낮은 강조를 나타낸다. 또한 MUI 버튼은 `color` prop으로 기본/보조 색상이나 에러 색상 등을 지정할 수 있어, Primary와 Secondary 역할 구분이나 Destructive(error color) 스타일도 쉽게 구현된다.
 
-<img src="/crypto-article-2-mui-button-variants.png" alt="MUI Button Variants: TEXT, CONTAINED, OUTLINED" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
+<img src="/crypto-article-2/crypto-article-2-mui-button-variants.png" alt="MUI Button Variants: TEXT, CONTAINED, OUTLINED" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
 
 Coinbase CDS의 버튼은 MUI와 유사하게 variant prop을 사용하지만 그 값으로 primary, secondary, tertiary, negative 네 가지를 명시적으로 제공한다. Primary는 화면 내 주된 액션에 (한 화면에 하나만 권장), Secondary는 동등한 복수 액션에, Tertiary는 어두운 배경에서의 반전(high-contrast) 용도로, Negative는 실행 취소 불가능한 파괴적 행동에 사용하도록 가이드한다. 또한 CDS는 `transparent` prop을 별도로 두어 어떤 variant에도 “배경 투명” 스타일을 적용할 수 있게 했다. 이를 통해 버튼의 강조도를 한 단계 낮추는 Ghost 버튼 스타일을 구현하며(컨테이너는 호버 등 상호작용 시에만 표시), MUI의 Text 버튼과 유사한 역할을 한다.
 
-<img src="/crypto-article-2-mui-button-colors.png" alt="MUI Button Colors: Primary, Secondary, Tertiary, Negative" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
+<img src="/crypto-article-2/crypto-article-2-mui-button-colors.png" alt="MUI Button Colors: Primary, Secondary, Tertiary, Negative" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
 
-<img src="/crypto-article-2-button-color-text.png" alt="Button Color Text: Primary, Secondary, Tertiary, Negative" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
+<img src="/crypto-article-2/crypto-article-2-button-color-text.png" alt="Button Color Text: Primary, Secondary, Tertiary, Negative" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
 
 **구조 및 상태 구현**
 
@@ -79,15 +79,15 @@ Modal은 현재 화면 위에 겹쳐 나타나 사용자의 주의를 집중시�
 
 Apple은 로그인 화면이나 새 항목 추가 화면 등을 이러한 모달 사례로 들며, 항상 취소 또는 완료 버튼을 배치해 사용자가 명시적으로 닫게 한다고 강조한다. 그리고 iPhone에서는 모달이 화면 전체를 덮으므로 상단에 내비게이션 바를 포함해 “취소”/“완료”를 배치하고, iPad에서는 폼시트 형태로 가운데 뜨는 등 플랫폼별 모달 형태도 HIG에 규정되어 있다.
 
-<img src="/crypto-article-2-apple-hig-action-sheet.png" alt="Apple HIG Action Sheet 예시" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
+<img src="/crypto-article-2/crypto-article-2-apple-hig-action-sheet.png" alt="Apple HIG Action Sheet 예시" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
 
 Material Design에서도 Modal 개념은 Dialog로 구체화되어 있다. Material 가이드에 따르면 “Dialog는 앱 콘텐츠 위에 나타나 중요 정보를 표시하거나 결정을 요구하며, 나타나는 동안 다른 기능을 모두 막는다”. 또한 “방해적이므로 필요한 경우에만 사용”하라고 명시한다[.](https://mui.com/material-ui/react-dialog/#:~:text=or%20a%20required%20action%20has,been%20taken) MUI에서는 `<Dialog>` 컴포넌트로 구현되어 있고, 이는 내부적으로 `<Modal>` 컴포넌트를 활용한다. MUI 가이드에는 “모달 다이얼로그를 만들려면 `Modal`을 직접 쓰기보다 `Dialog`를 사용하는 것이 좋다”라고 안내되어 있다. Dialog에는 제목(`<DialogTitle>`), 본문(`<DialogContent>`), 액션 버튼 영역(`<DialogActions>`)의 서브컴포넌트를 제공하여, 일관된 구조를 잡도록 했다[mui.com](https://mui.com/material-ui/react-dialog/#:~:text=Dialogs%20are%20implemented%20using%20a,collection%20of%20related%20components).
 
-<img src="/crypto-article-2-google-location-modal.png" alt="Google 위치 서비스 모달 다이얼로그" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
+<img src="/crypto-article-2/crypto-article-2-google-location-modal.png" alt="Google 위치 서비스 모달 다이얼로그" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
 
 Coinbase CDS에서도 Modal 컴포넌트를 구조적으로 나누었는데, `<ModalHeader>`, `<ModalBody>`, `<ModalFooter>` 세 부분으로 구성하여 사용하도록 되어 있다. 또한 CDS는 FullscreenModal과 Alert, Tray 등 몇 가지 변형을 제공한다. FullscreenModal은 모바일에서 전체 화면을 덮는 모달(아마 Apple의 기본 모달과 유사)이고, Alert는 경고용 간이 모달, Tray는 화면 하단에서 올라오는 일종의 바텀시트로 보인다. 이러한 분류는 Coinbase 디자인팀이 Web, Mobile을 아우르며 Modal 패턴을 세분화한 것이다. Apple도 UIAlertController에서 `.alert`(중앙 팝업)과 `.actionSheet`(하단 슬라이드) 두 스타일을 구분하며, CDS의 Alert와 Tray는 이와 일맥상통한다.
 
-<img src="/crypto-article-2-cds-modal-basic.png" alt="Coinbase CDS Basic Modal 예시" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
+<img src="/crypto-article-2/crypto-article-2-cds-modal-basic.png" alt="Coinbase CDS Basic Modal 예시" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
 
 **구조 및 기능**
 
@@ -121,7 +121,7 @@ Apple HIG의 "Charting Data" 섹션에서는 차트를 사용할 때 데이터�
 
 Coinbase CDS는 자사 서비스 전반에서 일관된 차트 스타일을 유지하기 위해 AreaChart 컴포넌트를 만들었다. 디자인적으로 Coinbase의 차트는 일반적으로 파란색/녹색 계열로 상승을 표시하고, 하락/음수는 붉은색으로 표시하는 규칙이 있다. CDS AreaChart는 기본적으로 이 규칙을 따르며, 음수 데이터가 포함될 경우 기준선(baseline)을 0으로 자동 조정하여 음영을 분리 표시한다. 또한 차트 내 여러 계열(series)을 겹칠 경우 투명도나 그래디언트를 사용해 가독성을 높인다. Coinbase 디자인팀은 차트의 애니메이션 효과와 상호작용(Marker, Scrubber)까지 디자인 시스템에 포함시켰는데, 예를 들어 차트 로드 시 선들이 서서히 그려지거나 값 변동에 따라 실시간 애니메이션되는 부분도 설정 가능하다. 이는 일반적인 UI 가이드에서 다루지 않는 상세로, Coinbase가 얼마나 크립토 UX에 최적화된 설계를 고민했는지 보여준다.
 
-<img src="/crypto-article-2-area-chart-negative-values.png" alt="Area Chart: Negative Values and Area Styles" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
+<img src="/crypto-article-2/crypto-article-2-area-chart-negative-values.png" alt="Area Chart: Negative Values and Area Styles" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
 
 
 **구조 및 Props**
@@ -132,17 +132,17 @@ Coinbase CDS AreaChart의 props를 살펴보면, 데이터 series 배열과 각 
 
 **명칭 및 기능 비교**
 
-<img src="/crypto-article-2-stocks-activity-apps.png" alt="Stocks 앱과 Activity 앱 스크린샷 비교" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<img src="/crypto-article-2/crypto-article-2-stocks-activity-apps.png" alt="Stocks 앱과 Activity 앱 스크린샷 비교" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
 
-<img src="/crypto-article-2-bar-charts.png" alt="Simple Bar Chart와 Stacked Bar Chart 비교" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<img src="/crypto-article-2/crypto-article-2-bar-charts.png" alt="Simple Bar Chart와 Stacked Bar Chart 비교" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
 
 명칭은 Coinbase가 `AreaChart`로 명확히 컴포넌트화한 반면 다른 시스템에는 특별한 이름이 없다. Material 가이드에서는 area 차트를 별도로 분류하지 않고 line chart의 한 형태로 본다. Apple도 영역형 차트/선형 차트를 구분하기보다 데이터 종류나 사용자 목적에 따른 차트 선택을 권장할 뿐이다. 기능에서는 CDS AreaChart가 도메인 특화 답게 범례(legend)나 툴팁은 없지만, 기간 선택기(PeriodSelector) 컴포넌트나 스크러버(Scrubber), 축(XAxis, YAxis) 컴포넌트를 별도로 제공한다. 예를 들어 Coinbase 앱의 가격 차트 밑에 1D/1W/1M/1Y 같은 기간 토글을 PeriodSelector로 구현하고, 그래프 위 손가락으로 슬라이드하면 해당 시점 값을 보여주는 것이 Scrubber이다. 이러한 구성 요소를 디자인 시스템에 포함한 것은, 일관된 상호작용 경험을 보장하려는 것이다. MUI X에도 Tooltip, Legend 모듈이 있어 차트에 적용 가능하나, Period selector나 scrubber는 범용 UI가 아니라서 제공되지 않는다. Apple은 차트 상호작용에 대해 “사용자가 탐색하도록 유도하라” 정도의 철학만 제시하고 구현은 앱별로 하도록 두고 있다.
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
-  <img src="/crypto-article-2-area-chart-scrubber-basics.png" alt="Area Chart Scrubber Basics" style="width: 100%; height: auto; display: block;" />
-  <img src="/crypto-article-2-area-chart-scrubber-pulsing.png" alt="Area Chart Scrubber Pulsing" style="width: 100%; height: auto; display: block;" />
-  <img src="/crypto-article-2-area-chart-scrubber-labels.png" alt="Area Chart Labels with BeaconLabelComponent" style="width: 100%; height: auto; display: block;" />
-  <img src="/crypto-article-2-area-chart-scrubber-fonts.png" alt="Area Chart Scrubber Fonts Customization" style="width: 100%; height: auto; display: block;" />
+  <img src="/crypto-article-2/crypto-article-2-area-chart-scrubber-basics.png" alt="Area Chart Scrubber Basics" style="width: 100%; height: auto; display: block;" />
+  <img src="/crypto-article-2/crypto-article-2-area-chart-scrubber-pulsing.png" alt="Area Chart Scrubber Pulsing" style="width: 100%; height: auto; display: block;" />
+  <img src="/crypto-article-2/crypto-article-2-area-chart-scrubber-labels.png" alt="Area Chart Labels with BeaconLabelComponent" style="width: 100%; height: auto; display: block;" />
+  <img src="/crypto-article-2/crypto-article-2-area-chart-scrubber-fonts.png" alt="Area Chart Scrubber Fonts Customization" style="width: 100%; height: auto; display: block;" />
 </div>
 
 **디자인 토큰 및 커스터마이징**
