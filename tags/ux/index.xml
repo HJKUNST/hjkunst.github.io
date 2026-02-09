@@ -6,8 +6,15 @@
     <description>Recent content in UX on Strawberry Fields</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jan 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 09 Feb 2026 12:00:00 +0900</lastBuildDate>
     <atom:link href="https://hjkunst.github.io/tags/ux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[퀘스트] 이용약관의 늪을 탈출하라: 10개의 UX 보스 몬스터</title>
+      <link>https://hjkunst.github.io/posts/2026-02-09-ux-agree/</link>
+      <pubDate>Mon, 09 Feb 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/posts/2026-02-09-ux-agree/</guid>
+      <description>&lt;h2 id=&#34;서론&#34;&gt;서론&lt;/h2&gt;&#xA;&lt;p&gt;이용약관에 동의하고 싶어는 일본에서 개발된 인디 게임으로, 2025년 12월 스팀에 출시되어 국내외 스트리머들 사이에서 폭발적인 인기를 얻었다. 이 게임은 겉보기엔 단순하다. 사용자는 단지 12개 조항의 이용약관에 &amp;lsquo;동의함&amp;rsquo; 버튼을 누르기만 하면 된다. 하지만 그 과정은 결코 단순하지 않다. 100가지 이상의 미니게임이 무작위로 등장하며, 각 게임은 사용자를 온갖 방법으로 방해한다. 버튼은 클릭 직전 위치를 바꾸고, 가짜 팝업이 화면을 가득 채우며, &amp;lsquo;동의안함&amp;rsquo;을 한 번이라도 누르면 모든 것이 초기화된다.&lt;/p&gt;&#xA;&lt;img src=&#34;https://hjkunst.github.io/260209/1.webp&#34; alt=&#34;이용약관에 동의하고 싶어 게임 스크린샷&#34; style=&#34;width: 100%; height: auto; display: block;&#34; /&gt;&#xA;&lt;p&gt;이 게임이 특별한 이유는 Windows XP의 루나 테마 UI를 완벽하게 재현하면서, 우리가 일상에서 마주하는 다크 패턴들을 극단적으로 풍자한다는 점이다. 실제 서비스에서 기업들은 이용자가 약관을 빨리 넘어가길 바라며 정보 구조를 설계한다. 이 게임은 그 반대 상황을 만들어, UX가 얼마나 &amp;lsquo;디자인된 행동&amp;rsquo;을 유도할 수 있는지를 역설적으로 드러낸다. 사용자 경험 디자인의 교과서라 불리는 존 야블론스키의 &amp;lsquo;UX/UI의 10가지 심리학 법칙&amp;rsquo;을 실제로 하나하나 짚어보기는 어렵다. 하지만 이 게임처럼 극단화된 사례를 통해 살펴보면, 각 법칙이 어떻게 작동하는지, 그리고 어떻게 악용될 수 있는지 살필 수 있다.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Crypto Article Week 2 | CDS Components</title>
       <link>https://hjkunst.github.io/posts/2026-01-05-crypto-article-2/</link>

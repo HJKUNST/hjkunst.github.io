@@ -220,7 +220,7 @@ CIE 1931 색도학(Colorimetry)은 인간의 시각 체계가 다양한 스펙�
             <h2 id="1-색을-수치로-표현한다는-것은-실제로-어떤-과정을-거치는가">1) 색을 수치로 표현한다는 것은 실제로 어떤 과정을 거치는가?</h2>
 <p>CIE 1931 색도학(Colorimetry)은 인간의 시각 체계가 다양한 스펙트럼 분포를 어떻게 색으로 인식하는지를 설명하기 위한 이론적·실험적 기반을 제공한다. 나뭇잎과 초록색 자동차처럼 겉보기에는 같은 색으로 보이지만 실제 반사 스펙트럼은 전혀 다른 경우를 상상해 보면, 같은 색 지각이 서로 다른 물리적 조건에서 발생할 수 있음을 알 수 있다. 이와 같이 서로 다른 스펙트럼 분포가 동일한 색 자극을 유발하는 현상을 메타메리즘(metamerism)이라고 하며, 색 재현의 핵심적인 개념이다.</p>
 <div style="text-align: center; margin: 1rem 0;">
-  <img src="/colorimetry2-1.webp" alt="Cone cell color response function" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+  <img src="/colorimetry-2/colorimetry2-1.webp" alt="Cone cell color response function" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
   <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">
     Fig 1. 인간 원추세포(S/M/L)의 파장별 상대 감응도 분포.
   </p>
@@ -232,7 +232,7 @@ CIE 1931 색도학(Colorimetry)은 인간의 시각 체계가 다양한 스펙�
 <p>이는 인간의 시각 체계가 파장에 따라 균등하게 반응하지 않는다는 점을 수치적으로 표현한 것이다. 예를 들어, 초록빛과 파란빛이 동일하게 ‘밝아 보인다면’, 실제로는 파란빛이 더 높은 복사휘도를 지닌 것이라는 의미다. 시각적 균등성과 물리적 균등성 사이의 간극을 이해하는 데 V(λ)는 중요한 기준이 되었다.</p>
 <p>다만, 1924년 버전의 V(λ)는 스펙트럼의 청색 영역에서 인간의 감도 반응을 과소평가한 것으로 이후 연구에서 밝혀졌다. 이는 후속 모델링과 보정을 통해 개선되어 왔으며, CIE 1931 색도학 모델은 이러한 광도 반응을 포함해 색지각 전반을 정량화한 최초의 종합적 체계로 자리잡았다.</p>
 <div style="text-align: center; margin: 1rem 0;">
-  <img src="/colorimetry2-2.webp" alt="CIE 1924 luminous efficiency function V(lambda)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+  <img src="/colorimetry-2/colorimetry2-2.webp" alt="CIE 1924 luminous efficiency function V(lambda)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
   <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 2. CIE 1924 광도 효율 함수 V(λ)와 파장에 따른 밝기 지각 특성.</p>
 </div>
 <hr>
@@ -243,19 +243,19 @@ CIE 1931 색도학(Colorimetry)은 인간의 시각 체계가 다양한 스펙�
 <p>이처럼 생성된 $\bar{x}(\lambda),\ \bar{y}(\lambda),\ \bar{z}(\lambda)$ 함수들은 인간의 색 일치 행동을 설명하기 위해 실험 결과를 수학적으로 재구성한 <strong>가상의 기본색 기반 색 일치 함수</strong>이다.</p>
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
   <div style="text-align: center;">
-    <img src="/colorimetry2-3.webp" alt="CIE 1931 Color Matching Functions (CMFs)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-3.webp" alt="CIE 1931 Color Matching Functions (CMFs)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 3. Wright–Guild 색 일치 실험의 개념적 구조.</p>
   </div>
   <div style="text-align: center;">
-    <img src="/colorimetry2-4.webp" alt="Wright–Guild color matching experiment" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-4.webp" alt="Wright–Guild color matching experiment" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 4. RGB 색 일치 함수에서 나타나는 음의 자극치 현상.</p>
   </div>
   <div style="text-align: center;">
-    <img src="/colorimetry2-5.webp" alt="Additional reference figure for CMF / chromaticity discussion" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-5.webp" alt="Additional reference figure for CMF / chromaticity discussion" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 6. CIE 1931 색 일치 함수의 실험적 도출 과정과 표준 관측자 모델.</p>
   </div>
   <div style="text-align: center;">
-    <img src="/colorimetry2-6.webp" alt="Additional reference figure for CMF / chromaticity discussion" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-6.webp" alt="Additional reference figure for CMF / chromaticity discussion" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 5. CIE 1931 색 일치 함수 x̄(λ), ȳ(λ), z̄(λ).</p>
   </div>
 </div>
@@ -289,7 +289,7 @@ $$</p>
 <p>위 정규화 과정을 단일 파장 λ에 대해 380nm부터 700nm까지 반복하면, 각 파장에 대한 (x, y) 좌표가 생성된다. 이 좌표들을 연결하면 색도도 상에서 외곽 경계선이 형성되며, 이를 스펙트럼 궤적(spectral locus)이라 부른다. 이 경계선은 단색광에 해당하는 색도이며, 곡선 아래쪽을 잇는 직선은 퍼플 라인(line of purples)이라 한다. 다음 그림은 그 예시를 보여준다.</p>
 <p><a href="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*cX02ZDqUrsdDGMUP./">예시 이미지 (spectral locus)</a></p>
 <div style="text-align: center; margin: 1rem 0;">
-  <img src="/colorimetry2-7.webp" alt="CIE 1931 chromaticity diagram spectral locus" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+  <img src="/colorimetry-2/colorimetry2-7.webp" alt="CIE 1931 chromaticity diagram spectral locus" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 8. XYZ 공간에서 단색광 스펙트럼이 형성하는 궤적.</p>
 </div>
 <p>색도도에서 삼자극치를 정규화한 (x, y) 좌표는 벡터의 방향만 남긴 단위 벡터(unit vector)로 해석할 수 있다. 세 값의 합이 1로 고정되므로, 처음 두 값만 알면 나머지 하나는 자동으로 구할 수 있다. 이는 차원 축소의 개념과도 관련된다.</p>
@@ -297,11 +297,11 @@ $$</p>
 <p><a href="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*dre7HQcxiUMBJiLT./">예시 이미지 (rg plane projection)</a></p>
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
   <div style="text-align: center;">
-    <img src="/colorimetry2-8.webp" alt="RGB rg-plane projection example" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-8.webp" alt="RGB rg-plane projection example" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 7. 3D → 2D 투영(rg plane projection) 예시</p>
   </div>
   <div style="text-align: center;">
-    <img src="/colorimetry2-9.webp" alt="Additional chromaticity / gamut reference figure" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-9.webp" alt="Additional chromaticity / gamut reference figure" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 9. rg 색도 평면과 RGB 색역(gamut) 표현.</p>
   </div>
 </div>
@@ -316,19 +316,19 @@ $$</p>
 <p>대부분의 색 보정이나 색온도 조절은 이러한 색 공간 내에서 특정 기준점, 즉 백색점(예: D65)을 중심으로 수행된다. 이 기준점은 색온도 곡선 상에 위치하며, 디스플레이에서의 색 균형을 조정하는 기준 역할을 한다.</p>
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
   <div style="text-align: center;">
-    <img src="/colorimetry2-10.webp" alt="Chromaticity / gamut reference figure" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-10.webp" alt="Chromaticity / gamut reference figure" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 10. CIE 1931 색도도 상의 색역(gamut) 비교: sRGB, Adobe RGB, DCI-P3.</p>
   </div>
   <div style="text-align: center;">
-    <img src="/colorimetry2-11.webp" alt="Chromaticity / gamut reference figure" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-11.webp" alt="Chromaticity / gamut reference figure" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 11. 디스플레이 장치의 RGB 기본색 좌표와 색역 삼각형 표현.</p>
   </div>
   <div style="text-align: center;">
-    <img src="/colorimetry2-12.webp" alt="Convert RGB chromaticity coordinates (r,g) to XYZ chromaticity coordinates (x,y)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-12.webp" alt="Convert RGB chromaticity coordinates (r,g) to XYZ chromaticity coordinates (x,y)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 12. RGB 색도 좌표(r, g)를 XYZ 색도 좌표(x, y)로 변환하는 색공간 재정의 과정.</p>
   </div>
   <div style="text-align: center;">
-    <img src="/colorimetry2-13.webp" alt="Additional reference figure for XYZ / chromaticity discussion" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <img src="/colorimetry-2/colorimetry2-13.webp" alt="Additional reference figure for XYZ / chromaticity discussion" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
     <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 13. 가상의 기본색(Imaginary Primaries)을 사용한 XYZ 색 공간의 구성 원리.</p>
   </div>
 </div>
@@ -364,7 +364,7 @@ $$
 <p>이 변환을 통해 얻어진 XYZ 색 공간에서는 RGB CMF가 모두 양의 값으로 나타나며, 색을 표현할 때 음수 자극치 없이도 설명이 가능하다. 이는 실제 디스플레이 장치의 색 관리 시스템에서 매우 중요한 특성이다. 특히 Y 자극치는 밝기의 대표로 사용되어 휘도 기반의 연산이나 HDR 톤 매핑에서 기준 값으로 활용된다.</p>
 <h3 id="색도도chromaticity-diagram와-가시-색-영역의-시각화">색도도(Chromaticity Diagram)와 가시 색 영역의 시각화</h3>
 <div style="text-align: center; margin: 1rem 0;">
-  <img src="/colorimetry2-14.webp" alt="CIE 1931 Chromaticity Diagram (xy)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+  <img src="/colorimetry-2/colorimetry2-14.webp" alt="CIE 1931 Chromaticity Diagram (xy)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
   <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 14. CIE 1931 색도도(xy)와 가시 색 영역의 시각화.</p>
 </div>
 <p>CIE 1931 색도도(xy)는 인간 시각계의 평균적 반응을 모델링한 표준 관측자 기준으로(2° 조건에서 측정된),  <strong>가시광 스펙트럼의 색도 분포를 2차원으로 투영한 참조 다이어그램</strong>이다. 이 다이어그램의 가장자리, 즉 말발굽 형태를 이루는 곡선은 파장 λ(400–700nm)에 따른 순수 단색광(spectral colors) 에 해당하며, 이 곡선은 가시광선에서 가능한 최대 포화도의 색들을 나타낸다.</p>
@@ -372,7 +372,7 @@ $$
 <hr>
 <h3 id="cie-1976-u-v-균등-색도도와-색-지각의-개선">CIE 1976 (u′, v′) 균등 색도도와 색 지각의 개선</h3>
 <div style="text-align: center; margin: 1rem 0;">
-  <img src="/colorimetry2-15.webp" alt="CIE 1976 (u′, v′) Uniform Chromaticity Scale Diagram" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+  <img src="/colorimetry-2/colorimetry2-15.webp" alt="CIE 1976 (u′, v′) Uniform Chromaticity Scale Diagram" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
   <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 15. CIE 1976 (u′, v′) 균등 색도도와 지각 균등성 개선 효과.</p>
 </div>
 <p>기존 CIE 1931 색도도는 색좌표 공간을 효과적으로 시각화하는 데 기여했지만, 한계도 분명했다. 특히 초록색 영역이 지나치게 확장되어 있고, 동일한 물리적 색 차이가 색도도 상에서는 거리 왜곡으로 나타나는 문제가 존재했다. 즉, 사람이 지각하는 색의 차이와 xy 색도도에서의 거리 간의 불일치가 발생한 것이다. 이 문제는 색상 간 등색 영역(MacAdam ellipse) 의 크기 차이를 통해 명확히 드러나며, 실제로 초록색 근방에서는 하나의 타원이 파란색보다 10배 이상 크기도 한다.</p>
