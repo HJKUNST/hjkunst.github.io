@@ -2,19 +2,27 @@
 {{ $description := .Summary | default .Content }}
 {{ $image := "" }}
 {{ if .Params.image }}
-  {{ $image = printf "%s%s" .Site.BaseURL (strings.TrimPrefix "/" .Params.image) }}
+{{ $image = printf "%s%s" .Site.BaseURL (strings.TrimPrefix "/" .Params.image) }}
 {{ else }}
-  {{ $image = printf "%s%s" .Site.BaseURL "images/og-image.png" }}
+{{ $image = printf "%s%s" .Site.BaseURL "images/og-image.png" }}
 {{ end }}
 
 
 <meta charset="utf-8" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YS9Z2BGZ1Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-YS9Z2BGZ1Q');
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="index, follow" />
-<meta
-  name="googlebot"
-  content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
-/>
+<meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
 
 <meta name="description" content="{{ $description }}" />
 
@@ -42,11 +50,11 @@
 <script>
   MathJax = {
     tex: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$'], ['\\[','\\]']],
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
       processEscapes: true,
       processEnvironments: true,
-      packages: {'[+]': ['ams']}
+      packages: { '[+]': ['ams'] }
     },
     options: {
       skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
@@ -55,11 +63,11 @@
 </script>
 <script id="MathJax-script" async
   {{ if .Site.Params.useCDN | default false -}}
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
   {{- else -}}
-  src="{{ absURL "js/MathJax.js" }}">
+  src="{{ absURL "js/MathJax.js" }}"
   {{- end -}}
-</script>
+></script>
 {{ end }}
 
 {{ partialCached "head/css.html" . }}
