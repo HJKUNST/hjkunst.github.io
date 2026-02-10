@@ -1,6 +1,11 @@
 {{ $title := .Title | default site.Title }}
 {{ $description := .Summary | default .Content }}
-{{ $image := printf "%s%s" .Site.BaseURL "images/og-image.png" }}
+{{ $image := "" }}
+{{ if .Params.image }}
+  {{ $image = printf "%s%s" .Site.BaseURL (strings.TrimPrefix "/" .Params.image) }}
+{{ else }}
+  {{ $image = printf "%s%s" .Site.BaseURL "images/og-image.png" }}
+{{ end }}
 
 
 <meta charset="utf-8" />
