@@ -15,24 +15,39 @@
 <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
   <article>
     <div class="xl:divide-y xl:divide-gray-200">
-      <header class="pt-6 xl:pb-6">
-        <div class="space-y-1 text-center">
-          <dl class="space-y-10">
+      <header class="pt-16 xl:pb-16">
+        <div class="text-center">
+          <div class="article-meta-group">
+            <dl>
+              <div>
+                <dt class="sr-only">Published on</dt>
+                <dd class="text-base font-medium leading-6 text-gray-500">
+                  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+                  {{ $dateHuman := .Date | time.Format ":date_full" }}
+                  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+                </dd>
+              </div>
+            </dl>
             <div>
-              <dt class="sr-only">Published on</dt>
-              <dd class="text-base font-medium leading-6 text-gray-500">
-                {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-                {{ $dateHuman := .Date | time.Format ":date_full" }}
-                <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
-              </dd>
+              <h1
+                class="text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-3xl sm:leading-9 md:text-4xl md:leading-10">
+                <div>{{ .Title }}</div>
+              </h1>
             </div>
-          </dl>
-          <div>
-            <h1
-              class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
-              <div>{{ .Title }}</div>
-            </h1>
+            {{ if .Params.tags }}
+            <div class="article-tag-row flex flex-wrap items-center justify-center gap-3">
+              {{ range .Params.tags }}
+              <a href="/tags/{{ . | urlize }}" class="tag-chip">{{ . }}</a>
+              {{ end }}
+            </div>
+            {{ end }}
           </div>
+          {{ if .Params.image }}
+          <div class="article-meta-to-banner article-banner-wrap overflow-hidden">
+            <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}"
+              class="article-banner-image h-auto w-full object-cover" />
+          </div>
+          {{ end }}
         </div>
       </header>
 
@@ -40,7 +55,7 @@
         <aside class="hidden xl:block xl:col-start-1 xl:row-start-1">
           <div class="sticky top-24 space-y-8">
             {{- if .Fragments.Headings }}
-            <div class="py-4">
+            <div class="py-10">
               <h2 class="text-xs uppercase tracking-wide text-gray-500">
                 Table of Contents
               </h2>
@@ -49,12 +64,14 @@
                 <ul class="space-y-3">
                   {{- range .Headings }}
                   <li class="text-sm">
-                    <a href="#{{ anchorize .ID }}" class="text-indigo-500 hover:text-indigo-600">{{ .Title | htmlUnescape }}</a>
+                    <a href="#{{ anchorize .ID }}" class="text-indigo-500 hover:text-indigo-600">{{ .Title |
+                      htmlUnescape }}</a>
                     {{- if .Headings }}
                     <ul class="ml-4 mt-2 space-y-2">
                       {{- range .Headings }}
                       <li class="text-sm">
-                        <a href="#{{ anchorize .ID }}" class="text-indigo-500 hover:text-indigo-600">{{ .Title | htmlUnescape }}</a>
+                        <a href="#{{ anchorize .ID }}" class="text-indigo-500 hover:text-indigo-600">{{ .Title |
+                          htmlUnescape }}</a>
                       </li>
                       {{- end }}
                     </ul>
@@ -87,20 +104,6 @@
         </div>
 
         <footer class="xl:col-start-1 xl:col-span-4">
-          <div class="divide-gray-200 text-sm font-medium leading-5 xl:divide-y">
-            <div class="py-4 xl:py-8">
-              <h2 class="text-xs uppercase tracking-wide text-gray-500">
-                Tags
-              </h2>
-              <div class="flex flex-wrap mt-2">
-                {{ range .Params.tags }}
-                <a href="/tags/{{ . | urlize }}"
-                  class="mr-3 text-sm font-medium uppercase text-indigo-500 hover:text-indigo-600">{{ . }}</a>
-                {{ end }}
-              </div>
-            </div>
-          </div>
-
           <div class="pt-4 xl:pt-8">
             <a class="text-indigo-500 hover:text-indigo-600" aria-label="Back to the list" href="/">← Back to the
               list</a>

@@ -1,6 +1,6 @@
 baseURL = 'https://hjkunst.github.io/'
 languageCode = 'en-us'
-title = 'Strawberry Fields'
+title = 'Strawberry Fields — Pastoral Tech Notes by @lkkunst'
 
 theme = 'hugo-discaptive'
 
@@ -29,7 +29,7 @@ theme = 'hugo-discaptive'
 [build]
   writeStats = false
   buildFuture = true
-
+  
 [minify]
   disableCSS = false
   disableHTML = false
