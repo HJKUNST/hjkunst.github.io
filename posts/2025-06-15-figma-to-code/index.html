@@ -59,7 +59,7 @@ Cursor AI와 Figma 파일을 연동시켜서, 디자인 리소스를 바로 코�
 
 개발 공수가 두 배가 되지는 않을까? lovable과 v0에서는 코드만 던져주는 느낌이라 실제 프로덕션에 적용하고 싶지 않았다. 디자인이란 결국 프로덕트에서 감성적인 보완점을 주는 역할을 빼놓을 수 없는데, 트렌드와 간결함에만 충실하고 친화적이지 않았다." />
 <meta property="og:url" content="https://hjkunst.github.io/posts/2025-06-15-figma-to-code/" />
-<meta property="og:site_name" content="Strawberry Fields" />
+<meta property="og:site_name" content="Strawberry Fields — Pastoral Tech Notes by @lkkunst" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://hjkunst.github.io/images/og-image.png" />
 
@@ -118,29 +118,31 @@ Cursor AI와 Figma 파일을 연동시켜서, 디자인 리소스를 바로 코�
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-
-      <link
+<link
         rel="stylesheet"
         href="/css/output.min.e6ea1a713ee8508a7ae1581f36a75a67ceb7390eaea21503ce3bade6cfabca8c.css"
         integrity="sha256-5uoacT7oUIp64VgfNqdaZ863OQ6uohUDzjut5s&#43;ryow="
         crossorigin="anonymous"
+      /><link
+        rel="stylesheet"
+        href="/css/custom.min.7d3ede83c330224a7f9f0a4504660007ccba6bdc7215a172ccd457cae468b9b0.css"
+        integrity="sha256-fT7eg8MwIkp/nwpFBGYAB8y6a9xyFaFyzNRXyuRoubA="
+        crossorigin="anonymous"
       />
-
   </head>
   <body class="bg-white text-black antialiased">
-    <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-      <div class="flex h-screen flex-col justify-between font-sans">
-        <header
-          class="flex items-center w-full bg-white justify-between py-10 sticky top-0 z-50"
-        >
-          <a class="group break-words" aria-label="Strawberry Fields" href="/">
+    <div class="flex h-screen flex-col justify-between font-sans">
+      <header class="site-header sticky top-0 z-50" style="background: rgba(228, 228, 228, 0.1); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="flex items-center justify-between py-4">
+            <a class="group break-words" aria-label="Strawberry Fields — Pastoral Tech Notes by @lkkunst" href="/">
   <div class="flex items-center justify-between">
     <div class="sm:mr-3">
       <img src="/images/logo.svg" width="32" height="32" alt="Logo Image" />
     </div>
 
     <div class="hidden text-2xl font-semibold sm:block group-hover:underline">
-      <span>Strawberry Fields</span>
+      <span>Strawberry Fields — Pastoral Tech Notes by @lkkunst</span>
     </div>
   </div>
 </a>
@@ -181,8 +183,13 @@ Cursor AI와 Figma 파일을 연동시켜서, 디자인 리소스를 바로 코�
   </div>
 </div>
 
-        </header>
-        <main class="mb-auto">
+          </div>
+        </div>
+      </header>
+      
+      <main class="mb-auto">
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          
 <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -199,31 +206,35 @@ Cursor AI와 Figma 파일을 연동시켜서, 디자인 리소스를 바로 코�
 <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
   <article>
     <div class="xl:divide-y xl:divide-gray-200">
-      <header class="pt-6 xl:pb-6">
-        <div class="space-y-1 text-center">
-          <dl class="space-y-10">
+      <header class="pt-16 xl:pb-16">
+        <div class="text-center">
+          <div class="article-meta-group">
+            <dl>
+              <div>
+                <dt class="sr-only">Published on</dt>
+                <dd class="text-base font-medium leading-6 text-gray-500">
+                  
+                  
+                  <time datetime="2025-06-15T02:04:00&#43;09:00">Sunday, June 15, 2025</time>
+                </dd>
+              </div>
+            </dl>
             <div>
-              <dt class="sr-only">Published on</dt>
-              <dd class="text-base font-medium leading-6 text-gray-500">
-                
-                
-                <time datetime="2025-06-15T02:04:00&#43;09:00">Sunday, June 15, 2025</time>
-              </dd>
+              <h1
+                class="text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-3xl sm:leading-9 md:text-4xl md:leading-10">
+                <div>디자인에서 구현까지: Figma와 Cursor MCP를 연결해봤다 (기본편)</div>
+              </h1>
             </div>
-          </dl>
-          <div>
-            <h1
-              class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
-              <div>디자인에서 구현까지: Figma와 Cursor MCP를 연결해봤다 (기본편)</div>
-            </h1>
+            
           </div>
+          
         </div>
       </header>
 
       <div class="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0">
         <aside class="hidden xl:block xl:col-start-1 xl:row-start-1">
           <div class="sticky top-24 space-y-8">
-            <div class="py-4">
+            <div class="py-10">
               <h2 class="text-xs uppercase tracking-wide text-gray-500">
                 Table of Contents
               </h2>
@@ -419,17 +430,6 @@ Cursor Chat을 열고 다음과 같이 입력:</p>
         </div>
 
         <footer class="xl:col-start-1 xl:col-span-4">
-          <div class="divide-gray-200 text-sm font-medium leading-5 xl:divide-y">
-            <div class="py-4 xl:py-8">
-              <h2 class="text-xs uppercase tracking-wide text-gray-500">
-                Tags
-              </h2>
-              <div class="flex flex-wrap mt-2">
-                
-              </div>
-            </div>
-          </div>
-
           <div class="pt-4 xl:pt-8">
             <a class="text-indigo-500 hover:text-indigo-600" aria-label="Back to the list" href="/">← Back to the
               list</a>
@@ -439,10 +439,14 @@ Cursor Chat을 열고 다음과 같이 입력:</p>
     </div>
   </article>
 </section>
-</main>
-        <footer><div class="mt-16 flex flex-col items-center">
+
+        </section>
+      </main>
+      <footer>
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="mt-16 flex flex-col items-center">
   <div class="mb-2 text-sm text-gray-500">
-    <span>(C) 2026. Strawberry Fields all rights reserved.</span>
+    <span>(C) 2026. Strawberry Fields — Pastoral Tech Notes by @lkkunst all rights reserved.</span>
   </div>
 
   <div class="mb-8 text-sm text-gray-500">
@@ -455,8 +459,9 @@ Cursor Chat을 열고 다음과 같이 입력:</p>
     >
   </div>
 </div>
-</footer>
-      </div>
-    </section>
+
+        </section>
+      </footer>
+    </div>
   </body>
 </html>

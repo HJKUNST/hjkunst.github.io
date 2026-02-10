@@ -37,7 +37,7 @@ CIE 1931 색도학(Colorimetry)은 인간의 시각 체계가 다양한 스펙�
 <meta property="og:description" content="1) 색을 수치로 표현한다는 것은 실제로 어떤 과정을 거치는가?
 CIE 1931 색도학(Colorimetry)은 인간의 시각 체계가 다양한 스펙트럼 분포를 어떻게 색으로 인식하는지를 설명하기 위한 이론적·실험적 기반을 제공한다. 나뭇잎과 초록색 자동차처럼 겉보기에는 같은 색으로 보이지만 실제 반사 스펙트럼은 전혀 다른 경우를 상상해 보면, 같은 색 지각이 서로 다른 물리적 조건에서 발생할 수 있음을 알 수 있다. 이와 같이 서로 다른 스펙트럼 분포가 동일한 색 자극을 유발하는 현상을 메타메리즘(metamerism)이라고 하며, 색 재현의 핵심적인 개념이다." />
 <meta property="og:url" content="https://hjkunst.github.io/posts/2026-01-29-colorimetry-2/" />
-<meta property="og:site_name" content="Strawberry Fields" />
+<meta property="og:site_name" content="Strawberry Fields — Pastoral Tech Notes by @lkkunst" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://hjkunst.github.io/images/og-image.png" />
 
@@ -85,29 +85,31 @@ CIE 1931 색도학(Colorimetry)은 인간의 시각 체계가 다양한 스펙�
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-
-      <link
+<link
         rel="stylesheet"
         href="/css/output.min.e6ea1a713ee8508a7ae1581f36a75a67ceb7390eaea21503ce3bade6cfabca8c.css"
         integrity="sha256-5uoacT7oUIp64VgfNqdaZ863OQ6uohUDzjut5s&#43;ryow="
         crossorigin="anonymous"
+      /><link
+        rel="stylesheet"
+        href="/css/custom.min.7d3ede83c330224a7f9f0a4504660007ccba6bdc7215a172ccd457cae468b9b0.css"
+        integrity="sha256-fT7eg8MwIkp/nwpFBGYAB8y6a9xyFaFyzNRXyuRoubA="
+        crossorigin="anonymous"
       />
-
   </head>
   <body class="bg-white text-black antialiased">
-    <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-      <div class="flex h-screen flex-col justify-between font-sans">
-        <header
-          class="flex items-center w-full bg-white justify-between py-10 sticky top-0 z-50"
-        >
-          <a class="group break-words" aria-label="Strawberry Fields" href="/">
+    <div class="flex h-screen flex-col justify-between font-sans">
+      <header class="site-header sticky top-0 z-50" style="background: rgba(228, 228, 228, 0.1); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="flex items-center justify-between py-4">
+            <a class="group break-words" aria-label="Strawberry Fields — Pastoral Tech Notes by @lkkunst" href="/">
   <div class="flex items-center justify-between">
     <div class="sm:mr-3">
       <img src="/images/logo.svg" width="32" height="32" alt="Logo Image" />
     </div>
 
     <div class="hidden text-2xl font-semibold sm:block group-hover:underline">
-      <span>Strawberry Fields</span>
+      <span>Strawberry Fields — Pastoral Tech Notes by @lkkunst</span>
     </div>
   </div>
 </a>
@@ -148,8 +150,13 @@ CIE 1931 색도학(Colorimetry)은 인간의 시각 체계가 다양한 스펙�
   </div>
 </div>
 
-        </header>
-        <main class="mb-auto">
+          </div>
+        </div>
+      </header>
+      
+      <main class="mb-auto">
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          
 <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -166,31 +173,43 @@ CIE 1931 색도학(Colorimetry)은 인간의 시각 체계가 다양한 스펙�
 <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
   <article>
     <div class="xl:divide-y xl:divide-gray-200">
-      <header class="pt-6 xl:pb-6">
-        <div class="space-y-1 text-center">
-          <dl class="space-y-10">
+      <header class="pt-16 xl:pb-16">
+        <div class="text-center">
+          <div class="article-meta-group">
+            <dl>
+              <div>
+                <dt class="sr-only">Published on</dt>
+                <dd class="text-base font-medium leading-6 text-gray-500">
+                  
+                  
+                  <time datetime="2026-01-29T12:00:00&#43;09:00">Thursday, January 29, 2026</time>
+                </dd>
+              </div>
+            </dl>
             <div>
-              <dt class="sr-only">Published on</dt>
-              <dd class="text-base font-medium leading-6 text-gray-500">
-                
-                
-                <time datetime="2026-01-29T12:00:00&#43;09:00">Thursday, January 29, 2026</time>
-              </dd>
+              <h1
+                class="text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-3xl sm:leading-9 md:text-4xl md:leading-10">
+                <div>Colorimetry 2 | CIE 1931: 색공간</div>
+              </h1>
             </div>
-          </dl>
-          <div>
-            <h1
-              class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
-              <div>Colorimetry 2 | CIE 1931: 색공간</div>
-            </h1>
+            
+            <div class="article-tag-row flex flex-wrap items-center justify-center gap-3">
+              
+              <a href="/tags/colorimetry" class="tag-chip">Colorimetry</a>
+              
+              <a href="/tags/science" class="tag-chip">Science</a>
+              
+            </div>
+            
           </div>
+          
         </div>
       </header>
 
       <div class="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0">
         <aside class="hidden xl:block xl:col-start-1 xl:row-start-1">
           <div class="sticky top-24 space-y-8">
-            <div class="py-4">
+            <div class="py-10">
               <h2 class="text-xs uppercase tracking-wide text-gray-500">
                 Table of Contents
               </h2>
@@ -248,9 +267,12 @@ CIE 1931 색도학(Colorimetry)은 인간의 시각 체계가 다양한 스펙�
 <hr>
 <h2 id="3-색-영역-그래프-제대로-읽기-cie-1931-xy">3) “색 영역 그래프” 제대로 읽기: CIE 1931 xy</h2>
 <p>인간의 시각은 다양한 파장으로 구성된 빛의 스펙트럼 $I(\lambda)$를 받아들이며, 이를 색으로 인지한다. 이 과정을 수학적으로 정형화하기 위해 CIE 1931 표준 관측자 함수가 등장했다. 이때 사용되는 세 개의 색 일치 함수(color matching functions, CMFs)는 각각 $\bar{x}(\lambda),\ \bar{y}(\lambda),\ \bar{z}(\lambda)$이며, 이는 인간이 인식할 수 있는 모든 색을 세 개의 가상의 기본색(Imaginary Primaries)으로 표현할 수 있도록 구성된 함수들이다.</p>
-<p>해당 함수들은 2도 시야 조건에서 다수의 피험자들을 대상으로 한 ‘조건등색실험(Wright-Guild Color Matching Experiments)’을 통해 도출되었다. 실험 방식은 10nm 간격으로 기준 파장을 설정하고, 세 가지 기본 광원—빨강(700nm), 초록(546.1nm), 파랑(435.8nm)—의 강도를 조정하여 기준색과 동일하게 보이도록 하는 조합을 찾는 방식이었다. 피험자는 이 세 가지 단색광을 혼합하여 기준색과 같다고 느껴지는 조합을 만들어야 했고, 그 조합을 수치화한 것이 삼자극치(tristimulus values)이다.</p>
-<p>그러나 실험 결과, 일부 파장에서는 RGB 기본색의 양수 조합만으로는 기준색을 구현할 수 없었고, 이에 따라 음의 값이 도입되었다. 예를 들어 520nm 근처의 밝은 녹색은 빨강을 음의 값으로 사용해야만 표현이 가능했으며, 이처럼 RGB로는 재현할 수 없는 영역을 정량적으로 설명하기 위해 음의 빛 개념이 사용되었다. 이러한 결과는 실제로 색을 정확히 맞추기 위해 기준색이 아닌 다른 쪽에 음의 광원을 추가하는 방식으로 해결되었다.</p>
-<p>이처럼 생성된 $\bar{x}(\lambda),\ \bar{y}(\lambda),\ \bar{z}(\lambda)$ 함수들은 인간의 색 일치 행동을 설명하기 위해 실험 결과를 수학적으로 재구성한 <strong>가상의 기본색 기반 색 일치 함수</strong>이다.</p>
+<pre><code>해당 함수들은 2도 시야 조건에서 다수의 피험자들을 대상으로 한 ‘조건등색실험(Wright-Guild Color Matching Experiments)’을 통해 도출되었다. 실험 방식은 10nm 간격으로 기준 파장을 설정하고, 세 가지 기본 광원—빨강(700nm), 초록(546.1nm), 파랑(435.8nm)—의 강도를 조정하여 기준색과 동일하게 보이도록 하는 조합을 찾는 방식이었다. 피험자는 이 세 가지 단색광을 혼합하여 기준색과 같다고 느껴지는 조합을 만들어야 했고, 그 조합을 수치화한 것이 삼자극치(tristimulus values)이다.
+
+그러나 실험 결과, 일부 파장에서는 RGB 기본색의 양수 조합만으로는 기준색을 구현할 수 없었고, 이에 따라 음의 값이 도입되었다. 예를 들어 520nm 근처의 밝은 녹색은 빨강을 음의 값으로 사용해야만 표현이 가능했으며, 이처럼 RGB로는 재현할 수 없는 영역을 정량적으로 설명하기 위해 음의 빛 개념이 사용되었다. 이러한 결과는 실제로 색을 정확히 맞추기 위해 기준색이 아닌 다른 쪽에 음의 광원을 추가하는 방식으로 해결되었다.
+
+이처럼 생성된 $\bar{x}(\lambda),\ \bar{y}(\lambda),\ \bar{z}(\lambda)$ 함수들은 인간의 색 일치 행동을 설명하기 위해 실험 결과를 수학적으로 재구성한 **가상의 기본색 기반 색 일치 함수**이다.
+</code></pre>
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
   <div style="text-align: center;">
     <img src="/colorimetry-2/colorimetry2-3.webp" alt="CIE 1931 Color Matching Functions (CMFs)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
@@ -407,23 +429,6 @@ $$
         </div>
 
         <footer class="xl:col-start-1 xl:col-span-4">
-          <div class="divide-gray-200 text-sm font-medium leading-5 xl:divide-y">
-            <div class="py-4 xl:py-8">
-              <h2 class="text-xs uppercase tracking-wide text-gray-500">
-                Tags
-              </h2>
-              <div class="flex flex-wrap mt-2">
-                
-                <a href="/tags/colorimetry"
-                  class="mr-3 text-sm font-medium uppercase text-indigo-500 hover:text-indigo-600">Colorimetry</a>
-                
-                <a href="/tags/science"
-                  class="mr-3 text-sm font-medium uppercase text-indigo-500 hover:text-indigo-600">Science</a>
-                
-              </div>
-            </div>
-          </div>
-
           <div class="pt-4 xl:pt-8">
             <a class="text-indigo-500 hover:text-indigo-600" aria-label="Back to the list" href="/">← Back to the
               list</a>
@@ -433,10 +438,14 @@ $$
     </div>
   </article>
 </section>
-</main>
-        <footer><div class="mt-16 flex flex-col items-center">
+
+        </section>
+      </main>
+      <footer>
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="mt-16 flex flex-col items-center">
   <div class="mb-2 text-sm text-gray-500">
-    <span>(C) 2026. Strawberry Fields all rights reserved.</span>
+    <span>(C) 2026. Strawberry Fields — Pastoral Tech Notes by @lkkunst all rights reserved.</span>
   </div>
 
   <div class="mb-8 text-sm text-gray-500">
@@ -449,8 +458,9 @@ $$
     >
   </div>
 </div>
-</footer>
-      </div>
-    </section>
+
+        </section>
+      </footer>
+    </div>
   </body>
 </html>

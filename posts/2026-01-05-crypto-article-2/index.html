@@ -37,7 +37,7 @@
 <meta property="og:description" content="과정
 이 글에서는 디자인 시스템의 구성 요소를 실제로 분석하면서 의사 결정 과정에 중점을 둔다. 포트폴리오에 포함할 코드 스니펫 역시 구현 결과물보다는 “왜 이렇게 구현했는가” 하는 결정 이유를 드러내는 범위로 제한하였다. 예를 들어, 특정 스타일 차이를 별도 컴포넌트가 아니라 prop으로 분리한 이유, 여러 스타일 변형을 variant로 설계한 이유, 혹은 디자인 토큰을 직접 참조하지 않고 간접적으로 사용하도록 한 배경 등을 중점적으로 해설한다. 이를 위해 Apple Human Interface Guidelines(HIG), Material-UI(MUI), Coinbase Design System(CDS) 세 가지 디자인 시스템을 Button, Text Input, Modal의 공통 컴포넌트와 CDS에만 있는 AreaChart 컴포넌트를 중심으로 비교하였다. 각 컴포넌트를 디자인 관점과 코드 구현 관점에서 분석하면서, 디자인 토큰 활용, variant 구조, 상태(State) 구성, 접근성 처리 방식 등의 구체 요소를 상세히 정리한다. 분석 방식은 논문 &ldquo;모바일 운영체제별 GUI 컴포넌트의 사용성 비교 분석을 위한 프레임워크&quot;에서 제안된 분류처럼, 공통 구조, 명칭상의 차이, 기능상의 차이 관점으로 내용을 분류하여 서술한다. 마지막으로 이러한 비교 분석 과정을 통해 얻은 교훈과 학습 효과를 정리하고, 디자인-개발 협업에 주는 시사점을 실용적인 결론으로 제시한다." />
 <meta property="og:url" content="https://hjkunst.github.io/posts/2026-01-05-crypto-article-2/" />
-<meta property="og:site_name" content="Strawberry Fields" />
+<meta property="og:site_name" content="Strawberry Fields — Pastoral Tech Notes by @lkkunst" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://hjkunst.github.io/images/og-image.png" />
 
@@ -85,29 +85,31 @@
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-
-      <link
+<link
         rel="stylesheet"
         href="/css/output.min.e6ea1a713ee8508a7ae1581f36a75a67ceb7390eaea21503ce3bade6cfabca8c.css"
         integrity="sha256-5uoacT7oUIp64VgfNqdaZ863OQ6uohUDzjut5s&#43;ryow="
         crossorigin="anonymous"
+      /><link
+        rel="stylesheet"
+        href="/css/custom.min.7d3ede83c330224a7f9f0a4504660007ccba6bdc7215a172ccd457cae468b9b0.css"
+        integrity="sha256-fT7eg8MwIkp/nwpFBGYAB8y6a9xyFaFyzNRXyuRoubA="
+        crossorigin="anonymous"
       />
-
   </head>
   <body class="bg-white text-black antialiased">
-    <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-      <div class="flex h-screen flex-col justify-between font-sans">
-        <header
-          class="flex items-center w-full bg-white justify-between py-10 sticky top-0 z-50"
-        >
-          <a class="group break-words" aria-label="Strawberry Fields" href="/">
+    <div class="flex h-screen flex-col justify-between font-sans">
+      <header class="site-header sticky top-0 z-50" style="background: rgba(228, 228, 228, 0.1); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="flex items-center justify-between py-4">
+            <a class="group break-words" aria-label="Strawberry Fields — Pastoral Tech Notes by @lkkunst" href="/">
   <div class="flex items-center justify-between">
     <div class="sm:mr-3">
       <img src="/images/logo.svg" width="32" height="32" alt="Logo Image" />
     </div>
 
     <div class="hidden text-2xl font-semibold sm:block group-hover:underline">
-      <span>Strawberry Fields</span>
+      <span>Strawberry Fields — Pastoral Tech Notes by @lkkunst</span>
     </div>
   </div>
 </a>
@@ -148,8 +150,13 @@
   </div>
 </div>
 
-        </header>
-        <main class="mb-auto">
+          </div>
+        </div>
+      </header>
+      
+      <main class="mb-auto">
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          
 <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -166,31 +173,45 @@
 <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
   <article>
     <div class="xl:divide-y xl:divide-gray-200">
-      <header class="pt-6 xl:pb-6">
-        <div class="space-y-1 text-center">
-          <dl class="space-y-10">
+      <header class="pt-16 xl:pb-16">
+        <div class="text-center">
+          <div class="article-meta-group">
+            <dl>
+              <div>
+                <dt class="sr-only">Published on</dt>
+                <dd class="text-base font-medium leading-6 text-gray-500">
+                  
+                  
+                  <time datetime="2026-01-05T12:00:00&#43;09:00">Monday, January 5, 2026</time>
+                </dd>
+              </div>
+            </dl>
             <div>
-              <dt class="sr-only">Published on</dt>
-              <dd class="text-base font-medium leading-6 text-gray-500">
-                
-                
-                <time datetime="2026-01-05T12:00:00&#43;09:00">Monday, January 5, 2026</time>
-              </dd>
+              <h1
+                class="text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-3xl sm:leading-9 md:text-4xl md:leading-10">
+                <div>Crypto Article Week 2 | CDS Components</div>
+              </h1>
             </div>
-          </dl>
-          <div>
-            <h1
-              class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
-              <div>Crypto Article Week 2 | CDS Components</div>
-            </h1>
+            
+            <div class="article-tag-row flex flex-wrap items-center justify-center gap-3">
+              
+              <a href="/tags/design-system" class="tag-chip">Design System</a>
+              
+              <a href="/tags/ux" class="tag-chip">UX</a>
+              
+              <a href="/tags/crypto" class="tag-chip">Crypto</a>
+              
+            </div>
+            
           </div>
+          
         </div>
       </header>
 
       <div class="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0">
         <aside class="hidden xl:block xl:col-start-1 xl:row-start-1">
           <div class="sticky top-24 space-y-8">
-            <div class="py-4">
+            <div class="py-10">
               <h2 class="text-xs uppercase tracking-wide text-gray-500">
                 Table of Contents
               </h2>
@@ -319,26 +340,6 @@ MUI Modal은 중첩을 허용하나 2개 이상 겹치는 것은 권장하지 �
         </div>
 
         <footer class="xl:col-start-1 xl:col-span-4">
-          <div class="divide-gray-200 text-sm font-medium leading-5 xl:divide-y">
-            <div class="py-4 xl:py-8">
-              <h2 class="text-xs uppercase tracking-wide text-gray-500">
-                Tags
-              </h2>
-              <div class="flex flex-wrap mt-2">
-                
-                <a href="/tags/design-system"
-                  class="mr-3 text-sm font-medium uppercase text-indigo-500 hover:text-indigo-600">Design System</a>
-                
-                <a href="/tags/ux"
-                  class="mr-3 text-sm font-medium uppercase text-indigo-500 hover:text-indigo-600">UX</a>
-                
-                <a href="/tags/crypto"
-                  class="mr-3 text-sm font-medium uppercase text-indigo-500 hover:text-indigo-600">Crypto</a>
-                
-              </div>
-            </div>
-          </div>
-
           <div class="pt-4 xl:pt-8">
             <a class="text-indigo-500 hover:text-indigo-600" aria-label="Back to the list" href="/">← Back to the
               list</a>
@@ -348,10 +349,14 @@ MUI Modal은 중첩을 허용하나 2개 이상 겹치는 것은 권장하지 �
     </div>
   </article>
 </section>
-</main>
-        <footer><div class="mt-16 flex flex-col items-center">
+
+        </section>
+      </main>
+      <footer>
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="mt-16 flex flex-col items-center">
   <div class="mb-2 text-sm text-gray-500">
-    <span>(C) 2026. Strawberry Fields all rights reserved.</span>
+    <span>(C) 2026. Strawberry Fields — Pastoral Tech Notes by @lkkunst all rights reserved.</span>
   </div>
 
   <div class="mb-8 text-sm text-gray-500">
@@ -364,8 +369,9 @@ MUI Modal은 중첩을 허용하나 2개 이상 겹치는 것은 권장하지 �
     >
   </div>
 </div>
-</footer>
-      </div>
-    </section>
+
+        </section>
+      </footer>
+    </div>
   </body>
 </html>

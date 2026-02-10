@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Strawberry Fields</title>
+    <title>Posts on Strawberry Fields — Pastoral Tech Notes by @lkkunst</title>
     <link>https://hjkunst.github.io/posts/</link>
-    <description>Recent content in Posts on Strawberry Fields</description>
+    <description>Recent content in Posts on Strawberry Fields — Pastoral Tech Notes by @lkkunst</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 09 Feb 2026 12:00:00 +0900</lastBuildDate>
@@ -27,7 +27,7 @@
       <link>https://hjkunst.github.io/posts/2026-01-22-colorimetry-1/</link>
       <pubDate>Thu, 22 Jan 2026 12:00:00 +0900</pubDate>
       <guid>https://hjkunst.github.io/posts/2026-01-22-colorimetry-1/</guid>
-      <description>&lt;h1 id=&#34;색-공간과-색상-시스템-이해를-위한-용어-정리-및-시각화&#34;&gt;색 공간과 색상 시스템 이해를 위한 용어 정리 및 시각화&lt;/h1&gt;&#xA;&lt;h2 id=&#34;문제-제기&#34;&gt;문제 제기&lt;/h2&gt;&#xA;&lt;p&gt;최근 아이폰의 컬러 선택 모드에는 기존의 RGB 외에도 &amp;ldquo;HDR Boost&amp;quot;라는 항목이 추가되었다. &lt;/br&gt; 이 외에도 &lt;strong&gt;sRGB, Display P3, DCI-P3 같은 색역(color gamut)&lt;/strong&gt; 등의 개념이 자주 등장하지만, 개념적 차이를 명확히 이해하지 못한 채 사용하는 경우가 많다. 구체적으로 내가 디자인을 하면서 궁금했던 것들은 다음과 같다.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;최근 아이폰 컬러 선택 모드에 rgb 말고도 HDR Boost 라는게 생겼는데 무엇인지.&lt;/li&gt;&#xA;&lt;li&gt;이 외에도 color space - sRGB, Display P3, DCI-p3, 넓은 색 영역, 색 재현 규격 그래프 등이 많은데 알고 쓰는게 좋을 것 같다.&lt;/li&gt;&#xA;&lt;li&gt;Css 에서도 컬러 모드가 rgba, hex 외에도 hsl, oklch 등 표기법이 많은데 용도의 차이를 알고싶었다.&lt;/li&gt;&#xA;&lt;li&gt;adobe illustrator 에서도 hsb, 그리고 ‘웹 적합 색상만’ 선택시 아래 사진처럼 색 영역이 단순화 되는데 왜 그런건지 궁금하다.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;항상 색을 공부할 떄면 색채심리학에 치중된 자료들을 접했었는데, 이번에는 질문에 답을 줄 수 있는 과학적인 접근 방식들을 이용해보려 한다. 결과적으로 이러한 배경을 바탕으로 색 관련 용어와 기술 개념을 정리하고자 한다.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;문제-제기&#34;&gt;문제 제기&lt;/h2&gt;&#xA;&lt;p&gt;최근 아이폰의 컬러 선택 모드에는 기존의 RGB 외에도 &amp;ldquo;HDR Boost&amp;quot;라는 항목이 추가되었다. &lt;/br&gt; 이 외에도 &lt;strong&gt;sRGB, Display P3, DCI-P3 같은 색역(color gamut)&lt;/strong&gt; 등의 개념이 자주 등장하지만, 개념적 차이를 명확히 이해하지 못한 채 사용하는 경우가 많다. 구체적으로 내가 디자인을 하면서 궁금했던 것들은 다음과 같다.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;최근 아이폰 컬러 선택 모드에 rgb 말고도 HDR Boost 라는게 생겼는데 무엇인지.&lt;/li&gt;&#xA;&lt;li&gt;이 외에도 color space - sRGB, Display P3, DCI-p3, 넓은 색 영역, 색 재현 규격 그래프 등이 많은데 알고 쓰는게 좋을 것 같다.&lt;/li&gt;&#xA;&lt;li&gt;Css 에서도 컬러 모드가 rgba, hex 외에도 hsl, oklch 등 표기법이 많은데 용도의 차이를 알고싶었다.&lt;/li&gt;&#xA;&lt;li&gt;adobe illustrator 에서도 hsb, 그리고 ‘웹 적합 색상만’ 선택시 아래 사진처럼 색 영역이 단순화 되는데 왜 그런건지 궁금하다.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;항상 색을 공부할 떄면 색채심리학에 치중된 자료들을 접했었는데, 이번에는 질문에 답을 줄 수 있는 과학적인 접근 방식들을 이용해보려 한다. 결과적으로 이러한 배경을 바탕으로 색 관련 용어와 기술 개념을 정리하고자 한다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Crypto Article Week 2 | CDS Components</title>
