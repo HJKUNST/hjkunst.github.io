@@ -1,29 +1,32 @@
 ---
 layout: post
-title: "Colorimetry 1 | 색 공간과 색상 시스템 이해를 위한 용어 정리 및 시각화"
+title: "Colorimetry 1 | Terminology and Visualization for Understanding Color Spaces and Color Systems"
 date: 2026-01-22 12:00:00 +0900
 tags: [Colorimetry, Science]
+translationKey: "2026-01-22-colorimetry-1"
+aliases:
+  - /posts/2026-01-22-colorimetry-1/
 ---
 
-## 문제 제기
+## Problem Statement
 
-최근 아이폰의 컬러 선택 모드에는 기존의 RGB 외에도 "HDR Boost"라는 항목이 추가되었다. </br> 이 외에도 **sRGB, Display P3, DCI-P3 같은 색역(color gamut)** 등의 개념이 자주 등장하지만, 개념적 차이를 명확히 이해하지 못한 채 사용하는 경우가 많다. 구체적으로 내가 디자인을 하면서 궁금했던 것들은 다음과 같다.
+Recently, the iPhone's color picker mode has added a new option called "HDR Boost" in addition to the existing RGB. </br> Beyond this, concepts such as **color gamuts like sRGB, Display P3, and DCI-P3** frequently appear, yet many people use them without clearly understanding the conceptual differences. Specifically, the questions I had while working on design were as follows:
 
-1. 최근 아이폰 컬러 선택 모드에 rgb 말고도 HDR Boost 라는게 생겼는데 무엇인지.
-2. 이 외에도 color space - sRGB, Display P3, DCI-p3, 넓은 색 영역, 색 재현 규격 그래프 등이 많은데 알고 쓰는게 좋을 것 같다.
-3. Css 에서도 컬러 모드가 rgba, hex 외에도 hsl, oklch 등 표기법이 많은데 용도의 차이를 알고싶었다.
-4. adobe illustrator 에서도 hsb, 그리고 ‘웹 적합 색상만’ 선택시 아래 사진처럼 색 영역이 단순화 되는데 왜 그런건지 궁금하다.
+1. The iPhone's color picker mode recently added something called HDR Boost in addition to RGB — what is it?
+2. There are also many color spaces — sRGB, Display P3, DCI-P3, wide color gamut, color reproduction specification graphs, etc. — and it would be good to understand them before using them.
+3. In CSS, there are many color notation methods beyond rgba and hex, such as hsl and oklch, and I wanted to understand the differences in their intended use.
+4. In Adobe Illustrator, when selecting HSB and the "Only Web Colors" option, the color gamut simplifies as shown in the image below — I was curious why this happens.
 
-항상 색을 공부할 떄면 색채심리학에 치중된 자료들을 접했었는데, 이번에는 질문에 답을 줄 수 있는 과학적인 접근 방식들을 이용해보려 한다. 결과적으로 이러한 배경을 바탕으로 색 관련 용어와 기술 개념을 정리하고자 한다.
+Whenever I studied color in the past, I always encountered materials heavily focused on color psychology. This time, I intend to take a scientific approach that can answer these questions. Ultimately, I aim to organize color-related terminology and technical concepts based on this background.
 
-## 1. 용어 지도 만들기
+## 1. Building a Terminology Map
 ### 1.1 3D Color Volume
 
 <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.5rem; margin: 1.5rem 0;">
   <div>
-    색 영역(color gamut)은 일반적으로 색상(Color)의 범위를 2차원 좌표계로 표현한다. 이때 수평 축에는 색도를 나타내는 X, Y 좌표가 쓰이며, 이는 CIE 1931 색 공간 등에서 볼 수 있는 평면 색도도(chromaticity diagram)와 관련이 깊다.</br></br>
-    그러나 2차원 평면만으로는 실제 우리가 인지하는 색상의 '밝기(Luminance)' 정보가 빠져 있다. 이를 보완하기 위해, 색 공간은 종종 Z축에 휘도 정보를 추가한 3차원 구조로 정의된다. 이때 밝기(Luminance)는 선형 함수 또는 EOTF(Electro-Optical Transfer Function)를 통해 수직 축으로 표현되며, 단위로는 '니트(nit)'를 사용한다.</br></br>
-    결과적으로 이 3차원 색 영역은 원뿔 또는 반구 형태의 벡터 공간으로 나타나며, 이는 디스플레이 장치가 표현할 수 있는 실제 색의 '부피'를 뜻한다. 3D Color Volume의 좌표 체계는 보통 u′v′+Y 형태를 사용하며, 이때 u′v′는 기존 xy좌표계에서 면적 왜곡 문제를 보완하기 위해 CIE 1976에서 제안된 새로운 색도 좌표이다. 이 좌표계를 통해 보다 지각에 일치하는 색 표현이 가능하다.
+    A color gamut typically represents the range of colors in a two-dimensional coordinate system. The horizontal axes use X and Y coordinates representing chromaticity, which is closely related to the planar chromaticity diagram seen in systems such as the CIE 1931 color space.</br></br>
+    However, a two-dimensional plane alone lacks the 'Luminance' (brightness) information that we actually perceive. To address this, color spaces are often defined as three-dimensional structures with luminance information added along the Z-axis. In this case, Luminance is expressed along the vertical axis through a linear function or an EOTF (Electro-Optical Transfer Function), with 'nit' as the unit of measurement.</br></br>
+    As a result, this three-dimensional color gamut appears as a cone- or hemisphere-shaped vector space, representing the actual 'volume' of colors that a display device can reproduce. The coordinate system of a 3D Color Volume typically uses the u'v'+Y format, where u'v' are new chromaticity coordinates proposed by CIE 1976 to compensate for the area distortion issues of the traditional xy coordinate system. This coordinate system enables a more perceptually uniform color representation.
   </div>
   <div>
     <img src="/colorimetry-1/colorimetry-1.webp" alt="3D Color Volume 시각화" style="width: 100%; height: auto; display: block;" />
@@ -32,33 +35,33 @@ tags: [Colorimetry, Science]
 
 ### 1.2 Color Model vs Color Space
 
-색을 디지털로 표현하기 위해 사용되는 틀은 크게 **Color Model(색 모델)** 과 **Color Space(색 공간)** 로 나뉜다. 색 모델은 색을 기술하는 수학적 구조이고, 색 공간은 특정 장치나 환경에 최적화된 색 모델의 구현 형태라고 이해할 수 있다. (그렇지만 혼용되어 쓰이는 듯 하다.)
+The frameworks used to represent color digitally are broadly divided into **Color Models** and **Color Spaces**. A color model is the mathematical structure that describes color, while a color space can be understood as an implementation of a color model optimized for a specific device or environment. (However, the two terms are often used interchangeably.)
 
 **(1) RGB**
 
-가장 널리 쓰이는 RGB 색 공간은 적(R), 녹(G), 청(B) 세 가지의 기본 색상을 조합하여 다양한 색을 표현하는 모델이다. 이는 모니터, 웹, 모바일 디스플레이 등 대부분의 디지털 장치에서 기본값으로 사용되며, RGB ↔ XYZ 변환은 선형 행렬 변환으로 가능하다.
+The most widely used RGB color space is a model that expresses a variety of colors by combining three primary colors: Red (R), Green (G), and Blue (B). It is the default for most digital devices including monitors, web, and mobile displays, and conversion between RGB and XYZ is possible through linear matrix transformation.
 
-장점: 직관적이고 구현이 간단하며, 대부분의 디지털 이미지 및 UI 시스템에서 기본적으로 채택된다. </br>
-단점: 영상처리 알고리즘에 바로 적용하기 어렵고, 복잡한 연산에는 불리하다. 특히 명암도 기반의 그레이스케일이나 이진화 처리에 적합하지 않다.
+Advantages: Intuitive and simple to implement; adopted as the default in most digital imaging and UI systems. </br>
+Disadvantages: Difficult to apply directly to image processing algorithms and unfavorable for complex computations. It is particularly unsuitable for luminance-based grayscale conversion or binarization.
 
-예를 들어, RGB 이미지를 흑백으로 변환할 때는 인간의 시각 특성을 반영한 가중치가 적용된다. 이러한 가중치가 존재하는 이유는, 인간은 녹색에 가장 민감하고, 청색에 가장 둔감하기 때문이다. 가중치로 인해 시지각을 최대한 유지한 채 흑백 변환이 가능하다.
+For example, when converting an RGB image to grayscale, weights reflecting human visual characteristics are applied. These weights exist because humans are most sensitive to green and least sensitive to blue. Thanks to these weights, grayscale conversion can be performed while preserving visual perception as much as possible.
 ```
-NTSC 기준 변환식:
+NTSC standard conversion formula:
 Brightness = 0.2999R + 0.587G + 0.114B
 
-단순 평균식:
+Simple average formula:
 Brightness = 0.333R + 0.333G + 0.333B
 ```
 
 **(2) HSL / HSV**
 
-HSL(Hue, Saturation, Lightness) 및 HSV(Hue, Saturation, Value) 색 공간은 RGB의 변형 모델로, 사용자에게 보다 직관적인 조작성을 제공하기 위해 만들어졌다. 디지털 디자인 툴과 영상처리에서 자주 사용된다.
+The HSL (Hue, Saturation, Lightness) and HSV (Hue, Saturation, Value) color spaces are variants of the RGB model, created to provide users with more intuitive controls. They are frequently used in digital design tools and image processing.
 
-- **Hue (색상)**: 색상의 종류를 표현하며, 색상환에서 0~360° 범위의 각도로 나타낸다.</br>
-- **Saturation (채도)**: 색의 선명도 또는 강도를 나타내며, 0.0~1.0 범위를 갖는다.</br>
-- **Lightness / Value (명도)**: 밝기를 표현하는 요소로, 조명의 양과 비슷하게 작동한다.</br>
+- **Hue**: Represents the type of color, expressed as an angle in the range of 0-360 degrees on the color wheel.</br>
+- **Saturation**: Represents the vividness or intensity of a color, with a range of 0.0 to 1.0.</br>
+- **Lightness / Value**: The component that represents brightness, functioning similarly to the amount of illumination.</br>
 
-이 모델의 핵심은 ‘휘도(밝기)’ 정보를 색상/채도와 분리하여 다룰 수 있다는 점이다. 이를 통해 다양한 색조 조절과 톤 보정이 용이해진다.
+The key advantage of this model is that it allows 'luminance (brightness)' information to be handled separately from hue and saturation. This makes various hue adjustments and tonal corrections easier to perform.
 
 <div style="text-align: center; margin: 1rem 0;">
   <img src="/colorimetry-1/colorimetry-2.webp" alt="HSL/HSV 색 공간 시각화" style="width: 100%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
@@ -70,47 +73,47 @@ HSL(Hue, Saturation, Lightness) 및 HSV(Hue, Saturation, Value) 색 공간은 RG
 
 <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.5rem; margin: 1.5rem 0;">
   <div>
-    YCbCr과 YUV는 인간의 시각 체계가 '밝기(Luminance)'에 더 민감하고, '색차(Chrominance)'에는 비교적 둔감하다는 특성을 바탕으로 설계된 색 공간들이다. 이들 모델은 색상(color) 정보를 분리하여 부호화함으로써 데이터 효율성과 압축 효율을 높인다. </br></br>
-    핵심 아이디어는 전체 색상 정보를 세 개의 성분으로 나누되, 밝기 성분(Y)은 고해상도·고정밀로 보존하고, 색차 성분(Cb, Cr 혹은 U, V)은 상대적으로 낮은 정밀도로 저장하는 것이다. 이는 대부분의 사람 눈이 밝기 변화에는 민감하지만, 색의 세부 차이에 둔감하기 때문이다.
+    YCbCr and YUV are color spaces designed based on the characteristic of the human visual system that is more sensitive to 'Luminance' (brightness) and relatively less sensitive to 'Chrominance' (color difference). These models separate and encode color information, thereby improving data efficiency and compression performance. </br></br>
+    The core idea is to divide the total color information into three components: the luminance component (Y) is preserved at high resolution and high precision, while the chrominance components (Cb, Cr or U, V) are stored at relatively lower precision. This is because most human eyes are sensitive to changes in brightness but insensitive to subtle differences in color.
   </div>
   <div>
     <img src="/colorimetry-1/colorimetry-7.png" alt="YUV 색 공간 시각화" style="width: 100%; height: auto; display: block;" />
   </div>
 </div>
 
-**구성 요소** </br>
-**Y (Luminance / 휘도, 밝기) :**
-이미지의 전체적인 명암 구조를 담당하며, 시각적으로 가장 중요한 요소이다. 대부분의 경우 4비트 이상을 할당받아 높은 정밀도로 저장된다.
-전통적으로 휘도 성분은 Y로 표기하며, 이는 흑백 영상 신호 시절부터 내려온 명명법이다.
+**Components** </br>
+**Y (Luminance / Brightness):**
+Responsible for the overall tonal structure of an image, it is the most visually important element. In most cases, it is allocated 4 or more bits and stored with high precision.
+Traditionally, the luminance component is denoted as Y, a naming convention that dates back to the era of black-and-white video signals.
 
-**Cb (또는 U): Chroma Blue :**
-파란색과 밝기 정보의 차이를 나타내는 성분이다.
-수식으로는 Cb = (B - Y) * K₁의 형태로 정의되며, 여기서 K₁은 표준에 따라 정해진 계수이다.
-BT.601 기준에서 K₁ = 0.49211로 사용된다.
-이 성분은 비교적 색상에 둔감한 정보이므로, 일반적으로 2비트 정도의 낮은 정밀도로 저장된다.
+**Cb (or U): Chroma Blue:**
+A component representing the difference between blue and luminance information.
+It is defined by the formula Cb = (B - Y) * K1, where K1 is a coefficient determined by the standard.
+Under the BT.601 standard, K1 = 0.49211.
+Since this component contains information to which human vision is relatively insensitive, it is typically stored at a lower precision of about 2 bits.
 
-**Cr (또는 V): Chroma Red :**
-붉은색과 밝기 정보의 차이를 나타내는 성분이다.
-수식은 Cr = (R - Y) * K₂ 형태이며, K₂ = 0.877283 (BT.601 기준)이다.
-이 역시 색차 정보이기 때문에 낮은 비트 수로 인코딩 가능하다.
+**Cr (or V): Chroma Red:**
+A component representing the difference between red and luminance information.
+The formula is Cr = (R - Y) * K2, where K2 = 0.877283 (BT.601 standard).
+As this is also chrominance information, it can be encoded with a low number of bits.
 
-**용도 및 차이** </br>
-YCbCr: 디지털 인코딩용 색 공간으로, JPEG 이미지, MPEG 비디오 압축 등 디지털 영상 압축 포맷에서 광범위하게 사용된다.
-비트 효율성과 인코딩 최적화를 위해 설계되었으며, 대부분의 디지털 카메라 및 영상 코덱에서 기본 색 공간으로 채택한다.
+**Usage and Differences** </br>
+YCbCr: A color space for digital encoding, widely used in digital video compression formats such as JPEG images and MPEG video compression.
+It was designed for bit efficiency and encoding optimization, and is adopted as the default color space in most digital cameras and video codecs.
 
-YUV: 아날로그 신호 기반의 색 공간으로, PAL(Phase Alternating Line) 및 NTSC 등의 아날로그 TV 전송 방식에서 사용된다.
-오늘날에는 주로 YCbCr로 대체되었지만, 아날로그 방송 시스템에서는 여전히 관련 개념으로 쓰인다.
+YUV: An analog signal-based color space used in analog TV transmission methods such as PAL (Phase Alternating Line) and NTSC.
+Today it has largely been replaced by YCbCr, but in analog broadcasting systems, the related concepts are still in use.
 
 <div class="spacer"></div>
 
 **(4) CMY**
 
-CMY(Cyan, Magenta, Yellow)는 인쇄 시스템에서 주로 사용되는 색 공간이다. RGB와는 보색 관계에 있으며, 서로 간의 변환이 간단하다. 이러한 관계 덕분에 디지털 → 인쇄 변환 시 유용하게 쓰이며, 보통은 여기에 블랙(K)을 더한 CMYK 모델이 실무에서 활용된다.
+CMY (Cyan, Magenta, Yellow) is a color space primarily used in printing systems. It has a complementary relationship with RGB, and conversion between the two is straightforward. Thanks to this relationship, it is useful for digital-to-print conversion. In practice, the CMYK model, which adds Black (K), is commonly used.
 ```
-RGB → CMY 변환:
+RGB to CMY conversion:
 C = 1 – R, M = 1 – G, Y = 1 – B
 
-CMY → RGB 변환:
+CMY to RGB conversion:
 R = 1 – C, G = 1 – M, B = 1 – Y
 ```
 
@@ -118,81 +121,81 @@ R = 1 – C, G = 1 – M, B = 1 – Y
 
 <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.5rem; margin: 1.5rem 0;">
   <div>
-    ICC 프로파일은 특정 기기나 파일의 RGB 값이 어떤 실제 색을 나타내는지를 정의한 메타데이터이다. 예를 들어, "이 이미지의 RGB는 sRGB 기준이다", "이 디스플레이는 이런 특성으로 색을 낸다", "프린터는 이 잉크/종이 조합에서 이런 색 변환이 필요하다"와 같은 식으로 색 공간을 명시한다. 이를 통해 장치 간 색상 일관성을 유지할 수 있다.
+    An ICC profile is metadata that defines what actual color a specific device's or file's RGB values represent. For example, it specifies the color space in statements like "This image's RGB is based on the sRGB standard," "This display renders colors with these characteristics," or "This printer requires this color conversion for this ink/paper combination." Through this, color consistency can be maintained across devices.
   </div>
   <div>
     <img src="/colorimetry-1/colorimetry-3.webp" alt="ICC Profile 설명" style="width: 100%; height: auto; display: block;" />
   </div>
 </div>
 
-## 3. 기타 주요 개념
+## 3. Other Key Concepts
 
-- **White Point (예: D65)**: 기준이 되는 백색점. 일반적으로 D65는 표준 주광을 기준으로 하며, 많은 디스플레이 및 색 공간이 이를 사용한다.
-- **Transfer Function (감마, PQ 등)**: 디지털 값과 실제 밝기 간의 관계를 정의한다. SDR에서는 감마 곡선, HDR에서는 PQ(EOTF) 등이 사용된다.
+- **White Point (e.g., D65)**: The reference white point. D65 is generally based on standard daylight, and many displays and color spaces use it.
+- **Transfer Function (Gamma, PQ, etc.)**: Defines the relationship between digital values and actual brightness. SDR uses gamma curves, while HDR uses PQ (EOTF), among others.
 
 ## 4. Gamut Comparison
 
-색역(Gamut)은 특정 색 공간이 표현할 수 있는 색상의 범위를 의미한다. 일반적으로 CIE xy 색도도 상에서 삼각형 영역으로 시각화된다. 다음은 색역 이용 사례를 비교한 표이다. 색역에 대한 자세한 설명은 다음 편에 진행한다.
+A gamut refers to the range of colors that a specific color space can represent. It is typically visualized as a triangular region on the CIE xy chromaticity diagram. The following table compares gamut use cases. A detailed explanation of gamuts will be covered in the next installment.
 
 
-| 색 공간 | 색역 크기 | 정의 및 용도 | 장점 | 단점 및 주의 |
+| Color Space | Gamut Size | Definition and Usage | Advantages | Disadvantages and Notes |
 |---------|-----------|------------------|-------|----------------|
-| sRGB | 기본/좁음 | 웹 및 UI 디자인 기본 | 호환성 최강 | 넓은 색역 표현 불가, 색 왜곡 우려 |
-| Rec.709 | sRGB와 유사 | SDR 영상 표준 | 영상 편집 표준 | sRGB와 유사하지만 혼동 주의 |
-| DCI-P3 | 넓음 | 디지털 시네마용 | 영화 색감 정확 | 화이트포인트 차이, UI에 부적절 |
-| Display P3 | DCI-P3 기반, D65 적용 | 애플 생태계 최적화 | 풍부한 색감 표현 | sRGB 기반 환경에서 오차 가능 |
-| Rec.2020 | 가장 넓음 | HDR/UHD 표준 | 미래 호환성 우수 | 대부분 디스플레이에서 미지원 |
+| sRGB | Basic/Narrow | Default for web and UI design | Best compatibility | Cannot express wide gamut colors; risk of color distortion |
+| Rec.709 | Similar to sRGB | SDR video standard | Standard for video editing | Similar to sRGB but be careful not to confuse the two |
+| DCI-P3 | Wide | For digital cinema | Accurate cinematic color reproduction | White point differences; unsuitable for UI |
+| Display P3 | Based on DCI-P3 with D65 | Optimized for the Apple ecosystem | Rich color expression | Potential errors in sRGB-based environments |
+| Rec.2020 | Widest | HDR/UHD standard | Excellent future compatibility | Unsupported by most current displays |
 
 <div style="text-align: center; margin: 1.5rem 0;">
   <img src="/colorimetry-1/colorimetry-4.webp" alt="Gamut Comparison 시각화" style="width: 80%; min-width: 200px; height: auto; display: block; margin: 0 auto;" />
 </div>
 
 
-## 5. 아이폰의 HDR Boost 기능
+## 5. iPhone's HDR Boost Feature
 
 <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.5rem; margin: 1.5rem 0;">
   <div>
-    Apple은 SDR(Standard Dynamic Range)의 기준 밝기 수준을 Reference White로 정의한다. 이는 일반적으로 종이 위의 흰색이나 Keynote의 흰 배경처럼 보이는 밝기 값으로, SDR 콘텐츠에서 가장 밝은 지점에 해당한다. 하지만 HDR(High Dynamic Range) 디스플레이에서는 이 Reference White를 기준으로 더 밝은 밝기 영역, 즉 발광이나 하이라이트 효과를 표현할 수 있는 **헤드룸(Headroom)** 이 존재한다.</br></br>
-    **HDR Boost는 바로 이 헤드룸을 얼마나 활용할지를 조정하는 휘도 부스트(slider) 기능이다.** 사용자가 Boost 값을 높이면, 동일한 색상 코드(e.g. #FFFFFF)라 하더라도 그것이 SDR Reference White처럼 보이는 대신, 보다 눈부시게 빛나는 흰색으로 렌더링된다. 이는 SDR의 범위를 넘어선 밝기 표현이 가능하다는 것을 의미하며, HDR 디스플레이 상에서 더 극적인 시각 효과를 만들어낸다.</br></br>
-    예를 들어, 웹에서 이미지나 UI 요소의 배경이 #FFFFFF일 경우, 일반적인 SDR 환경에서는 종이 같은 중립적인 흰색으로 보인다. 하지만 HDR Boost가 적용되면, 같은 색 코드라도 그것은 화면 상에서 하이라이트 효과가 있는 빛나는 흰색처럼 보일 수 있다. 즉, 색상값 자체는 변하지 않지만 시스템은 해당 색상의 휘도를 강조함으로써 더 강한 시각적 인상을 전달한다.
+    Apple defines the baseline brightness level of SDR (Standard Dynamic Range) as Reference White. This is typically the brightness value that appears as white on paper or a white background in Keynote, corresponding to the brightest point in SDR content. However, on HDR (High Dynamic Range) displays, there exists a **headroom** above this Reference White — an additional brightness range that can represent luminous or highlight effects.</br></br>
+    **HDR Boost is essentially a luminance boost (slider) feature that controls how much of this headroom is utilized.** When the user increases the Boost value, the same color code (e.g., #FFFFFF) is rendered not as an SDR Reference White appearance but as a more dazzlingly bright white. This means that brightness beyond the SDR range can be expressed, creating more dramatic visual effects on HDR displays.</br></br>
+    For example, when the background of an image or UI element on the web is #FFFFFF, it appears as a neutral, paper-like white in a standard SDR environment. However, with HDR Boost applied, the same color code can appear as a luminous, highlighted white on screen. In other words, the color value itself does not change, but the system emphasizes the luminance of that color to convey a stronger visual impression.
   </div>
   <div>
     <img src="/colorimetry-1/colorimetry-5.webp" alt="HDR Boost 기능 시각화" style="width: 100%; height: auto; display: block;" />
   </div>
 </div>
 
-다만 이러한 효과는 디스플레이의 실제 밝기 성능, 주변 광 조건, macOS나 iOS의 시스템 렌더링 계층이 적용한 tone mapping 처리 등에 따라 달라지므로, 항상 일관된 결과가 보장되지는 않는다.
+However, these effects vary depending on the display's actual brightness performance, ambient lighting conditions, and the tone mapping applied by the system rendering layer in macOS or iOS, so consistent results are not always guaranteed.
 
-## 6. Illustrator의 HSB와 "웹 적합 색상만"이 색을 단순화하는 이유
+## 6. Why Illustrator's HSB and "Only Web Colors" Simplify the Color Gamut
 
 <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.5rem; margin: 1.5rem 0;">
   <div>
-    <strong>8-bit(256색)의 한계</strong>
+    <strong>The Limitations of 8-bit (256 Colors)</strong>
 
-1990년대부터 2000년대 초반까지의 초기 웹 환경에서는, 많은 디스플레이와 그래픽 카드가 한 번에 256색만 표현할 수 있는 제한적인 컬러 출력 능력을 갖추고 있었다. 여기에 운영체제 자체가 이 중 일부 색상을 시스템 UI 구성 요소(예: 창, 메뉴, 버튼 등)에서 선점하고 있었기 때문에, 사용자 또는 디자이너가 실제로 활용 가능한 색상 수는 이보다도 더 적었다.
+From the 1990s through the early 2000s, many displays and graphics cards in the early web era had limited color output capabilities, able to render only 256 colors at a time. On top of this, the operating system itself reserved some of these colors for system UI components (e.g., windows, menus, buttons), so the number of colors actually available to users or designers was even fewer.
 
-이처럼 표현 가능한 색의 수가 제한된 환경에서는, 디자이너가 특정 RGB 색상을 선택했을 때 디스플레이 장치가 그 색을 정확히 표시하지 못하고, 가장 유사한 인접 색상으로 강제 변환(dithering)하는 현상이 흔하게 발생하였다. 이로 인해 이미지의 색이 뭉개지거나, 패턴이나 배경 그라데이션이 의도와 다르게 표시되는 문제가 지속적으로 발생하였다.
+In such environments where the number of representable colors was limited, it was common for a display device to be unable to accurately show a specific RGB color chosen by a designer, forcibly converting it to the nearest available color through dithering. This caused persistent issues where image colors would blur, or patterns and background gradients would display differently from what was intended.
   </div>
   <div>
     <img src="/colorimetry-1/colorimetry-6.webp" alt="Illustrator HSB 색상 선택기" style="width: 100%; height: auto; display: block;" />
   </div>
 </div>
 
-**216색 안전 팔레트**</br>
+**The 216-Color Safe Palette**</br>
 
-이러한 문제를 해결하기 위해 만들어진 개념이 바로 Web Safe Colors, 또는 216색 안전 팔레트이다. 이 팔레트는 256색 제한 환경에서도 대부분의 시스템에서 안정적으로 표현될 수 있는 색상만을 모은 것으로, 각 RGB 채널 값을 **6단계(00, 33, 66, 99, CC, FF)**로 제한하여 구성된다. 이는 16진수 기준으로 0x00부터 0xFF까지의 값을 51 단위(255 ÷ 5 = 51)로 일정하게 나눈 형태다.
+The concept created to solve this problem was Web Safe Colors, or the 216-color safe palette. This palette consists of colors that could be reliably rendered on most systems even in 256-color environments, constructed by limiting each RGB channel value to **6 levels (00, 33, 66, 99, CC, FF)**. In hexadecimal terms, this is a uniform division of values from 0x00 to 0xFF in increments of 51 (255 / 5 = 51).
 
-이 방식에 따르면, 가능한 조합은 R × G × B = 6 × 6 × 6 = 216가지 색상이며, 이 색상들은 디스플레이 장치의 제약과 무관하게 거의 대부분의 환경에서 디더링 없이 안정적으로 표시 가능하였다. 그 결과, 이 216색이 “안전한 색(Web Safe)”으로 불리게 된 것이다.
+Under this scheme, the possible combinations are R x G x B = 6 x 6 x 6 = 216 colors, and these colors could be displayed reliably without dithering in virtually all environments regardless of display device limitations. As a result, these 216 colors came to be known as "Web Safe" colors.
 
-**컬러 피커에서의 체감과 시각적 단절**
+**The Experience in Color Pickers and Visual Discontinuity**
 
-일반적인 디지털 컬러 피커 환경에서는, 사용자가 Hue(색상)를 조절하면 색상이 연속적으로 부드럽게 변하고, Saturation(채도)이나 Brightness(명도) 조절 역시 세밀한 조정이 가능하다. 하지만 “웹 세이프 색상만 보기(Web Safe Colors Only)” 옵션이 활성화되면 상황이 다르다. 이 모드는 사용자가 선택하려는 색을 실시간으로 216개 색상 중 가장 가까운 색으로 강제로 스냅(snap) 시키기 때문이다.
+In a typical digital color picker environment, when the user adjusts Hue, the color changes smoothly and continuously, and adjustments to Saturation and Brightness are also finely controllable. However, when the "Web Safe Colors Only" option is enabled, the situation is different. This mode forces the color the user is trying to select to snap in real time to the nearest of the 216 available colors.
 
-그 결과, 원래 연속적으로 움직여야 할 색상이 계단형 블록처럼 뚝뚝 끊기고, 어떤 구간에서는 여러 색상이 같은 값으로 뭉개져 표현되며, 색상 조절에 대한 미세한 움직임이 전혀 반응하지 않는 것처럼 느껴지는 시각적 단절이 발생한다.
+As a result, colors that should move continuously instead appear as stepped blocks, in certain ranges multiple colors collapse into the same value, and subtle movements in color adjustment seem to produce no response at all — creating a visual discontinuity.
 
-예를 들어, 사용자가 원래는 #5A7FBC와 같은 미묘한 중간색을 사용하고자 할 때도, Web Safe 모드에서는 #6699CC 또는 #3366CC처럼 제한된 값 중 하나로 자동으로 보정되어 표시된다. 따라서 마우스 커서를 색상 선택 창에서 조금만 움직여도 색상이 부드럽게 변하는 것이 아니라, 튕기듯 점프하는 것처럼 보이게 된다.
+For example, even when a user intends to use a subtle midtone like #5A7FBC, in Web Safe mode it is automatically corrected and displayed as one of the restricted values such as #6699CC or #3366CC. Therefore, even a small movement of the mouse cursor in the color picker causes the color to appear to jump abruptly rather than changing smoothly.
 
-## 참고 자료
+## References
 
 - https://jlongster.com/why-chromaticity-shape
 - https://dsaint31.me/mkdocs_site/DIP/cv2/ch02/dip_cv_color_space/#ycbcr
@@ -201,4 +204,3 @@ R = 1 – C, G = 1 – M, B = 1 – Y
 - https://cielab.xyz/pdf/cie.15.2004%20colorimetry.pdf
 - https://news.samsungdisplay.com/14129
 - https://developer.apple.com/videos/play/wwdc2024/10177
-

@@ -1,0 +1,16 @@
+<div class="lang-toggle">
+  {{- range .Site.Languages -}}
+    {{- if eq .Lang $.Site.Language.Lang -}}
+      <span class="lang-toggle__item lang-toggle__item--active">{{ .LanguageName }}</span>
+    {{- else -}}
+      {{- $targetURL := (printf "/%s/" .Lang) -}}
+      {{- $lang := .Lang -}}
+      {{- range $.Translations -}}
+        {{- if eq .Lang $lang -}}
+          {{- $targetURL = .RelPermalink -}}
+        {{- end -}}
+      {{- end -}}
+      <a class="lang-toggle__item" href="{{ $targetURL }}">{{ .LanguageName }}</a>
+    {{- end -}}
+  {{- end -}}
+</div>

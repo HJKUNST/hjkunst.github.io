@@ -33,6 +33,15 @@
 <meta property="og:site_name" content="{{ site.Title }}" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="{{ $image }}" />
+<meta property="og:locale" content="{{ .Site.Language.LanguageCode | replaceRE "-" "_" }}" />
+
+<!-- Alternate language links -->
+{{ if .IsTranslated }}
+{{ range .Translations }}
+<link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}" />
+{{ end }}
+<link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}" />
+{{ end }}
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />

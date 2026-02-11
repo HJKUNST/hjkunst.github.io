@@ -1,8 +1,38 @@
 baseURL = 'https://hjkunst.github.io/'
-languageCode = 'en-us'
 title = 'Strawberry Fields — Pastoral Tech Notes by @lkkunst'
 
 theme = 'hugo-discaptive'
+
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = true
+
+[languages]
+  [languages.en]
+    languageCode = 'en-us'
+    languageName = 'ENG'
+    weight = 1
+    [languages.en.menus]
+      [[languages.en.menus.main]]
+        name = 'About'
+        url = '/about'
+        weight = 1
+      [[languages.en.menus.main]]
+        name = 'Tags'
+        url = '/tags'
+        weight = 2
+  [languages.ko]
+    languageCode = 'ko-kr'
+    languageName = 'KOR'
+    weight = 2
+    [languages.ko.menus]
+      [[languages.ko.menus.main]]
+        name = '소개'
+        url = '/about'
+        weight = 1
+      [[languages.ko.menus.main]]
+        name = '태그'
+        url = '/tags'
+        weight = 2
 
 [params]
   useCDN = true
@@ -29,21 +59,11 @@ theme = 'hugo-discaptive'
 [build]
   writeStats = false
   buildFuture = true
-  
+
 [minify]
   disableCSS = false
   disableHTML = false
   disableJS = false
 
-[menus]
-[[menus.main]]
-  name = 'About'
-  url = '/about'
-  weight = 1
-[[menus.main]]
-  name = 'Tags'
-  url = '/tags'
-  weight = 2
-
 [pagination]
-  pagerSize = 5  # Specify the max number of rows to be returned in list
+  pagerSize = 5

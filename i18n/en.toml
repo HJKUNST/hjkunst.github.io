@@ -1,0 +1,29 @@
+[readArticle]
+other = "Read Article"
+
+[backToList]
+other = "Back to the list"
+
+[tableOfContents]
+other = "Table of Contents"
+
+[publishedOn]
+other = "Published on"
+
+[filterByTag]
+other = "Filter by tag"
+
+[previous]
+other = "Previous"
+
+[next]
+other = "Next"
+
+[tags]
+other = "Tags"
+
+[allRightsReserved]
+other = "all rights reserved."
+
+[builtWith]
+other = "Built with"

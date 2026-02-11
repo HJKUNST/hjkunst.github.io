@@ -1,0 +1,29 @@
+[readArticle]
+other = "글 읽기"
+
+[backToList]
+other = "목록으로 돌아가기"
+
+[tableOfContents]
+other = "목차"
+
+[publishedOn]
+other = "게시일"
+
+[filterByTag]
+other = "태그별 필터"
+
+[previous]
+other = "이전"
+
+[next]
+other = "다음"
+
+[tags]
+other = "태그"
+
+[allRightsReserved]
+other = "모든 권리 보유."
+
+[builtWith]
+other = "제작 도구:"

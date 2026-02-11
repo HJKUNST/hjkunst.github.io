@@ -1,75 +1,78 @@
 ---
 layout: post
-title: "Colorimetry 2 | CIE 1931: 색공간"
+title: "Colorimetry 2 | CIE 1931: Color Space"
 date: 2026-01-29 12:00:00 +0900
 tags: [Colorimetry, Science]
+translationKey: "2026-01-29-colorimetry-2"
+aliases:
+  - /posts/2026-01-29-colorimetry-2/
 ---
 
-## 1) 색을 수치로 표현한다는 것은 실제로 어떤 과정을 거치는가?
+## 1) What process does expressing color numerically actually involve?
 
-CIE 1931 색도학(Colorimetry)은 인간의 시각 체계가 다양한 스펙트럼 분포를 어떻게 색으로 인식하는지를 설명하기 위한 이론적·실험적 기반을 제공한다. 나뭇잎과 초록색 자동차처럼 겉보기에는 같은 색으로 보이지만 실제 반사 스펙트럼은 전혀 다른 경우를 상상해 보면, 같은 색 지각이 서로 다른 물리적 조건에서 발생할 수 있음을 알 수 있다. 이와 같이 서로 다른 스펙트럼 분포가 동일한 색 자극을 유발하는 현상을 메타메리즘(metamerism)이라고 하며, 색 재현의 핵심적인 개념이다.
+CIE 1931 Colorimetry provides theoretical and experimental foundations to explain how the human visual system perceives various spectral distributions as colors. Imagining cases like tree leaves and green cars that appear the same color but have completely different reflection spectra shows that identical color perception can occur under different physical conditions. This phenomenon where different spectral distributions induce identical color stimuli is called metamerism, a core concept of color reproduction.
 
 <div style="text-align: center; margin: 1rem 0;">
   <img src="/colorimetry-2/colorimetry2-1.webp" alt="Cone cell color response function" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
   <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">
-    Fig 1. 인간 원추세포(S/M/L)의 파장별 상대 감응도 분포.
+    Fig 1. Wavelength-dependent relative sensitivity distribution of human cone cells (S/M/L).
   </p>
 </div>
 
-메타메리즘은 어떤 색을 재현하기 위해 반드시 원래의 스펙트럼이 필요하지 않다는 것을 뜻한다. 즉, 인간의 원추세포 반응을 동일하게 유도할 수 있는 조합이라면, 원광원이 없더라도 동일한 색으로 지각된다. 예를 들어 LCD 디스플레이는 스펙트럼 노란색을 생성하지 않더라도, 빨간색과 녹색의 광원을 적절히 조합함으로써 인간의 시각 시스템이 노란색으로 지각하는 조건을 구현할 수 있다.
+Metamerism means the original spectrum isn't necessarily required to reproduce a color. In other words, if a combination can induce identical cone cell responses in humans, it's perceived as the same color even without the original light source. For example, LCD displays can implement conditions the human visual system perceives as yellow by properly combining red and green light sources, even without generating spectral yellow.
 
-이러한 색상 매칭 원리를 수학적으로 정립하고 모델링한 것이 바로 CIE 1931 XYZ 색공간이다. 이는 조명 조건이나 디스플레이 장치가 달라져도 동일한 색을 재현할 수 있도록 국제조명위원회(CIE)가 제안한 기준색 공간이며, 색을 수학적으로 정의한 최초의 표준이다. CIE XYZ는 삼자극 이론(Trichromatic Theory)에 기반하며, 세 가지 가상의 기본 자극(X, Y, Z)을 통해 색을 표현한다. 이 모델은 이후 RGB, LAB, HSV 등의 다양한 색공간 정의의 기준이 되며, 측색, 인쇄, 디스플레이 산업 전반에서 참조 좌표계로 사용된다.
+CIE 1931 XYZ color space mathematically established and modeled this color matching principle. This is the reference color space proposed by the International Commission on Illumination (CIE) to reproduce identical colors regardless of lighting conditions or display devices, and is the first standard mathematically defining color. CIE XYZ is based on Trichromatic Theory, expressing colors through three imaginary primary stimuli (X, Y, Z). This model becomes the basis for defining various color spaces like RGB, LAB, HSV, and is used as a reference coordinate system across colorimetry, printing, and display industries.
 
-## 2) 1924 광효율 함수, V(λ)
+## 2) 1924 Luminous Efficiency Function, V(λ)
 
-이 모델의 전신이라 할 수 있는 1924년의 CIE 광효율 함수 V(λ)는 색 자극에 앞서, 인간의 밝기 지각에 대한 기준을 정의한 것이다. V(λ)는 인간 눈이 가시광선 영역의 각 파장에 대해 얼마나 민감하게 반응하는지를 나타내며, 특히 555nm 부근의 초록빛에 최대 반응한다. 이 함수는 동일한 물리적 밝기(radiant flux)를 갖는 두 파장이 실제로는 서로 다르게 보일 수 있다는 사실을 보여준다. 예컨대 파란색과 초록색 빛이 똑같이 밝게 지각된다면, 물리적으로는 파란색이 더 높은 복사휘도를 가진다는 뜻이다.
+The 1924 CIE luminous efficiency function V(λ), which can be considered a predecessor of this model, defined standards for human brightness perception before color stimuli. V(λ) indicates how sensitively the human eye responds to each wavelength in the visible light range, showing maximum response around 555nm greenish light. This function shows that two wavelengths with identical physical brightness (radiant flux) can actually appear different. For instance, if blue and green lights appear equally bright, physically the blue light has higher radiance.
 
-이는 인간의 시각 체계가 파장에 따라 균등하게 반응하지 않는다는 점을 수치적으로 표현한 것이다. 예를 들어, 초록빛과 파란빛이 동일하게 ‘밝아 보인다면’, 실제로는 파란빛이 더 높은 복사휘도를 지닌 것이라는 의미다. 시각적 균등성과 물리적 균등성 사이의 간극을 이해하는 데 V(λ)는 중요한 기준이 되었다.
+This numerically expresses that the human visual system doesn't respond equally across wavelengths. For example, if green and blue lights appear equally 'bright,' it means the blue light actually has higher radiance. V(λ) became an important standard for understanding the gap between visual uniformity and physical uniformity.
 
-다만, 1924년 버전의 V(λ)는 스펙트럼의 청색 영역에서 인간의 감도 반응을 과소평가한 것으로 이후 연구에서 밝혀졌다. 이는 후속 모델링과 보정을 통해 개선되어 왔으며, CIE 1931 색도학 모델은 이러한 광도 반응을 포함해 색지각 전반을 정량화한 최초의 종합적 체계로 자리잡았다.
+However, the 1924 version of V(λ) was later found to underestimate human sensitivity response in the blue region of the spectrum. This has been improved through subsequent modeling and corrections, and the CIE 1931 colorimetry model established itself as the first comprehensive system quantifying overall color perception including such luminous response.
 
 <div style="text-align: center; margin: 1rem 0;">
   <img src="/colorimetry-2/colorimetry2-2.webp" alt="CIE 1924 luminous efficiency function V(lambda)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
-  <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 2. CIE 1924 광도 효율 함수 V(λ)와 파장에 따른 밝기 지각 특성.</p>
+  <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 2. CIE 1924 luminous efficiency function V(λ) and wavelength-dependent brightness perception characteristics.</p>
 </div>
 
 ---
 
-## 3) “색 영역 그래프” 제대로 읽기: CIE 1931 xy
+## 3) Properly Reading the "Color Gamut Graph": CIE 1931 xy
 
-인간의 시각은 다양한 파장으로 구성된 빛의 스펙트럼 $I(\lambda)$를 받아들이며, 이를 색으로 인지한다. 이 과정을 수학적으로 정형화하기 위해 CIE 1931 표준 관측자 함수가 등장했다. 이때 사용되는 세 개의 색 일치 함수(color matching functions, CMFs)는 각각 $\bar{x}(\lambda),\ \bar{y}(\lambda),\ \bar{z}(\lambda)$이며, 이는 인간이 인식할 수 있는 모든 색을 세 개의 가상의 기본색(Imaginary Primaries)으로 표현할 수 있도록 구성된 함수들이다.
+Human vision receives light spectrum $I(\lambda)$ composed of various wavelengths and perceives it as color. CIE 1931 standard observer functions emerged to mathematically formalize this process. The three color matching functions (CMFs) used at this time are $\bar{x}(\lambda),\ \bar{y}(\lambda),\ \bar{z}(\lambda)$ respectively—functions constructed to express all colors humans can perceive with three imaginary primaries.
     
-    해당 함수들은 2도 시야 조건에서 다수의 피험자들을 대상으로 한 ‘조건등색실험(Wright-Guild Color Matching Experiments)’을 통해 도출되었다. 실험 방식은 10nm 간격으로 기준 파장을 설정하고, 세 가지 기본 광원—빨강(700nm), 초록(546.1nm), 파랑(435.8nm)—의 강도를 조정하여 기준색과 동일하게 보이도록 하는 조합을 찾는 방식이었다. 피험자는 이 세 가지 단색광을 혼합하여 기준색과 같다고 느껴지는 조합을 만들어야 했고, 그 조합을 수치화한 것이 삼자극치(tristimulus values)이다.
+These functions were derived through 'Wright-Guild Color Matching Experiments' with numerous subjects under 2-degree viewing conditions. The experimental method set reference wavelengths at 10nm intervals and found combinations that appeared identical to reference colors by adjusting the intensity of three primary light sources—red (700nm), green (546.1nm), blue (435.8nm). Subjects had to create combinations that felt identical to reference colors by mixing these three monochromatic lights, and numericalizing those combinations became tristimulus values.
     
-    그러나 실험 결과, 일부 파장에서는 RGB 기본색의 양수 조합만으로는 기준색을 구현할 수 없었고, 이에 따라 음의 값이 도입되었다. 예를 들어 520nm 근처의 밝은 녹색은 빨강을 음의 값으로 사용해야만 표현이 가능했으며, 이처럼 RGB로는 재현할 수 없는 영역을 정량적으로 설명하기 위해 음의 빛 개념이 사용되었다. 이러한 결과는 실제로 색을 정확히 맞추기 위해 기준색이 아닌 다른 쪽에 음의 광원을 추가하는 방식으로 해결되었다.
+However, experimental results showed that for some wavelengths, reference colors couldn't be implemented with only positive combinations of RGB primaries, leading to the introduction of negative values. For example, bright green near 520nm could only be expressed using red with negative values, and the concept of negative light was used to quantitatively explain areas unreproducible with RGB. These results were solved by actually adding negative light sources to the other side rather than the reference color to accurately match colors.
     
-    이처럼 생성된 $\bar{x}(\lambda),\ \bar{y}(\lambda),\ \bar{z}(\lambda)$ 함수들은 인간의 색 일치 행동을 설명하기 위해 실험 결과를 수학적으로 재구성한 **가상의 기본색 기반 색 일치 함수**이다.
+The $\bar{x}(\lambda),\ \bar{y}(\lambda),\ \bar{z}(\lambda)$ functions thus generated are **color matching functions based on imaginary primaries** that mathematically reconstructed experimental results to explain human color matching behavior.
     
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
   <div style="text-align: center;">
     <img src="/colorimetry-2/colorimetry2-3.webp" alt="CIE 1931 Color Matching Functions (CMFs)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
-    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 3. Wright–Guild 색 일치 실험의 개념적 구조.</p>
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 3. Conceptual structure of Wright–Guild color matching experiment.</p>
   </div>
   <div style="text-align: center;">
     <img src="/colorimetry-2/colorimetry2-4.webp" alt="Wright–Guild color matching experiment" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
-    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 4. RGB 색 일치 함수에서 나타나는 음의 자극치 현상.</p>
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 4. Negative stimulus value phenomenon appearing in RGB color matching functions.</p>
   </div>
   <div style="text-align: center;">
     <img src="/colorimetry-2/colorimetry2-5.webp" alt="Additional reference figure for CMF / chromaticity discussion" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
-    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 6. CIE 1931 색 일치 함수의 실험적 도출 과정과 표준 관측자 모델.</p>
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 6. Experimental derivation process of CIE 1931 color matching functions and standard observer model.</p>
   </div>
   <div style="text-align: center;">
     <img src="/colorimetry-2/colorimetry2-6.webp" alt="Additional reference figure for CMF / chromaticity discussion" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
-    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 5. CIE 1931 색 일치 함수 x̄(λ), ȳ(λ), z̄(λ).</p>
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 5. CIE 1931 color matching functions x̄(λ), ȳ(λ), z̄(λ).</p>
   </div>
 </div>
 
-## 4) 색도도(CIE 1931 Chromaticity Diagram)가 정의되는 수학적·시각적 과정
+## 4) Mathematical and Visual Process Defining the Chromaticity Diagram (CIE 1931 Chromaticity Diagram)
 
-삼자극치(XYZ)는 색을 수치적으로 정의하는 데 매우 유용한 체계지만, 세 축(X, Y, Z)으로 구성된 3차원 공간에서 해석되기 때문에 시각적으로 직관적인 이해가 어렵다. 이에 따라 CIE는 1931년에 XYZ 값을 기반으로 하되, 밝기(luminance) 정보를 제거한 2차원 색 공간을 추가로 정의하였다. 이것이 바로 일반적으로 색도도라고 부르는 CIE 1931 색도도이다.
+Tristimulus values (XYZ) are very useful systems for numerically defining color, but because they're interpreted in 3-dimensional space composed of three axes (X, Y, Z), intuitive visual understanding is difficult. Accordingly, CIE additionally defined a 2-dimensional color space in 1931 based on XYZ values but with luminance information removed. This is what's commonly called the CIE 1931 chromaticity diagram.
 
-인간의 색 인지를 수학적으로 표현하기 위해, CIE는 세 개의 독립적인 기준 함수 $\bar{x}(\lambda),\ \bar{y}(\lambda),\ \bar{z}(\lambda)$를 정의하였다. 이는 각각의 파장 λ에 대해 인간이 어떻게 반응하는지를 나타내는 가중치 함수로, 일종의 basis 역할을 한다. 특정한 스펙트럼 분포 $I(λ)$에 대해 이 세 함수를 내적하면, 삼자극치 X, Y, Z 값을 얻을 수 있다. 이 값들은 다음과 같이 개념적으로 정의된다.
+To mathematically express human color perception, CIE defined three independent reference functions $\bar{x}(\lambda),\ \bar{y}(\lambda),\ \bar{z}(\lambda)$. These are weighting functions indicating how humans respond to each wavelength λ, serving as a kind of basis. Taking the inner product of spectral distribution $I(λ)$ with these three functions yields tristimulus values X, Y, Z. These values are conceptually defined as follows:
 
 $$
 X=k⋅\bar{x}(λ) \\
@@ -77,7 +80,7 @@ Y=k⋅\bar{y}(λ) \\
 Z=k⋅\bar{z}(λ)
 $$
 
-또는 일반적인 스펙트럼 $I(λ)$에 대해 내적(inner product)으로 표현하면 다음과 같다. 여기서 X, Y, Z는 절대 색 자극값(absolute color stimuli)이며, 색의 정보뿐 아니라 밝기 정보까지 포함한다.
+Or expressed as inner products for general spectrum $I(λ)$ as follows. Here X, Y, Z are absolute color stimuli, including not just color information but also brightness information.
 
 $$
 X=⟨I(λ),\bar{x}(λ)⟩ \\
@@ -85,7 +88,7 @@ Y=⟨I(λ),\bar{y}(λ)⟩\\
 Z=⟨I(λ),\bar{z}(λ)⟩ \\
 $$
 
-위 내적 연산은 연속적인 스펙트럼에 대해 정의되므로, 실제로는 적분 형태로 계산한다. 각 자극값은 다음과 같은 식으로 주어진다.
+Since the above inner product operations are defined for continuous spectra, they're actually calculated in integral form. Each stimulus value is given by the following equations:
 
 $$
 X=k∫I(λ)\bar x(λ)dλ \\
@@ -93,80 +96,74 @@ Y=k∫I(λ)\bar y(λ)dλ \\
 Z=k∫I(λ)\bar z(λ)dλ
 $$
 
-여기서 $k$는 스케일링 상수로, 일반적으로 Y가 기준 밝기(luminance)가 되도록 조정된다. 이 계산을 통해 우리는 임의의 스펙트럼
+Here $k$ is a scaling constant, generally adjusted so Y becomes the reference luminance. Through this calculation we can obtain corresponding tristimulus values (X, Y, Z) for arbitrary spectrum $I(λ)$.
 
-$I(λ)$ 에 대해 대응하는 삼자극치(X, Y, Z)를 얻을 수 있다.
-
-이와 같이 구한 X, Y, Z 값은 밝기 정보를 포함하는 절대 색 자극값으로 간주된다. 그러나 색도도를 구성할 때는 밝기 정보를 제거한 색의 순수한 속성만을 필요로 하므로, XYZ 값을 정규화하여 색도 좌표인 x, y, z로 변환한다. 이때 각 값은 다음과 같이 정의된다.
+The X, Y, Z values thus obtained are considered absolute color stimulus values including brightness information. However, when constructing chromaticity diagrams, only pure color attributes with brightness information removed are needed, so XYZ values are normalized and converted to chromaticity coordinates x, y, z. Each value is defined as follows:
 
 $$
 x=\frac{X}{X+Y+Z},\ y=\frac{Y}{X+Y+Z}
 $$
 
-여기서 $z = \frac{Z}{X + Y + Z}$ 또한 정의되지만, x+y+z=1 관계가 항상 성립하므로 x,y만으로도 전체 정보를 표현할 수 있다.
+Here $z = \frac{Z}{X + Y + Z}$ is also defined, but since the relationship x+y+z=1 always holds, entire information can be expressed with only x,y.
 
-위 정규화 과정을 단일 파장 λ에 대해 380nm부터 700nm까지 반복하면, 각 파장에 대한 (x, y) 좌표가 생성된다. 이 좌표들을 연결하면 색도도 상에서 외곽 경계선이 형성되며, 이를 스펙트럼 궤적(spectral locus)이라 부른다. 이 경계선은 단색광에 해당하는 색도이며, 곡선 아래쪽을 잇는 직선은 퍼플 라인(line of purples)이라 한다. 다음 그림은 그 예시를 보여준다.
-
-[예시 이미지 (spectral locus)](https://miro.medium.com/v2/resize:fit:1400/format:webp/0*cX02ZDqUrsdDGMUP./)
+Repeating the above normalization process for single wavelength λ from 380nm to 700nm generates (x, y) coordinates for each wavelength. Connecting these coordinates forms an outer boundary line on the chromaticity diagram, called the spectral locus. This boundary line is the chromaticity corresponding to monochromatic light, and the straight line connecting below the curve is called the line of purples. The following figure shows an example.
 
 <div style="text-align: center; margin: 1rem 0;">
   <img src="/colorimetry-2/colorimetry2-7.webp" alt="CIE 1931 chromaticity diagram spectral locus" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
-    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 8. XYZ 공간에서 단색광 스펙트럼이 형성하는 궤적.</p>
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 8. Trajectory formed by monochromatic spectrum in XYZ space.</p>
 </div>
 
-색도도에서 삼자극치를 정규화한 (x, y) 좌표는 벡터의 방향만 남긴 단위 벡터(unit vector)로 해석할 수 있다. 세 값의 합이 1로 고정되므로, 처음 두 값만 알면 나머지 하나는 자동으로 구할 수 있다. 이는 차원 축소의 개념과도 관련된다.
+Chromaticity diagram (x, y) coordinates normalizing tristimulus values can be interpreted as unit vectors leaving only vector direction. Since the sum of three values is fixed at 1, knowing the first two values automatically determines the remaining one. This also relates to the concept of dimensionality reduction.
 
-RGB 공간에서도 동일한 원리가 적용된다. 강도(밝기) 정보를 제거하면 3차원에서 2차원인 rg 평면으로의 투영이 가능해지고, 색도만을 분석하는 목적에서는 이러한 2차원 투영이 시각화를 훨씬 단순하게 만든다.
-
-[예시 이미지 (rg plane projection)](https://miro.medium.com/v2/resize:fit:1400/format:webp/0*dre7HQcxiUMBJiLT./)
+The same principle applies in RGB space. Removing intensity (brightness) information enables projection from 3-dimensional to 2-dimensional rg plane, and for purposes of analyzing only chromaticity, such 2-dimensional projection makes visualization much simpler.
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
   <div style="text-align: center;">
     <img src="/colorimetry-2/colorimetry2-8.webp" alt="RGB rg-plane projection example" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
-    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 7. 3D → 2D 투영(rg plane projection) 예시</p>
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 7. 3D → 2D projection (rg plane projection) example</p>
   </div>
   <div style="text-align: center;">
     <img src="/colorimetry-2/colorimetry2-9.webp" alt="Additional chromaticity / gamut reference figure" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
-    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 9. rg 색도 평면과 RGB 색역(gamut) 표현.</p>
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 9. rg chromaticity plane and RGB gamut representation.</p>
   </div>
 </div>
 
-- 외곽 곡선 위의 각 점은 단색광(스펙트럼 색상)에 해당한다.
-- 곡선 내부의 점들은 두 개 이상의 파장이 혼합된 비스펙트럼 색상을 나타낸다.
-- 곡선 외부의 색도는 단색광이나 일반적인 혼합광으로는 구현할 수 없는 영역이다.
-- RGB의 기본 색은 단색광에 해당하므로 곡선 경계 상에 위치한다.
-- 세 RGB 색점으로 이루어진 삼각형 안의 색들은 해당 RGB 광원으로 구현 가능한 영역이며, 삼각형 밖의 색은 표현을 위해 더 많은 광원이 필요하다.
+- Each point on the outer curve corresponds to monochromatic light (spectral colors).
+- Points inside the curve represent non-spectral colors mixed from two or more wavelengths.
+- Chromaticity outside the curve is an area unrealizable with monochromatic or general mixed light.
+- RGB primaries correspond to monochromatic light so are located on the curve boundary.
+- Colors inside the triangle formed by three RGB color points are areas realizable with those RGB light sources, and colors outside the triangle need more light sources for expression.
 
-디스플레이 장치의 색 재현 능력은 물리적으로 구현 가능한 색 영역(Gamut)에 의해 제한된다. 각 디스플레이는 자체의 R, G, B 광원의 색도 좌표를 갖고 있으며, 이 세 점을 꼭짓점으로 하는 삼각형 내부 영역이 해당 장치에서 표현 가능한 색도 범위를 결정한다. 이 삼각형 내부의 색도는 해당 장치로 재현 가능한 색이며, 외부는 구현 불가능한 색으로 간주된다. 삼각형이 클수록 해당 장치의 색 재현 범위가 넓다는 것을 의미한다.
+Display devices' color reproduction capability is limited by the physically realizable color gamut. Each display has chromaticity coordinates of its own R, G, B light sources, and the triangular area inside with these three points as vertices determines the chromaticity range expressible by that device. Chromaticity inside this triangle is color reproducible by that device, and outside is considered unreproducible color. The larger the triangle, the wider that device's color reproduction range.
 
-대부분의 색 보정이나 색온도 조절은 이러한 색 공간 내에서 특정 기준점, 즉 백색점(예: D65)을 중심으로 수행된다. 이 기준점은 색온도 곡선 상에 위치하며, 디스플레이에서의 색 균형을 조정하는 기준 역할을 한다.
+Most color correction or color temperature adjustment is performed centered on a specific reference point within such color space, namely the white point (e.g., D65). This reference point is located on the color temperature curve, serving as the standard for adjusting color balance in displays.
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
   <div style="text-align: center;">
     <img src="/colorimetry-2/colorimetry2-10.webp" alt="Chromaticity / gamut reference figure" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
-    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 10. CIE 1931 색도도 상의 색역(gamut) 비교: sRGB, Adobe RGB, DCI-P3.</p>
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 10. Gamut comparison on CIE 1931 chromaticity diagram: sRGB, Adobe RGB, DCI-P3.</p>
   </div>
   <div style="text-align: center;">
     <img src="/colorimetry-2/colorimetry2-11.webp" alt="Chromaticity / gamut reference figure" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
-    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 11. 디스플레이 장치의 RGB 기본색 좌표와 색역 삼각형 표현.</p>
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 11. Display device RGB primary color coordinates and gamut triangle representation.</p>
   </div>
   <div style="text-align: center;">
     <img src="/colorimetry-2/colorimetry2-12.webp" alt="Convert RGB chromaticity coordinates (r,g) to XYZ chromaticity coordinates (x,y)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
-    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 12. RGB 색도 좌표(r, g)를 XYZ 색도 좌표(x, y)로 변환하는 색공간 재정의 과정.</p>
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 12. Color space redefinition process converting RGB chromaticity coordinates (r, g) to XYZ chromaticity coordinates (x, y).</p>
   </div>
   <div style="text-align: center;">
     <img src="/colorimetry-2/colorimetry2-13.webp" alt="Additional reference figure for XYZ / chromaticity discussion" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
-    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 13. 가상의 기본색(Imaginary Primaries)을 사용한 XYZ 색 공간의 구성 원리.</p>
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 13. Construction principle of XYZ color space using Imaginary Primaries.</p>
   </div>
 </div>
 
-색상 일치 함수(Color Matching Function, CMF)를 통해 색을 수학적으로 정의할 때, 실존하는 색만을 기준으로 기본색을 선택하는 경우 RGB 삼자극치는 일부 파장에서 음수가 발생하는 문제를 겪는다. 이는 특정 색을 만들기 위해 ‘음의 양의 색’을 더해야 한다는 의미로, 물리적으로 구현이 불가능하거나 해석이 어렵다.
+When mathematically defining color through Color Matching Functions (CMF), if primaries are selected based only on existing colors, RGB tristimulus values experience the problem of negative values occurring at some wavelengths. This means 'negative amounts of color' must be added to make specific colors, which is physically unrealizable or difficult to interpret.
 
-이 문제를 해결하기 위해 CIE는 가상의 기본색(primary)을 도입하였다. 이 가상의 색상은 실제 색상 영역 외부에 위치하지만, 그 덕분에 모든 가시광선 파장에 대해 양수의 삼자극치 값(XYZ)를 생성할 수 있다. 즉, 인간의 눈에 보이는 모든 스펙트럼 색상을 양의 선형결합으로 표현할 수 있도록 한 것이다.
+To solve this problem, CIE introduced imaginary primaries. These imaginary colors are located outside the actual color range, but thanks to this, they can generate positive tristimulus values (XYZ) for all visible light wavelengths. In other words, they enable expressing all spectrum colors visible to the human eye as positive linear combinations.
 
-RGB 기반의 색좌표계에서는 이러한 특성이 불가능하다. 앞서 살펴본 색좌표 다이어그램 상에서, **모든 실제 색상을 포함하는 삼각형을 구성하려면 삼각형의 정점이 실제 색상 영역 외부에 있어야만 한다**. XYZ 색 공간은 이러한 조건을 만족하도록 구성된 모델이다.
+Such characteristics are impossible in RGB-based color coordinate systems. On the previously examined chromaticity diagram, **to construct a triangle containing all actual colors, the triangle's vertices must be outside the actual color range**. XYZ color space is a model constructed to satisfy this condition.
 
-CIE는 이를 위해 다음과 같은 변환 행렬을 사용하여 RGB 삼자극치 값을 XYZ 삼자극치로 변환한다. (해당 변환 행렬은 CIE RGB 기반 XYZ 변환의 예시이며, 실제 sRGB, Adobe RGB 등은 서로 다른 변환 행렬을 사용한다.)
+CIE uses the following transformation matrix to convert RGB tristimulus values to XYZ tristimulus values. (This transformation matrix is an example of CIE RGB-based XYZ transformation; actual sRGB, Adobe RGB, etc., use different transformation matrices.)
 
 <div>
 $$
@@ -189,48 +186,48 @@ B
 $$
 </div>
 
-이 변환 행렬의 목적은 두 가지이다.
+This transformation matrix has two purposes:
 
-1. **모든 파장에서의 자극값이 양수가 되도록 조정**하는 것.
-2. **Y 성분이 인간의 밝기 인식 곡선인 V(λ) 함수와 대응**되도록 보정하는 것.
+1. **Adjusting so stimulus values at all wavelengths become positive**.
+2. **Correcting so the Y component corresponds with V(λ) function, the human brightness perception curve**.
 
-이 변환을 통해 얻어진 XYZ 색 공간에서는 RGB CMF가 모두 양의 값으로 나타나며, 색을 표현할 때 음수 자극치 없이도 설명이 가능하다. 이는 실제 디스플레이 장치의 색 관리 시스템에서 매우 중요한 특성이다. 특히 Y 자극치는 밝기의 대표로 사용되어 휘도 기반의 연산이나 HDR 톤 매핑에서 기준 값으로 활용된다.
+In XYZ color space obtained through this transformation, RGB CMFs all appear as positive values, and explanation without negative stimulus values is possible when expressing colors. This is a very important characteristic in actual display device color management systems. Particularly, Y stimulus value is used as a brightness representative, utilized as a reference value in luminance-based operations or HDR tone mapping.
 
-### 색도도(Chromaticity Diagram)와 가시 색 영역의 시각화
+### Visualization of Chromaticity Diagram and Visible Color Range
 
 <div style="text-align: center; margin: 1rem 0;">
   <img src="/colorimetry-2/colorimetry2-14.webp" alt="CIE 1931 Chromaticity Diagram (xy)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
-  <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 14. CIE 1931 색도도(xy)와 가시 색 영역의 시각화.</p>
+  <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 14. CIE 1931 chromaticity diagram (xy) and visualization of visible color range.</p>
 </div>
 
-CIE 1931 색도도(xy)는 인간 시각계의 평균적 반응을 모델링한 표준 관측자 기준으로(2° 조건에서 측정된),  **가시광 스펙트럼의 색도 분포를 2차원으로 투영한 참조 다이어그램**이다. 이 다이어그램의 가장자리, 즉 말발굽 형태를 이루는 곡선은 파장 λ(400–700nm)에 따른 순수 단색광(spectral colors) 에 해당하며, 이 곡선은 가시광선에서 가능한 최대 포화도의 색들을 나타낸다.
+The CIE 1931 chromaticity diagram (xy) is **a reference diagram projecting the chromaticity distribution of visible light spectrum in 2-dimensions** based on standard observer standards modeling average human visual system response (measured under 2° conditions). The edge of this diagram, the curve forming a horseshoe shape, corresponds to pure monochromatic light (spectral colors) according to wavelength λ (400–700nm), and this curve represents colors of maximum saturation possible in visible light.
 
-이 내부에 존재하는 삼각형 영역은 특정 디스플레이 장치가 표현할 수 있는 색의 범위, 즉 색역(color gamut) 을 나타낸다. 이 삼각형의 각 꼭짓점은 해당 장치의 R, G, B 기본색의 색좌표 (xR, yR), (xG, yG), (xB, yB)로 표시되며, 이들이 연결되어 구성된 영역 안의 색만이 해당 장치에서 생성 가능하다. 이외의 색은 out of gamut 상태로, 기술적으로 재현할 수 없는 색을 뜻한다. 또한, 장치의 백색점(white point) 은 반드시 이 삼각형 내부에 존재해야 실제 백색을 표현할 수 있으며, 이는 이론적 중심 E (Equal Energy White Point)와 정확히 일치할 필요는 없지만, 일반적으로는 다른 위치에 존재한다.
+The triangular area existing inside represents the range of colors a specific display device can express, namely the color gamut. Each vertex of this triangle is displayed as the color coordinates (xR, yR), (xG, yG), (xB, yB) of that device's R, G, B primary colors, and only colors inside the area formed by connecting these can be generated on that device. Other colors are in an out of gamut state, meaning colors technically unreproducible. Additionally, the device's white point must exist inside this triangle to express actual white, which doesn't need to exactly match the theoretical center E (Equal Energy White Point), but generally exists at a different location.
 
 ---
 
-### CIE 1976 (u′, v′) 균등 색도도와 색 지각의 개선
+### CIE 1976 (u′, v′) Uniform Chromaticity Diagram and Improvement of Color Perception
 
 <div style="text-align: center; margin: 1rem 0;">
   <img src="/colorimetry-2/colorimetry2-15.webp" alt="CIE 1976 (u′, v′) Uniform Chromaticity Scale Diagram" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
-  <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 15. CIE 1976 (u′, v′) 균등 색도도와 지각 균등성 개선 효과.</p>
+  <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 15. CIE 1976 (u′, v′) uniform chromaticity diagram and perceptual uniformity improvement effect.</p>
 </div>
 
-기존 CIE 1931 색도도는 색좌표 공간을 효과적으로 시각화하는 데 기여했지만, 한계도 분명했다. 특히 초록색 영역이 지나치게 확장되어 있고, 동일한 물리적 색 차이가 색도도 상에서는 거리 왜곡으로 나타나는 문제가 존재했다. 즉, 사람이 지각하는 색의 차이와 xy 색도도에서의 거리 간의 불일치가 발생한 것이다. 이 문제는 색상 간 등색 영역(MacAdam ellipse) 의 크기 차이를 통해 명확히 드러나며, 실제로 초록색 근방에서는 하나의 타원이 파란색보다 10배 이상 크기도 한다.
+While the existing CIE 1931 chromaticity diagram contributed to effectively visualizing color coordinate space, limitations were also clear. Particularly, the green region was excessively expanded, and the problem existed where identical physical color differences appeared as distance distortions on the chromaticity diagram. In other words, mismatches occurred between color differences humans perceive and distances in the xy chromaticity diagram. This problem clearly revealed itself through size differences of equal-color regions (MacAdam ellipse) between colors—actually near green, one ellipse can be over 10 times larger than blue.
 
-이를 개선하기 위해 CIE는 1976년에 CIE 1976 (u′, v′) 균등 색도도(Uniform Chromaticity Scale Diagram) 를 도입하였다. 이 새로운 색도도는 사람의 시각적 민감도에 더 균일하게 대응하도록 수학적으로 재구성되었으며, 각 방향에서 동일한 거리만큼 이동했을 때 동등한 색 차이(perceptual difference) 로 느껴지도록 설계되었다. 그 결과, 빨간색과 파란색 영역이 시각적으로 확대되었고, 전체적으로 색상 간 지각 균등성이 향상되었다. 이는 색차 계산이나 색상 인식 기반 설계 작업 등에서 훨씬 더 유의미한 기준을 제공하게 되었다.
+To improve this, CIE introduced the CIE 1976 (u′, v′) Uniform Chromaticity Scale Diagram in 1976. This new chromaticity diagram was mathematically reconstructed to correspond more uniformly to human visual sensitivity, designed so movement of equal distance in each direction feels like equal perceptual difference. As a result, red and blue regions were visually expanded, and overall perceptual uniformity between colors improved. This came to provide much more meaningful standards in color difference calculations or design work based on color perception.
 
-### 실제 세계에서의 색 영역과 재현의 한계
+### Color Range and Reproduction Limits in the Real World
 
-현실에서 사용하는 대부분의 색 공간(sRGB, Adobe RGB 등)은 CIE 1931 색도도 상의 전체 말발굽 영역을 완전히 포함하지 못한다. 이는 곧 인간이 지각 가능한 전체 색 영역 중 일부만을 표현 가능하다는 뜻이며, 표현 가능한 색역(gamut)의 물리적 한계를 반영한다.
+Most color spaces used in reality (sRGB, Adobe RGB, etc.) don't completely include the entire horseshoe area on the CIE 1931 chromaticity diagram. This means only part of the total color range humans can perceive is expressible, reflecting physical limits of expressible gamut.
 
-예를 들어, 디지털 카메라가 sRGB 색 공간을 기준으로 작동하는 경우, 피사체가 sRGB의 삼각형 바깥쪽에 해당하는 색상을 갖고 있다면 해당 색은 정확하게 재현되지 않는다. 대신, 그 색과 가장 가까운 색역 내의 대체 가능한 색으로 대체되어 표현된다. 이러한 과정을 gamut clipping이라 하며, 이는 출력 장치(모니터, 프린터)에서도 유사하게 발생한다.
+For example, if a digital camera operates based on sRGB color space, if the subject has colors corresponding to outside sRGB's triangle, that color isn't accurately reproduced. Instead, it's expressed replaced by the closest substitutable color within the gamut. This process is called gamut clipping, and similarly occurs in output devices (monitors, printers).
 
-이러한 제한은 디스플레이 장치의 기본 색상 좌표와 물리적 조명 특성, 센서의 감도 등에 따라 결정된다. 따라서 각 장치는 서로 다른 색 표현 능력을 가지며, 동일한 이미지라도 장치 간 색 일치(color consistency) 가 완벽히 일어나지 않는 이유이기도 하다.
+Such limitations are determined by display device primary color coordinates, physical lighting characteristics, sensor sensitivity, etc. Therefore each device has different color expression capability, and is also why color consistency doesn't happen perfectly between devices even for identical images.
 
-더 자세한 내용은 본 시리즈 1편에서 다루었으니 참고하시길 바란다.
+For more details, please refer to Part 1 of this series.
 
-[Colorimetry 1편 보러가기](/posts/2026-01-22-colorimetry-1/)
+[Go to Colorimetry Part 1](/posts/2026-01-22-colorimetry-1/)
 
 **Reference**
 
@@ -238,5 +235,5 @@ CIE 1931 색도도(xy)는 인간 시각계의 평균적 반응을 모델링한 �
 - [Waveform Lighting — D65](https://www.waveformlighting.com/color-matching/what-is-d65-and-what-is-it-used-for)
 - [Wikipedia — Opponent process](https://en.wikipedia.org/wiki/Opponent_process)
 - [Fourmilab — Spectral Rendering](https://www.fourmilab.ch/documents/specrend/)
-- [Medium — A beginner’s guide to colorimetry](https://medium.com/hipster-color-science/a-beginners-guide-to-colorimetry-401f1830b65a)
+- [Medium — A beginner's guide to colorimetry](https://medium.com/hipster-color-science/a-beginners-guide-to-colorimetry-401f1830b65a)
 - [jlongster — why chromaticity shape](https://jlongster.com/why-chromaticity-shape)

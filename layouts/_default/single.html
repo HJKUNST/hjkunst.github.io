@@ -20,7 +20,7 @@
           <div class="article-meta-group">
             <dl>
               <div>
-                <dt class="sr-only">Published on</dt>
+                <dt class="sr-only">{{ i18n "publishedOn" }}</dt>
                 <dd class="text-base font-medium leading-6 text-gray-500">
                   {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
                   {{ $dateHuman := .Date | time.Format ":date_full" }}
@@ -34,13 +34,26 @@
                 <div>{{ .Title }}</div>
               </h1>
             </div>
-            {{ if .Params.tags }}
-            <div class="article-tag-row flex flex-wrap items-center justify-center gap-3">
-              {{ range .Params.tags }}
-              <a href="/tags/{{ . | urlize }}" class="tag-chip">{{ . }}</a>
+            <div class="flex flex-col items-center gap-3">
+              {{ if .Params.tags }}
+              <div class="article-tag-row flex flex-wrap items-center justify-center gap-3">
+                {{ range .Params.tags }}
+                <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="tag-chip">{{ . }}</a>
+                {{ end }}
+              </div>
+              {{ end }}
+              
+              {{ if .IsTranslated }}
+              <div class="flex items-center gap-2 text-sm">
+                <span class="text-gray-500">Read in:</span>
+                {{ range .Translations }}
+                <a href="{{ .RelPermalink }}" class="language-switch-link">
+                  {{ .Language.LanguageName }}
+                </a>
+                {{ end }}
+              </div>
               {{ end }}
             </div>
-            {{ end }}
           </div>
           {{ if .Params.image }}
           <div class="article-meta-to-banner article-banner-wrap overflow-hidden">
@@ -57,7 +70,7 @@
             {{- if .Fragments.Headings }}
             <div class="py-10">
               <h2 class="text-xs uppercase tracking-wide text-gray-500">
-                Table of Contents
+                {{ i18n "tableOfContents" }}
               </h2>
               <nav class="mt-2">
                 {{- range .Fragments.Headings }}
@@ -105,8 +118,7 @@
 
         <footer class="xl:col-start-1 xl:col-span-4">
           <div class="pt-4 xl:pt-8">
-            <a class="text-indigo-500 hover:text-indigo-600" aria-label="Back to the list" href="/">← Back to the
-              list</a>
+            <a class="text-indigo-500 hover:text-indigo-600" aria-label="{{ i18n "backToList" }}" href="{{ "/" | relLangURL }}">← {{ i18n "backToList" }}</a>
           </div>
         </footer>
       </div>
