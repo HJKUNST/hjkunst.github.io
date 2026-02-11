@@ -1,0 +1,460 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+  class="scroll-smooth"
+>
+  <head>
+    
+
+
+
+
+
+
+
+<meta charset="utf-8" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YS9Z2BGZ1Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-YS9Z2BGZ1Q');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
+
+<meta name="description" content="
+Purpose
+I wanted to integrate Cursor AI with Figma files to directly convert design resources into code. In most other design and art disciplines, the work is considered &ldquo;complete&rdquo; only when the final product is finished — so why should implementation in UX/UI design be solely the developer&rsquo;s responsibility? This was a challenge to that question. Ultimately, I think what I really wanted was to build a website driven by a sense of authorship." />
+
+
+<meta property="og:title" content="From Design to Implementation: Connecting Figma and Cursor MCP (Basics)" />
+<meta property="og:description" content="
+Purpose
+I wanted to integrate Cursor AI with Figma files to directly convert design resources into code. In most other design and art disciplines, the work is considered &ldquo;complete&rdquo; only when the final product is finished — so why should implementation in UX/UI design be solely the developer&rsquo;s responsibility? This was a challenge to that question. Ultimately, I think what I really wanted was to build a website driven by a sense of authorship." />
+<meta property="og:url" content="https://hjkunst.github.io/en/posts/2025-06-15-figma-to-code/" />
+<meta property="og:site_name" content="Strawberry Fields — Pastoral Tech Notes by @lkkunst" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://hjkunst.github.io/images/og-image.png" />
+<meta property="og:locale" content="en_us" />
+
+
+
+
+<link rel="alternate" hreflang="ko-kr" href="https://hjkunst.github.io/ko/posts/2025-06-15-figma-to-code/" />
+
+<link rel="alternate" hreflang="en-us" href="https://hjkunst.github.io/en/posts/2025-06-15-figma-to-code/" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="From Design to Implementation: Connecting Figma and Cursor MCP (Basics)" />
+<meta name="twitter:description" content="
+Purpose
+I wanted to integrate Cursor AI with Figma files to directly convert design resources into code. In most other design and art disciplines, the work is considered &ldquo;complete&rdquo; only when the final product is finished — so why should implementation in UX/UI design be solely the developer&rsquo;s responsibility? This was a challenge to that question. Ultimately, I think what I really wanted was to build a website driven by a sense of authorship." />
+<meta name="twitter:image" content="https://hjkunst.github.io/images/og-image.png" />
+
+<title>From Design to Implementation: Connecting Figma and Cursor MCP (Basics)</title>
+
+
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<meta name="theme-color" content="#FF6254">
+<meta name="msapplication-TileColor" content="#FF6254">
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      packages: { '[+]': ['ams'] }
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<link
+        rel="stylesheet"
+        href="/css/output.min.e6ea1a713ee8508a7ae1581f36a75a67ceb7390eaea21503ce3bade6cfabca8c.css"
+        integrity="sha256-5uoacT7oUIp64VgfNqdaZ863OQ6uohUDzjut5s&#43;ryow="
+        crossorigin="anonymous"
+      /><link
+        rel="stylesheet"
+        href="/css/custom.min.b0e39fb81464392a8c1dfcf79e38a1369b0ac0d49a0a8bfa676768c503a22757.css"
+        integrity="sha256-sOOfuBRkOSqMHfz3njihNpsKwNSaCov6Z2doxQOiJ1c="
+        crossorigin="anonymous"
+      />
+  </head>
+  <body class="bg-white text-black antialiased">
+    <div class="flex h-screen flex-col justify-between font-sans">
+      <header class="site-header sticky top-0 z-50" style="background: rgba(228, 228, 228, 0.1); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="flex items-center justify-between py-4">
+            <a class="group break-words" aria-label="Strawberry Fields — Pastoral Tech Notes by @lkkunst" href="/en/">
+  <div class="flex items-center justify-between">
+    <div class="sm:mr-3">
+      <img src="/images/logo.svg" width="32" height="32" alt="Logo Image" />
+    </div>
+
+    <div class="hidden text-2xl font-semibold sm:block group-hover:underline">
+      <span>Strawberry Fields — Pastoral Tech Notes by @lkkunst</span>
+    </div>
+  </div>
+</a>
+
+<div class="flex items-center space-x-4 leading-5 sm:space-x-6">
+  <div class="items-center space-x-4 overflow-x-auto flex sm:space-x-6">
+    
+      <a
+        href="/en/about"
+        class="font-medium text-gray-900 hover:text-indigo-500"
+        
+        >About</a
+      >
+    
+      <a
+        href="/en/tags"
+        class="font-medium text-gray-900 hover:text-indigo-500"
+        
+        >Tags</a
+      >
+    
+    <div class="lang-toggle"><span class="lang-toggle__item lang-toggle__item--active">ENG</span><a class="lang-toggle__item" href="/ko/posts/2025-06-15-figma-to-code/">KOR</a></div>
+
+    <a href="https://github.com/hjkunst" target="_blank">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="fill-[#24292F] hover:fill-indigo-500 h-6 w-6"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12.0099 0C5.36875 0 0 5.5 0 12.3042C0 17.7432 3.43994 22.3472 8.21205 23.9767C8.80869 24.0992 9.02724 23.712 9.02724 23.3862C9.02724 23.101 9.00757 22.1232 9.00757 21.1045C5.6667 21.838 4.97099 19.6378 4.97099 19.6378C4.43409 18.2118 3.63858 17.8452 3.63858 17.8452C2.54511 17.0915 3.71823 17.0915 3.71823 17.0915C4.93117 17.173 5.56763 18.3545 5.56763 18.3545C6.64118 20.2285 8.37111 19.699 9.06706 19.373C9.16638 18.5785 9.48473 18.0285 9.82275 17.723C7.15817 17.4377 4.35469 16.3785 4.35469 11.6523C4.35469 10.3078 4.8316 9.20775 5.58729 8.35225C5.46807 8.04675 5.0504 6.7835 5.70677 5.09275C5.70677 5.09275 6.72083 4.76675 9.00732 6.35575C9.98625 6.08642 10.9958 5.9494 12.0099 5.94825C13.024 5.94825 14.0577 6.091 15.0123 6.35575C17.299 4.76675 18.3131 5.09275 18.3131 5.09275C18.9695 6.7835 18.5515 8.04675 18.4323 8.35225C19.2079 9.20775 19.6652 10.3078 19.6652 11.6523C19.6652 16.3785 16.8617 17.4172 14.1772 17.723C14.6148 18.11 14.9924 18.8433 14.9924 20.0045C14.9924 21.6545 14.9727 22.9788 14.9727 23.386C14.9727 23.712 15.1915 24.0992 15.7879 23.977C20.56 22.347 23.9999 17.7432 23.9999 12.3042C24.0196 5.5 18.6312 0 12.0099 0Z"
+        />
+      </svg>
+    </a>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </header>
+      
+      <main class="mb-auto">
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "From Design to Implementation: Connecting Figma and Cursor MCP (Basics)",
+      "datePublished": "2025-06-15T02:04:00\u002b09:00",
+      "dateModified": "2025-06-15T02:04:00\u002b09:00",
+      "description": "\u003cdiv markdown=\u00221\u0022\u003e\n\u003ch3 id=\u0022purpose\u0022\u003ePurpose\u003c\/h3\u003e\n\u003cp\u003eI wanted to integrate Cursor AI with Figma files to directly convert design resources into code. In most other design and art disciplines, the work is considered \u0026ldquo;complete\u0026rdquo; only when the final product is finished — so why should implementation in UX\/UI design be solely the developer\u0026rsquo;s responsibility? This was a challenge to that question. Ultimately, I think what I really wanted was to build a website driven by a sense of authorship.\u003c\/p\u003e",
+      "image": "https:\/\/hjkunst.github.io\/images\/og-image.png",
+      "url": "https:\/\/hjkunst.github.io\/en\/posts\/2025-06-15-figma-to-code\/",
+      "author": [{ "@type": "Person", "name": "hjkunst" }]
+    }
+  </script>
+<section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+  <article>
+    <div class="xl:divide-y xl:divide-gray-200">
+      <header class="pt-16 xl:pb-16">
+        <div class="text-center">
+          <div class="article-meta-group">
+            <dl>
+              <div>
+                <dt class="sr-only">Published on</dt>
+                <dd class="text-base font-medium leading-6 text-gray-500">
+                  
+                  
+                  <time datetime="2025-06-15T02:04:00&#43;09:00">Sunday, June 15, 2025</time>
+                </dd>
+              </div>
+            </dl>
+            <div>
+              <h1
+                class="text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-3xl sm:leading-9 md:text-4xl md:leading-10">
+                <div>From Design to Implementation: Connecting Figma and Cursor MCP (Basics)</div>
+              </h1>
+            </div>
+            <div class="flex flex-col items-center gap-3">
+              
+              
+              
+              <div class="flex items-center gap-2 text-sm">
+                <span class="text-gray-500">Read in:</span>
+                
+                <a href="/ko/posts/2025-06-15-figma-to-code/" class="language-switch-link">
+                  KOR
+                </a>
+                
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+      </header>
+
+      <div class="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0">
+        <aside class="hidden xl:block xl:col-start-1 xl:row-start-1">
+          <div class="sticky top-24 space-y-8">
+            <div class="py-10">
+              <h2 class="text-xs uppercase tracking-wide text-gray-500">
+                Table of Contents
+              </h2>
+              <nav class="mt-2">
+                <ul class="space-y-3">
+                  <li class="text-sm">
+                    <a href="#" class="text-indigo-500 hover:text-indigo-600"></a>
+                    <ul class="ml-4 mt-2 space-y-2">
+                      <li class="text-sm">
+                        <a href="#purpose" class="text-indigo-500 hover:text-indigo-600">Purpose</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#doubts-about-feasibility" class="text-indigo-500 hover:text-indigo-600">Doubts About Feasibility</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#why-im-writing-this-blog-post" class="text-indigo-500 hover:text-indigo-600">Why I’m Writing This Blog Post</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#so-what-was-the-result" class="text-indigo-500 hover:text-indigo-600">So, What Was the Result?</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#steps" class="text-indigo-500 hover:text-indigo-600">Steps</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#requesting-implementation-via-cursor-chat" class="text-indigo-500 hover:text-indigo-600">Requesting Implementation via Cursor Chat</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#running-locally" class="text-indigo-500 hover:text-indigo-600">Running Locally</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#useful-references" class="text-indigo-500 hover:text-indigo-600">Useful References</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        <div class="divide-y divide-gray-200 xl:col-span-3 xl:row-span-2 xl:pb-0">
+          <div class="prose max-w-none pb-8 pt-10">
+            <div markdown="1">
+<h3 id="purpose">Purpose</h3>
+<p>I wanted to integrate Cursor AI with Figma files to directly convert design resources into code. In most other design and art disciplines, the work is considered &ldquo;complete&rdquo; only when the final product is finished — so why should implementation in UX/UI design be solely the developer&rsquo;s responsibility? This was a challenge to that question. Ultimately, I think what I really wanted was to build a website driven by a sense of authorship.</p>
+</div>
+<div class="spacer"></div>
+<div markdown="1">
+<h3 id="doubts-about-feasibility">Doubts About Feasibility</h3>
+<ul>
+<li>
+<p>Even if the appearance can be replicated, can things like flex, grid layout, margin/padding, and textures be faithfully transferred exactly as I designed them?</p>
+</li>
+<li>
+<p>Wouldn&rsquo;t the development effort double? With lovable and v0, it felt like they just threw code at you, so I never wanted to use them in actual production. Design ultimately plays an irreplaceable role in providing emotional refinement to a product, yet those tools only focused on trends and simplicity without being truly user-friendly.</p>
+</li>
+<li>
+<p>Can prototypes with animations also be implemented?</p>
+<ul>
+<li>In Figma, prototypes and animations are built through frame-to-frame connections, but wouldn&rsquo;t it be difficult when connecting via MCP on a single-frame basis?</li>
+<li>If animation is possible, which library would be most effective?</li>
+</ul>
+</li>
+<li>
+<p>How are states like hover implemented?</p>
+</li>
+<li>
+<p>How can components that require JavaScript be handled? Wouldn&rsquo;t it just render the screen while ignoring the functionality?</p>
+</li>
+</ul>
+</div>
+<div class="spacer"></div>
+<div markdown="1">
+<h3 id="why-im-writing-this-blog-post">Why I&rsquo;m Writing This Blog Post</h3>
+<p>Most people just show the final result after completing the Cursor integration. I wanted to make it so that even someone without a development background could use Figma + Cursor MCP. Of course, it was a meaningful process of trial and error, but I hope others can develop quickly without going through the same struggles I did. Since this is a skill needed to reduce communication overhead between designers and developers and to build faster, more satisfying products together, I hope many people will find this useful.</p>
+</div>
+<div class="spacer"></div>
+<div markdown="1">
+<h3 id="so-what-was-the-result">So, What Was the Result?</h3>
+<style>
+@media (max-width: 600px) {
+  .responsive-flex {
+    flex-direction: column !important;
+  }
+  .responsive-text {
+    min-width: auto !important;
+  }
+  .responsive-images {
+    min-width: auto !important;
+  }
+}
+</style>
+<div class="responsive-flex" style="display: flex; gap: 16px; align-items: flex-start;">
+  <p class="responsive-text" style="line-height: 1.6; min-width: 400px;">
+    It produced a fairly well-structured and clean result. This landing page was an opportunity where I could handle nearly the entire process up to just before deployment.
+    <br/><br/> Unfortunately, I did have to customize the carousel and motion effects (though I did get a bit of help from AI for that too), but Cursor was a huge help with the initial structure and design system.
+    <br/><br/> If you follow the steps below, you too can build a landing page like the one shown here! (Probably.) Here's a glimpse of the parts I can show without revealing the site name.
+  </p>
+  <div class="responsive-images" style="display: flex; flex-direction: column;">
+    <img src="https://raw.githubusercontent.com/HJKUNST/github-blog-images/main/assets/25-06-15-figma-to-code/1.png" alt="Cursor AI와 Figma 연동으로 제작된 랜딩페이지 상단 메인 섹션" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;"/>
+    <img src="https://raw.githubusercontent.com/HJKUNST/github-blog-images/main/assets/25-06-15-figma-to-code/2.png" alt="Cursor AI와 Figma 연동으로 제작된 랜딩페이지 하단 섹션"  style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+   </div>
+</div>
+</div>
+<div class="spacer"></div>
+<h3 id="steps">Steps</h3>
+<div class="spacer"></div>
+<h4 id="1-open-the-frame-you-want-to-connect-in-your-figma-file">1. Open the Frame you want to connect in your Figma file</h4>
+   <img src="https://raw.githubusercontent.com/HJKUNST/github-blog-images/main/assets/25-06-15-figma-to-code/3.png" alt="Figma에서 프레임 열기 - 디자인 파일에서 연결할 프레임을 선택하는 화면" style="display: block; text-align: left;"/>
+<div class="spacer"></div>
+<h4 id="2-log-in-to-cursor">2. Log in to Cursor</h4>
+<ul>
+<li>2-week free trial per account</li>
+<li>US students can use the Pro plan for free</li>
+<li>I went through 3 accounts, got IP-banned, and ended up paying for 1 year of Pro
+<img src="https://raw.githubusercontent.com/HJKUNST/github-blog-images/main/assets/25-06-15-figma-to-code/cursor.png" alt="Cursor AI 로그인 화면 - Pro 요금제 정보와 무료 기간 안내" style="display: block; text-align: left;"/></li>
+</ul>
+<div class="spacer"></div>
+<h4 id="3-go-to-cursor-settings--mcp-tools--click-new-mcp-server">3. Go to Cursor Settings &gt; MCP Tools &gt; Click New MCP Server</h4>
+<p>Paste the following into the generated <code>mcp.json</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;mcpServers&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Framelink Figma MCP&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;npx&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;args&#34;</span>: [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;-y&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;figma-developer-mcp&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;--figma-api-key=YOUR-KEY&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;--stdio&#34;</span>
+</span></span><span style="display:flex;"><span>      ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="spacer"></div>
+<h4 id="4-you-need-to-fill-in-the---figma-api-keyyour-key-part">4. You need to fill in the <code>--figma-api-key=YOUR-KEY</code> part</h4>
+<ul>
+<li>
+<p>Go to Figma &gt; Settings &gt; Security and click &lsquo;Generate new token&rsquo;</p>
+</li>
+<li>
+<p>Enter a name you can identify it by, select the Scopes, and generate it
+<img src="https://raw.githubusercontent.com/HJKUNST/github-blog-images/main/assets/25-06-15-figma-to-code/4.png" alt="Figma 설정 화면 - Security 탭에서 API 토큰 생성하는 과정" style="display: block; text-align: left;"/></p>
+</li>
+<li>
+<p>Click Copy this token and paste it into <code>YOUR-KEY</code></p>
+</li>
+<li>
+<p>Be careful not to include it when asking questions to AI chatbots like GPT
+<img src="https://raw.githubusercontent.com/HJKUNST/github-blog-images/main/assets/25-06-15-figma-to-code/5.png" alt="Figma API 토큰 복사 화면 - 생성된 토큰을 안전하게 복사하는 과정" style="display: block; text-align: left;"/></p>
+</li>
+</ul>
+<div class="spacer"></div>
+<h4 id="5-once-the-setup-is-complete-you-should-see-the-following-screen">5. Once the setup is complete, you should see the following screen</h4>
+  <img src="https://raw.githubusercontent.com/HJKUNST/github-blog-images/main/assets/25-06-15-figma-to-code/6.png" alt="MCP 서버 설정 완료 화면 - Figma MCP가 성공적으로 연결된 상태" style="display: block; text-align: left;"/>
+<div class="spacer"></div>
+<h4 id="4-by-now-you-should-have-pasted-everything-into-mcpjson--close-it-and-go-back-to-cursor-settings-the-json-you-just-created-should-appear-like-this">4. By now you should have pasted everything into mcp.json — close it and go back to Cursor Settings. The JSON you just created should appear like this.</h4>
+<p>Turn on the MCP server toggle if it&rsquo;s off
+<img src="https://raw.githubusercontent.com/HJKUNST/github-blog-images/main/assets/25-06-15-figma-to-code/7.png" alt="Cursor MCP 설정 화면 - 토글 버튼으로 서버 활성화" style="display: block; text-align: left;"/></p>
+<div class="spacer"></div>
+<h3 id="requesting-implementation-via-cursor-chat">Requesting Implementation via Cursor Chat</h3>
+<p>In this basics guide, we&rsquo;ll skip advanced prompting and settings and just focus on getting things built.
+Open Cursor Chat and type the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>implement this figma file and generate a new react project by (html/css/javascript or react or next app) on desktop @(링크)
+</span></span></code></pre></div><div class="spacer"></div>
+<p><strong>Additional prompt:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>I need new project and want you to adapt get_figma_data
+</span></span><span style="display:flex;"><span>Always choose the best consideration for this project
+</span></span></code></pre></div><ul>
+<li>
+<p>If the connection is successful, you&rsquo;ll see a screen like this:
+<img src="https://raw.githubusercontent.com/HJKUNST/github-blog-images/main/assets/25-06-15-figma-to-code/8.png" alt="Cursor Chat에서 Figma 파일 연동 성공 화면" style="display: block; text-align: left;"/></p>
+</li>
+<li>
+<p>After reviewing the generated code, click the <strong>Accept button</strong> in the bottom right
+<img src="https://raw.githubusercontent.com/HJKUNST/github-blog-images/main/assets/25-06-15-figma-to-code/9.png" alt="Cursor Accept 버튼 화면 - 생성된 코드를 승인하는 과정" style="display: block; text-align: left;"/></p>
+</li>
+</ul>
+<div class="spacer"></div>
+<h3 id="running-locally">Running Locally</h3>
+<p>I generated a <code>next app</code>, then ran the local server:
+It was a simple component page, but Figma&rsquo;s auto-layout settings were well reflected in the div structure.
+<img src="https://raw.githubusercontent.com/HJKUNST/github-blog-images/main/assets/25-06-15-figma-to-code/10.png" alt="로컬 개발 환경 - Next.js 프로젝트 실행 결과" style="display: block; text-align: left;"/></p>
+  <img src="https://raw.githubusercontent.com/HJKUNST/github-blog-images/main/assets/25-06-15-figma-to-code/11.png" alt="생성된 웹 애플리케이션 실행 결과 - Figma 디자인이 코드로 변환된 최종 결과물" style="display: block; text-align: left;"/>
+<div class="spacer"></div>
+<h3 id="useful-references">Useful References</h3>
+<ul>
+<li><a href="https://github.com/GLips/Figma-Context-MCP">Figma Context MCP GitHub</a></li>
+<li><a href="https://www.framelink.ai/docs/quickstart">Framelink Quickstart Docs</a></li>
+<li><a href="https://www.reese-log.com/cursor-figma-model-context-protocol">Cursor Experiment Log - reese-log</a></li>
+</ul>
+
+          </div>
+        </div>
+
+        <footer class="xl:col-start-1 xl:col-span-4">
+          <div class="pt-4 xl:pt-8">
+            <a class="text-indigo-500 hover:text-indigo-600" aria-label="Back to the list" href="/en/">← Back to the list</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </article>
+</section>
+
+        </section>
+      </main>
+      <footer>
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="mt-16 flex flex-col items-center">
+  <div class="mb-2 text-sm text-gray-500">
+    <span>(C) 2026. Strawberry Fields — Pastoral Tech Notes by @lkkunst all rights reserved.</span>
+  </div>
+
+  <div class="mb-8 text-sm text-gray-500">
+    <span class="mr-1">Built with</span>
+    <a
+      class="font-semibold underline"
+      href="https://github.com/discaptive/hugo-discaptive"
+      target="_blank"
+      >hugo-discaptive</a
+    >
+  </div>
+</div>
+
+        </section>
+      </footer>
+    </div>
+  </body>
+</html>

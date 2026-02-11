@@ -1,61 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://hjkunst.github.io/</loc>
-    <lastmod>2026-02-09T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hjkunst.github.io/posts/2026-02-09-ux-agree/</loc>
-    <lastmod>2026-02-09T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hjkunst.github.io/posts/</loc>
-    <lastmod>2026-02-09T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hjkunst.github.io/tags/</loc>
-    <lastmod>2026-02-09T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hjkunst.github.io/tags/ux/</loc>
-    <lastmod>2026-02-09T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hjkunst.github.io/tags/colorimetry/</loc>
-    <lastmod>2026-01-29T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hjkunst.github.io/posts/2026-01-29-colorimetry-2/</loc>
-    <lastmod>2026-01-29T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hjkunst.github.io/tags/science/</loc>
-    <lastmod>2026-01-29T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hjkunst.github.io/posts/2026-01-22-colorimetry-1/</loc>
-    <lastmod>2026-01-22T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hjkunst.github.io/tags/crypto/</loc>
-    <lastmod>2026-01-05T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hjkunst.github.io/posts/2026-01-05-crypto-article-2/</loc>
-    <lastmod>2026-01-05T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hjkunst.github.io/tags/design-system/</loc>
-    <lastmod>2026-01-05T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hjkunst.github.io/posts/2025-12-31-crypto-article-1/</loc>
-    <lastmod>2025-12-31T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hjkunst.github.io/tags/design/</loc>
-    <lastmod>2025-07-27T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hjkunst.github.io/posts/2025-07-27-tmc/</loc>
-    <lastmod>2025-07-27T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hjkunst.github.io/categories/</loc>
-    <lastmod>2025-06-15T02:04:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hjkunst.github.io/categories/front-end/</loc>
-    <lastmod>2025-06-15T02:04:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hjkunst.github.io/posts/2025-06-15-figma-to-code/</loc>
-    <lastmod>2025-06-15T02:04:00+09:00</lastmod>
-  </url><url>
-    <loc>https://hjkunst.github.io/about/</loc>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>https://hjkunst.github.io/en/sitemap.xml</loc>
+    
+      <lastmod>2026-02-09T12:00:00+09:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://hjkunst.github.io/ko/sitemap.xml</loc>
+    
+      <lastmod>2026-02-09T12:00:00+09:00</lastmod>
+    
+  </sitemap>
+  
+</sitemapindex>

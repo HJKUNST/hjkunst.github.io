@@ -1,0 +1,400 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+  class="scroll-smooth"
+>
+  <head>
+    
+
+
+
+
+
+
+
+<meta charset="utf-8" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YS9Z2BGZ1Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-YS9Z2BGZ1Q');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
+
+<meta name="description" content="Process
+This article focuses on the decision-making process while actually analyzing design system components. Code snippets included in the portfolio were also limited to revealing decision reasons of &ldquo;why implement this way&rdquo; rather than implementation results. For example, explaining in detail the reasons for separating specific style differences as props rather than separate components, designing various style variations as variants, or the background for using design tokens indirectly rather than directly referencing them. For this purpose, I compared three design systems—Apple Human Interface Guidelines (HIG), Material-UI (MUI), and Coinbase Design System (CDS)—centering on common components like Button, Text Input, Modal, and the AreaChart component unique to CDS. While analyzing each component from design and code implementation perspectives, I organize in detail specific elements like design token utilization, variant structure, state composition, and accessibility handling methods. The analysis method classifies and describes content from perspectives of common structure, naming differences, and functional differences, like the classification proposed in the paper &ldquo;Framework for Comparative Analysis of Usability of GUI Components by Mobile Operating System.&rdquo; Finally, I organize lessons and learning effects gained through this comparative analysis process and present practical conclusions on implications for design-development collaboration." />
+
+
+<meta property="og:title" content="Crypto Article Week 2 | CDS Components" />
+<meta property="og:description" content="Process
+This article focuses on the decision-making process while actually analyzing design system components. Code snippets included in the portfolio were also limited to revealing decision reasons of &ldquo;why implement this way&rdquo; rather than implementation results. For example, explaining in detail the reasons for separating specific style differences as props rather than separate components, designing various style variations as variants, or the background for using design tokens indirectly rather than directly referencing them. For this purpose, I compared three design systems—Apple Human Interface Guidelines (HIG), Material-UI (MUI), and Coinbase Design System (CDS)—centering on common components like Button, Text Input, Modal, and the AreaChart component unique to CDS. While analyzing each component from design and code implementation perspectives, I organize in detail specific elements like design token utilization, variant structure, state composition, and accessibility handling methods. The analysis method classifies and describes content from perspectives of common structure, naming differences, and functional differences, like the classification proposed in the paper &ldquo;Framework for Comparative Analysis of Usability of GUI Components by Mobile Operating System.&rdquo; Finally, I organize lessons and learning effects gained through this comparative analysis process and present practical conclusions on implications for design-development collaboration." />
+<meta property="og:url" content="https://hjkunst.github.io/en/posts/2026-01-05-crypto-article-2/" />
+<meta property="og:site_name" content="Strawberry Fields — Pastoral Tech Notes by @lkkunst" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://hjkunst.github.io/images/og-image.png" />
+<meta property="og:locale" content="en_us" />
+
+
+
+
+<link rel="alternate" hreflang="ko-kr" href="https://hjkunst.github.io/ko/posts/2026-01-05-crypto-article-2/" />
+
+<link rel="alternate" hreflang="en-us" href="https://hjkunst.github.io/en/posts/2026-01-05-crypto-article-2/" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Crypto Article Week 2 | CDS Components" />
+<meta name="twitter:description" content="Process
+This article focuses on the decision-making process while actually analyzing design system components. Code snippets included in the portfolio were also limited to revealing decision reasons of &ldquo;why implement this way&rdquo; rather than implementation results. For example, explaining in detail the reasons for separating specific style differences as props rather than separate components, designing various style variations as variants, or the background for using design tokens indirectly rather than directly referencing them. For this purpose, I compared three design systems—Apple Human Interface Guidelines (HIG), Material-UI (MUI), and Coinbase Design System (CDS)—centering on common components like Button, Text Input, Modal, and the AreaChart component unique to CDS. While analyzing each component from design and code implementation perspectives, I organize in detail specific elements like design token utilization, variant structure, state composition, and accessibility handling methods. The analysis method classifies and describes content from perspectives of common structure, naming differences, and functional differences, like the classification proposed in the paper &ldquo;Framework for Comparative Analysis of Usability of GUI Components by Mobile Operating System.&rdquo; Finally, I organize lessons and learning effects gained through this comparative analysis process and present practical conclusions on implications for design-development collaboration." />
+<meta name="twitter:image" content="https://hjkunst.github.io/images/og-image.png" />
+
+<title>Crypto Article Week 2 | CDS Components</title>
+
+
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<meta name="theme-color" content="#FF6254">
+<meta name="msapplication-TileColor" content="#FF6254">
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      packages: { '[+]': ['ams'] }
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<link
+        rel="stylesheet"
+        href="/css/output.min.e6ea1a713ee8508a7ae1581f36a75a67ceb7390eaea21503ce3bade6cfabca8c.css"
+        integrity="sha256-5uoacT7oUIp64VgfNqdaZ863OQ6uohUDzjut5s&#43;ryow="
+        crossorigin="anonymous"
+      /><link
+        rel="stylesheet"
+        href="/css/custom.min.b0e39fb81464392a8c1dfcf79e38a1369b0ac0d49a0a8bfa676768c503a22757.css"
+        integrity="sha256-sOOfuBRkOSqMHfz3njihNpsKwNSaCov6Z2doxQOiJ1c="
+        crossorigin="anonymous"
+      />
+  </head>
+  <body class="bg-white text-black antialiased">
+    <div class="flex h-screen flex-col justify-between font-sans">
+      <header class="site-header sticky top-0 z-50" style="background: rgba(228, 228, 228, 0.1); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="flex items-center justify-between py-4">
+            <a class="group break-words" aria-label="Strawberry Fields — Pastoral Tech Notes by @lkkunst" href="/en/">
+  <div class="flex items-center justify-between">
+    <div class="sm:mr-3">
+      <img src="/images/logo.svg" width="32" height="32" alt="Logo Image" />
+    </div>
+
+    <div class="hidden text-2xl font-semibold sm:block group-hover:underline">
+      <span>Strawberry Fields — Pastoral Tech Notes by @lkkunst</span>
+    </div>
+  </div>
+</a>
+
+<div class="flex items-center space-x-4 leading-5 sm:space-x-6">
+  <div class="items-center space-x-4 overflow-x-auto flex sm:space-x-6">
+    
+      <a
+        href="/en/about"
+        class="font-medium text-gray-900 hover:text-indigo-500"
+        
+        >About</a
+      >
+    
+      <a
+        href="/en/tags"
+        class="font-medium text-gray-900 hover:text-indigo-500"
+        
+        >Tags</a
+      >
+    
+    <div class="lang-toggle"><span class="lang-toggle__item lang-toggle__item--active">ENG</span><a class="lang-toggle__item" href="/ko/posts/2026-01-05-crypto-article-2/">KOR</a></div>
+
+    <a href="https://github.com/hjkunst" target="_blank">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="fill-[#24292F] hover:fill-indigo-500 h-6 w-6"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12.0099 0C5.36875 0 0 5.5 0 12.3042C0 17.7432 3.43994 22.3472 8.21205 23.9767C8.80869 24.0992 9.02724 23.712 9.02724 23.3862C9.02724 23.101 9.00757 22.1232 9.00757 21.1045C5.6667 21.838 4.97099 19.6378 4.97099 19.6378C4.43409 18.2118 3.63858 17.8452 3.63858 17.8452C2.54511 17.0915 3.71823 17.0915 3.71823 17.0915C4.93117 17.173 5.56763 18.3545 5.56763 18.3545C6.64118 20.2285 8.37111 19.699 9.06706 19.373C9.16638 18.5785 9.48473 18.0285 9.82275 17.723C7.15817 17.4377 4.35469 16.3785 4.35469 11.6523C4.35469 10.3078 4.8316 9.20775 5.58729 8.35225C5.46807 8.04675 5.0504 6.7835 5.70677 5.09275C5.70677 5.09275 6.72083 4.76675 9.00732 6.35575C9.98625 6.08642 10.9958 5.9494 12.0099 5.94825C13.024 5.94825 14.0577 6.091 15.0123 6.35575C17.299 4.76675 18.3131 5.09275 18.3131 5.09275C18.9695 6.7835 18.5515 8.04675 18.4323 8.35225C19.2079 9.20775 19.6652 10.3078 19.6652 11.6523C19.6652 16.3785 16.8617 17.4172 14.1772 17.723C14.6148 18.11 14.9924 18.8433 14.9924 20.0045C14.9924 21.6545 14.9727 22.9788 14.9727 23.386C14.9727 23.712 15.1915 24.0992 15.7879 23.977C20.56 22.347 23.9999 17.7432 23.9999 12.3042C24.0196 5.5 18.6312 0 12.0099 0Z"
+        />
+      </svg>
+    </a>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </header>
+      
+      <main class="mb-auto">
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Crypto Article Week 2 | CDS Components",
+      "datePublished": "2026-01-05T12:00:00\u002b09:00",
+      "dateModified": "2026-01-05T12:00:00\u002b09:00",
+      "description": "\u003ch2 id=\u0022process\u0022\u003eProcess\u003c\/h2\u003e\n\u003cp\u003eThis article focuses on the decision-making process while actually analyzing design system components. Code snippets included in the portfolio were also limited to revealing decision reasons of \u0026ldquo;why implement this way\u0026rdquo; rather than implementation results. For example, explaining in detail the reasons for separating specific style differences as props rather than separate components, designing various style variations as variants, or the background for using design tokens indirectly rather than directly referencing them. For this purpose, I compared three design systems—Apple Human Interface Guidelines (HIG), Material-UI (MUI), and Coinbase Design System (CDS)—centering on common components like Button, Text Input, Modal, and the AreaChart component unique to CDS. While analyzing each component from design and code implementation perspectives, I organize in detail specific elements like design token utilization, variant structure, state composition, and accessibility handling methods. The analysis method classifies and describes content from perspectives of common structure, naming differences, and functional differences, like the classification proposed in the paper \u0026ldquo;Framework for Comparative Analysis of Usability of GUI Components by Mobile Operating System.\u0026rdquo; Finally, I organize lessons and learning effects gained through this comparative analysis process and present practical conclusions on implications for design-development collaboration.\u003c\/p\u003e",
+      "image": "https:\/\/hjkunst.github.io\/images\/og-image.png",
+      "url": "https:\/\/hjkunst.github.io\/en\/posts\/2026-01-05-crypto-article-2\/",
+      "author": [{ "@type": "Person", "name": "hjkunst" }]
+    }
+  </script>
+<section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+  <article>
+    <div class="xl:divide-y xl:divide-gray-200">
+      <header class="pt-16 xl:pb-16">
+        <div class="text-center">
+          <div class="article-meta-group">
+            <dl>
+              <div>
+                <dt class="sr-only">Published on</dt>
+                <dd class="text-base font-medium leading-6 text-gray-500">
+                  
+                  
+                  <time datetime="2026-01-05T12:00:00&#43;09:00">Monday, January 5, 2026</time>
+                </dd>
+              </div>
+            </dl>
+            <div>
+              <h1
+                class="text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-3xl sm:leading-9 md:text-4xl md:leading-10">
+                <div>Crypto Article Week 2 | CDS Components</div>
+              </h1>
+            </div>
+            <div class="flex flex-col items-center gap-3">
+              
+              <div class="article-tag-row flex flex-wrap items-center justify-center gap-3">
+                
+                <a href="/en/tags/design-system" class="tag-chip">Design System</a>
+                
+                <a href="/en/tags/ux" class="tag-chip">UX</a>
+                
+                <a href="/en/tags/crypto" class="tag-chip">Crypto</a>
+                
+              </div>
+              
+              
+              
+              <div class="flex items-center gap-2 text-sm">
+                <span class="text-gray-500">Read in:</span>
+                
+                <a href="/ko/posts/2026-01-05-crypto-article-2/" class="language-switch-link">
+                  KOR
+                </a>
+                
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+      </header>
+
+      <div class="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0">
+        <aside class="hidden xl:block xl:col-start-1 xl:row-start-1">
+          <div class="sticky top-24 space-y-8">
+            <div class="py-10">
+              <h2 class="text-xs uppercase tracking-wide text-gray-500">
+                Table of Contents
+              </h2>
+              <nav class="mt-2">
+                <ul class="space-y-3">
+                  <li class="text-sm">
+                    <a href="#process" class="text-indigo-500 hover:text-indigo-600">Process</a>
+                    <ul class="ml-4 mt-2 space-y-2">
+                      <li class="text-sm">
+                        <a href="#3-analysis-approach" class="text-indigo-500 hover:text-indigo-600">3. Analysis Approach</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#components" class="text-indigo-500 hover:text-indigo-600">Components</a>
+                    <ul class="ml-4 mt-2 space-y-2">
+                      <li class="text-sm">
+                        <a href="#primary-button" class="text-indigo-500 hover:text-indigo-600">Primary Button</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#overlay-component-modal-dialog-popover" class="text-indigo-500 hover:text-indigo-600">Overlay Component: Modal (Dialog, Popover)</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#crypto-specific-component-area-chart" class="text-indigo-500 hover:text-indigo-600">Crypto-specific Component: Area Chart</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        <div class="divide-y divide-gray-200 xl:col-span-3 xl:row-span-2 xl:pb-0">
+          <div class="prose max-w-none pb-8 pt-10">
+            <h2 id="process">Process</h2>
+<p>This article focuses on the decision-making process while actually analyzing design system components. Code snippets included in the portfolio were also limited to revealing decision reasons of &ldquo;why implement this way&rdquo; rather than implementation results. For example, explaining in detail the reasons for separating specific style differences as props rather than separate components, designing various style variations as variants, or the background for using design tokens indirectly rather than directly referencing them. For this purpose, I compared three design systems—Apple Human Interface Guidelines (HIG), Material-UI (MUI), and Coinbase Design System (CDS)—centering on common components like Button, Text Input, Modal, and the AreaChart component unique to CDS. While analyzing each component from design and code implementation perspectives, I organize in detail specific elements like design token utilization, variant structure, state composition, and accessibility handling methods. The analysis method classifies and describes content from perspectives of common structure, naming differences, and functional differences, like the classification proposed in the paper &ldquo;Framework for Comparative Analysis of Usability of GUI Components by Mobile Operating System.&rdquo; Finally, I organize lessons and learning effects gained through this comparative analysis process and present practical conclusions on implications for design-development collaboration.</p>
+<div class="spacer"></div>
+<h3 id="3-analysis-approach">3. Analysis Approach</h3>
+<p>Typification centers on component function name consistency, functional similarity, and structural differentiation. First, components were classified into three types. Primitives include basic interaction elements Button and Text Input, Overlay includes Modal overlaying on screen, and Crypto-specific includes Area Chart especially frequently used in crypto fields. For each component, the following items are compared:</p>
+<ul>
+<li>Design Specifications: Usage guidelines and visual recommendations for the component in official guidelines.</li>
+<li>Structure and Props: Component property (props) composition and substructure at code level. For example, reviewing variant provision methods, state management (supporting loading through props, etc.) and design token utilization.</li>
+<li>Name and Function Comparison: Comparing whether component names or concepts match in the three systems (e.g., identical as &ldquo;Button&rdquo;), whether provided functions are similar (e.g., disabling, loading state support, etc.), and whether there are differences in structure or usability (e.g., subcomponent composition, label handling methods, etc.).</li>
+<li>Customization Points: Examining the customization scope and methods allowed in each system, such as theme application or style extension.</li>
+</ul>
+<p>In the comparison process, according to the paper&rsquo;s methodology, function name consistency, degree of functional similarity, and differentiation in structure/usage patterns are tabulated for typification. Additionally, design intent and implementation choices of each design system are shown through code snippets. For example, excerpting and citing in analysis parts revealing decision-making such as reasons for introducing the variant concept or how to utilize design tokens in spacing handling.</p>
+<div class="spacer"></div>
+<h2 id="components">Components</h2>
+<h3 id="primary-button">Primary Button</h3>
+<p><strong>Design Guide Comparison</strong></p>
+<p>All three systems provide &ldquo;Button&rdquo; components as basic elements, but there are differences in detailed guidelines according to design philosophy.</p>
+<img src="/crypto-article-2/crypto-article-2-design-system-venn.png" alt="Design System Component Venn Diagram" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+<p>Apple HIG emphasizes intuitive touch areas and platform consistency. For example, recommending &ldquo;buttons should have a minimum touch area of 44×44 pt (60×60 pt for visionOS)&rdquo; to allow users to easily press.
+Additionally, in iOS, Primary action buttons are made prominent (using accent colors like default blue), and Destructive actions are indicated with red text to draw attention. Apple recommends following basic styles provided by the OS rather than heavily customizing button styles, and there are standard styles according to context, such as emphasizing confirmation (OK) buttons in bold in modal dialogs. While Apple HIG doesn&rsquo;t directly mention transparent background buttons, in iOS there exists a pattern implemented as text-form buttons (link style) in Navigation Bars, etc.</p>
+<img src="/crypto-article-2/crypto-article-2-apple-hig-alert.png" alt="Apple HIG Alert/Action Sheet Example: A Short Title Is Best" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+<p>In contrast, Material-UI (MUI) provides three button variants—Contained / Outlined / Text—according to Material Design principles to control visual emphasis level appropriate to context. The default &ldquo;Contained&rdquo; button has filled background color giving highest emphasis, &ldquo;Outlined&rdquo; has only an outline giving medium emphasis, and &ldquo;Text&rdquo; button has only text without background giving lowest emphasis. Additionally, MUI buttons can specify primary/secondary colors or error colors through the <code>color</code> prop, making Primary and Secondary role distinctions or Destructive (error color) styles easily implementable.</p>
+<img src="/crypto-article-2/crypto-article-2-mui-button-variants.png" alt="MUI Button Variants: TEXT, CONTAINED, OUTLINED" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
+<p>Coinbase CDS buttons similarly use variant props like MUI but explicitly provide four values: primary, secondary, tertiary, negative. Primary is for main actions within a screen (recommended only one per screen), Secondary for multiple equal actions, Tertiary for high-contrast on dark backgrounds, and Negative guides usage for irreversible destructive actions. Additionally, CDS separately has a <code>transparent</code> prop to apply &ldquo;transparent background&rdquo; style to any variant. Through this, Ghost button styles that lower button emphasis by one level are implemented (containers display only during interactions like hover), playing a similar role to MUI&rsquo;s Text button.</p>
+<img src="/crypto-article-2/crypto-article-2-mui-button-colors.png" alt="MUI Button Colors: Primary, Secondary, Tertiary, Negative" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
+<img src="/crypto-article-2/crypto-article-2-button-color-text.png" alt="Button Color Text: Primary, Secondary, Tertiary, Negative" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
+<p><strong>Structure and State Implementation</strong></p>
+<p>Apple&rsquo;s UIKit/SwiftUI buttons are relatively simple interfaces (<code>UIButton</code> or SwiftUI <code>Button</code> view), not providing functions like loading state or icon placement by default. If needed, developers must place Activity Indicators (spinners) on buttons or implement separately.
+In contrast, MUI through extended button components made it easy to insert icons on both sides inside buttons through <code>startIcon</code> and <code>endIcon</code> props, and includes all basic functions like <code>disabled</code> prop and <code>onClick</code> event handlers.
+While MUI itself doesn&rsquo;t provide loading state props by default (a separate <code>&lt;LoadingButton&gt;</code> component exists in Lab), CDS standardized the pattern of supporting a <code>loading</code> boolean prop to disable buttons and show spinners when loading. For example, setting <code>&lt;Button loading={isLoading}&gt;</code> shows a loading spinner inside instead of button content, maintaining button width to prevent layout changes. This seems to reflect Coinbase&rsquo;s practical experience (crypto UX with many waiting situations like transaction processing). Additionally, while all three systems provide <code>disabled</code> props (Apple in SwiftUI <code>.disabled(true)</code> modifier form), Coinbase CDS further supports <code>compact</code> prop (small size buttons), <code>block</code> prop (100% width expansion of parent container) to accommodate various layout situations.
+MUI also provides similar functions through props like <code>size=&quot;small|medium|large&quot;</code> and <code>fullWidth</code> prop. Meanwhile, Apple&rsquo;s buttons specify sizes individually or follow system defaults, and iOS HIG only recommends layouts securing sufficient spacing and touch areas between buttons without detailed size variant concepts.</p>
+<p><strong>Name and Style Consistency/Differences</strong></p>
+<p>In naming, all three systems are unified as Button. Functionally, basics like click/tap actions and disabling are common. However, there are differences in style variant naming and concepts. Apple explains by roles like Primary action or Destructive action in official documents, and in SwiftUI implementation, specifying role like <code>Button(role: .destructive)</code> automatically applies red text style.
+MUI classifies by expression method like variant=&ldquo;contained/outlined/text&rdquo; and additionally conveys meaning through <code>color=&quot;primary|secondary|error|...&quot;</code>.
+In Coinbase CDS&rsquo;s case, while referencing Material design, it adopted a design integrating meaning and style by directly exposing Primary/Secondary/Tertiary/Negative as variants. For example, giving <code>variant=&quot;negative&quot;</code> in CDS sets button color to red, and CDS also reflects this in ARIA attributes to implicitly convey error role in terms of accessibility.
+Additionally, unlike Apple, MUI and CDS also provide icon-only buttons separately (MUI <code>&lt;IconButton&gt;</code>, CDS <code>&lt;IconButton&gt;</code> components), recommending explicit use of that component if button content is only icons. In terms of accessibility, Apple uses button text as labels for voice reading, etc., and CDS also receives <code>accessibilityLabel</code> as a prop to specify alternative labels for icon-only buttons. MUI leaves it to developers to directly assign <code>aria-label</code> attributes or handle through <code>&lt;IconButton aria-label=&quot;...&quot;&gt;</code>.</p>
+<p><strong>Design Token Utilization and Customization</strong></p>
+<p>Apple HIG doesn&rsquo;t have a &ldquo;design token&rdquo; concept exposed to developers, but system colors and fonts themselves can be considered a kind of token (e.g., using system colors corresponding to Light/Dark mode in iOS).
+MUI handles palette colors, spacing units, etc., like tokens through its theme system, and can override component styles through <code>sx</code> props or <code>styled</code> API.
+CDS is a system that fully fronts design token philosophy, defining all visual attributes (color, typography, spacing, radii, etc.) as tokens and applying them to components. For example, looking at CDS button CSS shows user theme values like <code>var(--color-bg)</code> or <code>var(--spacing-2)</code> being used, and Coinbase opened this as a Theming function allowing anyone to customize with their own brand colors, etc. While conceptually similar to MUI&rsquo;s theme customization, Coinbase open-sourced the design system encouraging various crypto projects to utilize Coinbase-level UI components by just replacing tokens.
+Looking at just the Button component, MUI provides palettes like <code>primary(main #1976d2)</code>, <code>secondary(main #9c27b0)</code> following Material Design&rsquo;s default color system, and CDS defaults to Coinbase&rsquo;s unique branding colors but can batch change to other brand colors through token replacement. Thanks to such structural design, predicting design modification scope becomes easy. For example, changing Primary button color in Coinbase CDS is simply changing token values, so the impact of Primary button changes across the entire product can be easily predicted and managed.</p>
+<div class="spacer"></div>
+<div class="divider"></div>
+<h3 id="overlay-component-modal-dialog-popover">Overlay Component: Modal (Dialog, Popover)</h3>
+<p><strong>Design Guide Comparison</strong></p>
+<p>Modal is a UI pattern that appears overlaid on the current screen to focus user attention. Apple HIG guides with situation-specific terms like &ldquo;modal view&rdquo; or &ldquo;sheet,&rdquo; &ldquo;alert&rdquo; rather than directly using the &ldquo;Modal&rdquo; term. The core principle is to use Modal when having users perform self-contained tasks. For example, &ldquo;when important auxiliary tasks or multi-step subtasks are needed, diverge from current flow providing modally, and return to original screen upon completion&rdquo; is desirable.</p>
+<p>Apple cites login screens or new item addition screens as such modal examples, emphasizing always placing cancel or completion buttons so users explicitly close. And in iPhone, since modals cover the entire screen, include navigation bar at top placing &ldquo;Cancel&rdquo;/&ldquo;Done,&rdquo; and in iPad they appear centered in formsheet form—platform-specific modal forms are also specified in HIG.</p>
+<img src="/crypto-article-2/crypto-article-2-apple-hig-action-sheet.png" alt="Apple HIG Action Sheet Example" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
+<p>In Material Design too, the Modal concept is embodied as Dialog. According to Material guide, &ldquo;Dialog appears on app content displaying important information or requiring decisions, blocking all other functions while appearing.&rdquo; Additionally, it explicitly states &ldquo;use only when necessary as it&rsquo;s disruptive.&rdquo; In MUI, it&rsquo;s implemented as <code>&lt;Dialog&gt;</code> component, which internally utilizes <code>&lt;Modal&gt;</code> component. MUI guide states &ldquo;to create modal dialogs, using <code>Dialog</code> is better than directly using <code>Modal</code>.&rdquo; Dialog provides subcomponents of title (<code>&lt;DialogTitle&gt;</code>), body (<code>&lt;DialogContent&gt;</code>), and action button area (<code>&lt;DialogActions&gt;</code>) to establish consistent structure.</p>
+<img src="/crypto-article-2/crypto-article-2-google-location-modal.png" alt="Google Location Service Modal Dialog" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
+<p>Coinbase CDS also structurally divided Modal components, configured to use with three parts: <code>&lt;ModalHeader&gt;</code>, <code>&lt;ModalBody&gt;</code>, <code>&lt;ModalFooter&gt;</code>. Additionally, CDS provides several variations like FullscreenModal, Alert, and Tray. FullscreenModal covers the entire screen on mobile (probably similar to Apple&rsquo;s basic modal), Alert is a simple modal for warnings, and Tray appears to be a kind of bottom sheet rising from the bottom of the screen. This classification shows Coinbase&rsquo;s design team segmenting Modal patterns across Web and Mobile. Apple also distinguishes two styles in UIAlertController: <code>.alert</code> (center popup) and <code>.actionSheet</code> (bottom slide), and CDS&rsquo;s Alert and Tray align with this.</p>
+<img src="/crypto-article-2/crypto-article-2-cds-modal-basic.png" alt="Coinbase CDS Basic Modal Example" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
+<p><strong>Structure and Functions</strong></p>
+<p>In Apple iOS, when calling modals, a new UIViewController is <code>.present(...)</code> to transition screens according to modalPresentationStyle. While there&rsquo;s no separate Modal component object, UIKit imparts modal characteristics (e.g., previous screen is deactivated, new VC floats up). Developers just specify VC transition method and the iOS system provides dimming behind and screen transition animation (basically slide up from bottom).
+MUI&rsquo;s <code>&lt;Modal&gt;</code> component is very low-level, rendering children to body based on portals (React Portal), handling backdrop clicks or ESC key processing, and A11y functions like focus trap. <code>&lt;Dialog&gt;</code> is a high-level implementation adding various convenience functions (title, content scrolling, etc.) on top of this Modal. For example, MUI Dialog basically sets role=&ldquo;dialog&rdquo; and aria-labelledby, etc., and automates tabIndex management.
+CDS Modal is also implemented as React Portal, opening and closing through <code>isOpen</code> prop, etc. Rather than just using <code>&lt;Modal&gt;</code>, CDS recommends the pattern of putting title and close (X) button in <code>&lt;ModalHeader&gt;</code>, content in <code>&lt;ModalBody&gt;</code>, and <code>&lt;Button&gt;</code>s in <code>&lt;ModalFooter&gt;</code>. This structure enforcement reduces developer mistakes and increases design consistency. Meanwhile, CDS designed to also enable page-unit navigation inside modals. For example, FullscreenModalLayout can include navigation bar components inside, allowing multiple steps within modals. Apple also mentions in HIG that &ldquo;navigation hierarchy can be had inside modals,&rdquo; acknowledging push/pop is possible within modals. However, it advises limiting to short flows if possible due to increased complexity. Coinbase CDS&rsquo;s PortalProvider or OverlayContext hooks also exist, appearing to include advanced functions like handling context when multiple overlapping modals appear.</p>
+<p><strong>Name and Usability Comparison</strong></p>
+<p>In naming, Apple calls them situationally as &ldquo;Alert,&rdquo; &ldquo;Action Sheet&rdquo; rather than the &ldquo;Modal&rdquo; term, Material/MUI uses &ldquo;Dialog,&rdquo; and Coinbase collectively calls them &ldquo;Modal.&rdquo; In terms of usability, what&rsquo;s commonly emphasized is necessarily making users take action to close.
+Apple says cancel/confirm buttons are essential in modals, and MUI also gives examples of necessarily including close-related buttons in Dialog actions. Closing on backdrop click also differs—Apple&rsquo;s modals (alerts) don&rsquo;t close on backdrop touch requiring explicit action.
+Web/MUI Dialog is set by default not to close on backdrop click (handling in <code>onClose</code> if needed), and Coinbase CDS also basically follows the principle of explicit user closing for Modals. However, CDS <code>&lt;Tray&gt;</code> (action sheet) can probably be closed on backdrop touch. Multiple simultaneous modal displays are avoided by all three systems, but are possible when needed (e.g., like Apple Contacts app with action sheet on modal, etc.).
+MUI Modal allows nesting but doesn&rsquo;t recommend overlapping more than two, and CDS can probably also use like displaying Alert on FullscreenModal. For animations, Apple provides by default (slide, etc.), MUI selectively applies Slide, Fade, etc., through Transition components, and CDS can also inject custom spring animations through <code>Transition</code> prop along with default Fade/Slide effects if needed.</p>
+<p><strong>Design Tokens and Customization</strong></p>
+<p>Coinbase CDS&rsquo;s modals can control backdrop color transparency, modal background/corners, etc., with tokens to easily accommodate dark mode or themes. MUI also uses theme&rsquo;s <code>palette.background.paper</code> for modal background, and radius can also be theme overridden. Apple follows modal shapes determined by the system (especially alert style is rounded corner rectangle) with almost no room for change. However, after iOS13, modal display styles can select <code>.automatic/ pageSheet/ formSheet/ fullScreen</code> allowing use of default forms by device or forced specification. Overall insights gained from Overlay/Modal component comparison are that web design systems carefully define Modal&rsquo;s structure and utilization to increase development convenience and consistency, while platform guides (HIG) focus on Modal&rsquo;s usage scenarios and UX principles. Both approaches share the commonality of prioritizing not overusing modals and using them appropriately to context so as not to harm user experience.</p>
+<div class="spacer"></div>
+<div class="divider"></div>
+<h3 id="crypto-specific-component-area-chart">Crypto-specific Component: Area Chart</h3>
+<p><strong>Introduction Background</strong></p>
+<p>Area Chart isn&rsquo;t in general UI libraries but is core-used in crypto services for price trend visualization, etc. Among this comparison&rsquo;s subjects, only Coinbase CDS provides AreaChart components at design system level, showing domain-specialized component design cases. While Apple HIG or Material Design also have general guidance on &ldquo;charts,&rdquo; they don&rsquo;t provide specific implementation components. Apple introduced APIs (BarMark, LineMark, AreaMark, etc.) to draw various charts through SwiftUI Charts framework from iOS 16, but this is a development framework to the end and isn&rsquo;t considered a &ldquo;design system component&rdquo; at HIG level. Material-UI also doesn&rsquo;t have charts in basic configuration, providing a Charts library as a separate package called MUI X. MUI X Charts is D3-based React componentization of Bar, Line, Pie, etc., with Area Chart being implemented by giving fill area as an attribute to LineChart component. While Coinbase CDS may have wrapped AreaChart utilizing Recharts internally, the important point is defining props API and documentation from a design system perspective.</p>
+<p><strong>Design Guide Comparison</strong></p>
+<p>Apple HIG&rsquo;s &ldquo;Charting Data&rdquo; section advises clearly conveying data&rsquo;s core when using charts and not confusing with too much information. For example, giving best practices like &ldquo;charts are visually prominent so should focus on important information users will be interested in,&rdquo; &ldquo;keep charts as simple as possible and let users drill down for additional details when they want.&rdquo; Material Design also has separate guides to consider color, label readability, and accessibility during interaction (e.g., ARIA descriptions) in data visualization. However, these are at design principle level, without specific component specs like &ldquo;Area Charts should be drawn this way.&rdquo;</p>
+<p>Coinbase CDS created AreaChart components to maintain consistent chart styles across their services. Design-wise, Coinbase charts generally have rules of displaying rises in blue/green series and falls/negatives in red. CDS AreaChart basically follows these rules, automatically adjusting baseline to 0 when negative data is included to separately display shading. Additionally, when overlapping multiple series in charts, transparency or gradients are used to increase readability. Coinbase&rsquo;s design team included even chart animation effects and interactions (Marker, Scrubber) in the design system—for example, lines gradually drawing when charts load or real-time animation according to value changes are also configurable. This is detail not covered in general UI guides, showing how much Coinbase considered design optimized for crypto UX.</p>
+<img src="/crypto-article-2/crypto-article-2-area-chart-negative-values.png" alt="Area Chart: Negative Values and Area Styles" style="width: 80%; min-width: 480px; height: auto; display: block; text-align: left;" />
+<p><strong>Structure and Props</strong></p>
+<p>Looking at Coinbase CDS AreaChart&rsquo;s props, there are data series arrays and each series&rsquo;s attributes (id, data array, color, etc.), <code>height</code> and <code>inset</code> (chart internal margins), <code>showLines</code> (whether to show line outlines), <code>showYAxis</code>/<code>XAxis</code> for axis display, <code>stacked</code> and <code>stackId</code> (stack group distinction) among options for expressing multiple series together. Particularly, styles for area filling or line shape can be changed by specifying <code>'gradient'</code>, <code>'dotted'</code> through <code>type</code> prop, and <code>AreaComponent</code> or <code>LineComponent</code> can be injected as customization props making it extremely flexible. For example, to draw dotted line charts, custom components like <code>LineComponent: DottedLine</code> can be passed to replace lines. Animation-related, passing values like <code>{ type: 'spring', stiffness: 700, damping: 20 }</code> to <code>transition</code> prop allows adjusting chart appearance/update animations. Additionally, animations can be turned off with <code>animate={false}</code>.</p>
+<p>Overall, CDS&rsquo;s chart components provide complete APIs that intermediate developers or data visualization personnel can utilize immediately. For MUI X Charts&rsquo; corresponding item LineChart+Area field, it&rsquo;s used like <code>&lt;LineChart series={[{data: [...] }]} xAxis={[...]} /&gt;</code> and MUI X also takes composition approach (ChartContainer, ChartAxis, etc.). However, MUI X Charts is still divided into community version/pro version so not all functions are free. When using Apple&rsquo;s SwiftUI Charts <code>AreaMark</code>, it&rsquo;s declarative syntax like <code>Chart(data) { AreaMark(x: .value(...), y: .value(...)) }</code> but fine shape control must be handled with modifiers and low-level customization is difficult.</p>
+<p><strong>Name and Function Comparison</strong></p>
+<img src="/crypto-article-2/crypto-article-2-stocks-activity-apps.png" alt="Stocks App and Activity App Screenshot Comparison" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<img src="/crypto-article-2/crypto-article-2-bar-charts.png" alt="Simple Bar Chart and Stacked Bar Chart Comparison" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<p>In naming, while Coinbase clearly componentized as <code>AreaChart</code>, other systems don&rsquo;t have special names. Material guides don&rsquo;t separately classify area charts but view them as a form of line charts. Apple also doesn&rsquo;t distinguish area charts/line charts but only recommends chart selection according to data type or user purpose. Function-wise, as domain-specialized, CDS AreaChart doesn&rsquo;t have legends or tooltips but separately provides components like PeriodSelector, Scrubber, and axes (XAxis, YAxis). For example, period toggles like 1D/1W/1M/1Y under Coinbase app&rsquo;s price charts are implemented with PeriodSelector, and Scrubber shows values at that point when sliding fingers over graphs. Including these components in the design system ensures consistent interaction experiences. MUI X also has Tooltip and Legend modules applicable to charts, but doesn&rsquo;t provide Period selectors or scrubbers as they&rsquo;re not universal UI. Apple only presents philosophy like &ldquo;encourage users to explore&rdquo; for chart interaction, leaving implementation to individual apps.</p>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
+  <img src="/crypto-article-2/crypto-article-2-area-chart-scrubber-basics.png" alt="Area Chart Scrubber Basics" style="width: 100%; height: auto; display: block;" />
+  <img src="/crypto-article-2/crypto-article-2-area-chart-scrubber-pulsing.png" alt="Area Chart Scrubber Pulsing" style="width: 100%; height: auto; display: block;" />
+  <img src="/crypto-article-2/crypto-article-2-area-chart-scrubber-labels.png" alt="Area Chart Labels with BeaconLabelComponent" style="width: 100%; height: auto; display: block;" />
+  <img src="/crypto-article-2/crypto-article-2-area-chart-scrubber-fonts.png" alt="Area Chart Scrubber Fonts Customization" style="width: 100%; height: auto; display: block;" />
+</div>
+<p><strong>Design Tokens and Customization</strong></p>
+<p>CDS charts manage colors with design tokens, so changing themes automatically links chart color palettes. In the above example, using tokens like <code>color: 'var(--color-fgPositive)'</code> made rises use the theme&rsquo;s positive color. MUI X uses MUI theme colors as is or specifies colors directly.</p>
+<p>Apple doesn&rsquo;t automatically generate chart colors so developers must determine Color sets, but Apple chart basic color palettes (iOS chart framework default provided colors) exist implicitly following recommendations. In terms of customization, CDS AreaChart is open enough to inject arbitrary React components through <code>AreaComponent</code> prop to replace rendering. This accommodates various demands like displaying only specific sections with unique graphics or laying patterns on area colors. In contrast, MUI X or Apple Charts didn&rsquo;t document such levels of extensibility (though possible through source modification or SwiftUI View composition, it&rsquo;s outside support scope).</p>
+
+          </div>
+        </div>
+
+        <footer class="xl:col-start-1 xl:col-span-4">
+          <div class="pt-4 xl:pt-8">
+            <a class="text-indigo-500 hover:text-indigo-600" aria-label="Back to the list" href="/en/">← Back to the list</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </article>
+</section>
+
+        </section>
+      </main>
+      <footer>
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="mt-16 flex flex-col items-center">
+  <div class="mb-2 text-sm text-gray-500">
+    <span>(C) 2026. Strawberry Fields — Pastoral Tech Notes by @lkkunst all rights reserved.</span>
+  </div>
+
+  <div class="mb-8 text-sm text-gray-500">
+    <span class="mr-1">Built with</span>
+    <a
+      class="font-semibold underline"
+      href="https://github.com/discaptive/hugo-discaptive"
+      target="_blank"
+      >hugo-discaptive</a
+    >
+  </div>
+</div>
+
+        </section>
+      </footer>
+    </div>
+  </body>
+</html>

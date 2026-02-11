@@ -1,0 +1,483 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+  class="scroll-smooth"
+>
+  <head>
+    
+
+
+
+
+
+
+
+<meta charset="utf-8" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YS9Z2BGZ1Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-YS9Z2BGZ1Q');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
+
+<meta name="description" content="1) What process does expressing color numerically actually involve?
+CIE 1931 Colorimetry provides theoretical and experimental foundations to explain how the human visual system perceives various spectral distributions as colors. Imagining cases like tree leaves and green cars that appear the same color but have completely different reflection spectra shows that identical color perception can occur under different physical conditions. This phenomenon where different spectral distributions induce identical color stimuli is called metamerism, a core concept of color reproduction." />
+
+
+<meta property="og:title" content="Colorimetry 2 | CIE 1931: Color Space" />
+<meta property="og:description" content="1) What process does expressing color numerically actually involve?
+CIE 1931 Colorimetry provides theoretical and experimental foundations to explain how the human visual system perceives various spectral distributions as colors. Imagining cases like tree leaves and green cars that appear the same color but have completely different reflection spectra shows that identical color perception can occur under different physical conditions. This phenomenon where different spectral distributions induce identical color stimuli is called metamerism, a core concept of color reproduction." />
+<meta property="og:url" content="https://hjkunst.github.io/en/posts/2026-01-29-colorimetry-2/" />
+<meta property="og:site_name" content="Strawberry Fields — Pastoral Tech Notes by @lkkunst" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://hjkunst.github.io/images/og-image.png" />
+<meta property="og:locale" content="en_us" />
+
+
+
+
+<link rel="alternate" hreflang="ko-kr" href="https://hjkunst.github.io/ko/posts/2026-01-29-colorimetry-2/" />
+
+<link rel="alternate" hreflang="en-us" href="https://hjkunst.github.io/en/posts/2026-01-29-colorimetry-2/" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Colorimetry 2 | CIE 1931: Color Space" />
+<meta name="twitter:description" content="1) What process does expressing color numerically actually involve?
+CIE 1931 Colorimetry provides theoretical and experimental foundations to explain how the human visual system perceives various spectral distributions as colors. Imagining cases like tree leaves and green cars that appear the same color but have completely different reflection spectra shows that identical color perception can occur under different physical conditions. This phenomenon where different spectral distributions induce identical color stimuli is called metamerism, a core concept of color reproduction." />
+<meta name="twitter:image" content="https://hjkunst.github.io/images/og-image.png" />
+
+<title>Colorimetry 2 | CIE 1931: Color Space</title>
+
+
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<meta name="theme-color" content="#FF6254">
+<meta name="msapplication-TileColor" content="#FF6254">
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      packages: { '[+]': ['ams'] }
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<link
+        rel="stylesheet"
+        href="/css/output.min.e6ea1a713ee8508a7ae1581f36a75a67ceb7390eaea21503ce3bade6cfabca8c.css"
+        integrity="sha256-5uoacT7oUIp64VgfNqdaZ863OQ6uohUDzjut5s&#43;ryow="
+        crossorigin="anonymous"
+      /><link
+        rel="stylesheet"
+        href="/css/custom.min.b0e39fb81464392a8c1dfcf79e38a1369b0ac0d49a0a8bfa676768c503a22757.css"
+        integrity="sha256-sOOfuBRkOSqMHfz3njihNpsKwNSaCov6Z2doxQOiJ1c="
+        crossorigin="anonymous"
+      />
+  </head>
+  <body class="bg-white text-black antialiased">
+    <div class="flex h-screen flex-col justify-between font-sans">
+      <header class="site-header sticky top-0 z-50" style="background: rgba(228, 228, 228, 0.1); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="flex items-center justify-between py-4">
+            <a class="group break-words" aria-label="Strawberry Fields — Pastoral Tech Notes by @lkkunst" href="/en/">
+  <div class="flex items-center justify-between">
+    <div class="sm:mr-3">
+      <img src="/images/logo.svg" width="32" height="32" alt="Logo Image" />
+    </div>
+
+    <div class="hidden text-2xl font-semibold sm:block group-hover:underline">
+      <span>Strawberry Fields — Pastoral Tech Notes by @lkkunst</span>
+    </div>
+  </div>
+</a>
+
+<div class="flex items-center space-x-4 leading-5 sm:space-x-6">
+  <div class="items-center space-x-4 overflow-x-auto flex sm:space-x-6">
+    
+      <a
+        href="/en/about"
+        class="font-medium text-gray-900 hover:text-indigo-500"
+        
+        >About</a
+      >
+    
+      <a
+        href="/en/tags"
+        class="font-medium text-gray-900 hover:text-indigo-500"
+        
+        >Tags</a
+      >
+    
+    <div class="lang-toggle"><span class="lang-toggle__item lang-toggle__item--active">ENG</span><a class="lang-toggle__item" href="/ko/posts/2026-01-29-colorimetry-2/">KOR</a></div>
+
+    <a href="https://github.com/hjkunst" target="_blank">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="fill-[#24292F] hover:fill-indigo-500 h-6 w-6"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12.0099 0C5.36875 0 0 5.5 0 12.3042C0 17.7432 3.43994 22.3472 8.21205 23.9767C8.80869 24.0992 9.02724 23.712 9.02724 23.3862C9.02724 23.101 9.00757 22.1232 9.00757 21.1045C5.6667 21.838 4.97099 19.6378 4.97099 19.6378C4.43409 18.2118 3.63858 17.8452 3.63858 17.8452C2.54511 17.0915 3.71823 17.0915 3.71823 17.0915C4.93117 17.173 5.56763 18.3545 5.56763 18.3545C6.64118 20.2285 8.37111 19.699 9.06706 19.373C9.16638 18.5785 9.48473 18.0285 9.82275 17.723C7.15817 17.4377 4.35469 16.3785 4.35469 11.6523C4.35469 10.3078 4.8316 9.20775 5.58729 8.35225C5.46807 8.04675 5.0504 6.7835 5.70677 5.09275C5.70677 5.09275 6.72083 4.76675 9.00732 6.35575C9.98625 6.08642 10.9958 5.9494 12.0099 5.94825C13.024 5.94825 14.0577 6.091 15.0123 6.35575C17.299 4.76675 18.3131 5.09275 18.3131 5.09275C18.9695 6.7835 18.5515 8.04675 18.4323 8.35225C19.2079 9.20775 19.6652 10.3078 19.6652 11.6523C19.6652 16.3785 16.8617 17.4172 14.1772 17.723C14.6148 18.11 14.9924 18.8433 14.9924 20.0045C14.9924 21.6545 14.9727 22.9788 14.9727 23.386C14.9727 23.712 15.1915 24.0992 15.7879 23.977C20.56 22.347 23.9999 17.7432 23.9999 12.3042C24.0196 5.5 18.6312 0 12.0099 0Z"
+        />
+      </svg>
+    </a>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </header>
+      
+      <main class="mb-auto">
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Colorimetry 2 | CIE 1931: Color Space",
+      "datePublished": "2026-01-29T12:00:00\u002b09:00",
+      "dateModified": "2026-01-29T12:00:00\u002b09:00",
+      "description": "\u003ch2 id=\u00221-what-process-does-expressing-color-numerically-actually-involve\u0022\u003e1) What process does expressing color numerically actually involve?\u003c\/h2\u003e\n\u003cp\u003eCIE 1931 Colorimetry provides theoretical and experimental foundations to explain how the human visual system perceives various spectral distributions as colors. Imagining cases like tree leaves and green cars that appear the same color but have completely different reflection spectra shows that identical color perception can occur under different physical conditions. This phenomenon where different spectral distributions induce identical color stimuli is called metamerism, a core concept of color reproduction.\u003c\/p\u003e",
+      "image": "https:\/\/hjkunst.github.io\/images\/og-image.png",
+      "url": "https:\/\/hjkunst.github.io\/en\/posts\/2026-01-29-colorimetry-2\/",
+      "author": [{ "@type": "Person", "name": "hjkunst" }]
+    }
+  </script>
+<section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+  <article>
+    <div class="xl:divide-y xl:divide-gray-200">
+      <header class="pt-16 xl:pb-16">
+        <div class="text-center">
+          <div class="article-meta-group">
+            <dl>
+              <div>
+                <dt class="sr-only">Published on</dt>
+                <dd class="text-base font-medium leading-6 text-gray-500">
+                  
+                  
+                  <time datetime="2026-01-29T12:00:00&#43;09:00">Thursday, January 29, 2026</time>
+                </dd>
+              </div>
+            </dl>
+            <div>
+              <h1
+                class="text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-3xl sm:leading-9 md:text-4xl md:leading-10">
+                <div>Colorimetry 2 | CIE 1931: Color Space</div>
+              </h1>
+            </div>
+            <div class="flex flex-col items-center gap-3">
+              
+              <div class="article-tag-row flex flex-wrap items-center justify-center gap-3">
+                
+                <a href="/en/tags/colorimetry" class="tag-chip">Colorimetry</a>
+                
+                <a href="/en/tags/science" class="tag-chip">Science</a>
+                
+              </div>
+              
+              
+              
+              <div class="flex items-center gap-2 text-sm">
+                <span class="text-gray-500">Read in:</span>
+                
+                <a href="/ko/posts/2026-01-29-colorimetry-2/" class="language-switch-link">
+                  KOR
+                </a>
+                
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+      </header>
+
+      <div class="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0">
+        <aside class="hidden xl:block xl:col-start-1 xl:row-start-1">
+          <div class="sticky top-24 space-y-8">
+            <div class="py-10">
+              <h2 class="text-xs uppercase tracking-wide text-gray-500">
+                Table of Contents
+              </h2>
+              <nav class="mt-2">
+                <ul class="space-y-3">
+                  <li class="text-sm">
+                    <a href="#1-what-process-does-expressing-color-numerically-actually-involve" class="text-indigo-500 hover:text-indigo-600">1) What process does expressing color numerically actually involve?</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#2-1924-luminous-efficiency-function-v%ce%bb" class="text-indigo-500 hover:text-indigo-600">2) 1924 Luminous Efficiency Function, V(λ)</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#3-properly-reading-the-color-gamut-graph-cie-1931-xy" class="text-indigo-500 hover:text-indigo-600">3) Properly Reading the “Color Gamut Graph”: CIE 1931 xy</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#4-mathematical-and-visual-process-defining-the-chromaticity-diagram-cie-1931-chromaticity-diagram" class="text-indigo-500 hover:text-indigo-600">4) Mathematical and Visual Process Defining the Chromaticity Diagram (CIE 1931 Chromaticity Diagram)</a>
+                    <ul class="ml-4 mt-2 space-y-2">
+                      <li class="text-sm">
+                        <a href="#visualization-of-chromaticity-diagram-and-visible-color-range" class="text-indigo-500 hover:text-indigo-600">Visualization of Chromaticity Diagram and Visible Color Range</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#cie-1976-u-v-uniform-chromaticity-diagram-and-improvement-of-color-perception" class="text-indigo-500 hover:text-indigo-600">CIE 1976 (u′, v′) Uniform Chromaticity Diagram and Improvement of Color Perception</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#color-range-and-reproduction-limits-in-the-real-world" class="text-indigo-500 hover:text-indigo-600">Color Range and Reproduction Limits in the Real World</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        <div class="divide-y divide-gray-200 xl:col-span-3 xl:row-span-2 xl:pb-0">
+          <div class="prose max-w-none pb-8 pt-10">
+            <h2 id="1-what-process-does-expressing-color-numerically-actually-involve">1) What process does expressing color numerically actually involve?</h2>
+<p>CIE 1931 Colorimetry provides theoretical and experimental foundations to explain how the human visual system perceives various spectral distributions as colors. Imagining cases like tree leaves and green cars that appear the same color but have completely different reflection spectra shows that identical color perception can occur under different physical conditions. This phenomenon where different spectral distributions induce identical color stimuli is called metamerism, a core concept of color reproduction.</p>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/colorimetry-2/colorimetry2-1.webp" alt="Cone cell color response function" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">
+    Fig 1. Wavelength-dependent relative sensitivity distribution of human cone cells (S/M/L).
+  </p>
+</div>
+<p>Metamerism means the original spectrum isn&rsquo;t necessarily required to reproduce a color. In other words, if a combination can induce identical cone cell responses in humans, it&rsquo;s perceived as the same color even without the original light source. For example, LCD displays can implement conditions the human visual system perceives as yellow by properly combining red and green light sources, even without generating spectral yellow.</p>
+<p>CIE 1931 XYZ color space mathematically established and modeled this color matching principle. This is the reference color space proposed by the International Commission on Illumination (CIE) to reproduce identical colors regardless of lighting conditions or display devices, and is the first standard mathematically defining color. CIE XYZ is based on Trichromatic Theory, expressing colors through three imaginary primary stimuli (X, Y, Z). This model becomes the basis for defining various color spaces like RGB, LAB, HSV, and is used as a reference coordinate system across colorimetry, printing, and display industries.</p>
+<h2 id="2-1924-luminous-efficiency-function-vλ">2) 1924 Luminous Efficiency Function, V(λ)</h2>
+<p>The 1924 CIE luminous efficiency function V(λ), which can be considered a predecessor of this model, defined standards for human brightness perception before color stimuli. V(λ) indicates how sensitively the human eye responds to each wavelength in the visible light range, showing maximum response around 555nm greenish light. This function shows that two wavelengths with identical physical brightness (radiant flux) can actually appear different. For instance, if blue and green lights appear equally bright, physically the blue light has higher radiance.</p>
+<p>This numerically expresses that the human visual system doesn&rsquo;t respond equally across wavelengths. For example, if green and blue lights appear equally &lsquo;bright,&rsquo; it means the blue light actually has higher radiance. V(λ) became an important standard for understanding the gap between visual uniformity and physical uniformity.</p>
+<p>However, the 1924 version of V(λ) was later found to underestimate human sensitivity response in the blue region of the spectrum. This has been improved through subsequent modeling and corrections, and the CIE 1931 colorimetry model established itself as the first comprehensive system quantifying overall color perception including such luminous response.</p>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/colorimetry-2/colorimetry2-2.webp" alt="CIE 1924 luminous efficiency function V(lambda)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 2. CIE 1924 luminous efficiency function V(λ) and wavelength-dependent brightness perception characteristics.</p>
+</div>
+<hr>
+<h2 id="3-properly-reading-the-color-gamut-graph-cie-1931-xy">3) Properly Reading the &ldquo;Color Gamut Graph&rdquo;: CIE 1931 xy</h2>
+<p>Human vision receives light spectrum $I(\lambda)$ composed of various wavelengths and perceives it as color. CIE 1931 standard observer functions emerged to mathematically formalize this process. The three color matching functions (CMFs) used at this time are $\bar{x}(\lambda),\ \bar{y}(\lambda),\ \bar{z}(\lambda)$ respectively—functions constructed to express all colors humans can perceive with three imaginary primaries.</p>
+<p>These functions were derived through &lsquo;Wright-Guild Color Matching Experiments&rsquo; with numerous subjects under 2-degree viewing conditions. The experimental method set reference wavelengths at 10nm intervals and found combinations that appeared identical to reference colors by adjusting the intensity of three primary light sources—red (700nm), green (546.1nm), blue (435.8nm). Subjects had to create combinations that felt identical to reference colors by mixing these three monochromatic lights, and numericalizing those combinations became tristimulus values.</p>
+<p>However, experimental results showed that for some wavelengths, reference colors couldn&rsquo;t be implemented with only positive combinations of RGB primaries, leading to the introduction of negative values. For example, bright green near 520nm could only be expressed using red with negative values, and the concept of negative light was used to quantitatively explain areas unreproducible with RGB. These results were solved by actually adding negative light sources to the other side rather than the reference color to accurately match colors.</p>
+<p>The $\bar{x}(\lambda),\ \bar{y}(\lambda),\ \bar{z}(\lambda)$ functions thus generated are <strong>color matching functions based on imaginary primaries</strong> that mathematically reconstructed experimental results to explain human color matching behavior.</p>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
+  <div style="text-align: center;">
+    <img src="/colorimetry-2/colorimetry2-3.webp" alt="CIE 1931 Color Matching Functions (CMFs)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 3. Conceptual structure of Wright–Guild color matching experiment.</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="/colorimetry-2/colorimetry2-4.webp" alt="Wright–Guild color matching experiment" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 4. Negative stimulus value phenomenon appearing in RGB color matching functions.</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="/colorimetry-2/colorimetry2-5.webp" alt="Additional reference figure for CMF / chromaticity discussion" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 6. Experimental derivation process of CIE 1931 color matching functions and standard observer model.</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="/colorimetry-2/colorimetry2-6.webp" alt="Additional reference figure for CMF / chromaticity discussion" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 5. CIE 1931 color matching functions x̄(λ), ȳ(λ), z̄(λ).</p>
+  </div>
+</div>
+<h2 id="4-mathematical-and-visual-process-defining-the-chromaticity-diagram-cie-1931-chromaticity-diagram">4) Mathematical and Visual Process Defining the Chromaticity Diagram (CIE 1931 Chromaticity Diagram)</h2>
+<p>Tristimulus values (XYZ) are very useful systems for numerically defining color, but because they&rsquo;re interpreted in 3-dimensional space composed of three axes (X, Y, Z), intuitive visual understanding is difficult. Accordingly, CIE additionally defined a 2-dimensional color space in 1931 based on XYZ values but with luminance information removed. This is what&rsquo;s commonly called the CIE 1931 chromaticity diagram.</p>
+<p>To mathematically express human color perception, CIE defined three independent reference functions $\bar{x}(\lambda),\ \bar{y}(\lambda),\ \bar{z}(\lambda)$. These are weighting functions indicating how humans respond to each wavelength λ, serving as a kind of basis. Taking the inner product of spectral distribution $I(λ)$ with these three functions yields tristimulus values X, Y, Z. These values are conceptually defined as follows:</p>
+<p>$$
+X=k⋅\bar{x}(λ) \
+Y=k⋅\bar{y}(λ) \
+Z=k⋅\bar{z}(λ)
+$$</p>
+<p>Or expressed as inner products for general spectrum $I(λ)$ as follows. Here X, Y, Z are absolute color stimuli, including not just color information but also brightness information.</p>
+<p>$$
+X=⟨I(λ),\bar{x}(λ)⟩ \
+Y=⟨I(λ),\bar{y}(λ)⟩\
+Z=⟨I(λ),\bar{z}(λ)⟩ \
+$$</p>
+<p>Since the above inner product operations are defined for continuous spectra, they&rsquo;re actually calculated in integral form. Each stimulus value is given by the following equations:</p>
+<p>$$
+X=k∫I(λ)\bar x(λ)dλ \
+Y=k∫I(λ)\bar y(λ)dλ \
+Z=k∫I(λ)\bar z(λ)dλ
+$$</p>
+<p>Here $k$ is a scaling constant, generally adjusted so Y becomes the reference luminance. Through this calculation we can obtain corresponding tristimulus values (X, Y, Z) for arbitrary spectrum $I(λ)$.</p>
+<p>The X, Y, Z values thus obtained are considered absolute color stimulus values including brightness information. However, when constructing chromaticity diagrams, only pure color attributes with brightness information removed are needed, so XYZ values are normalized and converted to chromaticity coordinates x, y, z. Each value is defined as follows:</p>
+<p>$$
+x=\frac{X}{X+Y+Z},\ y=\frac{Y}{X+Y+Z}
+$$</p>
+<p>Here $z = \frac{Z}{X + Y + Z}$ is also defined, but since the relationship x+y+z=1 always holds, entire information can be expressed with only x,y.</p>
+<p>Repeating the above normalization process for single wavelength λ from 380nm to 700nm generates (x, y) coordinates for each wavelength. Connecting these coordinates forms an outer boundary line on the chromaticity diagram, called the spectral locus. This boundary line is the chromaticity corresponding to monochromatic light, and the straight line connecting below the curve is called the line of purples. The following figure shows an example.</p>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/colorimetry-2/colorimetry2-7.webp" alt="CIE 1931 chromaticity diagram spectral locus" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 8. Trajectory formed by monochromatic spectrum in XYZ space.</p>
+</div>
+<p>Chromaticity diagram (x, y) coordinates normalizing tristimulus values can be interpreted as unit vectors leaving only vector direction. Since the sum of three values is fixed at 1, knowing the first two values automatically determines the remaining one. This also relates to the concept of dimensionality reduction.</p>
+<p>The same principle applies in RGB space. Removing intensity (brightness) information enables projection from 3-dimensional to 2-dimensional rg plane, and for purposes of analyzing only chromaticity, such 2-dimensional projection makes visualization much simpler.</p>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
+  <div style="text-align: center;">
+    <img src="/colorimetry-2/colorimetry2-8.webp" alt="RGB rg-plane projection example" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 7. 3D → 2D projection (rg plane projection) example</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="/colorimetry-2/colorimetry2-9.webp" alt="Additional chromaticity / gamut reference figure" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 9. rg chromaticity plane and RGB gamut representation.</p>
+  </div>
+</div>
+<ul>
+<li>Each point on the outer curve corresponds to monochromatic light (spectral colors).</li>
+<li>Points inside the curve represent non-spectral colors mixed from two or more wavelengths.</li>
+<li>Chromaticity outside the curve is an area unrealizable with monochromatic or general mixed light.</li>
+<li>RGB primaries correspond to monochromatic light so are located on the curve boundary.</li>
+<li>Colors inside the triangle formed by three RGB color points are areas realizable with those RGB light sources, and colors outside the triangle need more light sources for expression.</li>
+</ul>
+<p>Display devices&rsquo; color reproduction capability is limited by the physically realizable color gamut. Each display has chromaticity coordinates of its own R, G, B light sources, and the triangular area inside with these three points as vertices determines the chromaticity range expressible by that device. Chromaticity inside this triangle is color reproducible by that device, and outside is considered unreproducible color. The larger the triangle, the wider that device&rsquo;s color reproduction range.</p>
+<p>Most color correction or color temperature adjustment is performed centered on a specific reference point within such color space, namely the white point (e.g., D65). This reference point is located on the color temperature curve, serving as the standard for adjusting color balance in displays.</p>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
+  <div style="text-align: center;">
+    <img src="/colorimetry-2/colorimetry2-10.webp" alt="Chromaticity / gamut reference figure" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 10. Gamut comparison on CIE 1931 chromaticity diagram: sRGB, Adobe RGB, DCI-P3.</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="/colorimetry-2/colorimetry2-11.webp" alt="Chromaticity / gamut reference figure" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 11. Display device RGB primary color coordinates and gamut triangle representation.</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="/colorimetry-2/colorimetry2-12.webp" alt="Convert RGB chromaticity coordinates (r,g) to XYZ chromaticity coordinates (x,y)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 12. Color space redefinition process converting RGB chromaticity coordinates (r, g) to XYZ chromaticity coordinates (x, y).</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="/colorimetry-2/colorimetry2-13.webp" alt="Additional reference figure for XYZ / chromaticity discussion" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+    <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 13. Construction principle of XYZ color space using Imaginary Primaries.</p>
+  </div>
+</div>
+<p>When mathematically defining color through Color Matching Functions (CMF), if primaries are selected based only on existing colors, RGB tristimulus values experience the problem of negative values occurring at some wavelengths. This means &rsquo;negative amounts of color&rsquo; must be added to make specific colors, which is physically unrealizable or difficult to interpret.</p>
+<p>To solve this problem, CIE introduced imaginary primaries. These imaginary colors are located outside the actual color range, but thanks to this, they can generate positive tristimulus values (XYZ) for all visible light wavelengths. In other words, they enable expressing all spectrum colors visible to the human eye as positive linear combinations.</p>
+<p>Such characteristics are impossible in RGB-based color coordinate systems. On the previously examined chromaticity diagram, <strong>to construct a triangle containing all actual colors, the triangle&rsquo;s vertices must be outside the actual color range</strong>. XYZ color space is a model constructed to satisfy this condition.</p>
+<p>CIE uses the following transformation matrix to convert RGB tristimulus values to XYZ tristimulus values. (This transformation matrix is an example of CIE RGB-based XYZ transformation; actual sRGB, Adobe RGB, etc., use different transformation matrices.)</p>
+<div>
+$$
+\begin{bmatrix}
+X\\
+Y\\
+Z
+\end{bmatrix}
+=
+\begin{bmatrix}
+2.768 & 1.751 & 1.130\\
+1.000 & 4.590 & 0.060\\
+0.00 & 0.56 & 5.594
+\end{bmatrix}
+\begin{bmatrix}
+R\\
+G\\
+B
+\end{bmatrix}
+$$
+</div>
+<p>This transformation matrix has two purposes:</p>
+<ol>
+<li><strong>Adjusting so stimulus values at all wavelengths become positive</strong>.</li>
+<li><strong>Correcting so the Y component corresponds with V(λ) function, the human brightness perception curve</strong>.</li>
+</ol>
+<p>In XYZ color space obtained through this transformation, RGB CMFs all appear as positive values, and explanation without negative stimulus values is possible when expressing colors. This is a very important characteristic in actual display device color management systems. Particularly, Y stimulus value is used as a brightness representative, utilized as a reference value in luminance-based operations or HDR tone mapping.</p>
+<h3 id="visualization-of-chromaticity-diagram-and-visible-color-range">Visualization of Chromaticity Diagram and Visible Color Range</h3>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/colorimetry-2/colorimetry2-14.webp" alt="CIE 1931 Chromaticity Diagram (xy)" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 14. CIE 1931 chromaticity diagram (xy) and visualization of visible color range.</p>
+</div>
+<p>The CIE 1931 chromaticity diagram (xy) is <strong>a reference diagram projecting the chromaticity distribution of visible light spectrum in 2-dimensions</strong> based on standard observer standards modeling average human visual system response (measured under 2° conditions). The edge of this diagram, the curve forming a horseshoe shape, corresponds to pure monochromatic light (spectral colors) according to wavelength λ (400–700nm), and this curve represents colors of maximum saturation possible in visible light.</p>
+<p>The triangular area existing inside represents the range of colors a specific display device can express, namely the color gamut. Each vertex of this triangle is displayed as the color coordinates (xR, yR), (xG, yG), (xB, yB) of that device&rsquo;s R, G, B primary colors, and only colors inside the area formed by connecting these can be generated on that device. Other colors are in an out of gamut state, meaning colors technically unreproducible. Additionally, the device&rsquo;s white point must exist inside this triangle to express actual white, which doesn&rsquo;t need to exactly match the theoretical center E (Equal Energy White Point), but generally exists at a different location.</p>
+<hr>
+<h3 id="cie-1976-u-v-uniform-chromaticity-diagram-and-improvement-of-color-perception">CIE 1976 (u′, v′) Uniform Chromaticity Diagram and Improvement of Color Perception</h3>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/colorimetry-2/colorimetry2-15.webp" alt="CIE 1976 (u′, v′) Uniform Chromaticity Scale Diagram" style="width: 100%; height: auto; display: block; margin: 0 auto 8px auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666; text-align: center;">Fig. 15. CIE 1976 (u′, v′) uniform chromaticity diagram and perceptual uniformity improvement effect.</p>
+</div>
+<p>While the existing CIE 1931 chromaticity diagram contributed to effectively visualizing color coordinate space, limitations were also clear. Particularly, the green region was excessively expanded, and the problem existed where identical physical color differences appeared as distance distortions on the chromaticity diagram. In other words, mismatches occurred between color differences humans perceive and distances in the xy chromaticity diagram. This problem clearly revealed itself through size differences of equal-color regions (MacAdam ellipse) between colors—actually near green, one ellipse can be over 10 times larger than blue.</p>
+<p>To improve this, CIE introduced the CIE 1976 (u′, v′) Uniform Chromaticity Scale Diagram in 1976. This new chromaticity diagram was mathematically reconstructed to correspond more uniformly to human visual sensitivity, designed so movement of equal distance in each direction feels like equal perceptual difference. As a result, red and blue regions were visually expanded, and overall perceptual uniformity between colors improved. This came to provide much more meaningful standards in color difference calculations or design work based on color perception.</p>
+<h3 id="color-range-and-reproduction-limits-in-the-real-world">Color Range and Reproduction Limits in the Real World</h3>
+<p>Most color spaces used in reality (sRGB, Adobe RGB, etc.) don&rsquo;t completely include the entire horseshoe area on the CIE 1931 chromaticity diagram. This means only part of the total color range humans can perceive is expressible, reflecting physical limits of expressible gamut.</p>
+<p>For example, if a digital camera operates based on sRGB color space, if the subject has colors corresponding to outside sRGB&rsquo;s triangle, that color isn&rsquo;t accurately reproduced. Instead, it&rsquo;s expressed replaced by the closest substitutable color within the gamut. This process is called gamut clipping, and similarly occurs in output devices (monitors, printers).</p>
+<p>Such limitations are determined by display device primary color coordinates, physical lighting characteristics, sensor sensitivity, etc. Therefore each device has different color expression capability, and is also why color consistency doesn&rsquo;t happen perfectly between devices even for identical images.</p>
+<p>For more details, please refer to Part 1 of this series.</p>
+<p><a href="/en/posts/2026-01-22-colorimetry-1/">Go to Colorimetry Part 1</a></p>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://m.blog.naver.com/rhanfwk2964/222498858998">Naver Blog</a></li>
+<li><a href="https://www.waveformlighting.com/color-matching/what-is-d65-and-what-is-it-used-for">Waveform Lighting — D65</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Opponent_process">Wikipedia — Opponent process</a></li>
+<li><a href="https://www.fourmilab.ch/documents/specrend/">Fourmilab — Spectral Rendering</a></li>
+<li><a href="https://medium.com/hipster-color-science/a-beginners-guide-to-colorimetry-401f1830b65a">Medium — A beginner&rsquo;s guide to colorimetry</a></li>
+<li><a href="https://jlongster.com/why-chromaticity-shape">jlongster — why chromaticity shape</a></li>
+</ul>
+
+          </div>
+        </div>
+
+        <footer class="xl:col-start-1 xl:col-span-4">
+          <div class="pt-4 xl:pt-8">
+            <a class="text-indigo-500 hover:text-indigo-600" aria-label="Back to the list" href="/en/">← Back to the list</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </article>
+</section>
+
+        </section>
+      </main>
+      <footer>
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="mt-16 flex flex-col items-center">
+  <div class="mb-2 text-sm text-gray-500">
+    <span>(C) 2026. Strawberry Fields — Pastoral Tech Notes by @lkkunst all rights reserved.</span>
+  </div>
+
+  <div class="mb-8 text-sm text-gray-500">
+    <span class="mr-1">Built with</span>
+    <a
+      class="font-semibold underline"
+      href="https://github.com/discaptive/hugo-discaptive"
+      target="_blank"
+      >hugo-discaptive</a
+    >
+  </div>
+</div>
+
+        </section>
+      </footer>
+    </div>
+  </body>
+</html>

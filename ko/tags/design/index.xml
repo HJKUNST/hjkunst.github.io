@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Design on Strawberry Fields — Pastoral Tech Notes by @lkkunst</title>
+    <link>https://hjkunst.github.io/ko/tags/design/</link>
+    <description>Recent content in Design on Strawberry Fields — Pastoral Tech Notes by @lkkunst</description>
+    <generator>Hugo</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sun, 27 Jul 2025 12:00:00 +0900</lastBuildDate>
+    <atom:link href="https://hjkunst.github.io/ko/tags/design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Toss Makers Conference : Design Day 리뷰</title>
+      <link>https://hjkunst.github.io/ko/posts/2025-07-27-tmc/</link>
+      <pubDate>Sun, 27 Jul 2025 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/ko/posts/2025-07-27-tmc/</guid>
+      <description>&lt;h2 id=&#34;목차&#34;&gt;목차&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://hjkunst.github.io/ko/posts/2025-07-27-tmc/#%ed%86%a0%ec%8a%a4%ec%97%90%ec%84%9c-%ea%b0%80%ec%9e%a5-%ec%95%88-%ec%a2%8b%ec%9d%80-%ea%b2%bd%ed%97%98-%eb%a7%8c%eb%93%a4%ea%b8%b0&#34;&gt;토스에서 가장 안 좋은 경험 만들기&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://hjkunst.github.io/ko/posts/2025-07-27-tmc/#%ec%97%85%eb%ac%b4-%ec%8b%9c%ea%b0%84%ec%9d%84-70-%eb%8b%a8%ec%b6%95%ed%95%98%eb%8a%94-%ec%a0%9c%ed%92%88-%eb%a7%8c%eb%93%a4%ea%b8%b0&#34;&gt;업무 시간을 70% 단축하는 제품 만들기&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://hjkunst.github.io/ko/posts/2025-07-27-tmc/#%eb%ac%b8%ec%a0%84%eb%b0%95%eb%8c%80-%ec%86%8d-10%eb%b0%b0-%ec%84%b1%ec%9e%a5%ed%95%9c-%eb%a6%ac%ec%84%9c%ec%b9%98-%ec%a0%9c%ed%92%88%ec%9d%84-%eb%b0%94%ea%be%b8%eb%8b%a4&#34;&gt;문전박대 속 10배 성장한 리서치, 제품을 바꾸다&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://hjkunst.github.io/ko/posts/2025-07-27-tmc/#%ec%99%b8%ec%95%8a%ec%8d%a8-%eb%92%a4%ec%97%90-%ec%88%a8%ea%b2%a8%ec%a7%84-%ec%a7%84%ec%a7%9c-%eb%ac%b8%ec%a0%9c-%ec%a7%9a%ec%96%b4%eb%b3%b4%ea%b8%b0&#34;&gt;외않써?, 뒤에 숨겨진 진짜 문제 짚어보기&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://hjkunst.github.io/ko/posts/2025-07-27-tmc/#%ec%9d%b8%ed%84%b0%eb%a0%89%ec%85%98-%ed%86%a0%ec%8a%a4%ec%97%90%ec%84%a0-%ec%96%b4%eb%96%bb%ea%b2%8c-%ea%b0%9c%eb%b0%9c%ed%95%98%eb%82%98%ec%9a%94&#34;&gt;인터렉션, 토스에선 어떻게 개발하나요?&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://hjkunst.github.io/ko/posts/2025-07-27-tmc/#%ec%b2%98%ec%9d%8c%ec%9d%b4%ec%a7%80%eb%a7%8c-%eb%82%af%ec%84%a4%ec%a7%80-%ec%95%8a%ec%9d%80-%ec%b1%84%ea%b6%8c&#34;&gt;처음이지만, 낯설지 않은 채권&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://hjkunst.github.io/ko/posts/2025-07-27-tmc/#%ec%98%a4%ed%94%84%eb%9d%bc%ec%9d%b8-pos-ux%eb%a1%9c-%eb%92%a4%ec%a7%91%ea%b8%b0%ea%b9%8c%ec%a7%80%ec%9d%98-3%eb%85%84&#34;&gt;오프라인 POS, UX로 뒤집기까지의 3년&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;divider&#34;&gt;&lt;/div&gt;&#xA;&lt;h2 id=&#34;토스에서-가장-안-좋은-경험-만들기&#34;&gt;토스에서 가장 안 좋은 경험 만들기&lt;/h2&gt;&#xA;&lt;p&gt;토스 광고 UX 개선 사례를 공유한 이번 세션은 ‘피할 수 없는 기능’을 어떻게 더 나은 경험으로 바꿔나갈 수 있는지를 중심으로 진행됐다. &lt;/br&gt;&#xA;광고는 대부분의 유저에게 불쾌한 요소지만, 서비스 입장에서는 쉽게 제거할 수 없다. &lt;/br&gt;&#xA;이 발표자는 그 안에서 ‘불편하지 않은 경험’은 물론, 나아가 &lt;strong&gt;유저가 수용하거나 긍정적으로 느낄 수 있는 광고 UX&lt;/strong&gt;를 만들기 위해 어떤 접근을 했는지 공유했다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

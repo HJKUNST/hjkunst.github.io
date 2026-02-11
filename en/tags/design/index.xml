@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Design on Strawberry Fields — Pastoral Tech Notes by @lkkunst</title>
+    <link>https://hjkunst.github.io/en/tags/design/</link>
+    <description>Recent content in Design on Strawberry Fields — Pastoral Tech Notes by @lkkunst</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Jul 2025 12:00:00 +0900</lastBuildDate>
+    <atom:link href="https://hjkunst.github.io/en/tags/design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Toss Makers Conference: Design Day Review</title>
+      <link>https://hjkunst.github.io/en/posts/2025-07-27-tmc/</link>
+      <pubDate>Sun, 27 Jul 2025 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/en/posts/2025-07-27-tmc/</guid>
+      <description>&lt;h2 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://hjkunst.github.io/en/posts/2025-07-27-tmc/#creating-the-worst-experience-at-toss&#34;&gt;Creating the Worst Experience at Toss&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://hjkunst.github.io/en/posts/2025-07-27-tmc/#building-products-that-cut-work-time-by-70&#34;&gt;Building Products That Cut Work Time by 70%&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://hjkunst.github.io/en/posts/2025-07-27-tmc/#research-that-grew-10x-despite-rejection-transforming-products&#34;&gt;Research That Grew 10x Despite Rejection, Transforming Products&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://hjkunst.github.io/en/posts/2025-07-27-tmc/#why-arent-they-using-it-uncovering-the-real-problem&#34;&gt;Why Aren&amp;rsquo;t They Using It? Uncovering the Real Problem&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://hjkunst.github.io/en/posts/2025-07-27-tmc/#how-toss-develops-interactions&#34;&gt;How Toss Develops Interactions&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://hjkunst.github.io/en/posts/2025-07-27-tmc/#bonds-unfamiliar-yet-familiar&#34;&gt;Bonds: Unfamiliar Yet Familiar&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://hjkunst.github.io/en/posts/2025-07-27-tmc/#three-years-of-flipping-offline-pos-with-ux&#34;&gt;Three Years of Flipping Offline POS with UX&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;divider&#34;&gt;&lt;/div&gt;&#xA;&lt;h2 id=&#34;creating-the-worst-experience-at-toss&#34;&gt;Creating the Worst Experience at Toss&lt;/h2&gt;&#xA;&lt;p&gt;This session shared Toss&amp;rsquo;s advertising UX improvement case study, focusing on how to transform &amp;lsquo;unavoidable features&amp;rsquo; into better experiences. &lt;/br&gt;&#xA;Ads are an unpleasant element for most users, but from a service perspective, they can&amp;rsquo;t be easily removed. &lt;/br&gt;&#xA;The presenter shared their approach to creating not just &amp;rsquo;non-intrusive experiences,&amp;rsquo; but &lt;strong&gt;advertising UX that users can accept or even view positively&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

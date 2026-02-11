@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MacOS on Strawberry Fields — Pastoral Tech Notes by @lkkunst</title>
+    <link>https://hjkunst.github.io/en/tags/macos/</link>
+    <description>Recent content in MacOS on Strawberry Fields — Pastoral Tech Notes by @lkkunst</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 Jan 2026 12:00:00 +0900</lastBuildDate>
+    <atom:link href="https://hjkunst.github.io/en/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Crypto Article Week 2.5 | This Project Doesn&#39;t Make Money</title>
+      <link>https://hjkunst.github.io/en/posts/2026-01-08-mac-token-price-bar/</link>
+      <pubDate>Wed, 07 Jan 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/en/posts/2026-01-08-mac-token-price-bar/</guid>
+      <description>&lt;h2 id=&#34;a-real-time-token-price-bar-for-macos-users&#34;&gt;&lt;strong&gt;A Real-Time Token Price Bar for macOS Users&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Crypto is structurally dependent on a continuous inflow of capital to sustain itself. That is why user acquisition matters so much, and often, how much exposure a project gets has a greater impact than the team&amp;rsquo;s fundamentals. Trading users typically enter on-chain through airdrops, then expand into futures DEXs, prediction markets, and other areas in search of more stimulation. Demand for dopamine-inducing mechanisms grows, and services that provide them continue to emerge.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Front-End on Strawberry Fields — Pastoral Tech Notes by @lkkunst</title>
+    <link>https://hjkunst.github.io/en/categories/front-end/</link>
+    <description>Recent content in Front-End on Strawberry Fields — Pastoral Tech Notes by @lkkunst</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Jun 2025 02:04:00 +0900</lastBuildDate>
+    <atom:link href="https://hjkunst.github.io/en/categories/front-end/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>From Design to Implementation: Connecting Figma and Cursor MCP (Basics)</title>
+      <link>https://hjkunst.github.io/en/posts/2025-06-15-figma-to-code/</link>
+      <pubDate>Sun, 15 Jun 2025 02:04:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/en/posts/2025-06-15-figma-to-code/</guid>
+      <description>&lt;div markdown=&#34;1&#34;&gt;&#xA;&lt;h3 id=&#34;purpose&#34;&gt;Purpose&lt;/h3&gt;&#xA;&lt;p&gt;I wanted to integrate Cursor AI with Figma files to directly convert design resources into code. In most other design and art disciplines, the work is considered &amp;ldquo;complete&amp;rdquo; only when the final product is finished — so why should implementation in UX/UI design be solely the developer&amp;rsquo;s responsibility? This was a challenge to that question. Ultimately, I think what I really wanted was to build a website driven by a sense of authorship.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

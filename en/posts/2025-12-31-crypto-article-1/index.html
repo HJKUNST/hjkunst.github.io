@@ -1,0 +1,538 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+  class="scroll-smooth"
+>
+  <head>
+    
+
+
+
+
+
+
+
+<meta charset="utf-8" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YS9Z2BGZ1Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-YS9Z2BGZ1Q');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
+
+<meta name="description" content="Table of Contents
+
+Introduction: Why Analyze Design Systems First? Why Choose Coinbase Design System?
+Main Content: Identity and Target Users
+
+System&rsquo;s Official Mission / Slogan
+CDS, MUI, HIG Comparative Analysis
+
+
+System Architecture
+
+Notable Sections in Get Started: Theming
+Components
+Hooks
+
+
+Design Token Structure
+
+Combination of Primitive and Semantic Tokens
+Token Application Beyond Color
+Shadow Structure
+
+
+Conclusion
+
+
+Introduction: Why Analyze Design Systems First? Why Choose Coinbase Design System?
+I have long pondered how to contribute to the crypto ecosystem as a designer rather than a developer. Rather than remaining in the role of designing screens, the more important question became at what points in the overall process of creating and expanding products I could intervene. In this process, my interest naturally shifted toward design system construction methods that connect from token units to components." />
+
+
+<meta property="og:title" content="Crypto Article Week 1 | Summarizing Coinbase Design System" />
+<meta property="og:description" content="Table of Contents
+
+Introduction: Why Analyze Design Systems First? Why Choose Coinbase Design System?
+Main Content: Identity and Target Users
+
+System&rsquo;s Official Mission / Slogan
+CDS, MUI, HIG Comparative Analysis
+
+
+System Architecture
+
+Notable Sections in Get Started: Theming
+Components
+Hooks
+
+
+Design Token Structure
+
+Combination of Primitive and Semantic Tokens
+Token Application Beyond Color
+Shadow Structure
+
+
+Conclusion
+
+
+Introduction: Why Analyze Design Systems First? Why Choose Coinbase Design System?
+I have long pondered how to contribute to the crypto ecosystem as a designer rather than a developer. Rather than remaining in the role of designing screens, the more important question became at what points in the overall process of creating and expanding products I could intervene. In this process, my interest naturally shifted toward design system construction methods that connect from token units to components." />
+<meta property="og:url" content="https://hjkunst.github.io/en/posts/2025-12-31-crypto-article-1/" />
+<meta property="og:site_name" content="Strawberry Fields — Pastoral Tech Notes by @lkkunst" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://hjkunst.github.io/images/og-image.png" />
+<meta property="og:locale" content="en_us" />
+
+
+
+
+<link rel="alternate" hreflang="ko-kr" href="https://hjkunst.github.io/ko/posts/2025-12-31-crypto-article-1/" />
+
+<link rel="alternate" hreflang="en-us" href="https://hjkunst.github.io/en/posts/2025-12-31-crypto-article-1/" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Crypto Article Week 1 | Summarizing Coinbase Design System" />
+<meta name="twitter:description" content="Table of Contents
+
+Introduction: Why Analyze Design Systems First? Why Choose Coinbase Design System?
+Main Content: Identity and Target Users
+
+System&rsquo;s Official Mission / Slogan
+CDS, MUI, HIG Comparative Analysis
+
+
+System Architecture
+
+Notable Sections in Get Started: Theming
+Components
+Hooks
+
+
+Design Token Structure
+
+Combination of Primitive and Semantic Tokens
+Token Application Beyond Color
+Shadow Structure
+
+
+Conclusion
+
+
+Introduction: Why Analyze Design Systems First? Why Choose Coinbase Design System?
+I have long pondered how to contribute to the crypto ecosystem as a designer rather than a developer. Rather than remaining in the role of designing screens, the more important question became at what points in the overall process of creating and expanding products I could intervene. In this process, my interest naturally shifted toward design system construction methods that connect from token units to components." />
+<meta name="twitter:image" content="https://hjkunst.github.io/images/og-image.png" />
+
+<title>Crypto Article Week 1 | Summarizing Coinbase Design System</title>
+
+
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<meta name="theme-color" content="#FF6254">
+<meta name="msapplication-TileColor" content="#FF6254">
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      packages: { '[+]': ['ams'] }
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<link
+        rel="stylesheet"
+        href="/css/output.min.e6ea1a713ee8508a7ae1581f36a75a67ceb7390eaea21503ce3bade6cfabca8c.css"
+        integrity="sha256-5uoacT7oUIp64VgfNqdaZ863OQ6uohUDzjut5s&#43;ryow="
+        crossorigin="anonymous"
+      /><link
+        rel="stylesheet"
+        href="/css/custom.min.b0e39fb81464392a8c1dfcf79e38a1369b0ac0d49a0a8bfa676768c503a22757.css"
+        integrity="sha256-sOOfuBRkOSqMHfz3njihNpsKwNSaCov6Z2doxQOiJ1c="
+        crossorigin="anonymous"
+      />
+  </head>
+  <body class="bg-white text-black antialiased">
+    <div class="flex h-screen flex-col justify-between font-sans">
+      <header class="site-header sticky top-0 z-50" style="background: rgba(228, 228, 228, 0.1); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="flex items-center justify-between py-4">
+            <a class="group break-words" aria-label="Strawberry Fields — Pastoral Tech Notes by @lkkunst" href="/en/">
+  <div class="flex items-center justify-between">
+    <div class="sm:mr-3">
+      <img src="/images/logo.svg" width="32" height="32" alt="Logo Image" />
+    </div>
+
+    <div class="hidden text-2xl font-semibold sm:block group-hover:underline">
+      <span>Strawberry Fields — Pastoral Tech Notes by @lkkunst</span>
+    </div>
+  </div>
+</a>
+
+<div class="flex items-center space-x-4 leading-5 sm:space-x-6">
+  <div class="items-center space-x-4 overflow-x-auto flex sm:space-x-6">
+    
+      <a
+        href="/en/about"
+        class="font-medium text-gray-900 hover:text-indigo-500"
+        
+        >About</a
+      >
+    
+      <a
+        href="/en/tags"
+        class="font-medium text-gray-900 hover:text-indigo-500"
+        
+        >Tags</a
+      >
+    
+    <div class="lang-toggle"><span class="lang-toggle__item lang-toggle__item--active">ENG</span><a class="lang-toggle__item" href="/ko/posts/2025-12-31-crypto-article-1/">KOR</a></div>
+
+    <a href="https://github.com/hjkunst" target="_blank">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="fill-[#24292F] hover:fill-indigo-500 h-6 w-6"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12.0099 0C5.36875 0 0 5.5 0 12.3042C0 17.7432 3.43994 22.3472 8.21205 23.9767C8.80869 24.0992 9.02724 23.712 9.02724 23.3862C9.02724 23.101 9.00757 22.1232 9.00757 21.1045C5.6667 21.838 4.97099 19.6378 4.97099 19.6378C4.43409 18.2118 3.63858 17.8452 3.63858 17.8452C2.54511 17.0915 3.71823 17.0915 3.71823 17.0915C4.93117 17.173 5.56763 18.3545 5.56763 18.3545C6.64118 20.2285 8.37111 19.699 9.06706 19.373C9.16638 18.5785 9.48473 18.0285 9.82275 17.723C7.15817 17.4377 4.35469 16.3785 4.35469 11.6523C4.35469 10.3078 4.8316 9.20775 5.58729 8.35225C5.46807 8.04675 5.0504 6.7835 5.70677 5.09275C5.70677 5.09275 6.72083 4.76675 9.00732 6.35575C9.98625 6.08642 10.9958 5.9494 12.0099 5.94825C13.024 5.94825 14.0577 6.091 15.0123 6.35575C17.299 4.76675 18.3131 5.09275 18.3131 5.09275C18.9695 6.7835 18.5515 8.04675 18.4323 8.35225C19.2079 9.20775 19.6652 10.3078 19.6652 11.6523C19.6652 16.3785 16.8617 17.4172 14.1772 17.723C14.6148 18.11 14.9924 18.8433 14.9924 20.0045C14.9924 21.6545 14.9727 22.9788 14.9727 23.386C14.9727 23.712 15.1915 24.0992 15.7879 23.977C20.56 22.347 23.9999 17.7432 23.9999 12.3042C24.0196 5.5 18.6312 0 12.0099 0Z"
+        />
+      </svg>
+    </a>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </header>
+      
+      <main class="mb-auto">
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Crypto Article Week 1 | Summarizing Coinbase Design System",
+      "datePublished": "2025-12-31T12:00:00\u002b09:00",
+      "dateModified": "2025-12-31T12:00:00\u002b09:00",
+      "description": "\u003ch2 id=\u0022table-of-contents\u0022\u003eTable of Contents\u003c\/h2\u003e\n\u003col\u003e\n\u003cli\u003e\u003ca href=\u0022\/en\/posts\/2025-12-31-crypto-article-1\/#introduction-why-analyze-design-systems-first-why-choose-coinbase-design-system\u0022\u003eIntroduction: Why Analyze Design Systems First? Why Choose Coinbase Design System?\u003c\/a\u003e\u003c\/li\u003e\n\u003cli\u003e\u003ca href=\u0022\/en\/posts\/2025-12-31-crypto-article-1\/#main-content-identity-and-target-users\u0022\u003eMain Content: Identity and Target Users\u003c\/a\u003e\n\u003cul\u003e\n\u003cli\u003eSystem\u0026rsquo;s Official Mission \/ Slogan\u003c\/li\u003e\n\u003cli\u003eCDS, MUI, HIG Comparative Analysis\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003cli\u003e\u003ca href=\u0022\/en\/posts\/2025-12-31-crypto-article-1\/#3-system-architecture\u0022\u003eSystem Architecture\u003c\/a\u003e\n\u003cul\u003e\n\u003cli\u003eNotable Sections in Get Started: Theming\u003c\/li\u003e\n\u003cli\u003eComponents\u003c\/li\u003e\n\u003cli\u003eHooks\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003cli\u003e\u003ca href=\u0022\/en\/posts\/2025-12-31-crypto-article-1\/#4-design-token-structure\u0022\u003eDesign Token Structure\u003c\/a\u003e\n\u003cul\u003e\n\u003cli\u003eCombination of Primitive and Semantic Tokens\u003c\/li\u003e\n\u003cli\u003eToken Application Beyond Color\u003c\/li\u003e\n\u003cli\u003eShadow Structure\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003cli\u003e\u003ca href=\u0022\/en\/posts\/2025-12-31-crypto-article-1\/#conclusion\u0022\u003eConclusion\u003c\/a\u003e\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003chr\u003e\n\u003ch2 id=\u0022introduction-why-analyze-design-systems-first-why-choose-coinbase-design-system\u0022\u003eIntroduction: Why Analyze Design Systems First? Why Choose Coinbase Design System?\u003c\/h2\u003e\n\u003cp\u003eI have long pondered how to contribute to the crypto ecosystem as a designer rather than a developer. Rather than remaining in the role of designing screens, the more important question became at what points in the overall process of creating and expanding products I could intervene. In this process, my interest naturally shifted toward design system construction methods that connect from token units to components.\u003c\/p\u003e",
+      "image": "https:\/\/hjkunst.github.io\/images\/og-image.png",
+      "url": "https:\/\/hjkunst.github.io\/en\/posts\/2025-12-31-crypto-article-1\/",
+      "author": [{ "@type": "Person", "name": "hjkunst" }]
+    }
+  </script>
+<section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+  <article>
+    <div class="xl:divide-y xl:divide-gray-200">
+      <header class="pt-16 xl:pb-16">
+        <div class="text-center">
+          <div class="article-meta-group">
+            <dl>
+              <div>
+                <dt class="sr-only">Published on</dt>
+                <dd class="text-base font-medium leading-6 text-gray-500">
+                  
+                  
+                  <time datetime="2025-12-31T12:00:00&#43;09:00">Wednesday, December 31, 2025</time>
+                </dd>
+              </div>
+            </dl>
+            <div>
+              <h1
+                class="text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-3xl sm:leading-9 md:text-4xl md:leading-10">
+                <div>Crypto Article Week 1 | Summarizing Coinbase Design System</div>
+              </h1>
+            </div>
+            <div class="flex flex-col items-center gap-3">
+              
+              <div class="article-tag-row flex flex-wrap items-center justify-center gap-3">
+                
+                <a href="/en/tags/design-system" class="tag-chip">Design System</a>
+                
+                <a href="/en/tags/ux" class="tag-chip">UX</a>
+                
+                <a href="/en/tags/crypto" class="tag-chip">Crypto</a>
+                
+              </div>
+              
+              
+              
+              <div class="flex items-center gap-2 text-sm">
+                <span class="text-gray-500">Read in:</span>
+                
+                <a href="/ko/posts/2025-12-31-crypto-article-1/" class="language-switch-link">
+                  KOR
+                </a>
+                
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+      </header>
+
+      <div class="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0">
+        <aside class="hidden xl:block xl:col-start-1 xl:row-start-1">
+          <div class="sticky top-24 space-y-8">
+            <div class="py-10">
+              <h2 class="text-xs uppercase tracking-wide text-gray-500">
+                Table of Contents
+              </h2>
+              <nav class="mt-2">
+                <ul class="space-y-3">
+                  <li class="text-sm">
+                    <a href="#table-of-contents" class="text-indigo-500 hover:text-indigo-600">Table of Contents</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#introduction-why-analyze-design-systems-first-why-choose-coinbase-design-system" class="text-indigo-500 hover:text-indigo-600">Introduction: Why Analyze Design Systems First? Why Choose Coinbase Design System?</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#main-content-identity-and-target-users" class="text-indigo-500 hover:text-indigo-600">Main Content: Identity and Target Users</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#3-system-architecture" class="text-indigo-500 hover:text-indigo-600">3. System Architecture</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#4-design-token-structure" class="text-indigo-500 hover:text-indigo-600">4. Design Token Structure</a>
+                    <ul class="ml-4 mt-2 space-y-2">
+                      <li class="text-sm">
+                        <a href="#combination-of-primitive-and-semantic-tokens" class="text-indigo-500 hover:text-indigo-600">Combination of Primitive and Semantic Tokens</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#token-application-beyond-color" class="text-indigo-500 hover:text-indigo-600">Token Application Beyond Color</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#shadow-structure" class="text-indigo-500 hover:text-indigo-600">Shadow Structure</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#conclusion" class="text-indigo-500 hover:text-indigo-600">Conclusion</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        <div class="divide-y divide-gray-200 xl:col-span-3 xl:row-span-2 xl:pb-0">
+          <div class="prose max-w-none pb-8 pt-10">
+            <h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="/en/posts/2025-12-31-crypto-article-1/#introduction-why-analyze-design-systems-first-why-choose-coinbase-design-system">Introduction: Why Analyze Design Systems First? Why Choose Coinbase Design System?</a></li>
+<li><a href="/en/posts/2025-12-31-crypto-article-1/#main-content-identity-and-target-users">Main Content: Identity and Target Users</a>
+<ul>
+<li>System&rsquo;s Official Mission / Slogan</li>
+<li>CDS, MUI, HIG Comparative Analysis</li>
+</ul>
+</li>
+<li><a href="/en/posts/2025-12-31-crypto-article-1/#3-system-architecture">System Architecture</a>
+<ul>
+<li>Notable Sections in Get Started: Theming</li>
+<li>Components</li>
+<li>Hooks</li>
+</ul>
+</li>
+<li><a href="/en/posts/2025-12-31-crypto-article-1/#4-design-token-structure">Design Token Structure</a>
+<ul>
+<li>Combination of Primitive and Semantic Tokens</li>
+<li>Token Application Beyond Color</li>
+<li>Shadow Structure</li>
+</ul>
+</li>
+<li><a href="/en/posts/2025-12-31-crypto-article-1/#conclusion">Conclusion</a></li>
+</ol>
+<hr>
+<h2 id="introduction-why-analyze-design-systems-first-why-choose-coinbase-design-system">Introduction: Why Analyze Design Systems First? Why Choose Coinbase Design System?</h2>
+<p>I have long pondered how to contribute to the crypto ecosystem as a designer rather than a developer. Rather than remaining in the role of designing screens, the more important question became at what points in the overall process of creating and expanding products I could intervene. In this process, my interest naturally shifted toward design system construction methods that connect from token units to components.</p>
+<p>Based on design, I&rsquo;ve recently been building websites directly, learning development alongside. In this process, concerns about how designers and frontend developers should communicate to minimize collaboration resources became concrete. Particularly as we entered the AI era, discussions that tools like Cursor, Antigravity, and CLI could replace the roles of designers and frontend developers accelerated these concerns. Comparing before and after AI popularization, I clearly felt the nature of work I was assigned had changed. If in the past I mainly performed &lsquo;making things pretty&rsquo; design work as main or freelance work, recently with AI and templates becoming universal across almost all fields, I came to feel that role alone wasn&rsquo;t sufficient. Instead, based on practical experience and real-world sensibility, I got the impression that designers are required who can explain and demonstrate aesthetic judgment and its basis in actual situations. What operates importantly in practice was understanding how work flows between people rather than deliverables. I felt designers were needed who know efficient processes and experientially understand what becomes bottlenecks in collaboration. To use designer&rsquo;s language as an analogy, just as during undergraduate years you could only survive in the workplace by becoming someone needed when you could finish work at print shops with almost no repeated modifications and scolding.</p>
+<p>Until now, working in startup environments, systematically organizing design systems often felt like over-engineering. In situations requiring quick results, solving individual problems was priority. However, from my current position preparing for job changes, my judgment changed. I came to think the most basic judgment basis for design and frontend collaboration is ultimately the design system. Furthermore, the fact that this was documented and published seemed to be a result of considering not just internal efficiency but also the usage patterns of potential users and developers together. For these reasons, among published design system documents, I chose to analyze Coinbase Design System&rsquo;s documentation as a representative case of the crypto industry! This overview aims for a trilogy continuing to design-development content.</p>
+<h2 id="main-content-identity-and-target-users">Main Content: Identity and Target Users</h2>
+<ul>
+<li><strong>System&rsquo;s Official Mission / Slogan</strong></li>
+</ul>
+<p>CDS presents the following key features in its Introduction.</p>
+<p>For comparison, I&rsquo;ve brought the first pages of MUI and HIG documents.</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>CDS</th>
+          <th>MUI</th>
+          <th>HIG</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Provider</strong></td>
+          <td>Coinbase</td>
+          <td>Google</td>
+          <td>Apple</td>
+      </tr>
+      <tr>
+          <td><strong>Key Features</strong></td>
+          <td>• <strong>Cross-platform</strong> - CDS provides components for both React DOM and React Native. We go to great lengths to ensure that the source code is as identical as possible across React and React Native without compromising on platform-specific features.<br><br>• <strong>Powerful theming</strong> - The ThemeProvider can be used to define a custom theme for your application supporting light and dark mode.<br><br>• <strong>Rich styling capabilities</strong> - Components are designed to integrate with third-party libraries like styled-components, and to be customizable via theming, props, StyleProps, classnames, and inline styles.<br><br>• <strong>Subcomponent composition</strong> - Components are built using smaller subcomponents that can be fully customized or replaced via props.<br><br>• <strong>Accessibility</strong> - Components are accessible out of the box, and can be customized to different accessibility standards.</td>
+          <td><strong>Ship faster:</strong> Over 2,500 open-source <a href="https://github.com/mui/material-ui/graphs/contributors"><strong>contributors</strong></a> have poured countless hours into these components. Focus on your core business logic instead of reinventing the wheel—we&rsquo;ve got your UI covered.<br><br><strong>Beautiful by default:</strong> We&rsquo;re meticulous about our implementation of <a href="https://m2.material.io/"><strong>Material Design</strong></a>, ensuring that every Material UI component meets the highest standards of form and function, but diverge from the official spec where necessary to provide multiple great options.<br><br><strong>Customizability:</strong> The library includes an extensive set of intuitive customizability features. <a href="https://mui.com/store/"><strong>The templates</strong></a> in our store demonstrate how far you can go with customization.<br><br><strong>Cross-team collaboration:</strong> Material UI&rsquo;s intuitive developer experience reduces the barrier to entry for back-end developers and less technical designers, empowering teams to collaborate more effectively. The <a href="https://mui.com/design-kits/"><strong>design kits</strong></a> streamline your workflow and boost consistency between designers and developers.<br><br><strong>Trusted by thousands of organizations:</strong> Material UI has the largest UI community in the React ecosystem. It&rsquo;s almost as old as React itself—its history stretches back to 2014—and we&rsquo;re in this for the long haul. You can count on the community&rsquo;s support for years to come (for example <a href="https://trends.stackoverflow.co/?tags=material-ui"><strong>Stack Overflow</strong></a>).</td>
+          <td><a href="https://developer.apple.com/design/human-interface-guidelines#Hierarchy"><strong>Hierarchy</strong></a><br>Establish a clear visual hierarchy where controls and interface elements elevate and distinguish the content beneath them.<br><br><a href="https://developer.apple.com/design/human-interface-guidelines#Harmony"><strong>Harmony</strong></a><br>Align with the concentric design of the hardware and software to create harmony between interface elements, system experiences, and devices.<br><br><a href="https://developer.apple.com/design/human-interface-guidelines#Consistency"><strong>Consistency</strong></a><br>Adopt platform conventions to maintain a consistent design that continuously adapts across window sizes and displays.</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>CDS</strong></p>
+<p>A practical design system that achieves both UX consistency and development efficiency for large-scale product suites through source code consistency, powerful theme system, and high scalability allowing subcomponent replacement—a cross-platform (React·React Native) component system verified in real financial products.</p>
+<p>Like other design systems, it specified component composition structure and cross-platform support, among which its relatively technology-centric character stood out. In detailed descriptions, it directly mentions concepts like props and ThemeProvider, revealing intent to convey even code-level context within design documentation.</p>
+<p>Perhaps due to its origins in crypto trading exchanges, I got the impression it prioritizes unique functionality and its implementation methods over visual completion. The design system operates as a tool for accurately implementing product core functions rather than as a UI guide.</p>
+<p>→ It set frontend developers who need to operate and scale financial products in production environments, and design system owners as primary readers. It presupposed a practice-centered user base that values function implementation and code consistency over design guides.</p>
+<p><strong>MUI</strong></p>
+<p>A universal React UI library based on Material Design that supports rapid development and cross-team collaboration through a vast open-source community and high customization freedom, serving as standard UI infrastructure immediately applicable to various projects.</p>
+<p>MUI fronted trust built internally and externally within organizations through expressions like &ldquo;Collaboration, trusted by thousands of organizations.&rdquo; Not just the system&rsquo;s own completeness, but the fact that it&rsquo;s already used by many teams and organizations operated as a persuasion logic.</p>
+<p>At the point where CDS develops explanations centered on functionality and source code, MUI hinted at both visual convenience and selection flexibility through the sentence &ldquo;diverge where necessary to provide multiple options.&rdquo; The attitude of leaving room for different choices depending on situations rather than presenting one answer was impressive.</p>
+<p>→ It targeted development teams and product teams of various scales requiring rapid development and collaboration. It presupposed a user base valuing selection flexibility and social validation over clear norms.</p>
+<p><strong>HIG</strong></p>
+<p>A design principle document applied across Apple platforms, presenting abstract yet powerful standards centered on hierarchy, harmony, and consistency—a philosophical framework that becomes designers&rsquo; and developers&rsquo; thinking reference point when designing interfaces.</p>
+<p>HIG was the shortest in volume among the three systems. Whether due to Apple&rsquo;s confidence or characteristics of OS-based design systems, I&rsquo;m uncertain. Explanations were concise, but design philosophy revealed most clearly.</p>
+<p>Particularly impressive was centering on the concept of Harmony, a term mainly used when explaining formative principles. The attitude valuing visual hierarchy and order also read clearly. While stating it follows platform conventions, looking at recent flows massively introducing glassmorphism, it appeared as the most unconventional choice among the three systems.</p>
+<p>→ It placed designers and developers who need to make design decisions on Apple platforms as primary readers. It presupposed a skilled user base requiring thinking standards and design philosophy over implementation guidelines.</p>
+<hr>
+<h2 id="3-system-architecture">3. System Architecture</h2>
+<p>The introduction was long. Now begins full structural analysis centered on Coinbase Design System. Coinbase Design System&rsquo;s overall structure divides into three main areas. Composed of Get Started, Components, and Hooks, with further subdivided classifications within Components, but due to space only top-level structure is organized.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>design-system/
+</span></span><span style="display:flex;"><span>├── get-started/
+</span></span><span style="display:flex;"><span>│ ├── introduction/
+</span></span><span style="display:flex;"><span>│ ├── installation/
+</span></span><span style="display:flex;"><span>│ ├── templates/
+</span></span><span style="display:flex;"><span>│ ├── theming/
+</span></span><span style="display:flex;"><span>│ ├── styling/
+</span></span><span style="display:flex;"><span>│ ├── playground/
+</span></span><span style="display:flex;"><span>│ └── ai-overview/
+</span></span><span style="display:flex;"><span>│
+</span></span><span style="display:flex;"><span>├── components/
+</span></span><span style="display:flex;"><span>│ ├── layout/
+</span></span><span style="display:flex;"><span>│ ├── typography/
+</span></span><span style="display:flex;"><span>│ ├── inputs/
+</span></span><span style="display:flex;"><span>│ ├── media/
+</span></span><span style="display:flex;"><span>│ ├── cards/
+</span></span><span style="display:flex;"><span>│ ├── data-display/
+</span></span><span style="display:flex;"><span>│ ├── feedback/
+</span></span><span style="display:flex;"><span>│ ├── overlay/
+</span></span><span style="display:flex;"><span>│ ├── navigation/
+</span></span><span style="display:flex;"><span>│ ├── graphs/
+</span></span><span style="display:flex;"><span>│ ├── numbers/
+</span></span><span style="display:flex;"><span>│ ├── animation/
+</span></span><span style="display:flex;"><span>│ └── other/
+</span></span><span style="display:flex;"><span>│
+</span></span><span style="display:flex;"><span>└── hooks/
+</span></span><span style="display:flex;"><span>├── useBreakpoints/
+</span></span><span style="display:flex;"><span>├── useDimensions/
+</span></span><span style="display:flex;"><span>├── useEventHandler/
+</span></span><span style="display:flex;"><span>├── useHasMounted/
+</span></span><span style="display:flex;"><span>├── useIsomorphicEffect/
+</span></span><span style="display:flex;"><span>├── useMediaQuery/
+</span></span><span style="display:flex;"><span>├── useMergeRefs/
+</span></span><span style="display:flex;"><span>├── usePreviousValue/
+</span></span><span style="display:flex;"><span>├── useRefMap/
+</span></span><span style="display:flex;"><span>├── useScrollBlocker/
+</span></span><span style="display:flex;"><span>├── useTheme/
+</span></span><span style="display:flex;"><span>└── useOverlayContentContext/
+</span></span></code></pre></div><p><strong>Notable Sections in Get Started: Theming</strong></p>
+<p>Among Get Started sections, Theming is the area defining the design system&rsquo;s foundation. Types and specifications of basic units composing interfaces like Color, Spacing, Border Radius, Icon Size, Avatar Size, Font Family·Size·Weight, Shadow are organized here. It&rsquo;s a structure that presents standards applied across the system before individual components.</p>
+<p><strong>Components</strong></p>
+<p>Components is the system&rsquo;s core area organized around UI assembly units. It organizes each component&rsquo;s specifications to manage repeatedly used interface elements under consistent rules. This composition is commonly seen in other design systems, and personally I prefer direction similar to Radix UI.</p>
+<p>However, a disappointing point is that accessibility standards don&rsquo;t explicitly appear in the table of contents structure. In Radix UI&rsquo;s case, accessibility is a core value, repeatedly addressing ARIA, focus management, and keyboard interaction throughout documentation. In contrast, CDS doesn&rsquo;t present accessibility-related concepts as independent categories or clear entry points.</p>
+<p><strong>Hooks</strong></p>
+<p>Hooks handle the logic layer dealing with behavior and state rather than UI elements. Since this area will be addressed in a separate part after organizing the learning process, here I focus on structural meaning.</p>
+<p>Intent to treat the design system as a framework unit rather than a UI kit by separating UI and logic reads clearly. This acts as a clear advantage in terms of implementation efficiency and development speed.</p>
+<h2 id="4-design-token-structure">4. Design Token Structure</h2>
+<p>I examined design token structure and characteristics based on <code>defaultTheme</code> defined in Theming. An overall notable point is that components don&rsquo;t hold values directly, but are designed so all visual attributes go through tokens. I organize in order how each element is separated.</p>
+<h3 id="combination-of-primitive-and-semantic-tokens">Combination of Primitive and Semantic Tokens</h3>
+<p>Primitive tokens are a collection of values classified according to physical rules. For example, color tokens are densely divided by spectrum units from <code>--light-blue0</code> to <code>--light-blue100</code>, <code>--dark-gray0</code> to <code>--dark-gray100</code>. Tokens at this stage aren&rsquo;t given usage context or meaning, nor do they include role information like buttons or backgrounds. This structure allows replacing only the base color system without affecting the entire system when modifying palettes or switching themes.</p>
+<img src="/crypto-article-1/crypto-article-1-img1.png" alt="Primitive token color palette: Blue, Green, Orange each with 11-step color spectrum" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<p>Conversely, semantic tokens define usage rules and meaning. Tokens like <code>fgPrimary</code> have the role of text color representing brand or main actions, with the actual color value being unimportant. This causes component level to use only meaning-based tokens without directly referencing specific color values.</p>
+<img src="/crypto-article-1/crypto-article-1-img2.png" alt="Semantic token colors: FG, FGMUTED, FGINVERSE, FGPRIMARY, FGWARNING, FGPOSITIVE, FGNEGATIVE, BG, BGALTERNATE" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<p>Through a simple script verifying token structure, a total of 110 semantic tokens across Light and Dark were constructed based on primitive tokens. For example, <code>--lightColor-bg</code> and <code>--darkColor-bg</code> both have the same meaning of basic background but connect to different primitive values. This structure enables responding at token level without component modifications when adding new modes or expanding themes. Theme expansion becomes data replacement work rather than UI modification work.</p>
+<img src="/crypto-article-1/crypto-article-1-img3.png" alt="Dark mode semantic token mapping table: --darkColor-fgMuted, --darkColor-fgPrimary, --darkColor-fgPositive, --darkColor-fgNegative, --darkColor-fgWarning, --darkColor-bg" style="width: 100%; min-width: 600px; height: auto; display: block; text-align: left;" />
+<h3 id="token-application-beyond-color">Token Application Beyond Color</h3>
+<p>This combined structure applies equally to areas beyond color. Spacing tokens center on 8px-based scale while using auxiliary units like <code>2px</code>, <code>4px</code>, <code>6px</code>, <code>12px</code> together. It&rsquo;s a structure where fixed grid and fine adjustment are simultaneously possible.</p>
+<p>Typography appears as one of the most refined areas in this theme. Font family, size, weight, line-height, and transform are each managed as separated tokens, with clear hierarchy of Display, Title, Headline, Body, Label, Caption, Legal. Mono series for data and financial UI are also separately defined. Role-based naming already applied like <code>fontFamily-display</code>, <code>fontSize-title</code>, <code>lineHeight-body</code> raises structural completeness.</p>
+<p>However, Typography likewise doesn&rsquo;t have semantic override structure separated by Light and Dark like color. Contrast strategies for label or caption in dark mode don&rsquo;t reveal at token level.</p>
+<h3 id="shadow-structure">Shadow Structure</h3>
+<p>Shadow defines only two stages: <code>elevation1</code>, <code>elevation2</code>. Design intent to limit excessive three-dimensional effects in high information density financial·trading UI reads clearly. However, it&rsquo;s distant from multilayer shadow expressions frequently used in recent UI trends.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Coinbase Design System prioritizes tokens and structure over components, treating UI as a collection of data and rules rather than visual deliverables. Components were treated as results laid on top of tokens and logic rather than visual deliverables. Through this approach, intent to simultaneously secure implementation efficiency and scalability through the design system was reflected throughout the structure. What choices were made to simultaneously handle stability and scalability within the financial product domain also revealed relatively clearly.</p>
+
+          </div>
+        </div>
+
+        <footer class="xl:col-start-1 xl:col-span-4">
+          <div class="pt-4 xl:pt-8">
+            <a class="text-indigo-500 hover:text-indigo-600" aria-label="Back to the list" href="/en/">← Back to the list</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </article>
+</section>
+
+        </section>
+      </main>
+      <footer>
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="mt-16 flex flex-col items-center">
+  <div class="mb-2 text-sm text-gray-500">
+    <span>(C) 2026. Strawberry Fields — Pastoral Tech Notes by @lkkunst all rights reserved.</span>
+  </div>
+
+  <div class="mb-8 text-sm text-gray-500">
+    <span class="mr-1">Built with</span>
+    <a
+      class="font-semibold underline"
+      href="https://github.com/discaptive/hugo-discaptive"
+      target="_blank"
+      >hugo-discaptive</a
+    >
+  </div>
+</div>
+
+        </section>
+      </footer>
+    </div>
+  </body>
+</html>

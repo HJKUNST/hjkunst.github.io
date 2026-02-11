@@ -1,0 +1,401 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+  class="scroll-smooth"
+>
+  <head>
+    
+
+
+
+
+
+
+
+<meta charset="utf-8" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YS9Z2BGZ1Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-YS9Z2BGZ1Q');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
+
+<meta name="description" content="Introduction
+&ldquo;Agreeee&rdquo; (I Want to Agree to the Terms of Service) is an indie game developed in Japan that was released on Steam in December 2025, gaining explosive popularity among streamers domestically and abroad. This game appears simple on the surface. Users just need to press the &lsquo;Agree&rsquo; button to 12 articles of terms of service. But the process is far from simple. Over 100 mini-games appear randomly, each interfering with users in every way possible. Buttons change position right before clicking, fake popups fill the screen, and pressing &lsquo;Disagree&rsquo; even once resets everything." />
+
+
+<meta property="og:title" content="[Quest] Escape the Terms of Service Swamp: 10 UX Boss Monsters" />
+<meta property="og:description" content="Introduction
+&ldquo;Agreeee&rdquo; (I Want to Agree to the Terms of Service) is an indie game developed in Japan that was released on Steam in December 2025, gaining explosive popularity among streamers domestically and abroad. This game appears simple on the surface. Users just need to press the &lsquo;Agree&rsquo; button to 12 articles of terms of service. But the process is far from simple. Over 100 mini-games appear randomly, each interfering with users in every way possible. Buttons change position right before clicking, fake popups fill the screen, and pressing &lsquo;Disagree&rsquo; even once resets everything." />
+<meta property="og:url" content="https://hjkunst.github.io/en/posts/2026-02-09-ux-agree/" />
+<meta property="og:site_name" content="Strawberry Fields — Pastoral Tech Notes by @lkkunst" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://hjkunst.github.io/260209/1.webp" />
+<meta property="og:locale" content="en_us" />
+
+
+
+
+<link rel="alternate" hreflang="ko-kr" href="https://hjkunst.github.io/ko/posts/2026-02-09-ux-agree/" />
+
+<link rel="alternate" hreflang="en-us" href="https://hjkunst.github.io/en/posts/2026-02-09-ux-agree/" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="[Quest] Escape the Terms of Service Swamp: 10 UX Boss Monsters" />
+<meta name="twitter:description" content="Introduction
+&ldquo;Agreeee&rdquo; (I Want to Agree to the Terms of Service) is an indie game developed in Japan that was released on Steam in December 2025, gaining explosive popularity among streamers domestically and abroad. This game appears simple on the surface. Users just need to press the &lsquo;Agree&rsquo; button to 12 articles of terms of service. But the process is far from simple. Over 100 mini-games appear randomly, each interfering with users in every way possible. Buttons change position right before clicking, fake popups fill the screen, and pressing &lsquo;Disagree&rsquo; even once resets everything." />
+<meta name="twitter:image" content="https://hjkunst.github.io/260209/1.webp" />
+
+<title>[Quest] Escape the Terms of Service Swamp: 10 UX Boss Monsters</title>
+
+
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<meta name="theme-color" content="#FF6254">
+<meta name="msapplication-TileColor" content="#FF6254">
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      packages: { '[+]': ['ams'] }
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<link
+        rel="stylesheet"
+        href="/css/output.min.e6ea1a713ee8508a7ae1581f36a75a67ceb7390eaea21503ce3bade6cfabca8c.css"
+        integrity="sha256-5uoacT7oUIp64VgfNqdaZ863OQ6uohUDzjut5s&#43;ryow="
+        crossorigin="anonymous"
+      /><link
+        rel="stylesheet"
+        href="/css/custom.min.b0e39fb81464392a8c1dfcf79e38a1369b0ac0d49a0a8bfa676768c503a22757.css"
+        integrity="sha256-sOOfuBRkOSqMHfz3njihNpsKwNSaCov6Z2doxQOiJ1c="
+        crossorigin="anonymous"
+      />
+  </head>
+  <body class="bg-white text-black antialiased">
+    <div class="flex h-screen flex-col justify-between font-sans">
+      <header class="site-header sticky top-0 z-50" style="background: rgba(228, 228, 228, 0.1); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="flex items-center justify-between py-4">
+            <a class="group break-words" aria-label="Strawberry Fields — Pastoral Tech Notes by @lkkunst" href="/en/">
+  <div class="flex items-center justify-between">
+    <div class="sm:mr-3">
+      <img src="/images/logo.svg" width="32" height="32" alt="Logo Image" />
+    </div>
+
+    <div class="hidden text-2xl font-semibold sm:block group-hover:underline">
+      <span>Strawberry Fields — Pastoral Tech Notes by @lkkunst</span>
+    </div>
+  </div>
+</a>
+
+<div class="flex items-center space-x-4 leading-5 sm:space-x-6">
+  <div class="items-center space-x-4 overflow-x-auto flex sm:space-x-6">
+    
+      <a
+        href="/en/about"
+        class="font-medium text-gray-900 hover:text-indigo-500"
+        
+        >About</a
+      >
+    
+      <a
+        href="/en/tags"
+        class="font-medium text-gray-900 hover:text-indigo-500"
+        
+        >Tags</a
+      >
+    
+    <div class="lang-toggle"><span class="lang-toggle__item lang-toggle__item--active">ENG</span><a class="lang-toggle__item" href="/ko/posts/2026-02-09-ux-agree/">KOR</a></div>
+
+    <a href="https://github.com/hjkunst" target="_blank">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="fill-[#24292F] hover:fill-indigo-500 h-6 w-6"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12.0099 0C5.36875 0 0 5.5 0 12.3042C0 17.7432 3.43994 22.3472 8.21205 23.9767C8.80869 24.0992 9.02724 23.712 9.02724 23.3862C9.02724 23.101 9.00757 22.1232 9.00757 21.1045C5.6667 21.838 4.97099 19.6378 4.97099 19.6378C4.43409 18.2118 3.63858 17.8452 3.63858 17.8452C2.54511 17.0915 3.71823 17.0915 3.71823 17.0915C4.93117 17.173 5.56763 18.3545 5.56763 18.3545C6.64118 20.2285 8.37111 19.699 9.06706 19.373C9.16638 18.5785 9.48473 18.0285 9.82275 17.723C7.15817 17.4377 4.35469 16.3785 4.35469 11.6523C4.35469 10.3078 4.8316 9.20775 5.58729 8.35225C5.46807 8.04675 5.0504 6.7835 5.70677 5.09275C5.70677 5.09275 6.72083 4.76675 9.00732 6.35575C9.98625 6.08642 10.9958 5.9494 12.0099 5.94825C13.024 5.94825 14.0577 6.091 15.0123 6.35575C17.299 4.76675 18.3131 5.09275 18.3131 5.09275C18.9695 6.7835 18.5515 8.04675 18.4323 8.35225C19.2079 9.20775 19.6652 10.3078 19.6652 11.6523C19.6652 16.3785 16.8617 17.4172 14.1772 17.723C14.6148 18.11 14.9924 18.8433 14.9924 20.0045C14.9924 21.6545 14.9727 22.9788 14.9727 23.386C14.9727 23.712 15.1915 24.0992 15.7879 23.977C20.56 22.347 23.9999 17.7432 23.9999 12.3042C24.0196 5.5 18.6312 0 12.0099 0Z"
+        />
+      </svg>
+    </a>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </header>
+      
+      <main class="mb-auto">
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "[Quest] Escape the Terms of Service Swamp: 10 UX Boss Monsters",
+      "datePublished": "2026-02-09T12:00:00\u002b09:00",
+      "dateModified": "2026-02-09T12:00:00\u002b09:00",
+      "description": "\u003ch2 id=\u0022introduction\u0022\u003eIntroduction\u003c\/h2\u003e\n\u003cp\u003e\u0026ldquo;Agreeee\u0026rdquo; (I Want to Agree to the Terms of Service) is an indie game developed in Japan that was released on Steam in December 2025, gaining explosive popularity among streamers domestically and abroad. This game appears simple on the surface. Users just need to press the \u0026lsquo;Agree\u0026rsquo; button to 12 articles of terms of service. But the process is far from simple. Over 100 mini-games appear randomly, each interfering with users in every way possible. Buttons change position right before clicking, fake popups fill the screen, and pressing \u0026lsquo;Disagree\u0026rsquo; even once resets everything.\u003c\/p\u003e",
+      "image": "https:\/\/hjkunst.github.io\/260209\/1.webp",
+      "url": "https:\/\/hjkunst.github.io\/en\/posts\/2026-02-09-ux-agree\/",
+      "author": [{ "@type": "Person", "name": "hjkunst" }]
+    }
+  </script>
+<section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+  <article>
+    <div class="xl:divide-y xl:divide-gray-200">
+      <header class="pt-16 xl:pb-16">
+        <div class="text-center">
+          <div class="article-meta-group">
+            <dl>
+              <div>
+                <dt class="sr-only">Published on</dt>
+                <dd class="text-base font-medium leading-6 text-gray-500">
+                  
+                  
+                  <time datetime="2026-02-09T12:00:00&#43;09:00">Monday, February 9, 2026</time>
+                </dd>
+              </div>
+            </dl>
+            <div>
+              <h1
+                class="text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-3xl sm:leading-9 md:text-4xl md:leading-10">
+                <div>[Quest] Escape the Terms of Service Swamp: 10 UX Boss Monsters</div>
+              </h1>
+            </div>
+            <div class="flex flex-col items-center gap-3">
+              
+              <div class="article-tag-row flex flex-wrap items-center justify-center gap-3">
+                
+                <a href="/en/tags/ux" class="tag-chip">UX</a>
+                
+              </div>
+              
+              
+              
+              <div class="flex items-center gap-2 text-sm">
+                <span class="text-gray-500">Read in:</span>
+                
+                <a href="/ko/posts/2026-02-09-ux-agree/" class="language-switch-link">
+                  KOR
+                </a>
+                
+              </div>
+              
+            </div>
+          </div>
+          
+          <div class="article-meta-to-banner article-banner-wrap overflow-hidden">
+            <img src="/260209/1.webp" alt="[Quest] Escape the Terms of Service Swamp: 10 UX Boss Monsters"
+              class="article-banner-image h-auto w-full object-cover" />
+          </div>
+          
+        </div>
+      </header>
+
+      <div class="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0">
+        <aside class="hidden xl:block xl:col-start-1 xl:row-start-1">
+          <div class="sticky top-24 space-y-8">
+            <div class="py-10">
+              <h2 class="text-xs uppercase tracking-wide text-gray-500">
+                Table of Contents
+              </h2>
+              <nav class="mt-2">
+                <ul class="space-y-3">
+                  <li class="text-sm">
+                    <a href="#introduction" class="text-indigo-500 hover:text-indigo-600">Introduction</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#main-content" class="text-indigo-500 hover:text-indigo-600">Main Content</a>
+                    <ul class="ml-4 mt-2 space-y-2">
+                      <li class="text-sm">
+                        <a href="#pareto-principle" class="text-indigo-500 hover:text-indigo-600">Pareto Principle</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#fittss-law" class="text-indigo-500 hover:text-indigo-600">Fitts’s Law</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#millers-law" class="text-indigo-500 hover:text-indigo-600">Miller’s Law</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#hicks-law" class="text-indigo-500 hover:text-indigo-600">Hick’s Law</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#jakobs-law" class="text-indigo-500 hover:text-indigo-600">Jakob’s Law</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#teslers-law" class="text-indigo-500 hover:text-indigo-600">Tesler’s Law</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#doherty-threshold" class="text-indigo-500 hover:text-indigo-600">Doherty Threshold</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#von-restorff-effect" class="text-indigo-500 hover:text-indigo-600">Von Restorff Effect</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#aesthetic-usability-effect" class="text-indigo-500 hover:text-indigo-600">Aesthetic-Usability Effect</a>
+                      </li>
+                      <li class="text-sm">
+                        <a href="#law-of-closure" class="text-indigo-500 hover:text-indigo-600">Law of Closure</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#conclusion" class="text-indigo-500 hover:text-indigo-600">Conclusion</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        <div class="divide-y divide-gray-200 xl:col-span-3 xl:row-span-2 xl:pb-0">
+          <div class="prose max-w-none pb-8 pt-10">
+            <h2 id="introduction">Introduction</h2>
+<p>&ldquo;Agreeee&rdquo; (I Want to Agree to the Terms of Service) is an indie game developed in Japan that was released on Steam in December 2025, gaining explosive popularity among streamers domestically and abroad. This game appears simple on the surface. Users just need to press the &lsquo;Agree&rsquo; button to 12 articles of terms of service. But the process is far from simple. Over 100 mini-games appear randomly, each interfering with users in every way possible. Buttons change position right before clicking, fake popups fill the screen, and pressing &lsquo;Disagree&rsquo; even once resets everything.</p>
+<p>What makes this game special is that while perfectly recreating Windows XP&rsquo;s Luna theme UI, it extremely satirizes the dark patterns we face daily. In actual services, companies design information structures hoping users quickly skip terms. This game creates the opposite situation, paradoxically revealing how much UX can induce &lsquo;designed behavior.&rsquo; Jon Yablonski&rsquo;s textbook &lsquo;10 Psychology Laws of UX/UI&rsquo; is difficult to examine one by one in practice. But through extremified cases like this game, we can observe how each law operates and how it can be abused.</p>
+<p>Jon Yablonski&rsquo;s &lsquo;10 Psychology Laws of UX/UI&rsquo;, like a textbook of user experience design, isn&rsquo;t easy to examine one by one in practice. But the game &ldquo;Agreeee&rdquo; shows all these laws as extremified cases, becoming vivid educational material that sticks in your head. The reason for connecting this game to UX is clear. When designing information structure, at the corporate level, terms of service are designed hoping users quickly skip over them. The goal is to make users press &lsquo;Agree&rsquo; with one click without scrolling. But this game is the opposite. The simple act of &lsquo;agreeing&rsquo; becomes hours of ordeal.</p>
+<p>This game paradoxically reveals how much UX can induce &lsquo;designed behavior.&rsquo; Ethical traps hide within interfaces and choice structures users commonly overlook. Large &lsquo;Agree&rsquo; buttons and small &lsquo;Decline&rsquo; buttons, hidden subscription cancellation links, complicated settings menus all guide users in specific directions. This game amplifies such dark patterns 100 times, making us realize how often we&rsquo;re manipulated daily. The anger and frustration felt playing the game is essentially the same as what we feel in actual services. Just a difference of degree.</p>
+<p>In this article, I briefly introduce what each principle is, examine (infuriating) screens in the game, and identify which principles were technically followed and which were intentionally satirized. From Pareto Principle to Law of Closure, let&rsquo;s examine together how 10 psychology laws can transform from tools helping users to weapons of torture. And in the process, we can paradoxically learn what good UX is.</p>
+<h2 id="main-content">Main Content</h2>
+<h3 id="pareto-principle">Pareto Principle</h3>
+<p><img src="/260209/2.png" alt="image.png"></p>
+<p>80% of total results come from 20% of core elements. In UX design, this means users frequently use only some core functions among all functions. Placing core tools like &lsquo;Select&rsquo;, &lsquo;Frame&rsquo;, &lsquo;Text&rsquo; in the most visible places in Figma is a good example.</p>
+<p>Early in the game, players face a window titled &lsquo;Terms of Service.&rsquo; On screen, 12 terms items from Article 1 to Article 12 are listed, with guidance stating &lsquo;You can play the game if you agree to all terms of service.&rsquo; On the right, only a single &lsquo;Confirm&rsquo; button sits there. In this game, Pareto Principle satire hides within the &rsquo;terms agreement&rsquo; format. In reality, terms of service are just legal requirements, distant from core functions users actually want (using the service). But companies place this formal procedure before users as if it&rsquo;s core.</p>
+<p>This game maximizes that irony. The &lsquo;formality&rsquo; of terms agreement becomes the game&rsquo;s entirety. The &rsquo;thrilling action game&rsquo; users really want to play gets pushed back, and terms agreement that should originally take 5 seconds becomes hours of ordeal. This satirizes situations where secondary things (terms, newsletter subscriptions, surveys for recommendation algorithms, etc.) are excessively emphasized in actual UX, interfering with core experiences. In actual services, if signing up requires going through dozens of steps like email verification, phone verification, identity confirmation, five-page terms agreement, profile photo upload, selecting 10 interests, etc., it makes users pour more energy into secondary procedures than the core (using the service). Pareto Principle says let users spend 80% of time on 20% of core functions, but bad UX forces the opposite.</p>
+<h3 id="fittss-law">Fitts&rsquo;s Law</h3>
+<p><img src="/260209/3.png" alt="Screenshot 2026-02-08 at 9.39.44 AM.png"></p>
+<p><img src="/260209/4.png" alt="image.png"></p>
+<p>The shorter the distance to the target and the larger its size, the faster the click speed. iOS placing bottom tab menus large in places easily reached by thumbs is a good example following this law.</p>
+<p>Article 6 screen is a representative case frontally violating Fitts&rsquo;s Law. In the upper right of the screen is a small car with an &lsquo;Agree&rsquo; button, and players must shoot balls with the &lsquo;Shot&rsquo; button to hit this button. The button moves, angles must be calculated, and even physics laws must be considered. This situation of needing to hit a small moving target rather than clicking a large stationary button is the exact opposite of &lsquo;accessibility&rsquo; Fitts&rsquo;s Law speaks of. Rather than reading terms about personal information handling, users must understand physics engines and calculate ball trajectories.</p>
+<p>Variations are more vicious. Article 7&rsquo;s arrow maze game is representative. The screen is densely filled with hundreds of directional arrows (↑↓←→), with a small key icon marked as the goal in the upper right. Users must start from the starting point (green circle) in the lower left, reverse-tracking arrow directions to find the path to the key. The problem is reaching this key itself requires tremendous cognitive distance. Fitts&rsquo;s Law includes not just physical distance but cognitive distance. The target (key) is visually visible, but to actually reach there requires solving the maze by reversely following dozens of arrows. Moreover, arrows are small and high density, making each one difficult to accurately recognize.</p>
+<p>Such patterns exist in the real world too. In cookie consent popups, &lsquo;Reject All&rsquo; buttons are small and hidden in multi-level menus, while &lsquo;Accept All&rsquo; buttons are large and placed in immediately accessible locations. Unsubscribe buttons are hidden in small text at page bottoms, reachable only through complex paths like &lsquo;Customer Service → My Account → Subscription Management → Cancel.&rsquo;</p>
+<p><img src="/260209/3.png" alt="Screenshot 2026-02-08 at 9.39.44 AM.png"></p>
+<p><img src="/260209/4.png" alt="image.png"></p>
+<h3 id="millers-law">Miller&rsquo;s Law</h3>
+<p><img src="/260209/5.png" alt="Screenshot 2026-02-08 at 9.40.32 AM.png"></p>
+<p>Humans can only hold about 7±2 items in short-term memory. This means menu items, lists, filters, etc., should be clustered to reduce cognitive burden.</p>
+<p>Article 8 screen frontally attacks Miller&rsquo;s Law. On the left, a total of 8 evolution stages are listed vertically: &lsquo;Unconfirmed, Read a Little, Read Properly &hellip; Agree a Little, Agree.&rsquo; This is a structure moving upward sequentially like Suika Game&rsquo;s evolution system. On the right, blocks corresponding to these 8 stages are randomly stacked in various sizes and colors with text. Each block has gradients changing from green to yellow to orange visually hinting at evolution stages, but actually knowing which block is which stage requires reading text one by one. Users must remember the 8-stage system on the left while simultaneously matching which stage each of the 10+ blocks on the right corresponds to. This far exceeds short-term memory&rsquo;s limit of 7±2 items, adding the cognitive burden of constantly shifting gaze between two areas contrasting information.</p>
+<p><img src="/260209/5.png" alt="Screenshot 2026-02-08 at 9.40.32 AM.png"></p>
+<h3 id="hicks-law">Hick&rsquo;s Law</h3>
+<p><img src="/260209/6.png" alt="Screenshot 2026-02-08 at 9.37.03 AM.png"></p>
+<p>The more choices, the longer the decision time. This is why Google&rsquo;s main screen is simple. Numerous functions are hidden inside the &lsquo;Apps Menu&rsquo; button, showing only core on the initial screen.</p>
+<p>Article 2&rsquo;s whack-a-mole game combines Hick&rsquo;s Law with time pressure. On screen, 3x4 total 12 empty spaces are arranged in a grid, with &lsquo;Agree&rsquo; buttons appearing and disappearing at random positions. The trap button slightly visible in pink in the first cell of the lower left, and the green &lsquo;Agree&rsquo; button is in the first cell of the third row lower left. The problem is as the game progresses, identical &lsquo;Agree&rsquo; buttons can appear simultaneously in multiple cells.</p>
+<p>Users must watch all 12 empty cells while deciding which of the momentarily appearing buttons is real and which to click first. While Hick&rsquo;s Law addresses static choices, this game adds time pressure by adding choices that dynamically appear and disappear. When multiple &lsquo;Agrees&rsquo; appear simultaneously, users must decide &lsquo;which to click?&rsquo; within extremely short time, increasing the likelihood of decision errors in this process.</p>
+<p>In reality too, excessive choices paralyze users. Hundreds of options in settings screens, shopping sites&rsquo; complex filters all cause choice fatigue. But this game goes one step further, forcing choices to be processed within time limits, pressing the &lsquo;decision time increase&rsquo; Hick&rsquo;s Law speaks of to extremes.</p>
+<h3 id="jakobs-law">Jakob&rsquo;s Law</h3>
+<p><img src="/260209/7.png" alt="image.png"></p>
+<p>People expect things to work in familiar ways. This is why predictability is more important than originality in UX.</p>
+<p>Article 3 screen most cunningly betrays Jakob&rsquo;s Law. In this article dealing with attitudes toward defects (bugs), only one button exists on screen. A pink &lsquo;Disagree&rsquo; button. Users naturally expect an &lsquo;Agree&rsquo; button to also exist somewhere. Because all dialog boxes had pairs like &lsquo;Yes/No&rsquo;, &lsquo;OK/Cancel&rsquo;, &lsquo;Agree/Disagree.&rsquo; But this screen only has &lsquo;Disagree.&rsquo; Click it? Start from the beginning. The answer is waiting without pressing any button. It completely ignores the learned behavior pattern that buttons should be pressed when present.</p>
+<p>The entire game using Windows XP Luna theme is the same strategy. Blue title bar, round-cornered buttons, familiar fonts and colors are all that interface we experienced in the 2000s. In Article 2&rsquo;s variation screen, two buttons are both &lsquo;Disagree,&rsquo; but one is green. We trust color coding that green is positive, pink is negative, but this game betrays that trust. In reality too, things that look like hamburger menus but perform different functions, or blue links that aren&rsquo;t clickable confuse users.</p>
+<h3 id="teslers-law">Tesler&rsquo;s Law</h3>
+<p><img src="/260209/8.png" alt="image.png"></p>
+<p>All systems have complexity, and someone must necessarily handle it. Good UX doesn&rsquo;t force too many decisions on users and provides reasonable defaults.</p>
+<p>Article 7&rsquo;s maze game most clearly shows Tesler&rsquo;s Law. The screen is filled with numerous arrows (↑↓←→), and users must find the path from the starting point (green circle) to the key (goal). The system only says &lsquo;Follow the path,&rsquo; not telling which arrows are the correct path, how many turns to make, or in what order to follow. Users must trace each arrow individually, reverse-calculating the path.</p>
+<p>It&rsquo;s hard to say complexity designed as part of content transferred developer complexity to users. In reality, there are patterns more complex than games—software forcing all settings on users without defaults, address entry forms without autocomplete, excessive password requirements, etc. Rather, this game&rsquo;s information structure itself is in the form of continuous modal windows, simpler than pages created to achieve goals on the web.</p>
+<h3 id="doherty-threshold">Doherty Threshold</h3>
+<p><img src="/260209/9.png" alt="image.png"></p>
+<p>If system response speed is within 400ms, users can be immersed. YouTube immediately playing previews when hovering over video thumbnails is an example utilizing this law.</p>
+<p>This game&rsquo;s response speed is perfect. Button clicks respond immediately, mini-games load without delay, and popups appear instantaneously. Technically it perfectly complies with Doherty Threshold. The problem is this fast responsiveness is used not to help users but to interfere. The timeout error screen symbolically shows this. With the message &lsquo;A certain time has passed without input,&rsquo; it informs &lsquo;You must agree to terms of service to play the game.&rsquo; While users ponder, time passes, and after a certain time immediately returns to the beginning. It demands fast response while not giving time to think.</p>
+<p>In Article 3&rsquo;s popup bomb, when dozens of buttons cover the screen, these popups appear immediately without delay. Without time for users to defend, within 400ms the screen fills with buttons. In Article 2&rsquo;s whack-a-mole game, the moment users find and click the &lsquo;Agree&rsquo; button, the button immediately moves to another position. Because there&rsquo;s no delay at all, users mistake they clicked the button but actually clicked empty space. In physics engine games, balls fly in real-time and cars respond immediately. All this fast response doesn&rsquo;t forgive user mistakes. In reality too, ad banners that change position right before clicking, CLS where layout suddenly changes while loading, too-fast auto-refresh are examples of misusing speed.</p>
+<h3 id="von-restorff-effect">Von Restorff Effect</h3>
+<p><img src="/260209/10.png" alt="image.png"></p>
+<p>Visually prominent items are better remembered. CTA buttons or warning messages should be designed to stand out.</p>
+<p>Article 2&rsquo;s slot machine game cunningly reverse-uses the Von Restorff Effect. There are three reels, each alternately showing green &lsquo;Agree&rsquo; and pink &lsquo;Disagree&rsquo; buttons. Users&rsquo; eyes naturally go to green buttons. Because green has been learned to mean &lsquo;positive,&rsquo; &lsquo;proceed,&rsquo; &lsquo;confirm.&rsquo; But in this game, all three reels must match green &lsquo;Agree,&rsquo; which depends purely on luck. What stands out (green) is the correct answer, but it can&rsquo;t be obtained. Visual emphasis rather increases user frustration. The three &lsquo;Stop&rsquo; buttons at the bottom all look identical, with no visual cues about which to press first.</p>
+<h3 id="aesthetic-usability-effect">Aesthetic-Usability Effect</h3>
+<p><img src="/260209/11.png" alt="image.png"></p>
+<p>Beautiful interfaces feel more usable. High-quality visual style enhances user trust and satisfaction. From Article 1 screen, Windows XP&rsquo;s Luna theme is perfectly recreated. Blue gradient title bar, round-cornered buttons, soft shadow effects, even system fonts all evoke nostalgia. Terms text &lsquo;Regarding User Attitude&rsquo; is also neatly aligned, and bottom &lsquo;Disagree&rsquo; (pink) and &lsquo;Agree&rsquo; (green) buttons are clearly distinguished.</p>
+<p>Faded pink and green buttons and outlined areas evoke Japanese-style design.</p>
+<h3 id="law-of-closure">Law of Closure</h3>
+<p>People tend to perceive incomplete forms as complete forms. UI components can be designed to be inferable with minimal lines and forms. Even when some lines are omitted from icons, users intuitively recognize them as buttons, cards, checkboxes, etc.</p>
+<p>Article 5&rsquo;s horizontal carousel button cunningly abuses the Law of Closure. At the bottom of the screen, &lsquo;Agree&rsquo; (green) and &lsquo;Disagree&rsquo; (pink) buttons are horizontally arranged, with buttons at the left and right ends only half visible with the rest cut off outside the screen. Green &lsquo;Agree&rsquo; is half-visible at the left end, then pink &lsquo;Disagree,&rsquo; another pink &lsquo;Disagree,&rsquo; and another &lsquo;Agree&hellip;&rsquo; button half-cut at the right end. The human brain automatically completes these cut forms. &lsquo;Ah, there are more buttons left and right. The rest will be visible if I scroll.&rsquo; Users naturally expect to be able to scroll left and right, predicting &lsquo;Agree&rsquo; buttons will appear more in the continuation of cut buttons. According to the Law of Closure, incomplete visual information (half-cut buttons) is recognized as a complete pattern (continuing button list).</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Paradoxically, precisely thanks to this extreme satire, we can clearly learn what good UX is. First, UX laws are double-edged swords. The same law can be used for both good and bad purposes. Second, dark patterns exist in reality. The extreme cases this game showed appear in subtle forms in actual services. Third, designers have ethical responsibility. They should help users, not manipulate them.</p>
+<p>Next time you see an &lsquo;Do you agree to the terms of service?&rsquo; popup, this game will come to mind. Is the &lsquo;Agree&rsquo; button big enough? Can it be easily found? Is there intent to make you accidentally press &lsquo;Disagree&rsquo;? Everything this game showed extremely actually exists in subtle forms around us.</p>
+<p>Copyright Notice</p>
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+<p>Game screenshots used in this document are excerpted from the game
+&lsquo;Agreeee (利用規約に同意したい / I Want to Agree to the Terms of Service)&rsquo;
+for educational and UX/UI analysis purposes.</p>
+<p>Game Copyright: © 2025 All rights reserved by the original game developer
+Steam: <a href="https://store.steampowered.com/app/3757210">https://store.steampowered.com/app/3757210</a></p>
+<p>This document was created for non-profit educational purposes, and all game images and content copyrights belong to the original copyright holder. If the content of this document is judged to infringe the copyright holder&rsquo;s rights, the relevant content will be immediately deleted.</p>
+
+          </div>
+        </div>
+
+        <footer class="xl:col-start-1 xl:col-span-4">
+          <div class="pt-4 xl:pt-8">
+            <a class="text-indigo-500 hover:text-indigo-600" aria-label="Back to the list" href="/en/">← Back to the list</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </article>
+</section>
+
+        </section>
+      </main>
+      <footer>
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="mt-16 flex flex-col items-center">
+  <div class="mb-2 text-sm text-gray-500">
+    <span>(C) 2026. Strawberry Fields — Pastoral Tech Notes by @lkkunst all rights reserved.</span>
+  </div>
+
+  <div class="mb-8 text-sm text-gray-500">
+    <span class="mr-1">Built with</span>
+    <a
+      class="font-semibold underline"
+      href="https://github.com/discaptive/hugo-discaptive"
+      target="_blank"
+      >hugo-discaptive</a
+    >
+  </div>
+</div>
+
+        </section>
+      </footer>
+    </div>
+  </body>
+</html>

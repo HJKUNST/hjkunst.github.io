@@ -1,0 +1,639 @@
+<!doctype html>
+<html
+  lang="ko-kr"
+  dir="ltr"
+  class="scroll-smooth"
+>
+  <head>
+    
+
+
+
+
+
+
+
+<meta charset="utf-8" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YS9Z2BGZ1Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-YS9Z2BGZ1Q');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
+
+<meta name="description" content="목차
+
+
+토스에서 가장 안 좋은 경험 만들기
+
+
+업무 시간을 70% 단축하는 제품 만들기
+
+
+문전박대 속 10배 성장한 리서치, 제품을 바꾸다
+
+
+외않써?, 뒤에 숨겨진 진짜 문제 짚어보기
+
+
+인터렉션, 토스에선 어떻게 개발하나요?
+
+
+처음이지만, 낯설지 않은 채권
+
+
+오프라인 POS, UX로 뒤집기까지의 3년
+
+
+
+토스에서 가장 안 좋은 경험 만들기
+토스 광고 UX 개선 사례를 공유한 이번 세션은 ‘피할 수 없는 기능’을 어떻게 더 나은 경험으로 바꿔나갈 수 있는지를 중심으로 진행됐다. 
+광고는 대부분의 유저에게 불쾌한 요소지만, 서비스 입장에서는 쉽게 제거할 수 없다. 
+이 발표자는 그 안에서 ‘불편하지 않은 경험’은 물론, 나아가 유저가 수용하거나 긍정적으로 느낄 수 있는 광고 UX를 만들기 위해 어떤 접근을 했는지 공유했다." />
+
+
+<meta property="og:title" content="Toss Makers Conference : Design Day 리뷰" />
+<meta property="og:description" content="목차
+
+
+토스에서 가장 안 좋은 경험 만들기
+
+
+업무 시간을 70% 단축하는 제품 만들기
+
+
+문전박대 속 10배 성장한 리서치, 제품을 바꾸다
+
+
+외않써?, 뒤에 숨겨진 진짜 문제 짚어보기
+
+
+인터렉션, 토스에선 어떻게 개발하나요?
+
+
+처음이지만, 낯설지 않은 채권
+
+
+오프라인 POS, UX로 뒤집기까지의 3년
+
+
+
+토스에서 가장 안 좋은 경험 만들기
+토스 광고 UX 개선 사례를 공유한 이번 세션은 ‘피할 수 없는 기능’을 어떻게 더 나은 경험으로 바꿔나갈 수 있는지를 중심으로 진행됐다. 
+광고는 대부분의 유저에게 불쾌한 요소지만, 서비스 입장에서는 쉽게 제거할 수 없다. 
+이 발표자는 그 안에서 ‘불편하지 않은 경험’은 물론, 나아가 유저가 수용하거나 긍정적으로 느낄 수 있는 광고 UX를 만들기 위해 어떤 접근을 했는지 공유했다." />
+<meta property="og:url" content="https://hjkunst.github.io/ko/posts/2025-07-27-tmc/" />
+<meta property="og:site_name" content="Strawberry Fields — Pastoral Tech Notes by @lkkunst" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://hjkunst.github.io/images/og-image.png" />
+<meta property="og:locale" content="ko_kr" />
+
+
+
+
+<link rel="alternate" hreflang="en-us" href="https://hjkunst.github.io/en/posts/2025-07-27-tmc/" />
+
+<link rel="alternate" hreflang="ko-kr" href="https://hjkunst.github.io/ko/posts/2025-07-27-tmc/" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Toss Makers Conference : Design Day 리뷰" />
+<meta name="twitter:description" content="목차
+
+
+토스에서 가장 안 좋은 경험 만들기
+
+
+업무 시간을 70% 단축하는 제품 만들기
+
+
+문전박대 속 10배 성장한 리서치, 제품을 바꾸다
+
+
+외않써?, 뒤에 숨겨진 진짜 문제 짚어보기
+
+
+인터렉션, 토스에선 어떻게 개발하나요?
+
+
+처음이지만, 낯설지 않은 채권
+
+
+오프라인 POS, UX로 뒤집기까지의 3년
+
+
+
+토스에서 가장 안 좋은 경험 만들기
+토스 광고 UX 개선 사례를 공유한 이번 세션은 ‘피할 수 없는 기능’을 어떻게 더 나은 경험으로 바꿔나갈 수 있는지를 중심으로 진행됐다. 
+광고는 대부분의 유저에게 불쾌한 요소지만, 서비스 입장에서는 쉽게 제거할 수 없다. 
+이 발표자는 그 안에서 ‘불편하지 않은 경험’은 물론, 나아가 유저가 수용하거나 긍정적으로 느낄 수 있는 광고 UX를 만들기 위해 어떤 접근을 했는지 공유했다." />
+<meta name="twitter:image" content="https://hjkunst.github.io/images/og-image.png" />
+
+<title>Toss Makers Conference : Design Day 리뷰</title>
+
+
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<meta name="theme-color" content="#FF6254">
+<meta name="msapplication-TileColor" content="#FF6254">
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      packages: { '[+]': ['ams'] }
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<link
+        rel="stylesheet"
+        href="/css/output.min.e6ea1a713ee8508a7ae1581f36a75a67ceb7390eaea21503ce3bade6cfabca8c.css"
+        integrity="sha256-5uoacT7oUIp64VgfNqdaZ863OQ6uohUDzjut5s&#43;ryow="
+        crossorigin="anonymous"
+      /><link
+        rel="stylesheet"
+        href="/css/custom.min.b0e39fb81464392a8c1dfcf79e38a1369b0ac0d49a0a8bfa676768c503a22757.css"
+        integrity="sha256-sOOfuBRkOSqMHfz3njihNpsKwNSaCov6Z2doxQOiJ1c="
+        crossorigin="anonymous"
+      />
+  </head>
+  <body class="bg-white text-black antialiased">
+    <div class="flex h-screen flex-col justify-between font-sans">
+      <header class="site-header sticky top-0 z-50" style="background: rgba(228, 228, 228, 0.1); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="flex items-center justify-between py-4">
+            <a class="group break-words" aria-label="Strawberry Fields — Pastoral Tech Notes by @lkkunst" href="/ko/">
+  <div class="flex items-center justify-between">
+    <div class="sm:mr-3">
+      <img src="/images/logo.svg" width="32" height="32" alt="Logo Image" />
+    </div>
+
+    <div class="hidden text-2xl font-semibold sm:block group-hover:underline">
+      <span>Strawberry Fields — Pastoral Tech Notes by @lkkunst</span>
+    </div>
+  </div>
+</a>
+
+<div class="flex items-center space-x-4 leading-5 sm:space-x-6">
+  <div class="items-center space-x-4 overflow-x-auto flex sm:space-x-6">
+    
+      <a
+        href="/ko/about"
+        class="font-medium text-gray-900 hover:text-indigo-500"
+        
+        >소개</a
+      >
+    
+      <a
+        href="/ko/tags"
+        class="font-medium text-gray-900 hover:text-indigo-500"
+        
+        >태그</a
+      >
+    
+    <div class="lang-toggle"><a class="lang-toggle__item" href="/en/posts/2025-07-27-tmc/">ENG</a><span class="lang-toggle__item lang-toggle__item--active">KOR</span></div>
+
+    <a href="https://github.com/hjkunst" target="_blank">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="fill-[#24292F] hover:fill-indigo-500 h-6 w-6"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12.0099 0C5.36875 0 0 5.5 0 12.3042C0 17.7432 3.43994 22.3472 8.21205 23.9767C8.80869 24.0992 9.02724 23.712 9.02724 23.3862C9.02724 23.101 9.00757 22.1232 9.00757 21.1045C5.6667 21.838 4.97099 19.6378 4.97099 19.6378C4.43409 18.2118 3.63858 17.8452 3.63858 17.8452C2.54511 17.0915 3.71823 17.0915 3.71823 17.0915C4.93117 17.173 5.56763 18.3545 5.56763 18.3545C6.64118 20.2285 8.37111 19.699 9.06706 19.373C9.16638 18.5785 9.48473 18.0285 9.82275 17.723C7.15817 17.4377 4.35469 16.3785 4.35469 11.6523C4.35469 10.3078 4.8316 9.20775 5.58729 8.35225C5.46807 8.04675 5.0504 6.7835 5.70677 5.09275C5.70677 5.09275 6.72083 4.76675 9.00732 6.35575C9.98625 6.08642 10.9958 5.9494 12.0099 5.94825C13.024 5.94825 14.0577 6.091 15.0123 6.35575C17.299 4.76675 18.3131 5.09275 18.3131 5.09275C18.9695 6.7835 18.5515 8.04675 18.4323 8.35225C19.2079 9.20775 19.6652 10.3078 19.6652 11.6523C19.6652 16.3785 16.8617 17.4172 14.1772 17.723C14.6148 18.11 14.9924 18.8433 14.9924 20.0045C14.9924 21.6545 14.9727 22.9788 14.9727 23.386C14.9727 23.712 15.1915 24.0992 15.7879 23.977C20.56 22.347 23.9999 17.7432 23.9999 12.3042C24.0196 5.5 18.6312 0 12.0099 0Z"
+        />
+      </svg>
+    </a>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </header>
+      
+      <main class="mb-auto">
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Toss Makers Conference : Design Day 리뷰",
+      "datePublished": "2025-07-27T12:00:00\u002b09:00",
+      "dateModified": "2025-07-27T12:00:00\u002b09:00",
+      "description": "\u003ch2 id=\u0022목차\u0022\u003e목차\u003c\/h2\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\u0022\/ko\/posts\/2025-07-27-tmc\/#%ed%86%a0%ec%8a%a4%ec%97%90%ec%84%9c-%ea%b0%80%ec%9e%a5-%ec%95%88-%ec%a2%8b%ec%9d%80-%ea%b2%bd%ed%97%98-%eb%a7%8c%eb%93%a4%ea%b8%b0\u0022\u003e토스에서 가장 안 좋은 경험 만들기\u003c\/a\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\u0022\/ko\/posts\/2025-07-27-tmc\/#%ec%97%85%eb%ac%b4-%ec%8b%9c%ea%b0%84%ec%9d%84-70-%eb%8b%a8%ec%b6%95%ed%95%98%eb%8a%94-%ec%a0%9c%ed%92%88-%eb%a7%8c%eb%93%a4%ea%b8%b0\u0022\u003e업무 시간을 70% 단축하는 제품 만들기\u003c\/a\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\u0022\/ko\/posts\/2025-07-27-tmc\/#%eb%ac%b8%ec%a0%84%eb%b0%95%eb%8c%80-%ec%86%8d-10%eb%b0%b0-%ec%84%b1%ec%9e%a5%ed%95%9c-%eb%a6%ac%ec%84%9c%ec%b9%98-%ec%a0%9c%ed%92%88%ec%9d%84-%eb%b0%94%ea%be%b8%eb%8b%a4\u0022\u003e문전박대 속 10배 성장한 리서치, 제품을 바꾸다\u003c\/a\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\u0022\/ko\/posts\/2025-07-27-tmc\/#%ec%99%b8%ec%95%8a%ec%8d%a8-%eb%92%a4%ec%97%90-%ec%88%a8%ea%b2%a8%ec%a7%84-%ec%a7%84%ec%a7%9c-%eb%ac%b8%ec%a0%9c-%ec%a7%9a%ec%96%b4%eb%b3%b4%ea%b8%b0\u0022\u003e외않써?, 뒤에 숨겨진 진짜 문제 짚어보기\u003c\/a\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\u0022\/ko\/posts\/2025-07-27-tmc\/#%ec%9d%b8%ed%84%b0%eb%a0%89%ec%85%98-%ed%86%a0%ec%8a%a4%ec%97%90%ec%84%a0-%ec%96%b4%eb%96%bb%ea%b2%8c-%ea%b0%9c%eb%b0%9c%ed%95%98%eb%82%98%ec%9a%94\u0022\u003e인터렉션, 토스에선 어떻게 개발하나요?\u003c\/a\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\u0022\/ko\/posts\/2025-07-27-tmc\/#%ec%b2%98%ec%9d%8c%ec%9d%b4%ec%a7%80%eb%a7%8c-%eb%82%af%ec%84%a4%ec%a7%80-%ec%95%8a%ec%9d%80-%ec%b1%84%ea%b6%8c\u0022\u003e처음이지만, 낯설지 않은 채권\u003c\/a\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ca href=\u0022\/ko\/posts\/2025-07-27-tmc\/#%ec%98%a4%ed%94%84%eb%9d%bc%ec%9d%b8-pos-ux%eb%a1%9c-%eb%92%a4%ec%a7%91%ea%b8%b0%ea%b9%8c%ec%a7%80%ec%9d%98-3%eb%85%84\u0022\u003e오프라인 POS, UX로 뒤집기까지의 3년\u003c\/a\u003e\u003c\/p\u003e\n\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cdiv class=\u0022divider\u0022\u003e\u003c\/div\u003e\n\u003ch2 id=\u0022토스에서-가장-안-좋은-경험-만들기\u0022\u003e토스에서 가장 안 좋은 경험 만들기\u003c\/h2\u003e\n\u003cp\u003e토스 광고 UX 개선 사례를 공유한 이번 세션은 ‘피할 수 없는 기능’을 어떻게 더 나은 경험으로 바꿔나갈 수 있는지를 중심으로 진행됐다. \u003c\/br\u003e\n광고는 대부분의 유저에게 불쾌한 요소지만, 서비스 입장에서는 쉽게 제거할 수 없다. \u003c\/br\u003e\n이 발표자는 그 안에서 ‘불편하지 않은 경험’은 물론, 나아가 \u003cstrong\u003e유저가 수용하거나 긍정적으로 느낄 수 있는 광고 UX\u003c\/strong\u003e를 만들기 위해 어떤 접근을 했는지 공유했다.\u003c\/p\u003e",
+      "image": "https:\/\/hjkunst.github.io\/images\/og-image.png",
+      "url": "https:\/\/hjkunst.github.io\/ko\/posts\/2025-07-27-tmc\/",
+      "author": [{ "@type": "Person", "name": "hjkunst" }]
+    }
+  </script>
+<section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+  <article>
+    <div class="xl:divide-y xl:divide-gray-200">
+      <header class="pt-16 xl:pb-16">
+        <div class="text-center">
+          <div class="article-meta-group">
+            <dl>
+              <div>
+                <dt class="sr-only">게시일</dt>
+                <dd class="text-base font-medium leading-6 text-gray-500">
+                  
+                  
+                  <time datetime="2025-07-27T12:00:00&#43;09:00">2025년 7월 27일 일요일</time>
+                </dd>
+              </div>
+            </dl>
+            <div>
+              <h1
+                class="text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-3xl sm:leading-9 md:text-4xl md:leading-10">
+                <div>Toss Makers Conference : Design Day 리뷰</div>
+              </h1>
+            </div>
+            <div class="flex flex-col items-center gap-3">
+              
+              <div class="article-tag-row flex flex-wrap items-center justify-center gap-3">
+                
+                <a href="/ko/tags/design" class="tag-chip">Design</a>
+                
+              </div>
+              
+              
+              
+              <div class="flex items-center gap-2 text-sm">
+                <span class="text-gray-500">Read in:</span>
+                
+                <a href="/en/posts/2025-07-27-tmc/" class="language-switch-link">
+                  ENG
+                </a>
+                
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+      </header>
+
+      <div class="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0">
+        <aside class="hidden xl:block xl:col-start-1 xl:row-start-1">
+          <div class="sticky top-24 space-y-8">
+            <div class="py-10">
+              <h2 class="text-xs uppercase tracking-wide text-gray-500">
+                목차
+              </h2>
+              <nav class="mt-2">
+                <ul class="space-y-3">
+                  <li class="text-sm">
+                    <a href="#%eb%aa%a9%ec%b0%a8" class="text-indigo-500 hover:text-indigo-600">목차</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#%ed%86%a0%ec%8a%a4%ec%97%90%ec%84%9c-%ea%b0%80%ec%9e%a5-%ec%95%88-%ec%a2%8b%ec%9d%80-%ea%b2%bd%ed%97%98-%eb%a7%8c%eb%93%a4%ea%b8%b0" class="text-indigo-500 hover:text-indigo-600">토스에서 가장 안 좋은 경험 만들기</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#%ec%97%85%eb%ac%b4-%ec%8b%9c%ea%b0%84%ec%9d%84-70-%eb%8b%a8%ec%b6%95%ed%95%98%eb%8a%94-%ec%a0%9c%ed%92%88-%eb%a7%8c%eb%93%a4%ea%b8%b0" class="text-indigo-500 hover:text-indigo-600">업무 시간을 70% 단축하는 제품 만들기</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#%eb%ac%b8%ec%a0%84%eb%b0%95%eb%8c%80-%ec%86%8d-10%eb%b0%b0-%ec%84%b1%ec%9e%a5%ed%95%9c-%eb%a6%ac%ec%84%9c%ec%b9%98-%ec%a0%9c%ed%92%88%ec%9d%84-%eb%b0%94%ea%be%b8%eb%8b%a4" class="text-indigo-500 hover:text-indigo-600">문전박대 속 10배 성장한 리서치, 제품을 바꾸다</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#%ec%99%b8%ec%95%8a%ec%8d%a8-%eb%92%a4%ec%97%90-%ec%88%a8%ea%b2%a8%ec%a7%84-%ec%a7%84%ec%a7%9c-%eb%ac%b8%ec%a0%9c-%ec%a7%9a%ec%96%b4%eb%b3%b4%ea%b8%b0" class="text-indigo-500 hover:text-indigo-600">외않써?, 뒤에 숨겨진 진짜 문제 짚어보기</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#%ec%9d%b8%ed%84%b0%eb%a0%89%ec%85%98-%ed%86%a0%ec%8a%a4%ec%97%90%ec%84%a0-%ec%96%b4%eb%96%bb%ea%b2%8c-%ea%b0%9c%eb%b0%9c%ed%95%98%eb%82%98%ec%9a%94" class="text-indigo-500 hover:text-indigo-600">인터렉션, 토스에선 어떻게 개발하나요?</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#%ec%b2%98%ec%9d%8c%ec%9d%b4%ec%a7%80%eb%a7%8c-%eb%82%af%ec%84%a4%ec%a7%80-%ec%95%8a%ec%9d%80-%ec%b1%84%ea%b6%8c" class="text-indigo-500 hover:text-indigo-600">처음이지만, 낯설지 않은 채권</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#%ec%98%a4%ed%94%84%eb%9d%bc%ec%9d%b8-pos-ux%eb%a1%9c-%eb%92%a4%ec%a7%91%ea%b8%b0%ea%b9%8c%ec%a7%80%ec%9d%98-3%eb%85%84" class="text-indigo-500 hover:text-indigo-600">오프라인 POS, UX로 뒤집기까지의 3년</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        <div class="divide-y divide-gray-200 xl:col-span-3 xl:row-span-2 xl:pb-0">
+          <div class="prose max-w-none pb-8 pt-10">
+            <h2 id="목차">목차</h2>
+<ol>
+<li>
+<p><a href="/ko/posts/2025-07-27-tmc/#%ed%86%a0%ec%8a%a4%ec%97%90%ec%84%9c-%ea%b0%80%ec%9e%a5-%ec%95%88-%ec%a2%8b%ec%9d%80-%ea%b2%bd%ed%97%98-%eb%a7%8c%eb%93%a4%ea%b8%b0">토스에서 가장 안 좋은 경험 만들기</a></p>
+</li>
+<li>
+<p><a href="/ko/posts/2025-07-27-tmc/#%ec%97%85%eb%ac%b4-%ec%8b%9c%ea%b0%84%ec%9d%84-70-%eb%8b%a8%ec%b6%95%ed%95%98%eb%8a%94-%ec%a0%9c%ed%92%88-%eb%a7%8c%eb%93%a4%ea%b8%b0">업무 시간을 70% 단축하는 제품 만들기</a></p>
+</li>
+<li>
+<p><a href="/ko/posts/2025-07-27-tmc/#%eb%ac%b8%ec%a0%84%eb%b0%95%eb%8c%80-%ec%86%8d-10%eb%b0%b0-%ec%84%b1%ec%9e%a5%ed%95%9c-%eb%a6%ac%ec%84%9c%ec%b9%98-%ec%a0%9c%ed%92%88%ec%9d%84-%eb%b0%94%ea%be%b8%eb%8b%a4">문전박대 속 10배 성장한 리서치, 제품을 바꾸다</a></p>
+</li>
+<li>
+<p><a href="/ko/posts/2025-07-27-tmc/#%ec%99%b8%ec%95%8a%ec%8d%a8-%eb%92%a4%ec%97%90-%ec%88%a8%ea%b2%a8%ec%a7%84-%ec%a7%84%ec%a7%9c-%eb%ac%b8%ec%a0%9c-%ec%a7%9a%ec%96%b4%eb%b3%b4%ea%b8%b0">외않써?, 뒤에 숨겨진 진짜 문제 짚어보기</a></p>
+</li>
+<li>
+<p><a href="/ko/posts/2025-07-27-tmc/#%ec%9d%b8%ed%84%b0%eb%a0%89%ec%85%98-%ed%86%a0%ec%8a%a4%ec%97%90%ec%84%a0-%ec%96%b4%eb%96%bb%ea%b2%8c-%ea%b0%9c%eb%b0%9c%ed%95%98%eb%82%98%ec%9a%94">인터렉션, 토스에선 어떻게 개발하나요?</a></p>
+</li>
+<li>
+<p><a href="/ko/posts/2025-07-27-tmc/#%ec%b2%98%ec%9d%8c%ec%9d%b4%ec%a7%80%eb%a7%8c-%eb%82%af%ec%84%a4%ec%a7%80-%ec%95%8a%ec%9d%80-%ec%b1%84%ea%b6%8c">처음이지만, 낯설지 않은 채권</a></p>
+</li>
+<li>
+<p><a href="/ko/posts/2025-07-27-tmc/#%ec%98%a4%ed%94%84%eb%9d%bc%ec%9d%b8-pos-ux%eb%a1%9c-%eb%92%a4%ec%a7%91%ea%b8%b0%ea%b9%8c%ec%a7%80%ec%9d%98-3%eb%85%84">오프라인 POS, UX로 뒤집기까지의 3년</a></p>
+</li>
+</ol>
+<div class="divider"></div>
+<h2 id="토스에서-가장-안-좋은-경험-만들기">토스에서 가장 안 좋은 경험 만들기</h2>
+<p>토스 광고 UX 개선 사례를 공유한 이번 세션은 ‘피할 수 없는 기능’을 어떻게 더 나은 경험으로 바꿔나갈 수 있는지를 중심으로 진행됐다. </br>
+광고는 대부분의 유저에게 불쾌한 요소지만, 서비스 입장에서는 쉽게 제거할 수 없다. </br>
+이 발표자는 그 안에서 ‘불편하지 않은 경험’은 물론, 나아가 <strong>유저가 수용하거나 긍정적으로 느낄 수 있는 광고 UX</strong>를 만들기 위해 어떤 접근을 했는지 공유했다.</p>
+<p>유저가 가장 싫어한 건 두 가지였다.</p>
+<pre tabindex="0"><code>1. 갑작스럽게 뜨는 광고
+2. 중요한 정보 사이에 끼어드는 광고
+</code></pre><p>예고 없이 튀어나오거나 동선을 막는 구조는 유저가 앱을 꺼버릴 정도로 반감을 일으켰고, 실제로 고객센터에 관련 문의가 들어오는 사례도 있었다.</p>
+<div class="spacer"></div>
+<p><strong>어떻게 해결했을까?</strong></p>
+<p>광고임을 <strong>사전에 알려주는 문구</strong>만 추가해도 피드백이 눈에 띄게 줄었고, 광고를 정보 외곽으로 옮기자 오히려 클릭률이 높아졌다. 작은 실험과 반복을 통해 유저가 받아들일 수 있는 UX의 기준선이 생겼고, 그 기준 안에서 비즈니스 지표도 무너지지 않는 구조가 만들어졌다. </br> 그다음은 <strong>좋은 경험&rsquo;으로 전환하는 시도</strong> : 발표자는 “최대한 덜 거슬리게”라는 관점에서 더 나아가, 어떻게 하면 유저가 기꺼이 광고를 보게 만들 수 있을까를 고민했다고 말한다.</p>
+<div class="spacer"></div>
+<p><strong>이를 위해 세 가지 방향이 소개됐다:</strong></p>
+<ol>
+<li><strong>필요한 광고</strong>: 유저의 상황과 맥락에 맞는 광고 제공 </br>
+→ 이를 위해 B2B 광고 플랫폼 구축, 광고 다양성 확보</li>
+<li><strong>재미있는 광고</strong>: 직접 만들지 않더라도 아이디어 세션을 통해 기반 축적 </br>
+→ 이후 퀴즈형, 게임형 등 다양한 포맷으로 확장</li>
+<li><strong>보상 주는 광고</strong>: 보상의 형태와 강도를 다양하게 실험 </br>
+→ 현금, 기프티콘, 과금형 보상 등 다각도 시도</li>
+</ol>
+<p>이러한 설계는 실제로 유저 이탈 없이 사용성과 매출을 함께 끌어올렸고, 광고 UX에 대한 내부 팀의 인식 변화와 외부 사례로서의 주목도 함께 가져왔다.</p>
+<div class="divider"></div>
+<div class="spacer"></div>
+<h2 id="업무-시간을-70-단축하는-제품-만들기">업무 시간을 70% 단축하는 제품 만들기</h2>
+<p><strong>배경</strong></p>
+<p>이번 세션은 토스뱅크의 상속/사기보상 처리 과정을 다뤘다. </br>
+대부분의 유저에게 드문 경험인 이 두 업무는, <strong>평균 처리 기간이 2~4주 이상</strong> 걸릴 만큼 느리고 복잡한 구조였다.</p>
+<p>문제는 사전에 준비해야 하는 서류부터 시작된다. </br>
+유저는 어떤 서류가 필요한지 잘 모르고, 담당자는 그걸 일일이 전화로 설명해야 했다. 제출된 서류도 마찬가지로 아날로그였다. </br>
+여기에 잘못된 신청까지 겹치면, 유저는 “왜 이렇게 오래 걸려요?”라는 답답함만 쌓여간다. </br></p>
+<div class="spacer"></div>
+<p><strong>개선 방향</strong></p>
+<p>먼저 유저 신청 흐름부터 바꿨다.(처리 불가 건이 30% 가까이 줄었고, 담당자는 진짜 핵심 업무에 집중할 수 있게 됐다.)</p>
+<table>
+  <thead>
+      <tr>
+          <th>Before</th>
+          <th>After</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>기존의 크고 비싼 키오스크가 부담</td>
+          <td>단말기 화면을 활용해 키오스크 기능, 주문의 50% 이상 담당</td>
+      </tr>
+      <tr>
+          <td>단골이 절반쯤 되는 듯 생각했지만 실제 데이터는 20%</td>
+          <td>마케팅 수신 동의율 90% 도달, 직관적인 시각화와 자동 쿠폰 기능</td>
+      </tr>
+      <tr>
+          <td>카드 결제는 늘 &lsquo;사장님이 뽑는 것&rsquo;이 당연했던 흐름</td>
+          <td>고객이 스스로 결제 수단을 선택, 카드사 할인 정보와 시즌성 이벤트 추가</td>
+      </tr>
+  </tbody>
+</table>
+<p>그다음은 내부 어드민을 고쳤다. </br>
+기존 어드민은 최소한의 기능만 있었고, 대부분의 처리는 수작업으로 이루어졌다. 새로 바꾼 방향은 이렇다:</p>
+<table>
+  <thead>
+      <tr>
+          <th>바꾼점</th>
+          <th>효과</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>상태별로 업무 구분</td>
+          <td>지금 할 일만 테이블로 정리</td>
+      </tr>
+      <tr>
+          <td>단계별 화면 구성</td>
+          <td>어떤 정보를 봐야 할지 명확</td>
+      </tr>
+      <tr>
+          <td>왼쪽엔 PDF 뷰어, 오른쪽엔 조작</td>
+          <td>창 전환 없이 검토</td>
+      </tr>
+      <tr>
+          <td>서류 확인 체크리스트</td>
+          <td>누락 줄이고 검토 정확도 ↑</td>
+      </tr>
+      <tr>
+          <td>필드 정보 연동</td>
+          <td>&ldquo;이게 맞는지&rdquo; 판단도 쉽게</td>
+      </tr>
+  </tbody>
+</table>
+<p>이렇게 바꾼 결과, 유저 입장에선 “신청했는데 왜 아무 연락이 없지?” 하는 기다림이 줄었고, 담당자는 복잡한 매뉴얼 없이 바로 업무에 몰입할 수 있는 환경이 만들어졌다.</p>
+<div class="divider"></div>
+<div class="spacer"></div>
+<h2 id="문전박대-속-10배-성장한-리서치-제품을-바꾸다">문전박대 속 10배 성장한 리서치, 제품을 바꾸다</h2>
+<p>이번 세션은 ‘인터뷰 대상자를 어떻게 섭외했는가’가 아니라, &lsquo;사장님이 왜 인터뷰를 거절하는가&rsquo;에서 출발했다. 토스 플레이스 팀은 자영업 사장님들과의 리서치를 통해, B2B 유저 리서치는 접근부터 다르게 설계해야 한다는 걸 겪었다.</p>
+<p><strong>연락은 되는데, 인터뷰는 안 된다?</strong></p>
+<p>연락처는 많았지만 대부분 무응답. 브랜드 인지도가 낮아서 ‘토스 플레이스’가 뭔지도 모르는 경우가 많았다. 단순히 타겟 필터를 세분화하거나 자동화로 해결할 문제가 아니었다. 결국 중요한 건 접근 방식이 아니라, ‘신뢰’였다.</p>
+<p><strong>그래서 아예 처음부터 다시 설계했다</strong></p>
+<p><strong>리서치 경험 자체를 더 나은 제품으로 만들자</strong>고 설정하고, 업종별로 가장 응답률 높은 시간대, 채널, 톤앤매너를 실험한다. 토스 공식 계정으로 보내고, 브랜드 아이덴티티를 명확히 전달하는 방법과, 사례비를 강조하기보다, “내 이야기가 실제로 반영된다”는 설득 포인트 사용한다.</p>
+<p><strong>결과는?</strong></p>
+<p>A4 다섯 장 분량의 피드백을 미리 써온 사장님, 매장 내 고객 사용 장면을 직접 찍어 보내주는 유저, 2번, 3번 자발적으로 인터뷰에 참여한 분들도 있었다. 기존의 유저 리서치 방식만으론 <strong>B2B나 오프라인 고객은 설득되지 않는다</strong>는 메시지와 함께, 그들에게 필요한 건 ‘리서치 참여’가 아니라 ‘같이 만드는 경험’이라는 설계가 필요한 순간이었다.</p>
+<div class="divider"></div>
+<div class="spacer"></div>
+<h2 id="외않써-뒤에-숨겨진-진짜-문제-짚어보기">외않써?, 뒤에 숨겨진 진짜 문제 짚어보기</h2>
+<p>이번 세션에서는 토스증권 UX 리서처가 제품 개발 과정에서 리서처가 어떤 역할을 해야 하는지를 세 단계로 나누어 설명했다. 핵심은 ‘리서치가 누구나 할 수 있는 시대일수록, 전문 리서처의 역할은 더 본질적인 질문을 던지는 것’이라는 메시지였다.</p>
+<div class="spacer"></div>
+<ol>
+<li>초기 기획 단계 – 문제 정의와 방향 설정 </br>
+제품 초기에는 아직 ‘무엇을 만들지’조차 명확하지 않다. 이 시점에서 리서처는 퍼즐의 테두리를 맞추는 사람처럼, 유저 관점에서 문제의 범위를 정의하고 제품의 방향을 세운다.
+예를 들어, AI 기반의 투자 정보 서비스를 준비할 때 유저들은 단순한 뉴스 알림보다 <strong>맥락이 연결된 해석</strong>을 원했고, ‘정보 피로감’을 호소했다. 이를 바탕으로 정보 탐색의 실용성, 인지 가능성, 심리적 안정감 같은 가치 요소를 도출하고, 이를 제품 구조에 녹여내는 방식으로 초기 방향성을 정립했다.</li>
+</ol>
+  <div class="spacer"></div>
+<ol start="2">
+<li>기능 개선 단계 – 겉이 아닌 뿌리부터 보기 </br>
+이미 기능은 있지만 개선이 필요한 상황에선, 단순히 화면만 다듬는 게 아니라 <strong>유저의 목표 자체가 제대로 설정되어 있는지</strong>부터 다시 살펴야 했다.
+대표 사례는 ‘증시 캘린더’ 기능. 처음에는 일정만 나열됐지만, 유저는 실제로 이 기능을 통해 <strong>자신감을 얻고 투자 결정을 준비</strong>하고자 했다. 그래서 ‘잘 쓴다’는 상태를 인지–이해–준비의 단계로 재정의하고, 디자인 구조도 이를 따라 바꾸었다.</li>
+</ol>
+  <div class="spacer"></div>
+<ol start="3">
+<li>성장이 정체된 단계 – 제품의 자리를 다시 묻기 </br>
+제품이 한동안 성장하지 않을 때, 리서처는 단순한 수치가 아니라 <strong>이 제품이 이 플랫폼에 존재해야 할 이유</strong>를 묻는다.
+토스증권의 PC 웹 플랫폼이 대표적이었다. 기능은 충분히 구현되었지만 유저는 굳이 PC에서 쓸 이유를 느끼지 못했다. 이때 리서치는 ‘왜 안 쓰는가’보다 ‘이게 진짜 필요한가’를 묻는 방식으로 접근했고, 결국 제품이 성장하려면 어떤 환경과 조건이 필요한지를 팀이 다시 생각하게 만들었다.</li>
+</ol>
+<p>리서처의 역할이 &lsquo;<strong>질문을 던지는 관점과 팀 내에서 문제의 프레임을 어떻게 잡아주느냐</strong>&rsquo; 임을 다시 상기시키는 발표.</p>
+<div class="divider"></div>
+<div class="spacer"></div>
+<h2 id="인터렉션-토스에선-어떻게-개발하나요">인터렉션, 토스에선 어떻게 개발하나요?</h2>
+<p><strong>토스 인터랙션 팀의 협업 방식과 도구 설계 이야기</strong></p>
+<p>이번 세션에서는 토스 인터랙션 팀이 디자이너와 개발자가 함께 모션을 빠르게, 정확하게 구현하기 위해 어떻게 워크플로우를 다듬고 있는지 소개됐다. 포인트는 <strong>‘소통의 언어를 만드는 것’과 ‘툴을 직접 설계하는 것’</strong> 두 가지다.</p>
+<div class="spacer"></div>
+<p><strong>Rally의 핵심 개념</strong></p>
+<p>Rally : 디자이너와 개발자가 같은 방식으로 모션을 표현하고 이해할 수 있는 구조적 언어</p>
+<ul>
+<li>모션을 코드처럼 작성할 수 있는 <strong>수도 코드 문법</strong></li>
+<li>“이거 몇 번 반복되나요?” 같은 모호함 없이, <strong>playCount</strong> 같은 기준어 통일</li>
+<li>Sketch, After Effects, iOS, Android 등 각기 다른 환경에서도 <strong>동일한 의미를 유지할 수 있도록 설계</strong></li>
+<li>실제 코드까지 자동화</li>
+</ul>
+<div class="spacer"></div>
+<p><strong>Rally 주요 시스템</strong></p>
+<ul>
+<li><strong>Rally Editor</strong>: 디자이너가 손쉽게 수도 코드를 작성</li>
+<li><strong>CodeGen 시스템</strong>: 각 플랫폼별 코드로 변환해주는 자동화 도구</li>
+<li><strong>Rally 뷰어</strong>: 개발자가 구현된 모션과 문서를 한눈에 비교할 수 있도록 시각화</li>
+</ul>
+<p>-&gt; 디자이너는 더 빠르게 피드백을 줄 수 있고, 개발자는 구현 실수를 줄일 수 있다.</p>
+<div class="spacer"></div>
+<p><strong>인터랙션 디자이너가 없어도 되는 환경 만들기</strong></p>
+<p>토스는 자체 디자인 툴인 <strong>Deus의 특징</strong></p>
+<ul>
+<li>Figma처럼 인터페이스 안에서 <strong>단축키만으로 모션 지정 가능</strong></li>
+<li>별도 툴 전환 없이, 디자이너의 워크플로우를 유지한 채 작업</li>
+<li>개발자는 <strong>Deus Inspector</strong>에서 모든 파라미터를 확인하고 코드로 반영</li>
+</ul>
+<p>덕분에 인터랙션 수준은 높지만, 제작 난이도는 낮은 구조가 가능해졌다.</p>
+<div class="spacer"></div>
+<p><strong>요약</strong></p>
+<ol>
+<li>
+<p><strong>말보다 구조화된 언어가 중요하다</strong>
+→ Rally라는 공용 언어로 모션 협업의 기준을 통일함</p>
+</li>
+<li>
+<p><strong>툴을 직접 만들어 문제를 해결했다</strong>
+→ Rally Editor, CodeGen, Deus 등 실사용 중심의 협업 도구 설계</p>
+</li>
+<li>
+<p><strong>모션은 감각이 아니라, 합의된 명세로 구현된다</strong>
+→ 팀 간 재작업 없이 빠르고 정확하게 구현 가능</p>
+</li>
+</ol>
+<div class="divider"></div>
+<div class="spacer"></div>
+<h2 id="처음이지만-낯설지-않은-채권">처음이지만, 낯설지 않은 채권</h2>
+<p>이번 세션은 &lsquo;처음 보는 금융 상품&rsquo;을 어떻게 하면 직관적이고 쉽게 이해할 수 있게 만들 수 있을지를 다뤘다. 발표자는 토스증권에서 채권 서비스를 설계하며 겪은 시행착오와 배움을 공유했다.</p>
+<div class="spacer"></div>
+<p><strong>시작은 ‘심플리시티’ 원칙</strong></p>
+<p>토스증권은 늘 심플리시티(Simplicity)를 핵심 전략으로 가져간다. 채권도 마찬가지로, 복잡한 개념 없이, “얼마 넣고 얼마 받는다”만 직관적으로 보여주는 것이 목표였다.</p>
+<p>→ 그래서 계산기를 붙여 예상 수익을 한눈에 볼 수 있도록 설계했다. 하지만 사용자 반응은 예상과 달랐다. “이 그래프 왜 이렇게 커지죠?”, “결국 내가 얼마 받는 거죠?” 등 정보가 연결돼 있어도, 한 번에 여러 개를 보여주면 이해가 어렵다는 것을 깨달았다.</p>
+<div class="spacer"></div>
+<p><strong>“알려줄게”보다 “와닿게”</strong></p>
+<p>복잡한 개념은 툴팁으로 친절히 설명해도, 여전히 사용자에겐 낯설고 어렵게 느껴졌다.</br>
+결국 핵심은 ‘정보량’이 아니라 ‘와닿음’이었다. 이해하려 애쓰지 않아도 직관적으로 느껴져야 ‘진짜 심플한’ UX라는 것이다.</br>
+그래서 발표자는 사용자에게 친숙한 개념인 ‘예금’에 빗대어 채권을 다시 디자인했다.</br>
+“2개월 뒤, 원금 + 이자 받음”을 명확히 강조하고, 얼마 넣으면 얼마 받는지 한눈에 보이는
+구조로 만들자 유저 반응은 달라졌다. “아, 이거 예금 같은 거네요?” 같은 익숙한 사고 방식으로 이해한 것이다.</p>
+<p>위 UI 개선안과 기존안으로 A/B 테스트를 진행했는데, 신규 유저의 구매 전환율이 <strong>21% 상승했다.</strong> 핵심은 기능을 바꾸거나 정보를 줄인 게 아니라, ‘유저가 이해하기 쉬운 틀’로 바꿨다는 점이다.</p>
+<div class="divider"></div>
+<div class="spacer"></div>
+<h2 id="오프라인-pos-ux로-뒤집기까지의-3년">오프라인 POS, UX로 뒤집기까지의 3년</h2>
+<p>&ldquo;이런 거까지 해?&rdquo; 싶을 정도로 디테일한 실험이 인상적이었던 세션. 오프라인 자영업자들이 쓰는 POS 시스템을 어떻게 갈아엎었는지, 토스 팀이 실제 매장 현장으로 들어가 관찰하고 피드백을 모아가며 UX를 다듬은 과정을 공유했다.</p>
+<div class="spacer"></div>
+<p><strong>작은 화면으로 키오스크 만들기</strong></p>
+<p>기존 POS 단말기를 ‘작은 키오스크’로 바꾼 게 첫 번째 실험. 매장 운영자가 혼자 주문·서빙·결제까지 해야 하는 상황에서, 기존의 크고 비싼 키오스크는 부담이 컸다. 그래서 단말기 화면을 활용해 키오스크 기능을 넣었고, 2주 만에 베타를 띄워 테스트. 사용자가 화면을 어떻게 보는지, 어떤 UI 구성이 효율적인지 반복적으로 실험하면서 실제 주문의 50% 이상을 담당할 정도로 사용률이 올라갔다.</p>
+<div class="spacer"></div>
+<p><strong>고객 관리도 UX로 풀기</strong></p>
+<p>사장님들은 ‘단골이 절반쯤 되는 듯’이라고 생각했지만 실제 데이터는 20%. 마케팅 수신 동의율을 올리기 위해 결제 전에 자연스럽게 번호 입력 및 적립을 유도했고, 동의율이 무려 90%에 도달했다. 고객 데이터를 바탕으로 직관적인 시각화와 자동 쿠폰 기능도 도입. ‘머리 아프다’는 피드백을 줄이고, 누구나 쓸 수 있는 수준까지 UX를 간결화했다.</p>
+<div class="spacer"></div>
+<p><strong>결제도 유저가 주도</strong></p>
+<p>카드 결제는 늘 ‘사장님이 뽑는 것’이 당연했던 흐름을 바꿨다. 고객이 스스로 결제 수단을 선택하도록 인터페이스를 디자인했고, 여기에 카드사 할인 정보와 시즌성 이벤트(산타 등장 등)를 추가해 경험의 재미와 효용을 동시에 챙겼다. 귀여움과 인터랙션을 곁들인 이벤트는 예상 외의 바이럴 효과까지 불러왔다.</p>
+<p>사장님들이 실제로 “이제 포스계의 신이랑 안 비교해도 될 것 같다”고 말할 정도로 반응이 좋았고, 팀 내부에선 &ldquo;더 자연스러운 경험은 습관을 이긴다&quot;는 확신이 생겼다고 한다. 단순히 MVP로 기능만 만든 게 아니라, 진짜 사랑받는 제품(MLP)을 만들기 위한 집요한 현장 기반 설계가 돋보였던 사례였다.</p>
+<div class="spacer"></div>
+<p><strong>POS 개선 사례 비교</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Before</th>
+          <th>After</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>기존의 크고 비싼 키오스크가 부담</td>
+          <td>단말기 화면을 활용해 키오스크 기능, 주문의 50% 이상 담당</td>
+      </tr>
+      <tr>
+          <td>단골이 절반쯤 되는 듯 생각했지만 실제 데이터는 20%</td>
+          <td>마케팅 수신 동의율 90% 도달, 직관적인 시각화와 자동 쿠폰 기능</td>
+      </tr>
+      <tr>
+          <td>카드 결제는 늘 &lsquo;사장님이 뽑는 것&rsquo;이 당연했던 흐름</td>
+          <td>고객이 스스로 결제 수단을 선택, 카드사 할인 정보와 시즌성 이벤트 추가</td>
+      </tr>
+  </tbody>
+</table>
+
+          </div>
+        </div>
+
+        <footer class="xl:col-start-1 xl:col-span-4">
+          <div class="pt-4 xl:pt-8">
+            <a class="text-indigo-500 hover:text-indigo-600" aria-label="목록으로 돌아가기" href="/ko/">← 목록으로 돌아가기</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </article>
+</section>
+
+        </section>
+      </main>
+      <footer>
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="mt-16 flex flex-col items-center">
+  <div class="mb-2 text-sm text-gray-500">
+    <span>(C) 2026. Strawberry Fields — Pastoral Tech Notes by @lkkunst 모든 권리 보유.</span>
+  </div>
+
+  <div class="mb-8 text-sm text-gray-500">
+    <span class="mr-1">제작 도구:</span>
+    <a
+      class="font-semibold underline"
+      href="https://github.com/discaptive/hugo-discaptive"
+      target="_blank"
+      >hugo-discaptive</a
+    >
+  </div>
+</div>
+
+        </section>
+      </footer>
+    </div>
+  </body>
+</html>

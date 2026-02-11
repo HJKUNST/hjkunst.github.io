@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UX on Strawberry Fields — Pastoral Tech Notes by @lkkunst</title>
+    <link>https://hjkunst.github.io/en/tags/ux/</link>
+    <description>Recent content in UX on Strawberry Fields — Pastoral Tech Notes by @lkkunst</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Feb 2026 12:00:00 +0900</lastBuildDate>
+    <atom:link href="https://hjkunst.github.io/en/tags/ux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Quest] Escape the Terms of Service Swamp: 10 UX Boss Monsters</title>
+      <link>https://hjkunst.github.io/en/posts/2026-02-09-ux-agree/</link>
+      <pubDate>Mon, 09 Feb 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/en/posts/2026-02-09-ux-agree/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;&amp;ldquo;Agreeee&amp;rdquo; (I Want to Agree to the Terms of Service) is an indie game developed in Japan that was released on Steam in December 2025, gaining explosive popularity among streamers domestically and abroad. This game appears simple on the surface. Users just need to press the &amp;lsquo;Agree&amp;rsquo; button to 12 articles of terms of service. But the process is far from simple. Over 100 mini-games appear randomly, each interfering with users in every way possible. Buttons change position right before clicking, fake popups fill the screen, and pressing &amp;lsquo;Disagree&amp;rsquo; even once resets everything.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Crypto Article Week 2 | CDS Components</title>
+      <link>https://hjkunst.github.io/en/posts/2026-01-05-crypto-article-2/</link>
+      <pubDate>Mon, 05 Jan 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/en/posts/2026-01-05-crypto-article-2/</guid>
+      <description>&lt;h2 id=&#34;process&#34;&gt;Process&lt;/h2&gt;&#xA;&lt;p&gt;This article focuses on the decision-making process while actually analyzing design system components. Code snippets included in the portfolio were also limited to revealing decision reasons of &amp;ldquo;why implement this way&amp;rdquo; rather than implementation results. For example, explaining in detail the reasons for separating specific style differences as props rather than separate components, designing various style variations as variants, or the background for using design tokens indirectly rather than directly referencing them. For this purpose, I compared three design systems—Apple Human Interface Guidelines (HIG), Material-UI (MUI), and Coinbase Design System (CDS)—centering on common components like Button, Text Input, Modal, and the AreaChart component unique to CDS. While analyzing each component from design and code implementation perspectives, I organize in detail specific elements like design token utilization, variant structure, state composition, and accessibility handling methods. The analysis method classifies and describes content from perspectives of common structure, naming differences, and functional differences, like the classification proposed in the paper &amp;ldquo;Framework for Comparative Analysis of Usability of GUI Components by Mobile Operating System.&amp;rdquo; Finally, I organize lessons and learning effects gained through this comparative analysis process and present practical conclusions on implications for design-development collaboration.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Crypto Article Week 1 | Summarizing Coinbase Design System</title>
+      <link>https://hjkunst.github.io/en/posts/2025-12-31-crypto-article-1/</link>
+      <pubDate>Wed, 31 Dec 2025 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/en/posts/2025-12-31-crypto-article-1/</guid>
+      <description>&lt;h2 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://hjkunst.github.io/en/posts/2025-12-31-crypto-article-1/#introduction-why-analyze-design-systems-first-why-choose-coinbase-design-system&#34;&gt;Introduction: Why Analyze Design Systems First? Why Choose Coinbase Design System?&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://hjkunst.github.io/en/posts/2025-12-31-crypto-article-1/#main-content-identity-and-target-users&#34;&gt;Main Content: Identity and Target Users&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;System&amp;rsquo;s Official Mission / Slogan&lt;/li&gt;&#xA;&lt;li&gt;CDS, MUI, HIG Comparative Analysis&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://hjkunst.github.io/en/posts/2025-12-31-crypto-article-1/#3-system-architecture&#34;&gt;System Architecture&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Notable Sections in Get Started: Theming&lt;/li&gt;&#xA;&lt;li&gt;Components&lt;/li&gt;&#xA;&lt;li&gt;Hooks&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://hjkunst.github.io/en/posts/2025-12-31-crypto-article-1/#4-design-token-structure&#34;&gt;Design Token Structure&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Combination of Primitive and Semantic Tokens&lt;/li&gt;&#xA;&lt;li&gt;Token Application Beyond Color&lt;/li&gt;&#xA;&lt;li&gt;Shadow Structure&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://hjkunst.github.io/en/posts/2025-12-31-crypto-article-1/#conclusion&#34;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;introduction-why-analyze-design-systems-first-why-choose-coinbase-design-system&#34;&gt;Introduction: Why Analyze Design Systems First? Why Choose Coinbase Design System?&lt;/h2&gt;&#xA;&lt;p&gt;I have long pondered how to contribute to the crypto ecosystem as a designer rather than a developer. Rather than remaining in the role of designing screens, the more important question became at what points in the overall process of creating and expanding products I could intervene. In this process, my interest naturally shifted toward design system construction methods that connect from token units to components.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

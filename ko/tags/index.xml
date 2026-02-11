@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Strawberry Fields — Pastoral Tech Notes by @lkkunst</title>
+    <link>https://hjkunst.github.io/ko/tags/</link>
+    <description>Recent content in Tags on Strawberry Fields — Pastoral Tech Notes by @lkkunst</description>
+    <generator>Hugo</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Mon, 09 Feb 2026 12:00:00 +0900</lastBuildDate>
+    <atom:link href="https://hjkunst.github.io/ko/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UX</title>
+      <link>https://hjkunst.github.io/ko/tags/ux/</link>
+      <pubDate>Mon, 09 Feb 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/ko/tags/ux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Colorimetry</title>
+      <link>https://hjkunst.github.io/ko/tags/colorimetry/</link>
+      <pubDate>Thu, 29 Jan 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/ko/tags/colorimetry/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Science</title>
+      <link>https://hjkunst.github.io/ko/tags/science/</link>
+      <pubDate>Thu, 29 Jan 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/ko/tags/science/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>App</title>
+      <link>https://hjkunst.github.io/ko/tags/app/</link>
+      <pubDate>Wed, 07 Jan 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/ko/tags/app/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Crypto</title>
+      <link>https://hjkunst.github.io/ko/tags/crypto/</link>
+      <pubDate>Wed, 07 Jan 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/ko/tags/crypto/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MacOS</title>
+      <link>https://hjkunst.github.io/ko/tags/macos/</link>
+      <pubDate>Wed, 07 Jan 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/ko/tags/macos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SwiftUI</title>
+      <link>https://hjkunst.github.io/ko/tags/swiftui/</link>
+      <pubDate>Wed, 07 Jan 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/ko/tags/swiftui/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Design System</title>
+      <link>https://hjkunst.github.io/ko/tags/design-system/</link>
+      <pubDate>Mon, 05 Jan 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/ko/tags/design-system/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Design</title>
+      <link>https://hjkunst.github.io/ko/tags/design/</link>
+      <pubDate>Sun, 27 Jul 2025 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/ko/tags/design/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

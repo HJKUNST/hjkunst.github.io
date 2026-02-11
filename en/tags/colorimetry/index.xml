@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Colorimetry on Strawberry Fields — Pastoral Tech Notes by @lkkunst</title>
+    <link>https://hjkunst.github.io/en/tags/colorimetry/</link>
+    <description>Recent content in Colorimetry on Strawberry Fields — Pastoral Tech Notes by @lkkunst</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 Jan 2026 12:00:00 +0900</lastBuildDate>
+    <atom:link href="https://hjkunst.github.io/en/tags/colorimetry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Colorimetry 2 | CIE 1931: Color Space</title>
+      <link>https://hjkunst.github.io/en/posts/2026-01-29-colorimetry-2/</link>
+      <pubDate>Thu, 29 Jan 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/en/posts/2026-01-29-colorimetry-2/</guid>
+      <description>&lt;h2 id=&#34;1-what-process-does-expressing-color-numerically-actually-involve&#34;&gt;1) What process does expressing color numerically actually involve?&lt;/h2&gt;&#xA;&lt;p&gt;CIE 1931 Colorimetry provides theoretical and experimental foundations to explain how the human visual system perceives various spectral distributions as colors. Imagining cases like tree leaves and green cars that appear the same color but have completely different reflection spectra shows that identical color perception can occur under different physical conditions. This phenomenon where different spectral distributions induce identical color stimuli is called metamerism, a core concept of color reproduction.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Colorimetry 1 | Terminology and Visualization for Understanding Color Spaces and Color Systems</title>
+      <link>https://hjkunst.github.io/en/posts/2026-01-22-colorimetry-1/</link>
+      <pubDate>Thu, 22 Jan 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/en/posts/2026-01-22-colorimetry-1/</guid>
+      <description>&lt;h2 id=&#34;problem-statement&#34;&gt;Problem Statement&lt;/h2&gt;&#xA;&lt;p&gt;Recently, the iPhone&amp;rsquo;s color picker mode has added a new option called &amp;ldquo;HDR Boost&amp;rdquo; in addition to the existing RGB. &lt;/br&gt; Beyond this, concepts such as &lt;strong&gt;color gamuts like sRGB, Display P3, and DCI-P3&lt;/strong&gt; frequently appear, yet many people use them without clearly understanding the conceptual differences. Specifically, the questions I had while working on design were as follows:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;The iPhone&amp;rsquo;s color picker mode recently added something called HDR Boost in addition to RGB — what is it?&lt;/li&gt;&#xA;&lt;li&gt;There are also many color spaces — sRGB, Display P3, DCI-P3, wide color gamut, color reproduction specification graphs, etc. — and it would be good to understand them before using them.&lt;/li&gt;&#xA;&lt;li&gt;In CSS, there are many color notation methods beyond rgba and hex, such as hsl and oklch, and I wanted to understand the differences in their intended use.&lt;/li&gt;&#xA;&lt;li&gt;In Adobe Illustrator, when selecting HSB and the &amp;ldquo;Only Web Colors&amp;rdquo; option, the color gamut simplifies as shown in the image below — I was curious why this happens.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Whenever I studied color in the past, I always encountered materials heavily focused on color psychology. This time, I intend to take a scientific approach that can answer these questions. Ultimately, I aim to organize color-related terminology and technical concepts based on this background.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
