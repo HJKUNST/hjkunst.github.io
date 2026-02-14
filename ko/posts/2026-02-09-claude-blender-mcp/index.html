@@ -1,0 +1,408 @@
+<!doctype html>
+<html
+  lang="ko-kr"
+  dir="ltr"
+  class="scroll-smooth"
+>
+  <head>
+    
+
+
+
+
+
+
+
+<meta charset="utf-8" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNCT92GZ70"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-YNCT92GZ70');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
+
+<meta name="description" content="회사에 다닐 때 Claude Blender MCP로 모델링을 해서 실무에 썼던 적이 있다. 최근 개인 프로젝트를 다시 시작하면서 같은 환경을 다시 구성하게 되었고, 이번에는 기록으로 남겨두기로 했다.
+참고할 만한 블로그 대부분이 Windows 기준으로 작성되어 있어서, 이 글은 Mac 환경을 실제로 사용하는 입장에서 디자이너도 따라할 수 있도록 정리했다.
+3D 모델링은 솔직히 잘 못한다. 오브젝트 하나를 만드는 데도 2-3일을 통으로 투입해야 했고, Scene 단위로 작업하면 그보다 훨씬 오래 걸렸다. 그 한계를 보완하고 빠르게 결과물을 내기 위해 시도한 방법이 이것이다." />
+
+
+<meta property="og:title" content="AI로 Blender 제어하기: Claude MCP 연결 가이드 (Mac)" />
+<meta property="og:description" content="회사에 다닐 때 Claude Blender MCP로 모델링을 해서 실무에 썼던 적이 있다. 최근 개인 프로젝트를 다시 시작하면서 같은 환경을 다시 구성하게 되었고, 이번에는 기록으로 남겨두기로 했다.
+참고할 만한 블로그 대부분이 Windows 기준으로 작성되어 있어서, 이 글은 Mac 환경을 실제로 사용하는 입장에서 디자이너도 따라할 수 있도록 정리했다.
+3D 모델링은 솔직히 잘 못한다. 오브젝트 하나를 만드는 데도 2-3일을 통으로 투입해야 했고, Scene 단위로 작업하면 그보다 훨씬 오래 걸렸다. 그 한계를 보완하고 빠르게 결과물을 내기 위해 시도한 방법이 이것이다." />
+<meta property="og:url" content="https://hjkunst.github.io/ko/posts/2026-02-09-claude-blender-mcp/" />
+<meta property="og:site_name" content="Strawberry Fields — Pastoral Tech Notes by @lkkunst" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://hjkunst.github.io/claude-blender-mcp/claude-blender-mcp-1.webp" />
+<meta property="og:locale" content="ko_kr" />
+
+
+
+
+<link rel="alternate" hreflang="en-us" href="https://hjkunst.github.io/en/posts/2026-02-09-claude-blender-mcp/" />
+
+<link rel="alternate" hreflang="ko-kr" href="https://hjkunst.github.io/ko/posts/2026-02-09-claude-blender-mcp/" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI로 Blender 제어하기: Claude MCP 연결 가이드 (Mac)" />
+<meta name="twitter:description" content="회사에 다닐 때 Claude Blender MCP로 모델링을 해서 실무에 썼던 적이 있다. 최근 개인 프로젝트를 다시 시작하면서 같은 환경을 다시 구성하게 되었고, 이번에는 기록으로 남겨두기로 했다.
+참고할 만한 블로그 대부분이 Windows 기준으로 작성되어 있어서, 이 글은 Mac 환경을 실제로 사용하는 입장에서 디자이너도 따라할 수 있도록 정리했다.
+3D 모델링은 솔직히 잘 못한다. 오브젝트 하나를 만드는 데도 2-3일을 통으로 투입해야 했고, Scene 단위로 작업하면 그보다 훨씬 오래 걸렸다. 그 한계를 보완하고 빠르게 결과물을 내기 위해 시도한 방법이 이것이다." />
+<meta name="twitter:image" content="https://hjkunst.github.io/claude-blender-mcp/claude-blender-mcp-1.webp" />
+
+<title>AI로 Blender 제어하기: Claude MCP 연결 가이드 (Mac)</title>
+
+
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<meta name="theme-color" content="#FF6254">
+<meta name="msapplication-TileColor" content="#FF6254">
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      packages: { '[+]': ['ams'] }
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<link
+        rel="stylesheet"
+        href="/css/output.min.e6ea1a713ee8508a7ae1581f36a75a67ceb7390eaea21503ce3bade6cfabca8c.css"
+        integrity="sha256-5uoacT7oUIp64VgfNqdaZ863OQ6uohUDzjut5s&#43;ryow="
+        crossorigin="anonymous"
+      /><link
+        rel="stylesheet"
+        href="/css/custom.min.b0e39fb81464392a8c1dfcf79e38a1369b0ac0d49a0a8bfa676768c503a22757.css"
+        integrity="sha256-sOOfuBRkOSqMHfz3njihNpsKwNSaCov6Z2doxQOiJ1c="
+        crossorigin="anonymous"
+      />
+  </head>
+  <body class="bg-white text-black antialiased">
+    <div class="flex h-screen flex-col justify-between font-sans">
+      <header class="site-header sticky top-0 z-50" style="background: rgba(228, 228, 228, 0.1); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="flex items-center justify-between py-4">
+            <a class="group break-words" aria-label="Strawberry Fields — Pastoral Tech Notes by @lkkunst" href="/ko/">
+  <div class="flex items-center justify-between">
+    <div class="sm:mr-3">
+      <img src="/images/logo.svg" width="32" height="32" alt="Logo Image" />
+    </div>
+
+    <div class="hidden text-2xl font-semibold sm:block group-hover:underline">
+      <span>Strawberry Fields — Pastoral Tech Notes by @lkkunst</span>
+    </div>
+  </div>
+</a>
+
+<div class="flex items-center space-x-4 leading-5 sm:space-x-6">
+  <div class="items-center space-x-4 overflow-x-auto flex sm:space-x-6">
+    
+      <a
+        href="/ko/about"
+        class="font-medium text-gray-900 hover:text-indigo-500"
+        
+        >소개</a
+      >
+    
+      <a
+        href="/ko/tags"
+        class="font-medium text-gray-900 hover:text-indigo-500"
+        
+        >태그</a
+      >
+    
+    <div class="lang-toggle"><a class="lang-toggle__item" href="/en/posts/2026-02-09-claude-blender-mcp/">ENG</a><span class="lang-toggle__item lang-toggle__item--active">KOR</span></div>
+
+    <a href="https://github.com/hjkunst" target="_blank">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="fill-[#24292F] hover:fill-indigo-500 h-6 w-6"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12.0099 0C5.36875 0 0 5.5 0 12.3042C0 17.7432 3.43994 22.3472 8.21205 23.9767C8.80869 24.0992 9.02724 23.712 9.02724 23.3862C9.02724 23.101 9.00757 22.1232 9.00757 21.1045C5.6667 21.838 4.97099 19.6378 4.97099 19.6378C4.43409 18.2118 3.63858 17.8452 3.63858 17.8452C2.54511 17.0915 3.71823 17.0915 3.71823 17.0915C4.93117 17.173 5.56763 18.3545 5.56763 18.3545C6.64118 20.2285 8.37111 19.699 9.06706 19.373C9.16638 18.5785 9.48473 18.0285 9.82275 17.723C7.15817 17.4377 4.35469 16.3785 4.35469 11.6523C4.35469 10.3078 4.8316 9.20775 5.58729 8.35225C5.46807 8.04675 5.0504 6.7835 5.70677 5.09275C5.70677 5.09275 6.72083 4.76675 9.00732 6.35575C9.98625 6.08642 10.9958 5.9494 12.0099 5.94825C13.024 5.94825 14.0577 6.091 15.0123 6.35575C17.299 4.76675 18.3131 5.09275 18.3131 5.09275C18.9695 6.7835 18.5515 8.04675 18.4323 8.35225C19.2079 9.20775 19.6652 10.3078 19.6652 11.6523C19.6652 16.3785 16.8617 17.4172 14.1772 17.723C14.6148 18.11 14.9924 18.8433 14.9924 20.0045C14.9924 21.6545 14.9727 22.9788 14.9727 23.386C14.9727 23.712 15.1915 24.0992 15.7879 23.977C20.56 22.347 23.9999 17.7432 23.9999 12.3042C24.0196 5.5 18.6312 0 12.0099 0Z"
+        />
+      </svg>
+    </a>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </header>
+      
+      <main class="mb-auto">
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "AI로 Blender 제어하기: Claude MCP 연결 가이드 (Mac)",
+      "datePublished": "2026-02-14T12:00:00\u002b09:00",
+      "dateModified": "2026-02-14T12:00:00\u002b09:00",
+      "description": "\u003cp\u003e회사에 다닐 때 Claude Blender MCP로 모델링을 해서 실무에 썼던 적이 있다. 최근 개인 프로젝트를 다시 시작하면서 같은 환경을 다시 구성하게 되었고, 이번에는 기록으로 남겨두기로 했다.\u003c\/p\u003e\n\u003cp\u003e참고할 만한 블로그 대부분이 Windows 기준으로 작성되어 있어서, 이 글은 Mac 환경을 실제로 사용하는 입장에서 디자이너도 따라할 수 있도록 정리했다.\u003c\/p\u003e\n\u003cp\u003e3D 모델링은 솔직히 잘 못한다. 오브젝트 하나를 만드는 데도 2-3일을 통으로 투입해야 했고, Scene 단위로 작업하면 그보다 훨씬 오래 걸렸다. 그 한계를 보완하고 빠르게 결과물을 내기 위해 시도한 방법이 이것이다.\u003c\/p\u003e",
+      "image": "https:\/\/hjkunst.github.io\/claude-blender-mcp\/claude-blender-mcp-1.webp",
+      "url": "https:\/\/hjkunst.github.io\/ko\/posts\/2026-02-09-claude-blender-mcp\/",
+      "author": [{ "@type": "Person", "name": "hjkunst" }]
+    }
+  </script>
+<section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+  <article>
+    <div class="xl:divide-y xl:divide-gray-200">
+      <header class="pt-16 xl:pb-16">
+        <div class="text-center">
+          <div class="article-meta-group">
+            <dl>
+              <div>
+                <dt class="sr-only">게시일</dt>
+                <dd class="text-base font-medium leading-6 text-gray-500">
+                  
+                  
+                  <time datetime="2026-02-14T12:00:00&#43;09:00">2026년 2월 14일 토요일</time>
+                </dd>
+              </div>
+            </dl>
+            <div>
+              <h1
+                class="text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-3xl sm:leading-9 md:text-4xl md:leading-10">
+                <div>AI로 Blender 제어하기: Claude MCP 연결 가이드 (Mac)</div>
+              </h1>
+            </div>
+            <div class="flex flex-col items-center gap-3">
+              
+              <div class="article-tag-row flex flex-wrap items-center justify-center gap-3">
+                
+                <a href="/ko/tags/ai" class="tag-chip">AI</a>
+                
+              </div>
+              
+              
+              
+              <div class="flex items-center gap-2 text-sm">
+                <span class="text-gray-500">Read in:</span>
+                
+                <a href="/en/posts/2026-02-09-claude-blender-mcp/" class="language-switch-link">
+                  ENG
+                </a>
+                
+              </div>
+              
+            </div>
+          </div>
+          
+          <div class="article-meta-to-banner article-banner-wrap overflow-hidden">
+            <img src="/claude-blender-mcp/claude-blender-mcp-1.webp" alt="AI로 Blender 제어하기: Claude MCP 연결 가이드 (Mac)"
+              class="article-banner-image h-auto w-full object-cover" />
+          </div>
+          
+        </div>
+      </header>
+
+      <div class="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0">
+        <aside class="hidden xl:block xl:col-start-1 xl:row-start-1">
+          <div class="sticky top-24 space-y-8">
+            <div class="py-10">
+              <h2 class="text-xs uppercase tracking-wide text-gray-500">
+                목차
+              </h2>
+              <nav class="mt-2">
+                <ul class="space-y-3">
+                  <li class="text-sm">
+                    <a href="#%ec%84%a4%ec%b9%98-%ec%88%9c%ec%84%9c" class="text-indigo-500 hover:text-indigo-600">설치 순서</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#%eb%8b%a4%ec%9d%8c-%ed%94%84%eb%a1%9c%ec%a0%9d%ed%8a%b8%ec%97%90-%eb%8c%80%ed%95%b4" class="text-indigo-500 hover:text-indigo-600">다음 프로젝트에 대해</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        <div class="divide-y divide-gray-200 xl:col-span-3 xl:row-span-2 xl:pb-0">
+          <div class="prose max-w-none pb-8 pt-10">
+            <p>회사에 다닐 때 Claude Blender MCP로 모델링을 해서 실무에 썼던 적이 있다. 최근 개인 프로젝트를 다시 시작하면서 같은 환경을 다시 구성하게 되었고, 이번에는 기록으로 남겨두기로 했다.</p>
+<p>참고할 만한 블로그 대부분이 Windows 기준으로 작성되어 있어서, 이 글은 Mac 환경을 실제로 사용하는 입장에서 디자이너도 따라할 수 있도록 정리했다.</p>
+<p>3D 모델링은 솔직히 잘 못한다. 오브젝트 하나를 만드는 데도 2-3일을 통으로 투입해야 했고, Scene 단위로 작업하면 그보다 훨씬 오래 걸렸다. 그 한계를 보완하고 빠르게 결과물을 내기 위해 시도한 방법이 이것이다.</p>
+<p>결과적으로 퀄리티는 만족스러웠다. 다만 2020년형 맥북 프로로 Blender를 돌리다 보니, 작업 중 컴퓨터가 현저하게 느려지는 건 여전히 감수해야 하는 부분이다.</p>
+<p>MCP라고 하면 거창하게 들릴 수 있지만, 실제로는 AI 모델과 내가 쓰는 3D 툴을 연결한 것에 불과하다. Blender는 Adobe 계열 툴과 달리 노드 기반으로 작동하기 때문에, AI가 제어하기에 구조적으로 더 적합하다고 판단했다.</p>
+<p>이 글을 쓰면서 가장 많이 참고한 레포와 블로그는 다음 두 곳이다.</p>
+<p><a href="https://github.com/ahujasid/blender-mcp">https://github.com/ahujasid/blender-mcp</a></p>
+<p><a href="https://lightbakery.tistory.com/307">https://lightbakery.tistory.com/307</a></p>
+<h2 id="설치-순서">설치 순서</h2>
+<ol>
+<li>
+<p>Claude 데스크탑 앱에 로그인한다.</p>
+</li>
+<li>
+<p>위에서 언급한 레포를 확인한다.
+<a href="https://github.com/ahujasid/blender-mcp">https://github.com/ahujasid/blender-mcp</a></p>
+</li>
+<li>
+<p><strong>uv 설치 (Windows PowerShell 부분의 mac 대응)</strong></p>
+</li>
+</ol>
+<p><code>uv</code>를 설치한다. <code>uvx</code>가 없으면 Claude가 MCP 서버를 시작하지 못한다. 터미널을 열고 아래 명령어를 입력한다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -LsSf https://astral.sh/uv/install.sh | sh
+</span></span></code></pre></div><p>설치 완료 후에는 반드시 쉘을 새로 로드한다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>source ~/.zshrc
+</span></span></code></pre></div><ol>
+<li>Claude Desktop으로 돌아가서 좌측 상단의 Settings - Developer를 누른다. <code>claude_desktop_config.json</code>이 위치한 폴더가 팝업으로 열린다. 이미 MCP가 설정되어 있는 경우에는 &ldquo;Edit Config&quot;를 클릭한다.</li>
+</ol>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/claude-blender-mcp/claude-blender-mcp-1.webp" alt="Claude Desktop Settings - Developer" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666;">Claude Desktop의 Developer 설정 화면</p>
+</div>
+<ol>
+<li>아래 JSON을 붙여넣는다.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;mcpServers&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;blender&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;uvx&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;args&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;blender-mcp&#34;</span>
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ol>
+<li>
+<p>앱을 재시작한다.</p>
+</li>
+<li>
+<p>파이썬 애드온 파일을 다운로드한다.
+<a href="https://github.com/ahujasid/blender-mcp/blob/main/addon.py">https://github.com/ahujasid/blender-mcp/blob/main/addon.py</a></p>
+</li>
+<li>
+<p>Blender에서 Edit - Preferences - Add-ons - Install 순서로 설치한다.</p>
+</li>
+</ol>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/claude-blender-mcp/claude-blender-mcp-2.webp" alt="Blender Preferences - Add-ons Install" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666;">Blender에서 애드온 설치하기</p>
+</div>
+<ol>
+<li>화면 우측에서 Blender MCP를 켠다. 이것으로 모든 설정이 끝난다.</li>
+</ol>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/claude-blender-mcp/claude-blender-mcp-3.webp" alt="Blender MCP Enable" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666;">Blender MCP 활성화</p>
+</div>
+<ol start="2">
+<li>Claude 데스크탑 앱에서 프롬프트를 입력하고, 수정을 반복하는 방식으로 모델링을 진행했다. 예시 이미지와 대체하고 싶은 모듈 이미지를 함께 제공하면 맥락을 더 잘 잡아준다.</li>
+</ol>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/claude-blender-mcp/claude-blender-mcp-4.webp" alt="Claude Desktop Prompt Example" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666;">Claude에서 프롬프트 입력 예시</p>
+</div>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/claude-blender-mcp/claude-blender-mcp-5.webp" alt="Blender Modeling Result 1" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666;">모델링 결과 1</p>
+</div>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/claude-blender-mcp/claude-blender-mcp-6.webp" alt="Blender Modeling Result 2" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666;">모델링 결과 2</p>
+</div>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/claude-blender-mcp/claude-blender-mcp-7.webp" alt="Blender Modeling Result 3" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666;">모델링 결과 3</p>
+</div>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/claude-blender-mcp/claude-blender-mcp-8.webp" alt="Blender Modeling Result 4" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666;">모델링 결과 4</p>
+</div>
+<p>이런 식으로 실무에 활용했다</p>
+<p>Claude Code를 결제하기 전이었음에도 배경 포함 꽤 만족할 만한 퀄리티가 나왔다. 어쩌다 보니 기린이 완성됐지만, 이 글은 미감이나 Blender 사용법에 관한 포스팅이 아니니 MCP 활용 방법은 여기서 마친다.</p>
+<p>어쩌다 보니 기린 완성된 느낌이지만, 미감이나 블렌더 툴 사용법에 관련된 포스트는 아니었으니 여기서 MCP 활용 방법은 마친다.</p>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/claude-blender-mcp/claude-blender-mcp-9.webp" alt="Final Giraffe Model" style="width: 20%; height: auto; display: block; margin: 0 auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666;">최종 완성된 기린 모델</p>
+</div>
+<h2 id="다음-프로젝트에-대해">다음 프로젝트에 대해</h2>
+<p>현재 준비 중인 프로젝트를 간략히 소개한다.</p>
+<p>이 작업은 세계 각지의 고양이 이미지를 모아 전시하는 것이 아니다. 서로 다른 지역의 시선들이 &lsquo;고양이&rsquo;라는 대상 위에 남긴 감각의 층을 드러내는 작업이다. 나는 고양이 애호가로서의 개인적 집착을 사적인 취향으로 숨기지 않고, 웹이라는 공적 공간에서 작동하는 관찰 장치로 전환한다.</p>
+<p>이 프로젝트에서 고양이는 자연의 대상이 아니다. 인간의 돌봄과 소비, 애정과 통제 속에서 &ldquo;애완화된 존재&quot;로 재구성된 동물이다. 그 재구성의 결과를 비판적으로 고발하는 것이 목적이 아니라, 각각의 고양이가 인간과 함께 만들어진 미세한 형태로 존재한다는 사실을 기록하는 것이다. 따라서 이 작업은 고양이를 있는 그대로 보여주겠다는 약속이 아니다. 인간에 의해 대사된 동물성이 어떤 표정으로 남는지 끝까지 따라가는 시도다.</p>
+<p>현재 Blender에서 시도하고 있는 작업은 다음과 같다.</p>
+<ol>
+<li>털실 뭉치가 구형으로 나타나도록 구성한다.</li>
+<li>yarn, wool 소재에 약간의 furriness를 추가한다.</li>
+<li>가능하다면 세계 전도를 이미지로 매핑하여 털실 표면에 자연스럽게 묘사되도록 한다.</li>
+</ol>
+
+          </div>
+        </div>
+
+        <footer class="xl:col-start-1 xl:col-span-4">
+          <div class="pt-4 xl:pt-8">
+            <a class="text-indigo-500 hover:text-indigo-600" aria-label="목록으로 돌아가기" href="/ko/">← 목록으로 돌아가기</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </article>
+</section>
+
+        </section>
+      </main>
+      <footer>
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="mt-16 flex flex-col items-center">
+  <div class="mb-2 text-sm text-gray-500">
+    <span>(C) 2026. Strawberry Fields — Pastoral Tech Notes by @lkkunst 모든 권리 보유.</span>
+  </div>
+
+  <div class="mb-8 text-sm text-gray-500">
+    <span class="mr-1">제작 도구:</span>
+    <a
+      class="font-semibold underline"
+      href="https://github.com/discaptive/hugo-discaptive"
+      target="_blank"
+      >hugo-discaptive</a
+    >
+  </div>
+</div>
+
+        </section>
+      </footer>
+    </div>
+  </body>
+</html>

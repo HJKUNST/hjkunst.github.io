@@ -1,0 +1,408 @@
+<!doctype html>
+<html
+  lang="en-us"
+  dir="ltr"
+  class="scroll-smooth"
+>
+  <head>
+    
+
+
+
+
+
+
+
+<meta charset="utf-8" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNCT92GZ70"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-YNCT92GZ70');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
+
+<meta name="description" content="I previously used Claude &#43; Blender MCP for production work while I was employed at a company. Recently, as I restarted a personal project, I rebuilt the same environment—and this time, I decided to document the process.
+Most reference blogs are written for Windows setups, so this post is organized from the perspective of someone actually working on macOS, in a way that designers can realistically follow.
+To be honest, I&rsquo;m not particularly good at 3D modeling. Even creating a single object used to take me two or three full days, and scene-level work took much longer. This approach was something I tried to compensate for those limitations and produce results more quickly." />
+
+
+<meta property="og:title" content="Controlling Blender with AI: Claude MCP Setup Guide (Mac)" />
+<meta property="og:description" content="I previously used Claude &#43; Blender MCP for production work while I was employed at a company. Recently, as I restarted a personal project, I rebuilt the same environment—and this time, I decided to document the process.
+Most reference blogs are written for Windows setups, so this post is organized from the perspective of someone actually working on macOS, in a way that designers can realistically follow.
+To be honest, I&rsquo;m not particularly good at 3D modeling. Even creating a single object used to take me two or three full days, and scene-level work took much longer. This approach was something I tried to compensate for those limitations and produce results more quickly." />
+<meta property="og:url" content="https://hjkunst.github.io/en/posts/2026-02-09-claude-blender-mcp/" />
+<meta property="og:site_name" content="Strawberry Fields — Pastoral Tech Notes by @lkkunst" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://hjkunst.github.io/claude-blender-mcp/claude-blender-mcp-1.webp" />
+<meta property="og:locale" content="en_us" />
+
+
+
+
+<link rel="alternate" hreflang="ko-kr" href="https://hjkunst.github.io/ko/posts/2026-02-09-claude-blender-mcp/" />
+
+<link rel="alternate" hreflang="en-us" href="https://hjkunst.github.io/en/posts/2026-02-09-claude-blender-mcp/" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Controlling Blender with AI: Claude MCP Setup Guide (Mac)" />
+<meta name="twitter:description" content="I previously used Claude &#43; Blender MCP for production work while I was employed at a company. Recently, as I restarted a personal project, I rebuilt the same environment—and this time, I decided to document the process.
+Most reference blogs are written for Windows setups, so this post is organized from the perspective of someone actually working on macOS, in a way that designers can realistically follow.
+To be honest, I&rsquo;m not particularly good at 3D modeling. Even creating a single object used to take me two or three full days, and scene-level work took much longer. This approach was something I tried to compensate for those limitations and produce results more quickly." />
+<meta name="twitter:image" content="https://hjkunst.github.io/claude-blender-mcp/claude-blender-mcp-1.webp" />
+
+<title>Controlling Blender with AI: Claude MCP Setup Guide (Mac)</title>
+
+
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<meta name="theme-color" content="#FF6254">
+<meta name="msapplication-TileColor" content="#FF6254">
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      packages: { '[+]': ['ams'] }
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<link
+        rel="stylesheet"
+        href="/css/output.min.e6ea1a713ee8508a7ae1581f36a75a67ceb7390eaea21503ce3bade6cfabca8c.css"
+        integrity="sha256-5uoacT7oUIp64VgfNqdaZ863OQ6uohUDzjut5s&#43;ryow="
+        crossorigin="anonymous"
+      /><link
+        rel="stylesheet"
+        href="/css/custom.min.b0e39fb81464392a8c1dfcf79e38a1369b0ac0d49a0a8bfa676768c503a22757.css"
+        integrity="sha256-sOOfuBRkOSqMHfz3njihNpsKwNSaCov6Z2doxQOiJ1c="
+        crossorigin="anonymous"
+      />
+  </head>
+  <body class="bg-white text-black antialiased">
+    <div class="flex h-screen flex-col justify-between font-sans">
+      <header class="site-header sticky top-0 z-50" style="background: rgba(228, 228, 228, 0.1); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="flex items-center justify-between py-4">
+            <a class="group break-words" aria-label="Strawberry Fields — Pastoral Tech Notes by @lkkunst" href="/en/">
+  <div class="flex items-center justify-between">
+    <div class="sm:mr-3">
+      <img src="/images/logo.svg" width="32" height="32" alt="Logo Image" />
+    </div>
+
+    <div class="hidden text-2xl font-semibold sm:block group-hover:underline">
+      <span>Strawberry Fields — Pastoral Tech Notes by @lkkunst</span>
+    </div>
+  </div>
+</a>
+
+<div class="flex items-center space-x-4 leading-5 sm:space-x-6">
+  <div class="items-center space-x-4 overflow-x-auto flex sm:space-x-6">
+    
+      <a
+        href="/en/about"
+        class="font-medium text-gray-900 hover:text-indigo-500"
+        
+        >About</a
+      >
+    
+      <a
+        href="/en/tags"
+        class="font-medium text-gray-900 hover:text-indigo-500"
+        
+        >Tags</a
+      >
+    
+    <div class="lang-toggle"><span class="lang-toggle__item lang-toggle__item--active">ENG</span><a class="lang-toggle__item" href="/ko/posts/2026-02-09-claude-blender-mcp/">KOR</a></div>
+
+    <a href="https://github.com/hjkunst" target="_blank">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="fill-[#24292F] hover:fill-indigo-500 h-6 w-6"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12.0099 0C5.36875 0 0 5.5 0 12.3042C0 17.7432 3.43994 22.3472 8.21205 23.9767C8.80869 24.0992 9.02724 23.712 9.02724 23.3862C9.02724 23.101 9.00757 22.1232 9.00757 21.1045C5.6667 21.838 4.97099 19.6378 4.97099 19.6378C4.43409 18.2118 3.63858 17.8452 3.63858 17.8452C2.54511 17.0915 3.71823 17.0915 3.71823 17.0915C4.93117 17.173 5.56763 18.3545 5.56763 18.3545C6.64118 20.2285 8.37111 19.699 9.06706 19.373C9.16638 18.5785 9.48473 18.0285 9.82275 17.723C7.15817 17.4377 4.35469 16.3785 4.35469 11.6523C4.35469 10.3078 4.8316 9.20775 5.58729 8.35225C5.46807 8.04675 5.0504 6.7835 5.70677 5.09275C5.70677 5.09275 6.72083 4.76675 9.00732 6.35575C9.98625 6.08642 10.9958 5.9494 12.0099 5.94825C13.024 5.94825 14.0577 6.091 15.0123 6.35575C17.299 4.76675 18.3131 5.09275 18.3131 5.09275C18.9695 6.7835 18.5515 8.04675 18.4323 8.35225C19.2079 9.20775 19.6652 10.3078 19.6652 11.6523C19.6652 16.3785 16.8617 17.4172 14.1772 17.723C14.6148 18.11 14.9924 18.8433 14.9924 20.0045C14.9924 21.6545 14.9727 22.9788 14.9727 23.386C14.9727 23.712 15.1915 24.0992 15.7879 23.977C20.56 22.347 23.9999 17.7432 23.9999 12.3042C24.0196 5.5 18.6312 0 12.0099 0Z"
+        />
+      </svg>
+    </a>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </header>
+      
+      <main class="mb-auto">
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Controlling Blender with AI: Claude MCP Setup Guide (Mac)",
+      "datePublished": "2026-02-14T12:00:00\u002b09:00",
+      "dateModified": "2026-02-14T12:00:00\u002b09:00",
+      "description": "\u003cp\u003eI previously used Claude \u002b Blender MCP for production work while I was employed at a company. Recently, as I restarted a personal project, I rebuilt the same environment—and this time, I decided to document the process.\u003c\/p\u003e\n\u003cp\u003eMost reference blogs are written for Windows setups, so this post is organized from the perspective of someone actually working on macOS, in a way that designers can realistically follow.\u003c\/p\u003e\n\u003cp\u003eTo be honest, I\u0026rsquo;m not particularly good at 3D modeling. Even creating a single object used to take me two or three full days, and scene-level work took much longer. This approach was something I tried to compensate for those limitations and produce results more quickly.\u003c\/p\u003e",
+      "image": "https:\/\/hjkunst.github.io\/claude-blender-mcp\/claude-blender-mcp-1.webp",
+      "url": "https:\/\/hjkunst.github.io\/en\/posts\/2026-02-09-claude-blender-mcp\/",
+      "author": [{ "@type": "Person", "name": "hjkunst" }]
+    }
+  </script>
+<section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+  <article>
+    <div class="xl:divide-y xl:divide-gray-200">
+      <header class="pt-16 xl:pb-16">
+        <div class="text-center">
+          <div class="article-meta-group">
+            <dl>
+              <div>
+                <dt class="sr-only">Published on</dt>
+                <dd class="text-base font-medium leading-6 text-gray-500">
+                  
+                  
+                  <time datetime="2026-02-14T12:00:00&#43;09:00">Saturday, February 14, 2026</time>
+                </dd>
+              </div>
+            </dl>
+            <div>
+              <h1
+                class="text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-3xl sm:leading-9 md:text-4xl md:leading-10">
+                <div>Controlling Blender with AI: Claude MCP Setup Guide (Mac)</div>
+              </h1>
+            </div>
+            <div class="flex flex-col items-center gap-3">
+              
+              <div class="article-tag-row flex flex-wrap items-center justify-center gap-3">
+                
+                <a href="/en/tags/ai" class="tag-chip">AI</a>
+                
+              </div>
+              
+              
+              
+              <div class="flex items-center gap-2 text-sm">
+                <span class="text-gray-500">Read in:</span>
+                
+                <a href="/ko/posts/2026-02-09-claude-blender-mcp/" class="language-switch-link">
+                  KOR
+                </a>
+                
+              </div>
+              
+            </div>
+          </div>
+          
+          <div class="article-meta-to-banner article-banner-wrap overflow-hidden">
+            <img src="/claude-blender-mcp/claude-blender-mcp-1.webp" alt="Controlling Blender with AI: Claude MCP Setup Guide (Mac)"
+              class="article-banner-image h-auto w-full object-cover" />
+          </div>
+          
+        </div>
+      </header>
+
+      <div class="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0">
+        <aside class="hidden xl:block xl:col-start-1 xl:row-start-1">
+          <div class="sticky top-24 space-y-8">
+            <div class="py-10">
+              <h2 class="text-xs uppercase tracking-wide text-gray-500">
+                Table of Contents
+              </h2>
+              <nav class="mt-2">
+                <ul class="space-y-3">
+                  <li class="text-sm">
+                    <a href="#installation-order" class="text-indigo-500 hover:text-indigo-600">Installation Order</a>
+                  </li>
+                  <li class="text-sm">
+                    <a href="#about-the-next-project" class="text-indigo-500 hover:text-indigo-600">About the Next Project</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        <div class="divide-y divide-gray-200 xl:col-span-3 xl:row-span-2 xl:pb-0">
+          <div class="prose max-w-none pb-8 pt-10">
+            <p>I previously used Claude + Blender MCP for production work while I was employed at a company. Recently, as I restarted a personal project, I rebuilt the same environment—and this time, I decided to document the process.</p>
+<p>Most reference blogs are written for Windows setups, so this post is organized from the perspective of someone actually working on macOS, in a way that designers can realistically follow.</p>
+<p>To be honest, I&rsquo;m not particularly good at 3D modeling. Even creating a single object used to take me two or three full days, and scene-level work took much longer. This approach was something I tried to compensate for those limitations and produce results more quickly.</p>
+<p>In the end, I was satisfied with the quality. That said, running Blender on a 2020 MacBook Pro still meant accepting significant slowdowns during work.</p>
+<p>&ldquo;MCP&rdquo; may sound grand, but in practice it&rsquo;s simply a connection between an AI model and the 3D tool I already use. Compared to Adobe tools, Blender operates on a node-based system, which I found structurally more suitable for AI control.</p>
+<p>The two resources I referred to most while writing this were:</p>
+<p><a href="https://github.com/ahujasid/blender-mcp">https://github.com/ahujasid/blender-mcp</a></p>
+<p><a href="https://lightbakery.tistory.com/307">https://lightbakery.tistory.com/307</a></p>
+<h2 id="installation-order">Installation Order</h2>
+<ol>
+<li>
+<p>Log in to the Claude desktop app.</p>
+</li>
+<li>
+<p>Check the repository mentioned above:
+<a href="https://github.com/ahujasid/blender-mcp">https://github.com/ahujasid/blender-mcp</a></p>
+</li>
+<li>
+<p><strong>Install uv (macOS equivalent of the Windows PowerShell step)</strong></p>
+</li>
+</ol>
+<p>Install <code>uv</code>. Without <code>uvx</code>, Claude cannot start the MCP server. Open Terminal and run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -LsSf https://astral.sh/uv/install.sh | sh
+</span></span></code></pre></div><p>After installation, be sure to reload your shell:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>source ~/.zshrc
+</span></span></code></pre></div><ol>
+<li>Go back to Claude Desktop and click Settings → Developer in the top-left. A folder containing <code>claude_desktop_config.json</code> will open. If MCP is already configured, click &ldquo;Edit Config.&rdquo;</li>
+</ol>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/claude-blender-mcp/claude-blender-mcp-1.webp" alt="Claude Desktop Settings - Developer" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666;">Claude Desktop Developer Settings Screen</p>
+</div>
+<ol>
+<li>Paste the following JSON:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;mcpServers&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;blender&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;uvx&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;args&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;blender-mcp&#34;</span>
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ol>
+<li>
+<p>Restart the app.</p>
+</li>
+<li>
+<p>Download the Python addon file:
+<a href="https://github.com/ahujasid/blender-mcp/blob/main/addon.py">https://github.com/ahujasid/blender-mcp/blob/main/addon.py</a></p>
+</li>
+<li>
+<p>In Blender, go to Edit → Preferences → Add-ons → Install and install it.</p>
+</li>
+</ol>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/claude-blender-mcp/claude-blender-mcp-2.webp" alt="Blender Preferences - Add-ons Install" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666;">Installing the addon in Blender</p>
+</div>
+<ol>
+<li>Enable Blender MCP from the right-hand panel. That completes the setup.</li>
+</ol>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/claude-blender-mcp/claude-blender-mcp-3.webp" alt="Blender MCP Enable" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666;">Enabling Blender MCP</p>
+</div>
+<ol start="2">
+<li>From there, I modeled by entering prompts in Claude Desktop and iterating through revisions. Providing both reference images and replacement module images helps the model understand context more accurately.</li>
+</ol>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/claude-blender-mcp/claude-blender-mcp-4.webp" alt="Claude Desktop Prompt Example" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666;">Example prompt in Claude</p>
+</div>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/claude-blender-mcp/claude-blender-mcp-5.webp" alt="Blender Modeling Result 1" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666;">Modeling result 1</p>
+</div>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/claude-blender-mcp/claude-blender-mcp-6.webp" alt="Blender Modeling Result 2" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666;">Modeling result 2</p>
+</div>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/claude-blender-mcp/claude-blender-mcp-7.webp" alt="Blender Modeling Result 3" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666;">Modeling result 3</p>
+</div>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/claude-blender-mcp/claude-blender-mcp-8.webp" alt="Blender Modeling Result 4" style="width: 80%; min-width: 480px; height: auto; display: block; margin: 0 auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666;">Modeling result 4</p>
+</div>
+<p>This is roughly how I used it in production.</p>
+<p>Even before subscribing to Claude Code, I was able to achieve fairly satisfying quality, including backgrounds. Somewhere along the way, I ended up with a giraffe—but since this post isn&rsquo;t about aesthetics or Blender techniques, I&rsquo;ll stop the MCP discussion here.</p>
+<p>It feels like this turned into a giraffe project by accident, but again, this isn&rsquo;t about visual taste or Blender usage, so I&rsquo;ll wrap up the MCP portion at this point.</p>
+<div style="text-align: center; margin: 1rem 0;">
+  <img src="/claude-blender-mcp/claude-blender-mcp-9.webp" alt="Final Giraffe Model" style="width: 20%; height: auto; display: block; margin: 0 auto;" />
+  <p style="margin-top: 8px; font-style: italic; color: #666;">Final completed giraffe model</p>
+</div>
+<h2 id="about-the-next-project">About the Next Project</h2>
+<p>Here&rsquo;s a brief introduction to what I&rsquo;m currently preparing.</p>
+<p>This project is not an exhibition of cat images collected from around the world. Instead, it aims to reveal the layered sensibilities that different regions project onto the subject of &ldquo;cats.&rdquo; As a cat lover, I don&rsquo;t hide my personal fixation as a private preference—instead, I transform it into an observational apparatus operating within the public space of the web.</p>
+<p>In this project, cats are not natural objects. They are animals reconstructed as &ldquo;domesticated beings&rdquo; through human care and consumption, affection and control. The goal is not to critically expose that reconstruction, but to record how each cat exists as a subtle form co-produced with humans. Therefore, this work does not promise to show cats &ldquo;as they truly are.&rdquo; It is an attempt to follow, to the end, what kind of expression animality leaves behind after being metabolized by humans.</p>
+<p>What I&rsquo;m currently experimenting with in Blender is the following:</p>
+<ol>
+<li>Configure a ball of yarn so it appears spherical.</li>
+<li>Add slight furriness to yarn / wool materials.</li>
+<li>If possible, map a world map image onto the yarn surface in a natural way.</li>
+</ol>
+
+          </div>
+        </div>
+
+        <footer class="xl:col-start-1 xl:col-span-4">
+          <div class="pt-4 xl:pt-8">
+            <a class="text-indigo-500 hover:text-indigo-600" aria-label="Back to the list" href="/en/">← Back to the list</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </article>
+</section>
+
+        </section>
+      </main>
+      <footer>
+        <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <div class="mt-16 flex flex-col items-center">
+  <div class="mb-2 text-sm text-gray-500">
+    <span>(C) 2026. Strawberry Fields — Pastoral Tech Notes by @lkkunst all rights reserved.</span>
+  </div>
+
+  <div class="mb-8 text-sm text-gray-500">
+    <span class="mr-1">Built with</span>
+    <a
+      class="font-semibold underline"
+      href="https://github.com/discaptive/hugo-discaptive"
+      target="_blank"
+      >hugo-discaptive</a
+    >
+  </div>
+</div>
+
+        </section>
+      </footer>
+    </div>
+  </body>
+</html>

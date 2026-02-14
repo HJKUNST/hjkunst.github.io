@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://hjkunst.github.io/en/</loc>
-    <lastmod>2026-02-09T12:00:00+09:00</lastmod>
+    <lastmod>2026-02-14T12:00:00+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko-kr"
@@ -13,6 +13,58 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://hjkunst.github.io/en/"
+                />
+  </url><url>
+    <loc>https://hjkunst.github.io/en/tags/ai/</loc>
+    <lastmod>2026-02-14T12:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko-kr"
+                href="https://hjkunst.github.io/ko/tags/ai/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://hjkunst.github.io/en/tags/ai/"
+                />
+  </url><url>
+    <loc>https://hjkunst.github.io/en/posts/2026-02-09-claude-blender-mcp/</loc>
+    <lastmod>2026-02-14T12:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko-kr"
+                href="https://hjkunst.github.io/ko/posts/2026-02-09-claude-blender-mcp/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://hjkunst.github.io/en/posts/2026-02-09-claude-blender-mcp/"
+                />
+  </url><url>
+    <loc>https://hjkunst.github.io/en/posts/</loc>
+    <lastmod>2026-02-14T12:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko-kr"
+                href="https://hjkunst.github.io/ko/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://hjkunst.github.io/en/posts/"
+                />
+  </url><url>
+    <loc>https://hjkunst.github.io/en/tags/</loc>
+    <lastmod>2026-02-14T12:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko-kr"
+                href="https://hjkunst.github.io/ko/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://hjkunst.github.io/en/tags/"
                 />
   </url><url>
     <loc>https://hjkunst.github.io/en/posts/2026-02-09-ux-agree/</loc>
@@ -26,32 +78,6 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://hjkunst.github.io/en/posts/2026-02-09-ux-agree/"
-                />
-  </url><url>
-    <loc>https://hjkunst.github.io/en/posts/</loc>
-    <lastmod>2026-02-09T12:00:00+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko-kr"
-                href="https://hjkunst.github.io/ko/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://hjkunst.github.io/en/posts/"
-                />
-  </url><url>
-    <loc>https://hjkunst.github.io/en/tags/</loc>
-    <lastmod>2026-02-09T12:00:00+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko-kr"
-                href="https://hjkunst.github.io/ko/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://hjkunst.github.io/en/tags/"
                 />
   </url><url>
     <loc>https://hjkunst.github.io/en/tags/ux/</loc>

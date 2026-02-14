@@ -187,6 +187,17 @@
           
             text-gray-600
           "
+          href="https://hjkunst.github.io/ko/tags/ai/"
+          >AI<span class="ml-2 text-gray-400"
+            >(1)</span
+          ></a
+        >
+      
+        <a
+          class="font-mono text-sm uppercase
+          
+            text-gray-600
+          "
           href="https://hjkunst.github.io/ko/tags/app/"
           >App<span class="ml-2 text-gray-400"
             >(1)</span
@@ -289,6 +300,44 @@
 
       <div class="min-w-0 flex-1">
         <ul class="divide-y divide-gray-200">
+          
+          <li class="py-6 first:pt-0">
+  <article>
+    <div class="space-y-8">
+      <div class="space-y-4">
+        <div class="flex flex-col gap-4 text-sm text-gray-500">
+          
+          
+          <time datetime="2026-02-14T12:00:00&#43;09:00">2026년 2월 14일</time>
+
+          <h2 class="text-2xl font-semibold text-gray-900">
+            <a class="break-words" href="/ko/posts/2026-02-09-claude-blender-mcp/">AI로 Blender 제어하기: Claude MCP 연결 가이드 (Mac)</a>
+          </h2>
+
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/ko/tags/ai" class="tag-chip">AI</a>
+            
+          </div>
+        </div>
+
+        <div class="text-gray-600 line-clamp-3"><p>회사에 다닐 때 Claude Blender MCP로 모델링을 해서 실무에 썼던 적이 있다. 최근 개인 프로젝트를 다시 시작하면서 같은 환경을 다시 구성하게 되었고, 이번에는 기록으로 남겨두기로 했다.</p>
+<p>참고할 만한 블로그 대부분이 Windows 기준으로 작성되어 있어서, 이 글은 Mac 환경을 실제로 사용하는 입장에서 디자이너도 따라할 수 있도록 정리했다.</p>
+<p>3D 모델링은 솔직히 잘 못한다. 오브젝트 하나를 만드는 데도 2-3일을 통으로 투입해야 했고, Scene 단위로 작업하면 그보다 훨씬 오래 걸렸다. 그 한계를 보완하고 빠르게 결과물을 내기 위해 시도한 방법이 이것이다.</p></div>
+      </div>
+
+      <a href="/ko/posts/2026-02-09-claude-blender-mcp/"
+        class="group inline-flex items-center text-sm text-gray-600 transition-colors hover:text-gray-900">글 읽기<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5">
+          <path d="M5 12h14"></path>
+          <path d="m12 5 7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+  </article>
+</li>
+
           
           <li class="py-6 first:pt-0">
   <article>
@@ -445,47 +494,6 @@
       </div>
 
       <a href="/ko/posts/2026-01-08-mac-token-price-bar/"
-        class="group inline-flex items-center text-sm text-gray-600 transition-colors hover:text-gray-900">글 읽기<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5">
-          <path d="M5 12h14"></path>
-          <path d="m12 5 7 7-7 7"></path>
-        </svg>
-      </a>
-    </div>
-  </article>
-</li>
-
-          
-          <li class="py-6 first:pt-0">
-  <article>
-    <div class="space-y-8">
-      <div class="space-y-4">
-        <div class="flex flex-col gap-4 text-sm text-gray-500">
-          
-          
-          <time datetime="2026-01-05T12:00:00&#43;09:00">2026년 1월 5일</time>
-
-          <h2 class="text-2xl font-semibold text-gray-900">
-            <a class="break-words" href="/ko/posts/2026-01-05-crypto-article-2/">Crypto Article Week 2 | CDS Components</a>
-          </h2>
-
-          <div class="flex flex-wrap gap-2">
-            
-            <a href="/ko/tags/design-system" class="tag-chip">Design System</a>
-            
-            <a href="/ko/tags/ux" class="tag-chip">UX</a>
-            
-            <a href="/ko/tags/crypto" class="tag-chip">Crypto</a>
-            
-          </div>
-        </div>
-
-        <div class="text-gray-600 line-clamp-3"><h2 id="과정">과정</h2>
-<p>이 글에서는 디자인 시스템의 구성 요소를 실제로 분석하면서 의사 결정 과정에 중점을 둔다. 포트폴리오에 포함할 코드 스니펫 역시 구현 결과물보다는 “왜 이렇게 구현했는가” 하는 결정 이유를 드러내는 범위로 제한하였다. 예를 들어, 특정 스타일 차이를 별도 컴포넌트가 아니라 prop으로 분리한 이유, 여러 스타일 변형을 variant로 설계한 이유, 혹은 디자인 토큰을 직접 참조하지 않고 간접적으로 사용하도록 한 배경 등을 중점적으로 해설한다. 이를 위해 Apple Human Interface Guidelines(HIG), Material-UI(MUI), Coinbase Design System(CDS) 세 가지 디자인 시스템을 Button, Text Input, Modal의 공통 컴포넌트와 CDS에만 있는 AreaChart 컴포넌트를 중심으로 비교하였다. 각 컴포넌트를 디자인 관점과 코드 구현 관점에서 분석하면서, 디자인 토큰 활용, variant 구조, 상태(State) 구성, 접근성 처리 방식 등의 구체 요소를 상세히 정리한다. 분석 방식은 논문 &ldquo;모바일 운영체제별 GUI 컴포넌트의 사용성 비교 분석을 위한 프레임워크&quot;에서 제안된 분류처럼, 공통 구조, 명칭상의 차이, 기능상의 차이 관점으로 내용을 분류하여 서술한다. 마지막으로 이러한 비교 분석 과정을 통해 얻은 교훈과 학습 효과를 정리하고, 디자인-개발 협업에 주는 시사점을 실용적인 결론으로 제시한다.</p></div>
-      </div>
-
-      <a href="/ko/posts/2026-01-05-crypto-article-2/"
         class="group inline-flex items-center text-sm text-gray-600 transition-colors hover:text-gray-900">글 읽기<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
           class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5">
