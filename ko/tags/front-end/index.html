@@ -32,9 +32,9 @@
 <meta name="description" content="" />
 
 
-<meta property="og:title" content="Design" />
+<meta property="og:title" content="Front-End" />
 <meta property="og:description" content="" />
-<meta property="og:url" content="https://hjkunst.github.io/ko/tags/design/" />
+<meta property="og:url" content="https://hjkunst.github.io/ko/tags/front-end/" />
 <meta property="og:site_name" content="Strawberry Fields — Pastoral Tech Notes by @lkkunst" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://hjkunst.github.io/images/og-image.png" />
@@ -43,18 +43,18 @@
 
 
 
-<link rel="alternate" hreflang="en-us" href="https://hjkunst.github.io/en/tags/design/" />
+<link rel="alternate" hreflang="en-us" href="https://hjkunst.github.io/en/tags/front-end/" />
 
-<link rel="alternate" hreflang="ko-kr" href="https://hjkunst.github.io/ko/tags/design/" />
+<link rel="alternate" hreflang="ko-kr" href="https://hjkunst.github.io/ko/tags/front-end/" />
 
 
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Design" />
+<meta name="twitter:title" content="Front-End" />
 <meta name="twitter:description" content="" />
 <meta name="twitter:image" content="https://hjkunst.github.io/images/og-image.png" />
 
-<title>Design</title>
+<title>Front-End</title>
 
 
 
@@ -137,7 +137,7 @@
         >태그</a
       >
     
-    <div class="lang-toggle"><a class="lang-toggle__item" href="/en/tags/design/">ENG</a><span class="lang-toggle__item lang-toggle__item--active">KOR</span></div>
+    <div class="lang-toggle"><a class="lang-toggle__item" href="/en/tags/front-end/">ENG</a><span class="lang-toggle__item lang-toggle__item--active">KOR</span></div>
 
     <a href="https://github.com/hjkunst" target="_blank">
       <svg
@@ -169,7 +169,7 @@
     <div class="space-y-8 pb-12 pt-16">
       <div class="space-y-2">
         <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl uppercase">
-          <span>Design</span>
+          <span>Front-End</span>
         </h1>
         
       </div>
@@ -231,7 +231,7 @@
         <a
           class="font-mono text-sm uppercase
           
-            text-indigo-600 font-extrabold
+            text-gray-600
           "
           href="https://hjkunst.github.io/ko/tags/design/"
           >Design<span class="ml-2 text-gray-400"
@@ -253,7 +253,7 @@
         <a
           class="font-mono text-sm uppercase
           
-            text-gray-600
+            text-indigo-600 font-extrabold
           "
           href="https://hjkunst.github.io/ko/tags/front-end/"
           >Front-End<span class="ml-2 text-gray-400"
@@ -332,51 +332,37 @@
         <div class="flex flex-col gap-4 text-sm text-gray-500">
           
           
-          <time datetime="2025-07-27T12:00:00&#43;09:00">2025년 7월 27일</time>
+          <time datetime="2025-06-15T02:04:00&#43;09:00">2025년 6월 15일</time>
 
           <h2 class="text-2xl font-semibold text-gray-900">
-            <a class="break-words" href="/ko/posts/2025-07-27-tmc/">Toss Makers Conference : Design Day 리뷰</a>
+            <a class="break-words" href="/ko/posts/2025-06-15-figma-to-code/">디자인에서 구현까지: Figma와 Cursor MCP를 연결해봤다 (기본편)</a>
           </h2>
 
           <div class="flex flex-wrap gap-2">
             
-            <a href="/ko/tags/design" class="tag-chip">Design</a>
+            <a href="/ko/tags/front-end" class="tag-chip">Front-End</a>
+            
+            <a href="/ko/tags/project" class="tag-chip">Project</a>
             
           </div>
         </div>
 
-        <div class="text-gray-600 line-clamp-3"><h2 id="목차">목차</h2>
-<ol>
+        <div class="text-gray-600 line-clamp-3"><div markdown="1">
+<h3 id="목적">목적</h3>
+<p>Cursor AI와 Figma 파일을 연동시켜서, 디자인 리소스를 바로 코드로 전환해보고자 했다. 다른 대부분의 디자인과 예술은 프로덕트 완성까지를 &lsquo;완성&rsquo;으로 보는데, 왜 UX, UI 디자인만 구현은 개발자의 몫이어야 할까? 그 질문에 대한 도전이었다. 결론적으로 작가 의식에 기반한 웹사이트 제작을 해보고 싶었던 것 같다.</p>
+</div>
+<div class="spacer"></div>
+<div markdown="1">
+<h3 id="가능성에-대한-의문들">가능성에 대한 의문들</h3>
+<ul>
 <li>
-<p><a href="/ko/posts/2025-07-27-tmc/#%ed%86%a0%ec%8a%a4%ec%97%90%ec%84%9c-%ea%b0%80%ec%9e%a5-%ec%95%88-%ec%a2%8b%ec%9d%80-%ea%b2%bd%ed%97%98-%eb%a7%8c%eb%93%a4%ea%b8%b0">토스에서 가장 안 좋은 경험 만들기</a></p>
+<p>외형은 구현할 수 있더라도, flex, grid layout, margin/padding, 질감 표현까지 내가 만든 대로 옮겨질 수 있을까?</p>
 </li>
 <li>
-<p><a href="/ko/posts/2025-07-27-tmc/#%ec%97%85%eb%ac%b4-%ec%8b%9c%ea%b0%84%ec%9d%84-70-%eb%8b%a8%ec%b6%95%ed%95%98%eb%8a%94-%ec%a0%9c%ed%92%88-%eb%a7%8c%eb%93%a4%ea%b8%b0">업무 시간을 70% 단축하는 제품 만들기</a></p>
-</li>
-<li>
-<p><a href="/ko/posts/2025-07-27-tmc/#%eb%ac%b8%ec%a0%84%eb%b0%95%eb%8c%80-%ec%86%8d-10%eb%b0%b0-%ec%84%b1%ec%9e%a5%ed%95%9c-%eb%a6%ac%ec%84%9c%ec%b9%98-%ec%a0%9c%ed%92%88%ec%9d%84-%eb%b0%94%ea%be%b8%eb%8b%a4">문전박대 속 10배 성장한 리서치, 제품을 바꾸다</a></p>
-</li>
-<li>
-<p><a href="/ko/posts/2025-07-27-tmc/#%ec%99%b8%ec%95%8a%ec%8d%a8-%eb%92%a4%ec%97%90-%ec%88%a8%ea%b2%a8%ec%a7%84-%ec%a7%84%ec%a7%9c-%eb%ac%b8%ec%a0%9c-%ec%a7%9a%ec%96%b4%eb%b3%b4%ea%b8%b0">외않써?, 뒤에 숨겨진 진짜 문제 짚어보기</a></p>
-</li>
-<li>
-<p><a href="/ko/posts/2025-07-27-tmc/#%ec%9d%b8%ed%84%b0%eb%a0%89%ec%85%98-%ed%86%a0%ec%8a%a4%ec%97%90%ec%84%a0-%ec%96%b4%eb%96%bb%ea%b2%8c-%ea%b0%9c%eb%b0%9c%ed%95%98%eb%82%98%ec%9a%94">인터렉션, 토스에선 어떻게 개발하나요?</a></p>
-</li>
-<li>
-<p><a href="/ko/posts/2025-07-27-tmc/#%ec%b2%98%ec%9d%8c%ec%9d%b4%ec%a7%80%eb%a7%8c-%eb%82%af%ec%84%a4%ec%a7%80-%ec%95%8a%ec%9d%80-%ec%b1%84%ea%b6%8c">처음이지만, 낯설지 않은 채권</a></p>
-</li>
-<li>
-<p><a href="/ko/posts/2025-07-27-tmc/#%ec%98%a4%ed%94%84%eb%9d%bc%ec%9d%b8-pos-ux%eb%a1%9c-%eb%92%a4%ec%a7%91%ea%b8%b0%ea%b9%8c%ec%a7%80%ec%9d%98-3%eb%85%84">오프라인 POS, UX로 뒤집기까지의 3년</a></p>
-</li>
-</ol>
-<div class="divider"></div>
-<h2 id="토스에서-가장-안-좋은-경험-만들기">토스에서 가장 안 좋은 경험 만들기</h2>
-<p>토스 광고 UX 개선 사례를 공유한 이번 세션은 ‘피할 수 없는 기능’을 어떻게 더 나은 경험으로 바꿔나갈 수 있는지를 중심으로 진행됐다. </br>
-광고는 대부분의 유저에게 불쾌한 요소지만, 서비스 입장에서는 쉽게 제거할 수 없다. </br>
-이 발표자는 그 안에서 ‘불편하지 않은 경험’은 물론, 나아가 <strong>유저가 수용하거나 긍정적으로 느낄 수 있는 광고 UX</strong>를 만들기 위해 어떤 접근을 했는지 공유했다.</p></div>
+<p>개발 공수가 두 배가 되지는 않을까? lovable과 v0에서는 코드만 던져주는 느낌이라 실제 프로덕션에 적용하고 싶지 않았다. 디자인이란 결국 프로덕트에서 감성적인 보완점을 주는 역할을 빼놓을 수 없는데, 트렌드와 간결함에만 충실하고 친화적이지 않았다.</p></div>
       </div>
 
-      <a href="/ko/posts/2025-07-27-tmc/"
+      <a href="/ko/posts/2025-06-15-figma-to-code/"
         class="group inline-flex items-center text-sm text-gray-600 transition-colors hover:text-gray-900">글 읽기<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
           class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5">

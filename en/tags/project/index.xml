@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project on Strawberry Fields — Pastoral Tech Notes by @lkkunst</title>
+    <link>https://hjkunst.github.io/en/tags/project/</link>
+    <description>Recent content in Project on Strawberry Fields — Pastoral Tech Notes by @lkkunst</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Feb 2026 00:00:00 +0900</lastBuildDate>
+    <atom:link href="https://hjkunst.github.io/en/tags/project/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Auto-summarizing YouTube videos with n8n &#43; Gemini</title>
+      <link>https://hjkunst.github.io/en/posts/2026-02-17-n8n-youtube/</link>
+      <pubDate>Tue, 17 Feb 2026 00:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/en/posts/2026-02-17-n8n-youtube/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Purpose&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The rate at which I save YouTube videos is always faster than the rate at which I can actually watch them. Research videos I&amp;rsquo;ve bookmarked, videos I&amp;rsquo;ve saved for later, links I copied because they might become references—they keep piling up. The bottleneck is time.&lt;/p&gt;&#xA;&lt;p&gt;Most existing YouTube summarization tools rely on embedded subtitles, i.e., transcripts uploaded by the creator. If a video has no transcript, summarization becomes impossible. Videos without Korean subtitles, videos with low-quality auto-captions, or videos with no captions at all still require watching from start to finish.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Controlling Blender with AI: Claude MCP Setup Guide (Mac)</title>
+      <link>https://hjkunst.github.io/en/posts/2026-02-14-claude-blender-mcp/</link>
+      <pubDate>Sat, 14 Feb 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/en/posts/2026-02-14-claude-blender-mcp/</guid>
+      <description>&lt;p&gt;I previously used Claude + Blender MCP for production work while I was employed at a company. Recently, as I restarted a personal project, I rebuilt the same environment—and this time, I decided to document the process.&lt;/p&gt;&#xA;&lt;p&gt;Most reference blogs are written for Windows setups, so this post is organized from the perspective of someone actually working on macOS, in a way that designers can realistically follow.&lt;/p&gt;&#xA;&lt;p&gt;To be honest, I&amp;rsquo;m not particularly good at 3D modeling. Even creating a single object used to take me two or three full days, and scene-level work took much longer. This approach was something I tried to compensate for those limitations and produce results more quickly.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Crypto Article Week 2.5 | This Project Doesn&#39;t Make Money</title>
+      <link>https://hjkunst.github.io/en/posts/2026-01-08-mac-token-price-bar/</link>
+      <pubDate>Wed, 07 Jan 2026 12:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/en/posts/2026-01-08-mac-token-price-bar/</guid>
+      <description>&lt;h2 id=&#34;a-real-time-token-price-bar-for-macos-users&#34;&gt;&lt;strong&gt;A Real-Time Token Price Bar for macOS Users&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Crypto is structurally dependent on a continuous inflow of capital to sustain itself. That is why user acquisition matters so much, and often, how much exposure a project gets has a greater impact than the team&amp;rsquo;s fundamentals. Trading users typically enter on-chain through airdrops, then expand into futures DEXs, prediction markets, and other areas in search of more stimulation. Demand for dopamine-inducing mechanisms grows, and services that provide them continue to emerge.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>From Design to Implementation: Connecting Figma and Cursor MCP (Basics)</title>
+      <link>https://hjkunst.github.io/en/posts/2025-06-15-figma-to-code/</link>
+      <pubDate>Sun, 15 Jun 2025 02:04:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/en/posts/2025-06-15-figma-to-code/</guid>
+      <description>&lt;div markdown=&#34;1&#34;&gt;&#xA;&lt;h3 id=&#34;purpose&#34;&gt;Purpose&lt;/h3&gt;&#xA;&lt;p&gt;I wanted to integrate Cursor AI with Figma files to directly convert design resources into code. In most other design and art disciplines, the work is considered &amp;ldquo;complete&amp;rdquo; only when the final product is finished — so why should implementation in UX/UI design be solely the developer&amp;rsquo;s responsibility? This was a challenge to that question. Ultimately, I think what I really wanted was to build a website driven by a sense of authorship.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

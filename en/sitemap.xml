@@ -54,6 +54,19 @@
                 href="https://hjkunst.github.io/en/posts/"
                 />
   </url><url>
+    <loc>https://hjkunst.github.io/en/tags/project/</loc>
+    <lastmod>2026-02-17T00:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko-kr"
+                href="https://hjkunst.github.io/ko/tags/project/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://hjkunst.github.io/en/tags/project/"
+                />
+  </url><url>
     <loc>https://hjkunst.github.io/en/tags/</loc>
     <lastmod>2026-02-17T00:00:00+09:00</lastmod>
     <xhtml:link
@@ -288,19 +301,6 @@
                 href="https://hjkunst.github.io/en/posts/2025-07-27-tmc/"
                 />
   </url><url>
-    <loc>https://hjkunst.github.io/en/categories/</loc>
-    <lastmod>2025-06-15T02:04:00+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko-kr"
-                href="https://hjkunst.github.io/ko/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://hjkunst.github.io/en/categories/"
-                />
-  </url><url>
     <loc>https://hjkunst.github.io/en/posts/2025-06-15-figma-to-code/</loc>
     <lastmod>2025-06-15T02:04:00+09:00</lastmod>
     <xhtml:link
@@ -314,17 +314,17 @@
                 href="https://hjkunst.github.io/en/posts/2025-06-15-figma-to-code/"
                 />
   </url><url>
-    <loc>https://hjkunst.github.io/en/categories/front-end/</loc>
+    <loc>https://hjkunst.github.io/en/tags/front-end/</loc>
     <lastmod>2025-06-15T02:04:00+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko-kr"
-                href="https://hjkunst.github.io/ko/categories/front-end/"
+                href="https://hjkunst.github.io/ko/tags/front-end/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://hjkunst.github.io/en/categories/front-end/"
+                href="https://hjkunst.github.io/en/tags/front-end/"
                 />
   </url><url>
     <loc>https://hjkunst.github.io/en/about/</loc>
@@ -337,6 +337,18 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://hjkunst.github.io/en/about/"
+                />
+  </url><url>
+    <loc>https://hjkunst.github.io/en/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko-kr"
+                href="https://hjkunst.github.io/ko/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://hjkunst.github.io/en/categories/"
                 />
   </url>
 </urlset>
