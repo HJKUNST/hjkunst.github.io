@@ -2,7 +2,7 @@
 layout: post
 title: "Controlling Blender with AI: Claude MCP Setup Guide (Mac)"
 date: 2026-02-14 12:00:00 +0900
-tags: [AI]
+tags: [AI, Project]
 image: /claude-blender-mcp/claude-blender-mcp-1.webp
 translationKey: "2026-02-09-claude-blender-mcp"
 ---

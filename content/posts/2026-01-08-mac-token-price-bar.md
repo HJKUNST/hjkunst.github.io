@@ -2,7 +2,7 @@
 layout: post
 title: "Crypto Article Week 2.5 | This Project Doesn't Make Money"
 date: 2026-01-07 12:00:00 +0900
-tags: [Crypto, SwiftUI, macOS, App]
+tags: [Crypto, SwiftUI, macOS, App, Project]
 translationKey: "2026-01-08-mac-token-price-bar"
 aliases:
   - /posts/2026-01-08-mac-token-price-bar/

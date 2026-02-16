@@ -2,7 +2,8 @@
 layout: post
 title: "디자인에서 구현까지: Figma와 Cursor MCP를 연결해봤다 (기본편)"
 date: 2025-06-15 02:04:00 +0900
-categories: [Front-End]
+categories: [Front-End, Project]
+tags: [Front-End, Project]
 translationKey: "2025-06-15-figma-to-code"
 ---
 

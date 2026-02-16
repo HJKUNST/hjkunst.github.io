@@ -2,7 +2,7 @@
 layout: post
 title: "From Design to Implementation: Connecting Figma and Cursor MCP (Basics)"
 date: 2025-06-15 02:04:00 +0900
-categories: [Front-End]
+tags: [Front-End, Project]
 translationKey: "2025-06-15-figma-to-code"
 aliases:
   - /posts/2025-06-15-figma-to-code/

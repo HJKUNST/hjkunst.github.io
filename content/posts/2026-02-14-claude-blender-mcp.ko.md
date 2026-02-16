@@ -2,7 +2,7 @@
 layout: post
 title: "AI로 Blender 제어하기: Claude MCP 연결 가이드 (Mac)"
 date: 2026-02-14 12:00:00 +0900
-tags: [AI]
+tags: [AI, Project]
 image: /claude-blender-mcp/claude-blender-mcp-1.webp
 translationKey: "2026-02-09-claude-blender-mcp"
 ---
