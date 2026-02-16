@@ -6,8 +6,15 @@
     <description>Recent content in AI on Strawberry Fields — Pastoral Tech Notes by @lkkunst</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Feb 2026 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 17 Feb 2026 00:00:00 +0900</lastBuildDate>
     <atom:link href="https://hjkunst.github.io/en/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Auto-summarizing YouTube videos with n8n &#43; Gemini</title>
+      <link>https://hjkunst.github.io/en/posts/2026-02-17-n8n-youtube/</link>
+      <pubDate>Tue, 17 Feb 2026 00:00:00 +0900</pubDate>
+      <guid>https://hjkunst.github.io/en/posts/2026-02-17-n8n-youtube/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Purpose&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The rate at which I save YouTube videos is always faster than the rate at which I can actually watch them. Research videos I&amp;rsquo;ve bookmarked, videos I&amp;rsquo;ve saved for later, links I copied because they might become references—they keep piling up. The bottleneck is time.&lt;/p&gt;&#xA;&lt;p&gt;Most existing YouTube summarization tools rely on embedded subtitles, i.e., transcripts uploaded by the creator. If a video has no transcript, summarization becomes impossible. Videos without Korean subtitles, videos with low-quality auto-captions, or videos with no captions at all still require watching from start to finish.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Controlling Blender with AI: Claude MCP Setup Guide (Mac)</title>
       <link>https://hjkunst.github.io/en/posts/2026-02-14-claude-blender-mcp/</link>
