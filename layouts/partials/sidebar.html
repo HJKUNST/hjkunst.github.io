@@ -5,6 +5,16 @@
     </h2>
 
     <nav class="inline-flex flex-col space-y-3">
+      <a
+        class="font-mono text-sm uppercase
+        {{ if eq .Page.Permalink ($.Site.GetPage "/").Permalink }}
+          text-indigo-600 font-extrabold
+        {{ else }}
+          text-gray-600
+        {{ end }}"
+        href="{{ "/" | relLangURL }}"
+        >{{ i18n "viewAll" }}</a
+      >
       {{ range .Site.Taxonomies.tags }}
         <a
           class="font-mono text-sm uppercase

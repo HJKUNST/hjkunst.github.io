@@ -13,6 +13,9 @@ other = "게시일"
 [filterByTag]
 other = "태그별 필터"
 
+[viewAll]
+other = "전체보기"
+
 [previous]
 other = "이전"
 

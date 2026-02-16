@@ -13,6 +13,9 @@ other = "Published on"
 [filterByTag]
 other = "Filter by tag"
 
+[viewAll]
+other = "View All"
+
 [previous]
 other = "Previous"
 
