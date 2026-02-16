@@ -10,9 +10,9 @@
     <atom:link href="https://hjkunst.github.io/en/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Controlling Blender with AI: Claude MCP Setup Guide (Mac)</title>
-      <link>https://hjkunst.github.io/en/posts/2026-02-09-claude-blender-mcp/</link>
+      <link>https://hjkunst.github.io/en/posts/2026-02-14-claude-blender-mcp/</link>
       <pubDate>Sat, 14 Feb 2026 12:00:00 +0900</pubDate>
-      <guid>https://hjkunst.github.io/en/posts/2026-02-09-claude-blender-mcp/</guid>
+      <guid>https://hjkunst.github.io/en/posts/2026-02-14-claude-blender-mcp/</guid>
       <description>&lt;p&gt;I previously used Claude + Blender MCP for production work while I was employed at a company. Recently, as I restarted a personal project, I rebuilt the same environment—and this time, I decided to document the process.&lt;/p&gt;&#xA;&lt;p&gt;Most reference blogs are written for Windows setups, so this post is organized from the perspective of someone actually working on macOS, in a way that designers can realistically follow.&lt;/p&gt;&#xA;&lt;p&gt;To be honest, I&amp;rsquo;m not particularly good at 3D modeling. Even creating a single object used to take me two or three full days, and scene-level work took much longer. This approach was something I tried to compensate for those limitations and produce results more quickly.&lt;/p&gt;</description>
     </item>
     <item>
