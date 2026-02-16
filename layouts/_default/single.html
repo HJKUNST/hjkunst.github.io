@@ -42,17 +42,6 @@
                 {{ end }}
               </div>
               {{ end }}
-              
-              {{ if .IsTranslated }}
-              <div class="flex items-center gap-2 text-sm">
-                <span class="text-gray-500">Read in:</span>
-                {{ range .Translations }}
-                <a href="{{ .RelPermalink }}" class="language-switch-link">
-                  {{ .Language.LanguageName }}
-                </a>
-                {{ end }}
-              </div>
-              {{ end }}
             </div>
           </div>
           {{ if .Params.image }}
