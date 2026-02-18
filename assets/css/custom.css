@@ -19,10 +19,12 @@
   /* Light accent for backgrounds */
 
   /* Code Colors */
-  --color-code: #639094;
-  --color-code-bg: rgba(218, 240, 255, 0.8);
-  --color-pre-bg: rgb(248, 252, 255);
-  --color-pre-shadow: #D8E5EE;
+  --color-code: #6ca5aa;
+  --color-code-bg: rgba(218, 240, 255, 0.2);
+  /* Code block (multi-line): light background for readability */
+  --color-pre-bg: #f6f8fa;
+  --color-pre-shadow: #e1e4e8;
+  --color-pre-text: #333;
 
   /* Background Colors */
   --color-bg: #ffffff;
@@ -133,295 +135,186 @@ pre,
 }
 
 code {
-  font-weight: 500;
-  padding: 4px 8px;
+  font-weight: 600;
+  padding: 2px 4px;
   font-size: 0.875rem;
   color: var(--color-code);
   background-color: var(--color-code-bg);
   border-radius: 3px;
 }
 
-pre {
+/* Code block container - force light background (overrides theme/Hugo dark styles) */
+pre,
+.highlight {
   display: block;
-  margin: 24px 0;
-  padding: 32px 40px;
+  margin: 20px 0;
+  padding: 16px 16px;
   font-size: 1rem;
   line-height: 1.8;
   white-space: pre-wrap;
   word-break: break-all;
-  background-color: var(--color-pre-bg);
-  box-shadow: 0px 0px 8px var(--color-pre-shadow);
+  background-color: var(--color-pre-bg) !important;
+  box-shadow: 0 1px 3px var(--color-pre-shadow);
   border-radius: 12px;
   width: 100%;
   box-sizing: border-box;
 }
 
-pre code {
+.highlight pre {
+  margin: 0;
+  padding: 16px 16px;
+  background-color: transparent !important;
+  box-shadow: none;
+}
+
+pre code,
+.highlight code,
+.highlight pre code {
   padding: 0;
   font-size: 0.875rem;
-  color: #639094 !important;
-  background-color: transparent;
+  color: var(--color-pre-text) !important;
+  background-color: transparent !important;
 }
 
-/* Syntax highlighting - Catppuccin Latte theme */
+/* Hugo Chroma: force light code block (overrides built-in dark theme) */
+.chroma {
+  background-color: var(--color-pre-bg) !important;
+  border-radius: 12px;
+  padding: 16px 16px;
+  margin: 24px 0;
+}
+.chroma code {
+  color: var(--color-pre-text) !important;
+  background: transparent !important;
+}
+
+/* Syntax highlighting - Primer Light (https://github.com/andrewmarkle/primer-light) */
 code .hll {
-  background-color: #EFF1F5
+  background-color: #F0F5FA;
 }
 
-code .c {
-  color: #ACB0BE;
-  font-style: italic
+code .c,
+code .cm,
+code .c1,
+code .cp,
+code .cs,
+code .sd {
+  color: #969896;
+  font-style: italic;
+}
+
+code .err,
+code .gr,
+code .gt,
+code .ge {
+  color: #d21d00;
 }
 
 code .err {
-  color: #D20F39;
-  background-color: #F2CDCD
+  background-color: #ffdce0;
 }
 
-code .k {
-  color: #DC8A78
+code .k,
+code .kc,
+code .kd,
+code .kn,
+code .kp,
+code .kr,
+code .kt {
+  color: #A71D5D;
 }
 
-code .o {
-  color: #FE640B
-}
-
-code .cm {
-  color: #ACB0BE;
-  font-style: italic
-}
-
-code .cp {
-  color: #DC8A78
-}
-
-code .c1 {
-  color: #ACB0BE;
-  font-style: italic
-}
-
-code .cs {
-  color: #ACB0BE;
-  font-style: italic
+code .o,
+code .ow {
+  color: #333;
 }
 
 code .gd {
-  background-color: #F2CDCD;
-  border: 1px solid #D20F39
-}
-
-code .ge {
-  font-style: italic
-}
-
-code .gr {
-  color: #D20F39
-}
-
-code .gh {
-  color: #7287FD;
-  font-weight: bold
+  background-color: #ffdce0;
+  border: 1px solid #d21d00;
 }
 
 code .gi {
-  background-color: #C9F0C9;
-  border: 1px solid #40A02B
+  background-color: #e6ffec;
+  border: 1px solid #2da44e;
 }
 
-code .go {
-  color: #9CA0B0
-}
-
-code .gp {
-  color: #4C4F69
-}
-
-code .gs {
-  font-weight: bold
-}
-
+code .gh,
 code .gu {
-  color: #7287FD;
-  font-weight: bold
+  color: #795DA3;
+  font-weight: bold;
 }
 
-code .gt {
-  color: #D20F39
+code .go,
+code .gp,
+code .gs {
+  color: #333;
 }
 
-code .kc {
-  color: #DD7878
+code .m,
+code .mf,
+code .mh,
+code .mi,
+code .mo,
+code .il {
+  color: #0086B3;
 }
 
-code .kd {
-  color: #DC8A78
+code .s,
+code .s1,
+code .s2,
+code .sb,
+code .sc,
+code .se,
+code .sh,
+code .si,
+code .sx,
+code .sr,
+code .ss {
+  color: #4180C6;
 }
 
-code .kn {
-  color: #DC8A78
-}
-
-code .kp {
-  color: #DC8A78
-}
-
-code .kr {
-  color: #DC8A78
-}
-
-code .kt {
-  color: #DD7878
-}
-
-code .m {
-  color: #7287FD
-}
-
-code .s {
-  color: #40A02B
-}
-
-code .na {
-  color: #8839EF
-}
-
-code .nb {
-  color: #7287FD
+code .na,
+code .nf,
+code .nd,
+code .nn,
+code .bp,
+code .nl {
+  color: #795DA3;
 }
 
 code .nc {
-  color: #8839EF
+  color: #0086B3;
 }
 
 code .no {
-  color: #DD7878
+  color: #795DA3;
 }
 
-code .nd {
-  color: #8839EF
-}
-
-code .ni {
-  color: #4C4F69
+code .ni,
+code .nv,
+code .vc,
+code .vg,
+code .vi {
+  color: #ED6A43;
 }
 
 code .ne {
-  color: #D20F39
-}
-
-code .nf {
-  color: #8839EF
-}
-
-code .nl {
-  color: #7287FD
-}
-
-code .nn {
-  color: #8839EF
+  color: #d21d00;
 }
 
 code .nt {
-  color: #D20F39
-}
-
-code .nv {
-  color: #4C4F69
-}
-
-code .ow {
-  color: #FE640B
+  color: #63a3a4;
 }
 
 code .w {
-  color: #BCC0CC
-}
-
-code .mf {
-  color: #7287FD
-}
-
-code .mh {
-  color: #7287FD
-}
-
-code .mi {
-  color: #7287FD
-}
-
-code .mo {
-  color: #7287FD
-}
-
-code .sb {
-  color: #40A02B
-}
-
-code .sc {
-  color: #40A02B
-}
-
-code .sd {
-  color: #ACB0BE;
-  font-style: italic
-}
-
-code .s2 {
-  color: #40A02B
-}
-
-code .se {
-  color: #40A02B
-}
-
-code .sh {
-  color: #40A02B
-}
-
-code .si {
-  color: #40A02B
-}
-
-code .sx {
-  color: #40A02B
-}
-
-code .sr {
-  color: #40A02B
-}
-
-code .s1 {
-  color: #40A02B
-}
-
-code .ss {
-  color: #DC8A78
-}
-
-code .bp {
-  color: #7287FD
-}
-
-code .vc {
-  color: #4C4F69
-}
-
-code .vg {
-  color: #4C4F69
-}
-
-code .vi {
-  color: #4C4F69
-}
-
-code .il {
-  color: #7287FD
+  color: #333;
 }
 
 .css .o,
 .css .o+.nt,
 .css .nt+.nt {
-  color: #DC8A78
+  color: #A71D5D;
 }
 
 /* ==========================================================================
