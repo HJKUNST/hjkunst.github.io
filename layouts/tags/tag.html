@@ -16,11 +16,7 @@
         {{ end }}
       </div>
 
-      <div class="flex flex-col gap-8 md:flex-row">
-        <aside class="hidden md:block md:w-48 md:mr-20">
-          {{ partial "sidebar.html" . }}
-        </aside>
-
+      <div class="flex flex-col gap-8 md:flex-row md:gap-16">
         <div class="min-w-0 flex-1">
           <ul class="divide-y divide-gray-200">
             {{ range .Pages }}
@@ -28,6 +24,10 @@
             {{ end }}
           </ul>
         </div>
+
+        <aside class="hidden md:block md:w-48 md:ml-24 md:flex-shrink-0">
+          {{ partial "sidebar.html" . }}
+        </aside>
       </div>
     </div>
   </div>

@@ -2,16 +2,15 @@
   <article>
     <div class="space-y-8">
       <div class="space-y-4">
-        <div class="flex flex-col gap-4 text-sm text-gray-500">
-          <h2 class="text-2xl font-semibold text-gray-900">
-            <a class="break-words" href="{{ .RelPermalink }}">{{ .Title }}</a>
-          </h2>
-
+        <div class="flex flex-col gap-2 text-sm text-gray-500">
           <div class="flex flex-wrap gap-2">
             {{ range .Params.tags }}
             <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="tag-chip">{{ . }}</a>
             {{ end }}
           </div>
+          <h2 class="text-2xl font-semibold text-gray-900">
+            <a class="break-words" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h2>
         </div>
 
         <div class="text-gray-600 line-clamp-3">{{ .Summary }}</div>

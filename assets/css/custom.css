@@ -365,7 +365,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0.25rem 0.75rem;
-  border-radius: 16px;
+  border-radius: 6px;
   background-color: rgba(var(--color-accent-light), 0.1);
   color: var(--color-primary);
   font-size: 0.75rem;
